@@ -3,17 +3,18 @@
 import { motion } from "framer-motion";
 
 const ECOSYSTEM = [
-  { label: "Search", icon: "🔍" },
-  { label: "Social", icon: "💬" },
+  { label: "Søk", icon: "🔍" },
+  { label: "Sosiale medier", icon: "💬" },
   { label: "Video", icon: "🎥" },
   { label: "Display", icon: "🖼️" },
   { label: "Influencer", icon: "🤝" },
   { label: "Podcast", icon: "🎙️" },
   { label: "DOOH", icon: "🚌" },
-  { label: "Contextual", icon: "🧩" },
-  { label: "AI Discovery", icon: "🤖" },
+  { label: "Kontekstuell", icon: "🧩" },
+  { label: "AI-oppdagelse", icon: "🤖" },
   { label: "Retail Media", icon: "🛒" },
-  { label: "Creator Platforms", icon: "🌐" },
+  { label: "Skaperplattformer", icon: "🌐" },
+  { label: "Programmatisk", icon: "⚡" },
 ];
 
 const containerVariants = {
