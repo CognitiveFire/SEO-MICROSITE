@@ -29,27 +29,26 @@ export function HeroSection() {
               </a>
             </div>
           </div>
-          <div className="hidden lg:block">
-            <div className="aspect-[0.92] rounded-[28px] border border-apriil-line bg-[linear-gradient(180deg,#f3f0e9_0%,#ece8df_100%)] p-6">
-              <div className="flex h-full flex-col justify-between rounded-[24px] border border-white/70 bg-white/30 p-8">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-apriil-primary">Apriil Clarity</p>
-                  <p className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-apriil-dark">
-                    Søkesynlighet og betalt anskaffelse, koblet sammen av ett
-                    beslutningsrammeverk.
-                  </p>
-                </div>
-                <div className="grid gap-px overflow-hidden rounded-[18px] border border-apriil-line/80 bg-apriil-line/80">
-                  <div className="bg-[#fbfaf7] p-4 text-sm leading-7 text-apriil-muted">
-                    Signaler fra etterspørsel, anskaffelse, landingssider og rapportering
-                    vektes for tydeligere prioritering.
-                  </div>
-                  <div className="bg-[#fbfaf7] p-4 text-sm leading-7 text-apriil-muted">
-                    Outputen er ikke enda et dashbord. Den er en tydeligere sekvens av
-                    tiltak, eierskap og kommersielle implikasjoner.
+          <div className="mt-2 lg:mt-0">
+            <div className="relative rounded-[34px] border border-apriil-line/70 bg-[radial-gradient(circle_at_18%_12%,#f4eee3_0%,#e8e2d8_48%,#ddd4c8_100%)] p-7 shadow-[0_24px_70px_rgba(80,56,34,0.16)]">
+              <div className="mx-auto w-[min(100%,460px)] rounded-[34px] bg-[#d9dce1] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_20px_45px_rgba(26,27,29,0.22)]">
+                <div className="rounded-[28px] bg-[#111214] p-3">
+                  <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-black">
+                    <span className="absolute left-1/2 top-2 z-10 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#25272b] shadow-[0_0_0_1px_rgba(255,255,255,0.08)]" />
+                    <video
+                      src="/clarity.mov"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      controls
+                      preload="metadata"
+                      className="aspect-[4/3] w-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
+              <p className="mt-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-apriil-primary/80">Apriil Clarity pa iPad</p>
             </div>
           </div>
       </div>

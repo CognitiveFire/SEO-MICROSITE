@@ -1,3 +1,30 @@
+import { SignalRoomSlideshow } from "@/components/signal-room-slideshow";
+import { PremiumServicePricing } from "@/components/premium-service-pricing";
+
+const clarityTasks = [
+  {
+    title: "Forbedre synlighet i AI-baserte søkeflater",
+    impact: "Høy",
+    complexity: "Middels",
+    description:
+      "Innhold og struktur gjør det vanskelig for AI-systemer å forstå og referere til sentrale tjenester.",
+  },
+  {
+    title: "Redusere ineffektiv anskaffelse på tvers av mediemiks",
+    impact: "Høy",
+    complexity: "Middels",
+    description:
+      "Flere kanaler driver trafikk med svak kommersiell intensjon og lav konverteringskvalitet.",
+  },
+  {
+    title: "Forbedre sammenheng mellom innhold og annonsering",
+    impact: "Middels",
+    complexity: "Lav",
+    description:
+      "Manglende sammenheng mellom synlighet, landingssider og anskaffelse reduserer samlet effekt.",
+  },
+] as const;
+
 export default function SignalRoomPage() {
   return (
     <main className="px-6 pb-24 md:px-10 xl:px-16">
@@ -20,6 +47,7 @@ export default function SignalRoomPage() {
           </div>
         </div>
       </section>
+      <SignalRoomSlideshow />
       <section className="mx-auto mt-16 max-w-6xl border-t border-apriil-line/80 pt-16">
         <div className="grid gap-px overflow-hidden border border-apriil-line/80 bg-apriil-line/80 lg:grid-cols-3">
         <div className="bg-[#fbfaf7] p-8">
@@ -50,6 +78,52 @@ export default function SignalRoomPage() {
           </div>
         </div>
       </section>
+
+      <PremiumServicePricing
+        embedded
+        headlineTag="h2"
+        eyebrow="Operasjonell tydelighet"
+        headline="Tydeligere prioriteringer på tvers av moderne mediemiljøer."
+        body="Apriil Clarity samler signaler fra synlighet, anskaffelse og mediemiks for å gi tydeligere beslutningsgrunnlag, prioriteringer og operasjonell oversikt."
+        retainer={{
+          label: "Apriil Clarity",
+          price: "Fra NOK 15.000 / måned",
+          description:
+            "Operasjonell innsikt og strategisk prioritering på tvers av moderne synlighets- og anskaffelsesmiljøer.",
+          items: [
+            "Strategisk prioritering",
+            "Medieovergripende innsikt",
+            "Operasjonell rapportering",
+            "Implementeringsoversikt",
+            "Beslutningsstøtte",
+            "Signal Room-tilgang",
+          ],
+          cta: "Book strategisamtale",
+          href: "/contact",
+        }}
+        analysis={{
+          label: "Apriil Clarity Analyse",
+          price: "NOK 18.000",
+          description:
+            "En strukturert analyse av synlighet, anskaffelse og operasjonelle forbedringsmuligheter på tvers av moderne mediemiljøer.",
+          items: [
+            "Synlighetsanalyse",
+            "Anskaffelsesanalyse",
+            "Mediemiks-vurdering",
+            "Prioritert tiltaksliste",
+            "Strategiske anbefalinger",
+            "Lederoppsummering",
+            "Signal Room-demo",
+          ],
+          cta: "Bestill analyse",
+          href: "/contact",
+        }}
+        tasks={[...clarityTasks]}
+        closingHeadline="Bygget for tydeligere beslutninger og sterkere operasjonell kontroll."
+        closingBody="Apriil Clarity kombinerer signaler fra moderne mediemiljøer til ett strukturert beslutningsgrunnlag utviklet for langsiktig synlighet og mer effektiv anskaffelse."
+        closingCtaLabel="Book strategisamtale"
+        closingCtaHref="/contact"
+      />
     </main>
   );
 }

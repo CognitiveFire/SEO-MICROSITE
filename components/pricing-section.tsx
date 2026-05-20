@@ -53,7 +53,7 @@ export function PricingSection() {
             className="rounded-[32px] border border-apriil-dark/85 bg-[linear-gradient(180deg,#211c19_0%,#171311_100%)] p-8 text-white shadow-[0_28px_100px_rgba(23,23,23,0.18)] md:p-10"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d8c6b8]">Søkesynlighet</p>
-            <p className="mt-8 text-4xl font-semibold tracking-[-0.065em] md:text-[3.15rem] md:leading-none">Fra NOK 25.000 / måned</p>
+            <p className="mt-8 text-4xl font-semibold tracking-[-0.065em] md:text-[3.15rem] md:leading-none">Fra NOK 15.000 / måned</p>
             <p className="mt-5 max-w-lg text-base leading-8 text-white/74">
               Strategisk og teknisk arbeid for virksomheter som vil bli tydeligere der kunder faktisk søker og oppdager leverandører.
             </p>
@@ -75,7 +75,7 @@ export function PricingSection() {
             className="rounded-[32px] border border-apriil-line/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.7),rgba(251,250,247,0.95))] p-8 shadow-[0_22px_75px_rgba(23,23,23,0.08)] md:p-10"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Betalt anskaffelse</p>
-            <p className="mt-8 text-4xl font-semibold tracking-[-0.065em] text-apriil-dark md:text-[3.15rem] md:leading-none">Fra NOK 25.000 / måned</p>
+            <p className="mt-8 text-4xl font-semibold tracking-[-0.065em] text-apriil-dark md:text-[3.15rem] md:leading-none">Fra NOK 15.000 / måned</p>
             <p className="mt-5 max-w-lg text-base leading-8 text-apriil-muted">
               Kontinuerlig forbedring av trafikkvalitet, budsjetteffektivitet og konverteringsstyrke for virksomheter med tydelige vekstmål.
             </p>

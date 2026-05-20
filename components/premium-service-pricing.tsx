@@ -26,6 +26,12 @@ type PremiumServicePricingProps = {
   retainer: Offer;
   analysis: Offer;
   tasks: TaskItem[];
+  headlineTag?: "h1" | "h2";
+  embedded?: boolean;
+  closingEyebrow?: string;
+  closingHeadline?: string;
+  closingBody?: string;
+  closingCtaLabel?: string;
   closingCtaHref?: string;
 };
 
@@ -119,10 +125,26 @@ function TaskCard({ task }: { task: TaskItem }) {
 }
 
 export function PremiumServicePricing(props: PremiumServicePricingProps) {
-  const { eyebrow, headline, body, retainer, analysis, tasks, closingCtaHref = "/contact" } = props;
+  const {
+    eyebrow,
+    headline,
+    body,
+    retainer,
+    analysis,
+    tasks,
+    headlineTag = "h1",
+    embedded = false,
+    closingEyebrow = "Arbeidsmodell",
+    closingHeadline = "Strukturert rundt tydelige prioriteringer og langsiktig effekt.",
+    closingBody =
+      "Hver leveranse tilpasses virksomhetens mål, kompleksitet og vekstprioriteringer — med fokus på tydeligere beslutninger og målbar utvikling.",
+    closingCtaLabel = "Book strategisamtale",
+    closingCtaHref = "/contact",
+  } = props;
+  const IntroHeading = headlineTag;
 
   return (
-    <main className="px-6 pb-24 md:px-10 xl:px-16">
+    <section className={embedded ? "pb-16 md:pb-20" : "px-6 pb-24 md:px-10 xl:px-16"}>
       <motion.section
         initial="hidden"
         animate="visible"
@@ -134,9 +156,9 @@ export function PremiumServicePricing(props: PremiumServicePricingProps) {
         </motion.p>
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <motion.div variants={itemVariants}>
-            <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.07em] text-apriil-dark md:text-7xl md:leading-[0.94]">
+            <IntroHeading className="max-w-4xl text-5xl font-semibold tracking-[-0.07em] text-apriil-dark md:text-7xl md:leading-[0.94]">
               {headline}
-            </h1>
+            </IntroHeading>
           </motion.div>
           <motion.p variants={itemVariants} className="max-w-2xl text-lg leading-8 text-apriil-muted md:text-xl md:leading-9">
             {body}
@@ -193,22 +215,22 @@ export function PremiumServicePricing(props: PremiumServicePricingProps) {
           variants={itemVariants}
           className="rounded-[34px] border border-apriil-line/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.75),rgba(251,250,247,0.95))] p-8 shadow-[0_18px_60px_rgba(23,23,23,0.05)] md:p-12"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Arbeidsmodell</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">{closingEyebrow}</p>
           <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">
-            Strukturert rundt tydelige prioriteringer og langsiktig effekt.
+            {closingHeadline}
           </h2>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-apriil-muted">
-            Hver leveranse tilpasses virksomhetens mål, kompleksitet og vekstprioriteringer — med fokus på tydeligere beslutninger og målbar utvikling.
+            {closingBody}
           </p>
           <Link
             href={closingCtaHref}
             className="mt-8 inline-flex items-center gap-3 rounded-full border border-apriil-line/80 bg-white px-5 py-3 text-sm font-semibold text-apriil-dark transition hover:-translate-y-0.5 hover:border-apriil-primary/40 hover:text-apriil-primary"
           >
-            Book strategisamtale
+            {closingCtaLabel}
             <span aria-hidden="true">↗</span>
           </Link>
         </motion.div>
       </motion.section>
-    </main>
+    </section>
   );
 }

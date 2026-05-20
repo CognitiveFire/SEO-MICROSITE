@@ -32,7 +32,7 @@ export default function PaidAcquisitionPage() {
       body="Apriil hjelper virksomheter med å forbedre annonseringsresultater gjennom tydeligere prioriteringer, bedre målretting og mer effektiv bruk av markedsbudsjetter."
       retainer={{
         label: "Løpende betalt anskaffelse",
-        price: "Fra NOK 25.000 / måned",
+        price: "Fra NOK 15.000 / måned",
         description:
           "Kontinuerlig optimalisering og oppfølging utviklet for å forbedre konverteringskvalitet, budsjetteffektivitet og langsiktig annonseytelse.",
         items: [

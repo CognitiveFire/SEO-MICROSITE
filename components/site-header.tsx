@@ -8,7 +8,6 @@ const navItems = [
   { href: "/services/betalt-anskaffelse", label: "Betalt anskaffelse" },
   { href: "/signal-room", label: "Apriil Clarity" },
   { href: "/results", label: "Resultater" },
-  { href: "/about", label: "Om Apriil" },
   { href: "/contact", label: "Kontakt" },
 ];
 

@@ -32,7 +32,7 @@ export default function SearchVisibilityPage() {
       body="Søkeatferd skjer nå på tvers av tradisjonelle søkemotorer, AI-systemer, video, sosiale plattformer og anbefalingsmiljøer. Apriil hjelper virksomheter med å forbedre synlighet og oppdagbarhet på tvers av moderne søkeflater."
       retainer={{
         label: "Løpende søkesynlighet",
-        price: "Fra NOK 25.000 / måned",
+        price: "Fra NOK 15.000 / måned",
         description:
           "Strategisk og teknisk arbeid utviklet for å forbedre synlighet, oppdagbarhet og langsiktig organisk vekst.",
         items: [
