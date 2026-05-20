@@ -6,7 +6,6 @@ import { PricingSection } from "../components/pricing-section";
 import { ResultsSection } from "../components/results-section";
 import { AboutSection } from "../components/about-section";
 import { ContactSection } from "../components/contact-section";
-import { Footer } from "../components/footer";
 
 export default function HomePage() {
   return (
@@ -19,7 +18,6 @@ export default function HomePage() {
       <ResultsSection />
       <AboutSection />
       <ContactSection />
-      <Footer />
     </main>
   );
 }
