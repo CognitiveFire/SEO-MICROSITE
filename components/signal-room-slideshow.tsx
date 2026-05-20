@@ -88,30 +88,30 @@ export function SignalRoomSlideshow() {
       <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Signalrom</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">Visualisering av operative signaler</h2>
+          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">Operativ innsikt på tvers av signaler</h2>
         </div>
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={goPrev}
-            className="h-10 w-10 border border-apriil-line/90 bg-white text-xl leading-none text-apriil-dark transition hover:bg-[#f4efe9]"
+            className="h-10 border border-apriil-line/90 bg-white px-3 text-xs font-semibold uppercase tracking-[0.16em] text-apriil-dark transition hover:bg-[#f4efe9]"
             aria-label="Forrige bilde"
           >
-            ‹
+            Forrige
           </button>
           <button
             type="button"
             onClick={goNext}
-            className="h-10 w-10 border border-apriil-line/90 bg-white text-xl leading-none text-apriil-dark transition hover:bg-[#f4efe9]"
+            className="h-10 border border-apriil-line/90 bg-white px-3 text-xs font-semibold uppercase tracking-[0.16em] text-apriil-dark transition hover:bg-[#f4efe9]"
             aria-label="Neste bilde"
           >
-            ›
+            Neste
           </button>
         </div>
       </div>
 
       <div
-        className="mt-8 overflow-hidden border border-apriil-line/80 bg-[#f6f1ea]"
+        className="mx-auto mt-8 w-full overflow-hidden border border-apriil-line/80 bg-[#f6f1ea] md:w-[60%]"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
@@ -124,7 +124,7 @@ export function SignalRoomSlideshow() {
         />
       </div>
 
-      <div className="mt-5 flex flex-wrap items-center gap-3">
+      <div className="mx-auto mt-5 flex w-full flex-wrap items-center gap-3 md:w-[60%]">
         {slides.map((slide, index) => (
           <button
             key={slide.src}
@@ -147,8 +147,8 @@ export function SignalRoomSlideshow() {
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-apriil-primary">Clarity i praksis</p>
-            <h3 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-apriil-dark">Video av hvordan signalene blir til prioriterte tiltak</h3>
-            <p className="mt-4 text-sm leading-7 text-apriil-muted">Dette er en egen videoblokk ved siden av bildeslideshowet, slik at team kan se flyten i kontekst før de går videre til detaljerte visninger.</p>
+            <h3 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-apriil-dark">Operativ flyt og prioriteringsgrunnlag</h3>
+            <p className="mt-4 text-sm leading-7 text-apriil-muted">Apriil Clarity knytter synlighet, anskaffelse og mediesignaler sammen til ett strukturert beslutningsgrunnlag for ledelse og team.</p>
           </div>
           <div className="overflow-hidden border border-apriil-line/80 bg-black/90">
             <video

@@ -6,7 +6,7 @@ export function HeroSection() {
       <div className="mx-auto grid max-w-6xl gap-12 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-20">
           <div>
             <p className="text-[12px] font-semibold uppercase tracking-[0.28em] text-apriil-primary">
-              Operasjonell søkekonsulent
+              APRIIL CLARITY
             </p>
             <h1 className="mt-8 max-w-4xl text-[56px] font-semibold leading-[0.95] tracking-[-0.07em] text-apriil-dark md:text-[82px] xl:text-[96px]">
               Operasjonell klarhet på tvers av søkesynlighet og anskaffelse.
@@ -35,14 +35,9 @@ export function HeroSection() {
                 <div className="rounded-[28px] bg-[#111214] p-3">
                   <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-black">
                     <span className="absolute left-1/2 top-2 z-10 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#25272b] shadow-[0_0_0_1px_rgba(255,255,255,0.08)]" />
-                    <video
-                      src="/clarity.mov"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      controls
-                      preload="metadata"
+                    <img
+                      src="/oversikt.png"
+                      alt="Apriil Clarity oversikt"
                       className="aspect-[4/3] w-full object-cover"
                     />
                   </div>
