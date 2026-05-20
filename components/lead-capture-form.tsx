@@ -11,6 +11,13 @@ type LeadCaptureFormProps = {
   buttonClassName?: string;
   feedbackClassName?: string;
   showFocusField?: boolean;
+  showMessageField?: boolean;
+  hiddenMessageValue?: string;
+  introText?: string;
+  responseText?: string;
+  focusLabel?: string;
+  fieldLayout?: "two-column" | "stacked";
+  submitRowClassName?: string;
 };
 
 const focusOptions = [
@@ -29,6 +36,13 @@ export function LeadCaptureForm({
   buttonClassName = "mt-2 inline-flex items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-8 py-3 font-semibold text-white transition hover:bg-[#2d2824] disabled:cursor-not-allowed disabled:opacity-70",
   feedbackClassName = "rounded-2xl border border-apriil-line bg-[#fbfaf7] px-4 py-3 text-sm text-apriil-muted",
   showFocusField = true,
+  showMessageField = true,
+  hiddenMessageValue = "Ønsker en strategisamtale om dagens modell og prioriteringer.",
+  introText,
+  responseText = "Vi svarer vanligvis innen én arbeidsdag.",
+  focusLabel = "Fokusområde",
+  fieldLayout = "two-column",
+  submitRowClassName = "mt-2 flex flex-col gap-4 md:flex-row md:items-center md:justify-between",
 }: LeadCaptureFormProps) {
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -55,7 +69,7 @@ export function LeadCaptureForm({
           email: formData.get("email"),
           company: formData.get("company"),
           focus: showFocusField ? formData.get("focus") : "Generell henvendelse",
-          message: formData.get("message"),
+          message: showMessageField ? formData.get("message") : hiddenMessageValue,
           source,
           submittedAt: new Date().toISOString(),
         }),
@@ -76,24 +90,25 @@ export function LeadCaptureForm({
 
   return (
     <form className={formClassName} onSubmit={handleSubmit}>
-      <div className="grid gap-5 md:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium text-apriil-dark">
+      {introText ? <p className="max-w-2xl text-[1.02rem] leading-8 text-apriil-muted">{introText}</p> : null}
+      <div className={fieldLayout === "stacked" ? "grid gap-5" : "grid gap-5 md:grid-cols-2"}>
+        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
           Navn
-          <input name="name" type="text" placeholder="Navn" className={inputClassName} required />
+          <input name="name" type="text" className={inputClassName} required />
         </label>
-        <label className="grid gap-2 text-sm font-medium text-apriil-dark">
+        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
           E-post
-          <input name="email" type="email" placeholder="navn@firma.no" className={inputClassName} required />
+          <input name="email" type="email" className={inputClassName} required />
         </label>
       </div>
-      <div className="grid gap-5 md:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium text-apriil-dark">
+      <div className={fieldLayout === "stacked" ? "grid gap-5" : "grid gap-5 md:grid-cols-2"}>
+        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
           Selskap
-          <input name="company" type="text" placeholder="Selskap" className={inputClassName} />
+          <input name="company" type="text" className={inputClassName} />
         </label>
       {showFocusField ? (
-        <label className="grid gap-2 text-sm font-medium text-apriil-dark">
-          Fokusområde
+        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
+          {focusLabel}
           <select
             name="focus"
             value={selectedFocus}
@@ -109,19 +124,24 @@ export function LeadCaptureForm({
         </label>
       ) : null}
       </div>
-      <label className="grid gap-2 text-sm font-medium text-apriil-dark">
-        Beskrivelse
-        <textarea
-          name="message"
-          placeholder={messagePlaceholder}
-          className={`${inputClassName} min-h-[160px] resize-y`}
-          rows={5}
-          required
-        />
-      </label>
-      <button type="submit" className={buttonClassName} disabled={isPending}>
-        {isPending ? "Sender..." : submitLabel}
-      </button>
+      {showMessageField ? (
+        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
+          Beskrivelse
+          <textarea
+            name="message"
+            placeholder={messagePlaceholder}
+            className={`${inputClassName} min-h-[160px] resize-y`}
+            rows={5}
+            required
+          />
+        </label>
+      ) : null}
+      <div className={submitRowClassName}>
+        <p className="text-sm text-apriil-muted/72">{responseText}</p>
+        <button type="submit" className={buttonClassName} disabled={isPending}>
+          {isPending ? "Sender..." : submitLabel}
+        </button>
+      </div>
       {status === "success" ? (
         <p className={feedbackClassName}>Takk. Vi følger opp innen én arbeidsdag.</p>
       ) : null}
