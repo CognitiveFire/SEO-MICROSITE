@@ -1,5 +1,5 @@
-import { SignalRoomSlideshow } from "@/components/signal-room-slideshow";
-import { PremiumServicePricing } from "@/components/premium-service-pricing";
+import { SignalRoomSlideshow } from "../../components/signal-room-slideshow";
+import { PremiumServicePricing } from "../../components/premium-service-pricing";
 
 const clarityTasks = [
   {
