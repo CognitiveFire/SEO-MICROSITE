@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { TouchEvent, useEffect, useMemo, useState } from "react";
 
 type Slide = {
@@ -43,21 +44,27 @@ const slides: Slide[] = [
 
 export function SignalRoomSlideshow() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const totalSlides = slides.length;
 
+  const setSlide = (nextIndex: number, nextDirection: number) => {
+    setDirection(nextDirection);
+    setActiveIndex((nextIndex + totalSlides) % totalSlides);
+  };
+
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % totalSlides);
+      setSlide(activeIndex + 1, 1);
     }, 4500);
 
     return () => window.clearInterval(timer);
-  }, [totalSlides]);
+  }, [activeIndex, totalSlides]);
 
   const activeSlide = useMemo(() => slides[activeIndex], [activeIndex]);
 
-  const goNext = () => setActiveIndex((current) => (current + 1) % totalSlides);
-  const goPrev = () => setActiveIndex((current) => (current - 1 + totalSlides) % totalSlides);
+  const goNext = () => setSlide(activeIndex + 1, 1);
+  const goPrev = () => setSlide(activeIndex - 1, -1);
 
   const onTouchStart = (event: TouchEvent<HTMLDivElement>) => {
     setTouchStartX(event.touches[0]?.clientX ?? null);
@@ -119,13 +126,23 @@ export function SignalRoomSlideshow() {
               onTouchEnd={onTouchEnd}
             >
               <span className="absolute left-1/2 top-2 z-10 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#25272b] shadow-[0_0_0_1px_rgba(255,255,255,0.08)]" />
-              <img
-                key={activeSlide.src}
-                src={activeSlide.src}
-                alt={activeSlide.alt}
-                className="animate-signal-slide-fade h-auto w-full object-cover"
-                loading="lazy"
-              />
+              <div className="relative aspect-[16/10] w-full">
+                <AnimatePresence initial={false} custom={direction} mode="wait">
+                  <motion.img
+                    key={activeSlide.src}
+                    custom={direction}
+                    src={activeSlide.src}
+                    alt={activeSlide.alt}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    initial={(value) => ({ opacity: 0, x: value > 0 ? 44 : -44 })}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={(value) => ({ opacity: 0, x: value > 0 ? -44 : 44 })}
+                    transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </AnimatePresence>
+              </div>
             </div>
           </div>
         </div>
@@ -136,7 +153,7 @@ export function SignalRoomSlideshow() {
           <button
             key={slide.src}
             type="button"
-            onClick={() => setActiveIndex(index)}
+            onClick={() => setSlide(index, index >= activeIndex ? 1 : -1)}
             className={`border px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] transition ${
               index === activeIndex
                 ? "border-apriil-dark bg-apriil-dark text-white"
