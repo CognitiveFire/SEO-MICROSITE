@@ -42,6 +42,12 @@ const slides: Slide[] = [
   },
 ];
 
+const slideVariants = {
+  enter: (direction: number) => ({ opacity: 0, x: direction > 0 ? 44 : -44 }),
+  center: { opacity: 1, x: 0 },
+  exit: (direction: number) => ({ opacity: 0, x: direction > 0 ? -44 : 44 }),
+};
+
 export function SignalRoomSlideshow() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -134,9 +140,10 @@ export function SignalRoomSlideshow() {
                     src={activeSlide.src}
                     alt={activeSlide.alt}
                     className="absolute inset-0 h-full w-full object-cover"
-                    initial={(value) => ({ opacity: 0, x: value > 0 ? 44 : -44 })}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={(value) => ({ opacity: 0, x: value > 0 ? -44 : 44 })}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                     loading="eager"
                     decoding="async"

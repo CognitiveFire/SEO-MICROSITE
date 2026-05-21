@@ -43,7 +43,6 @@ export function HeroSection() {
                   </div>
                 </div>
               </div>
-              <p className="mt-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-apriil-primary/80">Apriil Clarity pa iPad</p>
             </div>
           </div>
       </div>
