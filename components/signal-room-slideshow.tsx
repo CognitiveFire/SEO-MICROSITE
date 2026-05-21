@@ -110,21 +110,28 @@ export function SignalRoomSlideshow() {
         </div>
       </div>
 
-      <div
-        className="mx-auto mt-8 w-full overflow-hidden border border-apriil-line/80 bg-[#f6f1ea] md:w-[60%]"
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-      >
-        <img
-          key={activeSlide.src}
-          src={activeSlide.src}
-          alt={activeSlide.alt}
-          className="animate-signal-slide-fade h-auto w-full object-cover"
-          loading="lazy"
-        />
+      <div className="relative mt-8 rounded-[32px] border border-apriil-line/70 bg-[radial-gradient(circle_at_18%_12%,#f4eee3_0%,#e8e2d8_48%,#ddd4c8_100%)] p-6 shadow-[0_20px_60px_rgba(80,56,34,0.14)] md:p-8">
+        <div className="mx-auto rounded-[30px] bg-[#d9dce1] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_16px_38px_rgba(26,27,29,0.2)] md:p-4">
+          <div className="rounded-[24px] bg-[#111214] p-2 md:p-3">
+            <div
+              className="relative overflow-hidden rounded-[20px] border border-white/10 bg-black"
+              onTouchStart={onTouchStart}
+              onTouchEnd={onTouchEnd}
+            >
+              <span className="absolute left-1/2 top-2 z-10 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#25272b] shadow-[0_0_0_1px_rgba(255,255,255,0.08)]" />
+              <img
+                key={activeSlide.src}
+                src={activeSlide.src}
+                alt={activeSlide.alt}
+                className="animate-signal-slide-fade h-auto w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="mx-auto mt-5 flex w-full flex-wrap items-center gap-3 md:w-[60%]">
+      <div className="mx-auto mt-5 flex w-full flex-wrap items-center gap-3">
         {slides.map((slide, index) => (
           <button
             key={slide.src}
@@ -141,28 +148,6 @@ export function SignalRoomSlideshow() {
             {slide.caption}
           </button>
         ))}
-      </div>
-
-      <div className="mt-10 border border-apriil-line/80 bg-[#f4eee5] p-5 md:p-8">
-        <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-apriil-primary">Clarity i praksis</p>
-            <h3 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-apriil-dark">Operativ flyt og prioriteringsgrunnlag</h3>
-            <p className="mt-4 text-sm leading-7 text-apriil-muted">Apriil Clarity knytter synlighet, anskaffelse og mediesignaler sammen til ett strukturert beslutningsgrunnlag for ledelse og team.</p>
-          </div>
-          <div className="overflow-hidden border border-apriil-line/80 bg-black/90">
-            <video
-              src="/clarity.mov"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              preload="metadata"
-              className="h-full w-full"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );
