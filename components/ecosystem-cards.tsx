@@ -170,24 +170,70 @@ export function EcosystemCards() {
 
         <div ref={gridRef} className="relative mt-12">
           <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" aria-hidden="true">
+            <defs>
+              <filter id="connectionGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="1.8" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
             {lines.map((line, index) => (
-              <motion.line
-                key={line.id}
-                x1={line.x1}
-                y1={line.y1}
-                x2={line.x2}
-                y2={line.y2}
-                stroke="rgba(143,90,51,0.34)"
-                strokeWidth="1.2"
-                strokeDasharray="5 6"
-                initial={{ pathLength: 0, opacity: 0.2 }}
-                animate={{ pathLength: 1, opacity: [0.2, 0.6, 0.2] }}
-                transition={{
-                  duration: 1.5,
-                  delay: index * 0.06,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              />
+              <g key={line.id}>
+                <motion.line
+                  x1={line.x1}
+                  y1={line.y1}
+                  x2={line.x2}
+                  y2={line.y2}
+                  stroke="rgba(143,90,51,0.26)"
+                  strokeWidth="3.2"
+                  strokeLinecap="round"
+                  filter="url(#connectionGlow)"
+                  initial={{ pathLength: 0, opacity: 0.12 }}
+                  animate={{ pathLength: 1, opacity: [0.12, 0.32, 0.12] }}
+                  transition={{
+                    duration: 1.5,
+                    delay: index * 0.06,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                />
+                <motion.line
+                  x1={line.x1}
+                  y1={line.y1}
+                  x2={line.x2}
+                  y2={line.y2}
+                  stroke="rgba(143,90,51,0.68)"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeDasharray="7 7"
+                  initial={{ pathLength: 0, opacity: 0.22 }}
+                  animate={{ pathLength: 1, opacity: [0.22, 0.78, 0.22] }}
+                  transition={{
+                    duration: 1.5,
+                    delay: index * 0.06,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                />
+                <motion.circle
+                  cx={line.x1}
+                  cy={line.y1}
+                  r="2.6"
+                  fill="rgba(143,90,51,0.9)"
+                  filter="url(#connectionGlow)"
+                  animate={{ opacity: [0.45, 1, 0.45], scale: [0.95, 1.15, 0.95] }}
+                  transition={{ duration: 1.35, repeat: Infinity, ease: "easeInOut", delay: index * 0.04 }}
+                />
+                <motion.circle
+                  cx={line.x2}
+                  cy={line.y2}
+                  r="2.6"
+                  fill="rgba(143,90,51,0.9)"
+                  filter="url(#connectionGlow)"
+                  animate={{ opacity: [0.45, 1, 0.45], scale: [0.95, 1.15, 0.95] }}
+                  transition={{ duration: 1.35, repeat: Infinity, ease: "easeInOut", delay: index * 0.06 }}
+                />
+              </g>
             ))}
           </svg>
 
