@@ -4,13 +4,13 @@ export function AboutSection() {
       <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Om Apriil</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">Et strategisk søk- og ytelseskonsulentskap, ikke en kanalfabrikk.</h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-apriil-muted">Apriil kombinerer søkesynlighet, betalt anskaffelse og operasjonell intelligens i ett sammenkoblet beslutningsrammeverk, designet for sterkere langsiktige vekstbeslutninger.</p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">Et strategisk rådgivningsmiljø for synlighet, anskaffelse og tydelige beslutninger.</h2>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-apriil-muted">Apriil kombinerer søkesynlighet, betalt anskaffelse og operasjonell intelligens i ett sammenkoblet beslutningsrammeverk. Apriil Clarity-prinsippene styrer hvordan vi prioriterer, følger opp og skaper kommersiell verdi.</p>
         </div>
         <div className="mt-10 grid gap-px overflow-hidden rounded-[22px] border border-apriil-line/80 bg-apriil-line/80 md:grid-cols-3">
           <div className="bg-[#fbfaf7] p-6">
             <p className="text-xl font-semibold text-apriil-dark">Strategisk</p>
-            <p className="mt-3 text-sm leading-7 text-apriil-muted">Vi starter med operasjonell klarhet, hierarki og kommersiell konsekvens for taktikk.</p>
+            <p className="mt-3 text-sm leading-7 text-apriil-muted">Vi starter med operasjonell klarhet, prioriteringsrekkefolge og tydelig kommersiell retning.</p>
           </div>
           <div className="bg-[#fbfaf7] p-6">
             <p className="text-xl font-semibold text-apriil-dark">Sammenkoblet</p>

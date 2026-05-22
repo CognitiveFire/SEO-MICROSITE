@@ -165,7 +165,7 @@ export function EcosystemCards() {
           Fragmenterte signaler. Tydeligere beslutninger.
         </motion.h2>
         <motion.p variants={cardVariants} className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-          Apriil Clarity samler signaler fra moderne mediemiljoer og oversetter dem til tydeligere prioriteringer, tiltak og forretningsmessige beslutninger.
+          Apriil Clarity samler signaler fra moderne mediemiljøer og oversetter dem til tydeligere prioriteringer, tiltak og forretningsmessige beslutninger.
         </motion.p>
 
         <div ref={gridRef} className="relative mt-12">

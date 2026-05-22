@@ -23,6 +23,31 @@ export default function PrincessCaseStudyPage() {
         </div>
       </section>
       <section className="mx-auto mt-16 max-w-6xl border-t border-apriil-line/80 pt-16">
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="overflow-hidden border border-apriil-line/80 bg-[#f4efe7]">
+            <img
+              src="/oversikt.png"
+              alt="Anonymisert oversiktsvisning fra case"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="grid gap-6">
+            <div className="overflow-hidden border border-apriil-line/80 bg-[#f4efe7]">
+              <img
+                src="/reporting.png"
+                alt="Anonymisert rapporteringsvisning fra case"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="border border-apriil-line/80 bg-[#fbfaf7] p-6 text-sm leading-7 text-apriil-muted">
+              Bildene er anonymiserte og brukes for å illustrere operasjonell retning, tiltak og oppfølging uten identifiserbare merkeelementer.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto mt-16 max-w-6xl border-t border-apriil-line/80 pt-16">
         <div className="grid gap-px overflow-hidden border border-apriil-line/80 bg-apriil-line/80 md:grid-cols-3">
           <div className="bg-[#fbfaf7] p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-apriil-primary">Sektor</p>

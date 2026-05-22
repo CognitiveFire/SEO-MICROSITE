@@ -13,8 +13,9 @@ export function HeroSection() {
             </h1>
             <p className="mt-8 max-w-3xl text-[20px] leading-[1.6] text-apriil-muted md:text-[22px]">
               Apriil kombinerer søkesynlighet, betalt anskaffelse og operasjonell
-              rapportering i ett samlet strategisk rammeverk, designet for tydeligere
-              prioriteringer og sterkere langsiktig vekst.
+              oppfølging i ett samlet strategisk rammeverk. Apriil Clarity er
+              prinsippene som styrer prioriteringene på tvers av alle tjenester,
+              med mål om tydeligere beslutninger og sterkere kommersiell utvikling.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
@@ -38,8 +39,16 @@ export function HeroSection() {
                     <img
                       src="/oversikt.png"
                       alt="Apriil Clarity oversikt"
-                      className="aspect-[4/3] w-full object-cover"
+                      className="aspect-[4/3] w-full scale-[1.28] object-cover object-[58%_38%]"
                     />
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(160deg,rgba(10,10,12,0.08),rgba(10,10,12,0.28))]" />
+                    <div className="absolute bottom-4 right-4 w-[36%] rounded-xl border border-white/15 bg-[#0f1012]/80 p-1.5 shadow-[0_12px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+                      <img
+                        src="/oversikt.png"
+                        alt="Apriil Clarity totaloversikt"
+                        className="aspect-[4/3] w-full rounded-[8px] object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

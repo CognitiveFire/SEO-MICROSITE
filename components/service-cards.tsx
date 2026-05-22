@@ -8,16 +8,16 @@ export function ServiceCards() {
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Apriil-modellen</p>
           <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">Søkesynlighet og betalt anskaffelse, koblet sammen av Apriil Clarity.</h2>
           <p className="mt-5 text-lg leading-8 text-apriil-muted">
-            Utførelsesdisiplinene betyr fortsatt noe. Men de styres som sammenkoblede systemer,
-            der Apriil Clarity fungerer som intelligenslaget som setter prioriteringer og
-            rammer inn beslutninger.
+            Fagdisiplinene er viktige, men de styres som ett sammenkoblet system.
+            Apriil Clarity er prinsippene som setter prioriteringer, vurderer
+            forretningsverdi og gir et tydeligere grunnlag for beslutninger.
           </p>
         </div>
         <div className="grid gap-px overflow-hidden rounded-[22px] border border-apriil-line/80 bg-apriil-line/80 lg:grid-cols-3">
           <div className="bg-[#fbfaf7] p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-apriil-primary">Søkesynlighet</p>
             <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-apriil-dark">Organisk etterspørselfangst, teknisk synlighet og informasjonsarkitektur.</h3>
-            <p className="mt-4 text-base leading-7 text-apriil-muted">Bredere enn tradisjonell SEO. Teknisk synlighet, organisk etterspørselfangst, intensjonskartlegging og AI-søk-beredskap.</p>
+            <p className="mt-4 text-base leading-7 text-apriil-muted">Bredere enn tradisjonell SEO. Arbeidet dekker teknisk synlighet, etterspørselfangst og innholdsstruktur som støtter kommersiell utvikling.</p>
             <Link href="/services/sokesynlighet" className="mt-8 inline-flex text-sm font-semibold text-apriil-dark transition hover:text-apriil-primary">Se tjeneste</Link>
           </div>
           <div className="bg-[#fbfaf7] p-8">
@@ -28,8 +28,8 @@ export function ServiceCards() {
           </div>
           <div className="bg-[#fbfaf7] p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-apriil-primary">Apriil Clarity</p>
-            <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-apriil-dark">Operasjonell intelligens på tvers av kanaler og implementering.</h3>
-            <p className="mt-4 text-base leading-7 text-apriil-muted">Signalinnsamling, prioriteringslogikk, rapporteringsmetodikk og implementeringssynlighet i ett beslutningsrammeverk.</p>
+            <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-apriil-dark">Operasjonell intelligens på tvers av signaler, tiltak og oppfølging.</h3>
+            <p className="mt-4 text-base leading-7 text-apriil-muted">Signalinnsamling, prioriteringslogikk, rapportering og gjennomføring samlet i ett beslutningsrammeverk for ledelse og team.</p>
             <Link href="/signal-room" className="mt-8 inline-flex text-sm font-semibold text-apriil-dark transition hover:text-apriil-primary">Utforsk rammeverket</Link>
           </div>
         </div>
