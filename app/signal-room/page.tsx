@@ -1,5 +1,6 @@
 import { SignalRoomSlideshow } from "../../components/signal-room-slideshow";
 import { PremiumServicePricing } from "../../components/premium-service-pricing";
+import { ClarityWorksGraphic } from "../../components/clarity-works-graphic";
 
 const clarityTasks = [
   {
@@ -48,6 +49,7 @@ export default function SignalRoomPage() {
         </div>
       </section>
       <SignalRoomSlideshow />
+      <ClarityWorksGraphic />
       <section className="mx-auto mt-16 max-w-6xl border-t border-apriil-line/80 pt-16">
         <div className="grid gap-px overflow-hidden border border-apriil-line/80 bg-apriil-line/80 lg:grid-cols-3">
         <div className="bg-[#fbfaf7] p-8">
