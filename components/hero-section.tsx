@@ -36,18 +36,27 @@ export function HeroSection() {
                 <div className="rounded-[28px] bg-[#111214] p-3">
                   <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-black">
                     <span className="absolute left-1/2 top-2 z-10 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-[#25272b] shadow-[0_0_0_1px_rgba(255,255,255,0.08)]" />
-                    <img
-                      src="/oversikt.png"
-                      alt="Apriil Clarity oversikt"
-                      className="aspect-[4/3] w-full scale-[1.28] object-cover object-[58%_38%]"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(160deg,rgba(10,10,12,0.08),rgba(10,10,12,0.28))]" />
-                    <div className="absolute bottom-4 right-4 w-[36%] rounded-xl border border-white/15 bg-[#0f1012]/80 p-1.5 shadow-[0_12px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm">
-                      <img
-                        src="/oversikt.png"
-                        alt="Apriil Clarity totaloversikt"
-                        className="aspect-[4/3] w-full rounded-[8px] object-cover"
-                      />
+                    <div className="aspect-[4/3] w-full bg-[linear-gradient(145deg,#141517_0%,#1b1d20_45%,#151618_100%)] p-5 md:p-6">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#d8c6b8]">Apriil Clarity</p>
+
+                      <div className="mt-4 grid grid-cols-3 gap-2.5">
+                        <div className="rounded-lg border border-white/12 bg-white/5 px-2 py-2 text-[11px] font-medium text-white/88">Synlighet</div>
+                        <div className="rounded-lg border border-white/12 bg-white/5 px-2 py-2 text-[11px] font-medium text-white/88">Anskaffelse</div>
+                        <div className="rounded-lg border border-white/12 bg-white/5 px-2 py-2 text-[11px] font-medium text-white/88">Rapportering</div>
+                      </div>
+
+                      <div className="mt-4 rounded-xl border border-white/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-3">
+                        <div className="flex items-center gap-2">
+                          <span className="h-2 w-2 animate-pulse rounded-full bg-[#d8c6b8]" />
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-white/72">Intelligensprinsipper</p>
+                        </div>
+                        <p className="mt-2 text-sm font-semibold leading-5 text-white">Tolkning, prioritering og tydelige operative valg</p>
+                      </div>
+
+                      <div className="mt-4 grid grid-cols-2 gap-2.5">
+                        <div className="rounded-lg border border-white/12 bg-white/5 px-2 py-2 text-[11px] text-white/82">Bedre beslutningsgrunnlag</div>
+                        <div className="rounded-lg border border-white/12 bg-white/5 px-2 py-2 text-[11px] text-white/82">Sterkere kommersiell effekt</div>
+                      </div>
                     </div>
                   </div>
                 </div>
