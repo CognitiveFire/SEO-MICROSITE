@@ -7,7 +7,7 @@ export default function DigitalMarketingPage() {
       <ServicePageTemplate
         eyebrow="Digital markedsføring"
         title="Digital markedsføring som henger sammen på tvers av SEO, paid media og analyse"
-        intro="Apriil bygger digitale modeller som gjør at markedsføring, innsikt og kommersielle mål peker i samme retning. I stedet for separate kanalprosjekter får du én struktur som gir tydeligere prioriteringer og målbar effekt."
+        intro="Det er 2026. Synlighet avgjøres ikke lenger bare i klassiske Google-resultater. AI-genererte svar, Google AI Overviews og plattformer som ChatGPT og Perplexity kuraterer egne kilder. Apriil bygger en samlet modell for SEO, paid media og analyse som sikrer teknisk soliditet, tydelig innholdsstruktur og sterk autoritet på tvers av søkeflater."
         trendTitle="Hva har endret seg i digital markedsføring?"
         trendBody="AI-søk, automatisert annonsering og nye personvernkrav gjør at gamle kanal-oppskrifter ikke holder. Bedrifter som lykkes nå samkjører synlighet, anskaffelse og innsikt i ett operativt system."
         bullets={[
