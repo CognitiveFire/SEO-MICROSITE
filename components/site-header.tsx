@@ -4,11 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/services/sokesynlighet", label: "Søkesynlighet" },
-  { href: "/services/betalt-anskaffelse", label: "Betalt anskaffelse" },
-  { href: "/signal-room", label: "Apriil Clarity" },
-  { href: "/results", label: "Resultater" },
-  { href: "/contact", label: "Kontakt" },
+  { href: "/services/seo", label: "SEO" },
+  { href: "/services/paid-media", label: "Paid Media" },
 ];
 
 export function SiteHeader() {

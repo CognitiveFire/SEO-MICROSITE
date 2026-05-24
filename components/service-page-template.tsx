@@ -95,6 +95,10 @@ export function ServicePageTemplate({
                 <p className="mt-4 text-3xl font-semibold tracking-[-0.04em]">{tier.price}</p>
                 <p className="mt-4 text-sm leading-7 text-white/82">{tier.audience}</p>
                 <ul className="mt-5 grid gap-2.5 text-sm leading-7 text-white/88">
+                  <li className="flex items-start gap-2.5">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white" />
+                    <span>Tilgang til Apriil Clarity Data Room</span>
+                  </li>
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2.5">
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white" />

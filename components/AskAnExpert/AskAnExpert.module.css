@@ -36,31 +36,39 @@
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  background: var(--rae-bg);
-  border: var(--rae-border);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--rae-accent) 11%, var(--rae-bg)) 0%, var(--rae-bg) 45%, color-mix(in srgb, var(--rae-accent) 6%, var(--rae-bg-soft)) 100%);
+  border: var(--rae-border-strong);
   border-left: 3px solid var(--rae-accent);
   border-radius: var(--rae-radius-lg);
-  padding: 0.9rem 1rem;
+  padding: 1rem 1.05rem;
   color: var(--rae-text);
   cursor: pointer;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.08);
 }
 
 .avatar {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   border-radius: 999px;
-  background: var(--rae-accent);
-  color: #fff;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
 }
 
 .avatarIcon {
   width: 20px;
   height: 20px;
+}
+
+.expertPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .dotOnline,
@@ -90,8 +98,8 @@
 }
 
 .heading {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -99,6 +107,13 @@
   font-size: 13px;
   color: var(--rae-muted);
   line-height: 1.35;
+}
+
+.microCta {
+  margin-top: 0.05rem;
+  font-size: 12px;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--rae-accent) 72%, var(--rae-text));
 }
 
 .statusBadgeOnline,
@@ -125,7 +140,7 @@
 .chevronOpen {
   font-size: 22px;
   line-height: 1;
-  color: var(--rae-muted);
+  color: color-mix(in srgb, var(--rae-accent) 68%, var(--rae-text));
   transition: transform 0.22s ease;
 }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { useChat } from "./hooks/useChat";
 import { type OfficeHours, useOnlineStatus } from "./hooks/useOnlineStatus";
 import { ChatTab } from "./tabs/ChatTab";
@@ -78,9 +79,13 @@ export function AskAnExpert({
         onClick={() => setOpen((prev) => !prev)}
       >
         <span className={styles.avatar} aria-hidden="true">
-          <svg viewBox="0 0 24 24" className={styles.avatarIcon} aria-hidden="true">
-            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-3.5 0-6.5 1.7-7 4v2h14v-2c-.5-2.3-3.5-4-7-4Z" fill="currentColor" />
-          </svg>
+          <Image
+            src="/lasse-maroen,.png"
+            alt="Apriil ekspert"
+            width={56}
+            height={56}
+            className={styles.expertPhoto}
+          />
           <span
             className={online ? styles.dotOnline : styles.dotOffline}
             aria-label={online ? "Online" : "Utilgjengelig"}
@@ -91,6 +96,7 @@ export function AskAnExpert({
         <span className={styles.triggerText}>
           <span className={styles.heading}>Spør en ekspert</span>
           <span className={styles.subtext}>Få svar fra våre spesialister i SEO, betalt media og analyse</span>
+          <span className={styles.microCta}>Gratis strategisk avklaring • Svar innen én arbeidsdag</span>
           <span className={online ? styles.statusBadgeOnline : styles.statusBadgeOffline}>{statusText}</span>
         </span>
 
