@@ -1,0 +1,176 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Apriil",
+      "url": "https://apriil.no",
+      "logo": "https://apriil.no/logo.png",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Bergen",
+          "streetAddress": "Damsgardveien 59"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Oslo",
+          "streetAddress": "Hausmannsgate 21"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Stavanger",
+          "streetAddress": "Nykirkebakken 7"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "SEO og sokesynlighet",
+      "provider": {
+        "@type": "Organization",
+        "name": "Apriil"
+      },
+      "description": "Strategisk og teknisk SEO for norske bedrifter, inkludert AI-sokeoptimalisering.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Basis SEO",
+          "price": "12000",
+          "priceCurrency": "NOK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Vekst SEO",
+          "price": "22000",
+          "priceCurrency": "NOK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise SEO",
+          "price": "45000",
+          "priceCurrency": "NOK"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Betalt media og annonsering",
+      "provider": {
+        "@type": "Organization",
+        "name": "Apriil"
+      },
+      "description": "Google Ads, Meta Ads, LinkedIn og programmatic annonsering for norske bedrifter.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Basis betalt media",
+          "price": "12000",
+          "priceCurrency": "NOK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Vekst betalt media",
+          "price": "25000",
+          "priceCurrency": "NOK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise betalt media",
+          "price": "55000",
+          "priceCurrency": "NOK"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Business intelligence og analyse",
+      "provider": {
+        "@type": "Organization",
+        "name": "Apriil"
+      },
+      "description": "Apriil Clarity - var plattform for rapportering, analyse og oppgavestyring pa tvers av digitale kanaler.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Basis BI",
+          "price": "10000",
+          "priceCurrency": "NOK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Vekst BI",
+          "price": "20000",
+          "priceCurrency": "NOK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise BI",
+          "price": "40000",
+          "priceCurrency": "NOK"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hva koster SEO fra Apriil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO fra Apriil starter fra NOK 12 000 per maned for basispakken, NOK 22 000 for vekstpakken og NOK 45 000 for enterprise. Alle pakker inkluderer tilgang til Apriil Clarity-rapportering. Prisene varierer basert pa nettstedets kompleksitet og konkurransesituasjon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hva er Apriil Clarity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apriil Clarity er Apriils egen plattform for operasjonell innsikt og oppgavestyring. Den samler data fra SEO, betalt media og analyser i en flate, og gir ledelsen og teamene et felles beslutningsgrunnlag med tydelig prioritering av tiltak."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jobber Apriil med AI SEO og generativ sokeoptimalisering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Apriil hjelper bedrifter med a bli sitert og anbefalt av AI-systemer som Google AI Overviews, ChatGPT og Perplexity. Dette krever strukturert innhold, autoritetssignaler og teknisk optimalisering - noe vi bygger inn i all SEO-radgivning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvem passer Apriils digitale tjenester for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apriil passer best for norske bedrifter som onsker malbare resultater fra digital markedsforing, men mangler intern kapasitet eller metodologi. Vi jobber med alt fra vekstbedrifter til store nasjonale aktorer, med kontorer i Bergen, Oslo og Stavanger."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hva er forskjellen pa SEO og betalt sok?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO (sokeoptimalisering) handler om a bygge organisk synlighet over tid - uten kostnad per klikk. Betalt sok (Google Ads / PPC) gir umiddelbar synlighet mot betaling. Apriil anbefaler ofte en kombinasjon, der kanalene forsterker hverandre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hva er business intelligence (BI) og trenger vi det?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Business intelligence er prosessen med a gjore ra forretningsdata om til handlingsrettet innsikt. Alle bedrifter med en nettside og digitale markedsaktiviteter trenger en form for BI - uten det vet man ikke hva som virker eller hva man bor prioritere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Har Apriil kontor i Bergen, Oslo og Stavanger?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Apriil har kontorer i Bergen (Damsgardveien 59), Oslo (Hausmannsgate 21) og Stavanger (Nykirkebakken 7). Vi betjener kunder i hele Norge, men prioriterer naerheten og de lokale relasjonene."
+          }
+        }
+      ]
+    }
+  ]
+}
