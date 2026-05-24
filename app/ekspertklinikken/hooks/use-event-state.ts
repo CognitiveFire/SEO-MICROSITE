@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { EventState } from "../types";
 
+const RECORDING_GRACE_HOURS = 24;
+
 function toOsloDate(date: Date) {
   return new Date(date.toLocaleString("en-US", { timeZone: "Europe/Oslo" }));
 }
@@ -18,16 +20,16 @@ function lastFridayOf(year: number, month: number) {
 
 export function getNextLastFriday() {
   const nowOslo = toOsloDate(new Date());
-  let candidate = lastFridayOf(nowOslo.getFullYear(), nowOslo.getMonth());
+  const currentMonthCandidate = lastFridayOf(nowOslo.getFullYear(), nowOslo.getMonth());
+  const currentMonthRecordingAvailableAt = recordingAvailableAtFromEvent(currentMonthCandidate);
+  const currentMonthRecordingGraceEnds = new Date(currentMonthRecordingAvailableAt);
+  currentMonthRecordingGraceEnds.setHours(currentMonthRecordingGraceEnds.getHours() + RECORDING_GRACE_HOURS);
 
-  const eventEnd = new Date(candidate);
-  eventEnd.setHours(13, 0, 0, 0);
-
-  if (nowOslo >= eventEnd) {
-    candidate = lastFridayOf(nowOslo.getFullYear(), nowOslo.getMonth() + 1);
+  if (nowOslo <= currentMonthRecordingGraceEnds) {
+    return currentMonthCandidate;
   }
 
-  return candidate;
+  return lastFridayOf(nowOslo.getFullYear(), nowOslo.getMonth() + 1);
 }
 
 function recordingAvailableAtFromEvent(event: Date) {
@@ -71,7 +73,7 @@ function formatEventDate(eventDate: Date) {
     year: "numeric",
     timeZone: "Europe/Oslo",
   }).format(eventDate);
-  return `${weekday} ${datePart} kl. 12:00-13:00`;
+  return `${weekday} ${datePart} kl. 12:00–13:00`;
 }
 
 export function getEventMonthValue(eventDate: Date) {
