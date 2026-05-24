@@ -1,4 +1,4 @@
-:root {
+.wrap {
   --rae-accent: #e63322;
   --rae-accent-light: #fdf1f0;
   --rae-online: #16a34a;
@@ -13,10 +13,14 @@
   --rae-bg-soft: #f8f7f6;
   --rae-text: #1f1f1f;
   --rae-muted: #676767;
+  font-family: var(--rae-font);
+  width: 100%;
+  max-width: 980px;
+  margin-top: 2rem;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  .wrap {
     --rae-bg: #121212;
     --rae-bg-soft: #1a1a1a;
     --rae-text: #f4f4f4;
@@ -24,13 +28,6 @@
     --rae-border: 0.5px solid rgba(255, 255, 255, 0.15);
     --rae-border-strong: 0.5px solid rgba(255, 255, 255, 0.22);
   }
-}
-
-.wrap {
-  font-family: var(--rae-font);
-  width: 100%;
-  max-width: 980px;
-  margin-top: 2rem;
 }
 
 .trigger {
