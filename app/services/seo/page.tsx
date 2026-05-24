@@ -4,7 +4,7 @@ export default function SeoPage() {
   return (
     <ServicePageTemplate
       eyebrow="SEO"
-      title="SEO that connects customers beyond the ten blue links"
+      title="SEO that connects content with customer wherever they are."
       intro="AI, social search, image, video, local and zero-click searches have replaced the static Google homepage. Our SEO service connects your content with your customers on their own terms."
       trendTitle="Hva er nytt i SEO nå?"
       trendBody="Søkelandskapet er ikke lenger bare ti blå lenker. AI Overviews, ChatGPT og andre svarmotorer henter kilder direkte. Derfor må innholdet ditt være tydelig strukturert, troverdig og formulert for å bli valgt."
