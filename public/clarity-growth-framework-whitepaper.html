@@ -411,6 +411,10 @@
       </article>
     </div>
     <script>
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("print") === "1") {
+        setTimeout(() => window.print(), 180);
+      }
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>

@@ -58,11 +58,10 @@ export default function HomePage() {
                 Åpne fagnotat
               </a>
               <a
-                href="/clarity-growth-framework-whitepaper.html"
-                download="apriil-clarity-growth-framework-whitepaper.html"
+                href="/clarity-growth-framework-whitepaper.html?print=1"
                 className="inline-flex items-center justify-center rounded-full border border-apriil-line bg-[#f7f3ee] px-6 py-3 text-sm font-semibold text-apriil-dark transition hover:-translate-y-0.5"
               >
-                Last ned fil
+                Last ned PDF
               </a>
             </div>
           </div>
