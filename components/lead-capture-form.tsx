@@ -27,6 +27,8 @@ const focusOptions = [
   "Apriil Clarity",
 ];
 
+const officeOptions = ["Bergen", "Stavanger", "Oslo"] as const;
+
 export function LeadCaptureForm({
   source,
   messagePlaceholder,
@@ -68,6 +70,7 @@ export function LeadCaptureForm({
           name: formData.get("name"),
           email: formData.get("email"),
           company: formData.get("company"),
+          office: formData.get("office"),
           focus: showFocusField ? formData.get("focus") : "Generell henvendelse",
           message: showMessageField ? formData.get("message") : hiddenMessageValue,
           source,
@@ -101,10 +104,23 @@ export function LeadCaptureForm({
           <input name="email" type="email" className={inputClassName} required />
         </label>
       </div>
-      <div className={fieldLayout === "stacked" ? "grid gap-5" : "grid gap-5 md:grid-cols-2"}>
+      <div className={fieldLayout === "stacked" ? "grid gap-5" : "grid gap-5 md:grid-cols-3"}>
         <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
           Selskap
           <input name="company" type="text" className={inputClassName} />
+        </label>
+        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
+          Velg kontor
+          <select name="office" className={inputClassName} required defaultValue="">
+            <option value="" disabled>
+              Velg kontor...
+            </option>
+            {officeOptions.map((office) => (
+              <option key={office} value={office} className="text-apriil-dark">
+                {office}
+              </option>
+            ))}
+          </select>
         </label>
       {showFocusField ? (
         <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">

@@ -4,6 +4,7 @@ type LeadPayload = {
   name?: string;
   email?: string;
   company?: string;
+  office?: string;
   focus?: string;
   message?: string;
   source?: string;
@@ -40,6 +41,7 @@ export async function POST(request: Request) {
   const name = cleanValue(payload.name);
   const email = cleanValue(payload.email);
   const company = cleanValue(payload.company);
+  const office = cleanValue(payload.office);
   const focus = cleanValue(payload.focus);
   const message = cleanValue(payload.message);
   const source = cleanValue(payload.source) || "website";
@@ -67,6 +69,7 @@ export async function POST(request: Request) {
       name,
       email,
       company,
+      office,
       focus,
       message,
       source,

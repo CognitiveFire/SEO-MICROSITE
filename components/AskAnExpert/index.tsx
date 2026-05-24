@@ -135,15 +135,13 @@ export function AskAnExpert({
           aria-labelledby="ask-tab-chat"
           hidden={activeTab !== "chat"}
         >
-          {activeTab === "chat" ? (
-            <ChatTab
-              online={online}
-              messages={messages}
-              isTyping={isTyping}
-              onSend={sendMessage}
-              onSwitchToPost={() => setActiveTab("post")}
-            />
-          ) : null}
+          <ChatTab
+            online={online}
+            messages={messages}
+            isTyping={isTyping}
+            onSend={sendMessage}
+            onSwitchToPost={() => setActiveTab("post")}
+          />
         </div>
 
         <div
@@ -152,7 +150,7 @@ export function AskAnExpert({
           aria-labelledby="ask-tab-post"
           hidden={activeTab !== "post"}
         >
-          {activeTab === "post" ? <PostTab submitEndpoint={submitEndpoint} topic={topic} /> : null}
+          <PostTab submitEndpoint={submitEndpoint} topic={topic} />
         </div>
 
         <div
@@ -161,7 +159,7 @@ export function AskAnExpert({
           aria-labelledby="ask-tab-qa"
           hidden={activeTab !== "qa"}
         >
-          {activeTab === "qa" ? <QATab qaEndpoint={qaEndpoint} /> : null}
+          <QATab qaEndpoint={qaEndpoint} />
         </div>
       </div>
 
