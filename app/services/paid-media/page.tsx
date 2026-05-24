@@ -47,7 +47,8 @@ export default function PaidMediaPage() {
             price: "Fra NOK 55 000 / mnd",
             audience: "For større selskaper med flere markeder og høye volumkrav.",
             features: [
-              "Alle relevante kanaler",
+              "Søk, sosial, video, programmatic og DOOH",
+              "Kontekstuell annonsering, creator og podcast",
               "Daglig oppfølging",
               "Dedikert kreativt team",
               "A/B-testing og full datalag-modell",

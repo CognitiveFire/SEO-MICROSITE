@@ -6,6 +6,7 @@ import { useState } from "react";
 const navItems = [
   { href: "/services/seo", label: "SEO" },
   { href: "/services/paid-media", label: "Paid Media" },
+  { href: "/services/intelligence-consulting-analytics", label: "Analytics / Intelligence" },
 ];
 
 export function SiteHeader() {
