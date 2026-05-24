@@ -33,25 +33,26 @@ export function ServicePageTemplate({
 }: ServicePageTemplateProps) {
   return (
     <main>
-      <section className="bg-[#101010] px-6 py-20 text-white md:px-10 xl:px-16">
+      <section className="px-6 py-20 md:px-10 xl:px-16">
         <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#f28d85]">{eyebrow}</p>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-[-0.05em] md:text-6xl md:leading-[0.95]">{title}</h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-white/76 md:text-lg">{intro}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#e63322]">{eyebrow}</p>
+          <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-6xl md:leading-[0.95]">{title}</h1>
+          <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">{intro}</p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
               href={primaryCtaHref}
-              className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#e63322] px-6 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#e63322] px-6 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#cf2c1c]"
             >
               {primaryCtaLabel}
             </Link>
             <Link
               href="#pricing"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-white/25 px-6 py-2.5 text-sm font-semibold text-white/90"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-apriil-line px-6 py-2.5 text-sm font-semibold text-apriil-dark"
             >
               Se priser
             </Link>
           </div>
+          <div className="mt-10 h-[2px] w-24 rounded-full bg-[#e63322]" />
         </div>
       </section>
 
@@ -75,33 +76,33 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section id="pricing" className="bg-[#111111] px-6 py-20 md:px-10 xl:px-16">
+      <section id="pricing" className="bg-[#fbfaf7] px-6 py-20 md:px-10 xl:px-16">
         <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#f28d85]">Tre prisnivåer</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Velg nivå etter modenhet og mål</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#e63322]">Tre prisnivåer</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-4xl">Velg nivå etter modenhet og mål</h2>
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {tiers.map((tier) => (
               <article
                 key={tier.name}
                 className={
                   tier.highlighted
-                    ? "rounded-[26px] border border-[#e63322] bg-[#e63322] p-7 text-white shadow-[0_22px_52px_rgba(230,51,34,0.35)]"
-                    : "rounded-[26px] border border-white/14 bg-[#191919] p-7 text-white"
+                    ? "rounded-[26px] border border-[#e63322] bg-[#fff6f4] p-7 text-apriil-dark shadow-[0_18px_48px_rgba(230,51,34,0.14)]"
+                    : "rounded-[26px] border border-apriil-line/80 bg-white p-7 text-apriil-dark shadow-[0_14px_38px_rgba(23,23,23,0.06)]"
                 }
               >
-                <p className={tier.highlighted ? "text-xs font-semibold uppercase tracking-[0.2em] text-white/82" : "text-xs font-semibold uppercase tracking-[0.2em] text-[#f5c4bf]"}>
+                <p className={tier.highlighted ? "text-xs font-semibold uppercase tracking-[0.2em] text-[#e63322]" : "text-xs font-semibold uppercase tracking-[0.2em] text-[#7a5a47]"}>
                   {tier.name}
                 </p>
                 <p className="mt-4 text-3xl font-semibold tracking-[-0.04em]">{tier.price}</p>
-                <p className="mt-4 text-sm leading-7 text-white/82">{tier.audience}</p>
-                <ul className="mt-5 grid gap-2.5 text-sm leading-7 text-white/88">
+                <p className="mt-4 text-sm leading-7 text-apriil-muted">{tier.audience}</p>
+                <ul className="mt-5 grid gap-2.5 text-sm leading-7 text-apriil-muted">
                   <li className="flex items-start gap-2.5">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white" />
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#e63322]" />
                     <span>Tilgang til Apriil Clarity Data Room</span>
                   </li>
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2.5">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white" />
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#e63322]" />
                       <span>{feature}</span>
                     </li>
                   ))}

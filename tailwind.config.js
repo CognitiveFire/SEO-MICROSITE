@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        heading: ["Inter", "sans-serif"],
+        sans: ["GT Walsheim", "Neue Haas Grotesk", "system-ui", "sans-serif"],
+        heading: ["GT Walsheim", "Neue Haas Grotesk", "system-ui", "sans-serif"],
       },
       colors: {
         apriil: {

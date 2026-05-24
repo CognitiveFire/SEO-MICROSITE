@@ -11,7 +11,7 @@ function ExpertSupportHub({ topic }: { topic: string }) {
   return (
     <section className="px-6 pb-6 pt-10 md:px-10 xl:px-16">
       <div className="mx-auto max-w-6xl border-t border-apriil-line/80 pt-10">
-        <div className="rounded-[24px] border border-apriil-line/80 bg-[linear-gradient(135deg,#fff_0%,#f8f3ed_65%,#f2ebe3_100%)] p-7 shadow-[0_14px_40px_rgba(23,23,23,0.06)] md:p-8">
+        <div className="rounded-[24px] border border-apriil-line/80 bg-white p-7 shadow-[0_14px_34px_rgba(23,23,23,0.06)] md:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-apriil-primary">Ekspertstøtte</p>
           <div className="mt-3 grid gap-5 md:grid-cols-[1fr_auto] md:items-end md:gap-8">
             <div>
@@ -42,7 +42,7 @@ function PageContactCta() {
   return (
     <section className="px-6 py-20 md:px-10 xl:px-16">
       <div className="mx-auto max-w-6xl border-t border-apriil-line/80 pt-16">
-        <div className="rounded-[30px] border border-apriil-line/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.75),rgba(251,250,247,0.95))] p-8 shadow-[0_16px_50px_rgba(23,23,23,0.05)] md:p-10">
+        <div className="rounded-[30px] border border-apriil-line/80 bg-white p-8 shadow-[0_16px_40px_rgba(23,23,23,0.05)] md:p-10">
           <div className="grid gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Neste steg</p>

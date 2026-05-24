@@ -6,10 +6,17 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --apriil-red: #e63322;
+  --apriil-ink: #171717;
+  --apriil-paper: #fbfaf7;
+  --apriil-paper-soft: #f4efe8;
+}
+
 body {
-  font-family: "Inter", sans-serif;
-  background: #f8f8f6;
-  color: #171717;
+  font-family: "GT Walsheim", "Neue Haas Grotesk", system-ui, sans-serif;
+  background: linear-gradient(180deg, var(--apriil-paper) 0%, var(--apriil-paper-soft) 100%);
+  color: var(--apriil-ink);
 }
 
 ::selection {
