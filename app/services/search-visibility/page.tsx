@@ -62,6 +62,7 @@ export default function SearchVisibilityPage() {
         cta: "Bestill analyse",
         href: "/contact",
       }}
+      askExpertTopic="SEO og søkesynlighet"
       tasks={[...tasks]}
     />
   );
