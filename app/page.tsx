@@ -42,6 +42,30 @@ export default function HomePage() {
               <p className="mt-3 text-sm leading-7 text-white/82">3 tiers. Inkluderer tilgang til Apriil Clarity Data Room.</p>
             </Link>
           </div>
+          <div className="mt-8 rounded-[22px] border border-apriil-line/80 bg-white/75 p-6 shadow-[0_12px_34px_rgba(23,23,23,0.06)] md:flex md:items-center md:justify-between md:gap-6">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-apriil-primary">White paper</p>
+              <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-apriil-dark">From setup to revenue</h3>
+              <p className="mt-2 text-sm leading-7 text-apriil-muted md:text-base">
+                Last ned white paper med samlet tjenestemodell, priser, how-it-works og kontoradresser.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3 md:mt-0 md:justify-end">
+              <a
+                href="/clarity-growth-framework-whitepaper.html"
+                className="inline-flex items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#2a2420]"
+              >
+                Open white paper
+              </a>
+              <a
+                href="/clarity-growth-framework-whitepaper.html"
+                download="apriil-clarity-growth-framework-whitepaper.html"
+                className="inline-flex items-center justify-center rounded-full border border-apriil-line bg-[#f7f3ee] px-6 py-3 text-sm font-semibold text-apriil-dark transition hover:-translate-y-0.5"
+              >
+                Download file
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
