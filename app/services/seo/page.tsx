@@ -4,8 +4,8 @@ export default function SeoPage() {
   return (
     <ServicePageTemplate
       eyebrow="SEO"
-      title="SEO and search visibility for the way your customers search for the products and services you provide"
-      intro="Det er 2026. SEO handler ikke lenger bare om å komme øverst på Google. AI-genererte svar, Google AI Overviews og plattformer som ChatGPT og Perplexity kuraterer egne kilder. Apriil bygger synlighet som fungerer i dette nye søkelandskapet med teknisk soliditet, innholdsstruktur og autoritetsbygging."
+      title="SEO that connects customers beyond the ten blue links"
+      intro="AI, social search, image, video, local and zero-click searches have replaced the static Google homepage. Our SEO service connects your content with your customers on their own terms."
       trendTitle="Hva er nytt i SEO nå?"
       trendBody="Søkelandskapet er ikke lenger bare ti blå lenker. AI Overviews, ChatGPT og andre svarmotorer henter kilder direkte. Derfor må innholdet ditt være tydelig strukturert, troverdig og formulert for å bli valgt."
       bullets={[

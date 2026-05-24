@@ -11,7 +11,7 @@ export default function PaidMediaPage() {
         trendTitle="Hva har endret seg i paid media?"
         trendBody="Automatisering og AI har tatt over mye av den manuelle optimaliseringen. Differansen mellom svake og sterke resultater ligger nå i strategi, signal-kvalitet og relevans mellom budskap, målgruppe og landingsside."
         bullets={[
-          "Google Ads, Meta Ads, LinkedIn og programmatic",
+          "Google Ads, Meta Ads, LinkedIn Ads, programmatic, DOOH, contextual, video, creator og podcast",
           "Søkestruktur, målgrupper og budsjettrammeverk",
           "Annonsekreativ og testplan",
           "Landingsside- og konverteringsanalyse",
