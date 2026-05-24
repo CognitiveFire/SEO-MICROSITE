@@ -1,1 +1,5 @@
-export { default } from "../paid-acquisition/page";
+import { redirect } from "next/navigation";
+
+export default function BetaltAnskaffelsePage() {
+	redirect("/services/paid-media");
+}
