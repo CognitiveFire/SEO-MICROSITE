@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Footer } from "./footer";
+import { AskAnExpert } from "./AskAnExpert";
 
 function PageContactCta() {
   return (
@@ -38,9 +39,21 @@ export function GlobalPageChrome({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const hideSharedCta = pathname === "/" || pathname === "/contact";
 
+  const askExpertTopic =
+    pathname.includes("/services/search-visibility") || pathname.includes("/services/sokesynlighet")
+      ? "SEO og søkesynlighet"
+      : pathname.includes("/services/paid-acquisition") || pathname.includes("/services/betalt-anskaffelse")
+        ? "Betalt media (Google, Meta, LinkedIn)"
+        : "";
+
   return (
     <>
       {children}
+      <section className="px-6 pb-6 md:px-10 xl:px-16">
+        <div className="mx-auto max-w-6xl border-t border-apriil-line/80 pt-10">
+          <AskAnExpert topic={askExpertTopic} />
+        </div>
+      </section>
       {hideSharedCta ? null : <PageContactCta />}
       <Footer />
     </>

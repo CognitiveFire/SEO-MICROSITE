@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { AskAnExpert } from "@/components/AskAnExpert";
 
 type TaskItem = {
   title: string;
@@ -27,7 +26,6 @@ type PremiumServicePricingProps = {
   retainer: Offer;
   analysis: Offer;
   tasks: TaskItem[];
-  askExpertTopic?: string;
   headlineTag?: "h1" | "h2";
   embedded?: boolean;
   closingEyebrow?: string;
@@ -134,7 +132,6 @@ export function PremiumServicePricing(props: PremiumServicePricingProps) {
     retainer,
     analysis,
     tasks,
-    askExpertTopic,
     headlineTag = "h1",
     embedded = false,
     closingEyebrow = "Arbeidsmodell",
@@ -234,10 +231,6 @@ export function PremiumServicePricing(props: PremiumServicePricingProps) {
           </Link>
         </motion.div>
       </motion.section>
-
-      <section className="mx-auto mt-12 max-w-6xl border-t border-apriil-line/80 pt-12">
-        <AskAnExpert topic={askExpertTopic ?? eyebrow} />
-      </section>
     </section>
   );
 }

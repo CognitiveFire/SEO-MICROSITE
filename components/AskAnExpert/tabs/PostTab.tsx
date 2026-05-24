@@ -11,6 +11,7 @@ type PostTabProps = {
 type FormState = {
   name: string;
   email: string;
+  office: string;
   topic: string;
   question: string;
 };
@@ -25,6 +26,8 @@ const topics = [
   "Priser og pakker",
   "Annet",
 ] as const;
+
+const offices = ["Bergen", "Stavanger", "Oslo"] as const;
 
 function normalize(value: string) {
   return value.toLowerCase().replaceAll("ø", "o").replaceAll("å", "a").replaceAll("æ", "ae").trim();
@@ -56,6 +59,10 @@ function validate(form: FormState): FieldErrors {
     errors.topic = "Velg et tema.";
   }
 
+  if (!form.office) {
+    errors.office = "Velg kontor.";
+  }
+
   if (!form.question.trim()) {
     errors.question = "Skriv inn spørsmålet ditt.";
   } else if (form.question.trim().length < 20) {
@@ -70,6 +77,7 @@ export function PostTab({ submitEndpoint, topic }: PostTabProps) {
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
+    office: "",
     topic: defaultTopic,
     question: "",
   });
@@ -103,6 +111,7 @@ export function PostTab({ submitEndpoint, topic }: PostTabProps) {
         body: JSON.stringify({
           name: form.name.trim(),
           email: form.email.trim(),
+          office: form.office,
           topic: form.topic,
           question: form.question.trim(),
           pageUrl: window.location.href,
@@ -117,6 +126,7 @@ export function PostTab({ submitEndpoint, topic }: PostTabProps) {
       setForm({
         name: "",
         email: "",
+        office: "",
         topic: defaultTopic,
         question: "",
       });
@@ -154,6 +164,27 @@ export function PostTab({ submitEndpoint, topic }: PostTabProps) {
           required
         />
         {errors.email ? <p className={styles.errorText}>{errors.email}</p> : null}
+      </div>
+
+      <div className={styles.formField}>
+        <label htmlFor="ask-expert-office">Velg kontor</label>
+        <select
+          id="ask-expert-office"
+          value={form.office}
+          onChange={(event) => update("office", event.target.value)}
+          className={errors.office ? styles.fieldError : ""}
+          required
+        >
+          <option value="" disabled>
+            Velg kontor...
+          </option>
+          {offices.map((office) => (
+            <option key={office} value={office}>
+              {office}
+            </option>
+          ))}
+        </select>
+        {errors.office ? <p className={styles.errorText}>{errors.office}</p> : null}
       </div>
 
       <div className={styles.formField}>

@@ -65,7 +65,6 @@ export default function PaidAcquisitionPage() {
           cta: "Bestill analyse",
           href: "/contact",
         }}
-        askExpertTopic="Betalt media (Google, Meta, LinkedIn)"
         tasks={[...tasks]}
       />
     </>
