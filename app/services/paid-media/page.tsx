@@ -4,7 +4,6 @@ import { ServicePageTemplate } from "@/components/service-page-template";
 export default function PaidMediaPage() {
   return (
     <>
-      <EcosystemCards />
       <ServicePageTemplate
         eyebrow="Paid media"
         title="Betalt media som gir avkastning, ikke bare aktivitet"
@@ -56,6 +55,7 @@ export default function PaidMediaPage() {
           },
         ]}
       />
+      <EcosystemCards />
     </>
   );
 }

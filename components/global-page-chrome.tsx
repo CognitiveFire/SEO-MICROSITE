@@ -1,7 +1,6 @@
 "use client";
 
 import type { ReactNode } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Footer } from "./footer";
 import { AskAnExpert } from "./AskAnExpert";
@@ -16,18 +15,11 @@ function PageContactCta() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Neste steg</p>
               <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">
-                Fortell oss hvor dagens modell trenger mer klarhet.
+                Tell us how your company could use more clarity.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
                 Del hva dere vil forstå bedre, så følger vi opp med en tydelig vurdering av hvor Apriil kan bidra videre.
               </p>
-              <Link
-                href="/contact"
-                className="mt-7 inline-flex items-center justify-center gap-3 rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#2a2420]"
-              >
-                Gå til kontaktskjema
-                <span aria-hidden="true">↗</span>
-              </Link>
             </div>
             <LeadCaptureForm
               source="global-page-chrome"

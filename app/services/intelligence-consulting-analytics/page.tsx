@@ -4,8 +4,8 @@ export default function IntelligenceConsultingAnalyticsPage() {
   return (
     <ServicePageTemplate
       eyebrow="Intelligence / Consulting / Analytics"
-      title="Fra data til handling: intelligence, consulting og analytics i ett rammeverk"
-      intro="De fleste virksomheter har nok data. Utfordringen er å omsette innsikt til handling i riktig rekkefølge. Apriil kobler analyse, rådgivning og operativ oppfølging så ledelsen får tydeligere beslutningsgrunnlag."
+      title="From setup to revenue"
+      intro="Collect the important insights and create actionable strategy. A service that moves the commercial needle. Apriil combines intelligence, consulting, and analytics in one execution framework."
       trendTitle="Hva er nytt i analyse og intelligence?"
       trendBody="GA4, cookieless måling og strengere personvernkrav har endret hvordan data må samles og tolkes. Samtidig gjør AI-drevet analyse det enklere å se mønstre raskere. Gevinsten kommer når innsikten faktisk styrer prioriteringene."
       bullets={[
