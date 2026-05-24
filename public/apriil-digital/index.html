@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apriil | SEO, betalt media og business intelligence - Bergen, Oslo, Stavanger</title>
+  <meta name="description" content="Apriil hjelper norske bedrifter med SEO, betalt annonsering og forretningsintelligens. Med kontorer i Bergen, Oslo og Stavanger kombinerer vi strategi, data og kommersiell effekt.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Apriil | SEO, betalt media og business intelligence">
+  <meta property="og:description" content="SEO, betalt media og innsikt i ett samlet rammeverk for kommersiell vekst.">
+  <meta property="og:image" content="https://apriil.no/logo.png">
+  <meta property="og:locale" content="nb_NO">
+  <style>
+    :root {
+      --color-bg: #0f0f0f;
+      --color-bg-soft: #151515;
+      --color-surface: #1a1a1a;
+      --color-accent: #e63322;
+      --color-text-primary: #f5f5f0;
+      --color-text-muted: #b8b8b0;
+      --color-border: rgba(255, 255, 255, 0.12);
+      --font-display: "GT Walsheim", "Neue Haas Grotesk", "Aktiv Grotesk", "Avenir Next", sans-serif;
+      --font-body: "Sohne", "DM Sans", "Manrope", sans-serif;
+      --spacing-section: clamp(4rem, 8vw, 8rem);
+      --max-width: 1200px;
+      --radius: 4px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at 15% 10%, #241a18 0%, var(--color-bg) 45%), var(--color-bg);
+      color: var(--color-text-primary);
+      font-family: var(--font-body);
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    p,
+    li {
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      line-height: 1.7;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      font-family: var(--font-display);
+      color: var(--color-text-primary);
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    h4 {
+      font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 3rem));
+      margin-inline: auto;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--color-border);
+      backdrop-filter: blur(10px);
+      background: rgba(15, 15, 15, 0.9);
+    }
+
+    .top-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 1.5rem;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .logo-wrap img {
+      width: 110px;
+      height: auto;
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--color-text-primary);
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--color-text-primary);
+    }
+
+    section {
+      padding: var(--spacing-section) 0;
+      border-top: 1px solid var(--color-border);
+      scroll-margin-top: 90px;
+    }
+
+    .hero {
+      position: relative;
+      border-top: none;
+      min-height: min(92vh, 900px);
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(230, 51, 34, 0.18) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(230, 51, 34, 0.18) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+    }
+
+    .hero p {
+      margin-top: 1.5rem;
+      max-width: 72ch;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      min-height: 44px;
+      padding: 0.75rem 1.2rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: #ffffff;
+      border-color: var(--color-accent);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-text-primary);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      border: 1px solid var(--color-border);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(230, 51, 34, 0.45);
+    }
+
+    .icon-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.9rem;
+      height: 1.9rem;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      color: #ffd2cd;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+
+    .closing-line {
+      margin-top: 1.3rem;
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+
+    blockquote {
+      margin: 1.2rem 0 1.8rem;
+      padding: 1rem 1rem 1rem 1.25rem;
+      border-left: 3px solid var(--color-accent);
+      background: var(--color-bg-soft);
+      color: var(--color-text-primary);
+    }
+
+    .process-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .process-list li {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: var(--color-surface);
+    }
+
+    .step-no {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      color: #f08c83;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.4rem;
+      font-family: var(--font-display);
+    }
+
+    .service-list {
+      margin: 1.4rem 0 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .answer-blocks {
+      margin-top: 1.4rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .answer-block {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .pricing-wrap {
+      margin-top: 1.6rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: #141414;
+    }
+
+    caption {
+      text-align: left;
+      padding: 1rem;
+      color: var(--color-text-primary);
+      font-weight: 600;
+      font-family: var(--font-display);
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--color-border);
+      text-align: left;
+      padding: 0.85rem 1rem;
+      vertical-align: top;
+      color: var(--color-text-muted);
+    }
+
+    th {
+      color: var(--color-text-primary);
+      background: rgba(255, 255, 255, 0.02);
+      font-family: var(--font-display);
+    }
+
+    .recommended,
+    td.recommended {
+      background: rgba(230, 51, 34, 0.14);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--color-accent);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.78rem;
+      vertical-align: middle;
+      margin-left: 0.35rem;
+    }
+
+    .clarity-box {
+      margin-top: 1.5rem;
+      border: 1px solid rgba(230, 51, 34, 0.45);
+      background: linear-gradient(160deg, rgba(230, 51, 34, 0.15), rgba(26, 26, 26, 0.8));
+      border-radius: var(--radius);
+      padding: 1.2rem;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .pillar {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.9rem;
+    }
+
+    .case-quote {
+      color: var(--color-text-primary);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 0.4rem;
+    }
+
+    details {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.8rem 1rem;
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    details + details {
+      margin-top: 0.8rem;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: var(--font-display);
+      font-size: 1.03rem;
+      color: var(--color-text-primary);
+      padding-right: 1.5rem;
+      position: relative;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: var(--color-accent);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    details[open] summary::after {
+      content: "-";
+    }
+
+    .faq-answer {
+      margin-top: 0.75rem;
+    }
+
+    form {
+      margin-top: 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    label {
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.92rem;
+      color: var(--color-text-primary);
+    }
+
+    input,
+    select,
+    textarea {
+      min-height: 44px;
+      border: 1px solid var(--color-border);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--color-text-primary);
+      border-radius: var(--radius);
+      padding: 0.65rem 0.75rem;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-span-2 {
+      grid-column: span 2;
+    }
+
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: 2rem 0 3rem;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .muted-note {
+      margin-top: 1rem;
+      font-style: italic;
+      color: #a8a89f;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-group > *:nth-child(1) {
+      transition-delay: 0ms;
+    }
+
+    .reveal-group > *:nth-child(2) {
+      transition-delay: 100ms;
+    }
+
+    .reveal-group > *:nth-child(3) {
+      transition-delay: 200ms;
+    }
+
+    @media (max-width: 1024px) {
+      .grid-3,
+      .process-list,
+      .pillars {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 1.5rem));
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        padding: 0.8rem;
+        border-top: 1px solid var(--color-border);
+        background: rgba(15, 15, 15, 0.98);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      table {
+        min-width: 100%;
+      }
+
+      .pricing-wrap {
+        border: none;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+      }
+
+      tbody tr {
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+
+      td {
+        border-bottom: 1px solid var(--color-border);
+        padding-left: 44%;
+        position: relative;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        top: 0.85rem;
+        width: 38%;
+        color: var(--color-text-primary);
+        font-family: var(--font-display);
+        font-size: 0.88rem;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-span-2 {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .btn {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .hero-content {
+        max-width: 980px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Apriil",
+          "url": "https://apriil.no",
+          "logo": "https://apriil.no/logo.png",
+          "address": [
+            {"@type": "PostalAddress", "addressLocality": "Bergen", "streetAddress": "Damsgårdveien 59"},
+            {"@type": "PostalAddress", "addressLocality": "Oslo", "streetAddress": "Hausmannsgate 21"},
+            {"@type": "PostalAddress", "addressLocality": "Stavanger", "streetAddress": "Nykirkebakken 7"}
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "SEO og søkesynlighet",
+          "provider": {"@type": "Organization", "name": "Apriil"},
+          "description": "Strategisk og teknisk SEO for norske bedrifter, inkludert AI-søkeoptimalisering.",
+          "offers": [
+            {"@type": "Offer", "name": "Basis SEO", "price": "12000", "priceCurrency": "NOK"},
+            {"@type": "Offer", "name": "Vekst SEO", "price": "22000", "priceCurrency": "NOK"},
+            {"@type": "Offer", "name": "Enterprise SEO", "price": "45000", "priceCurrency": "NOK"}
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Betalt media og annonsering",
+          "provider": {"@type": "Organization", "name": "Apriil"},
+          "description": "Google Ads, Meta Ads, LinkedIn og programmatic annonsering for norske bedrifter.",
+          "offers": [
+            {"@type": "Offer", "name": "Basis betalt media", "price": "12000", "priceCurrency": "NOK"},
+            {"@type": "Offer", "name": "Vekst betalt media", "price": "25000", "priceCurrency": "NOK"},
+            {"@type": "Offer", "name": "Enterprise betalt media", "price": "55000", "priceCurrency": "NOK"}
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Business intelligence og analyse",
+          "provider": {"@type": "Organization", "name": "Apriil"},
+          "description": "Apriil Clarity - vår plattform for rapportering, analyse og oppgavestyring på tvers av digitale kanaler.",
+          "offers": [
+            {"@type": "Offer", "name": "Basis BI", "price": "10000", "priceCurrency": "NOK"},
+            {"@type": "Offer", "name": "Vekst BI", "price": "20000", "priceCurrency": "NOK"},
+            {"@type": "Offer", "name": "Enterprise BI", "price": "40000", "priceCurrency": "NOK"}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Hva koster SEO fra Apriil?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SEO fra Apriil starter fra NOK 12 000 per måned for basispakken, NOK 22 000 for vekstpakken og NOK 45 000 for enterprise. Alle pakker inkluderer tilgang til Apriil Clarity-rapportering. Prisene varierer basert på nettstedets kompleksitet og konkurransesituasjon."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hva er Apriil Clarity?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Apriil Clarity er Apriils egen plattform for operasjonell innsikt og oppgavestyring. Den samler data fra SEO, betalt media og analyser i én flate, og gir ledelsen og teamene et felles beslutningsgrunnlag med tydelig prioritering av tiltak."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Jobber Apriil med AI SEO og generativ søkeoptimalisering?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Apriil hjelper bedrifter med å bli sitert og anbefalt av AI-systemer som Google AI Overviews, ChatGPT og Perplexity. Dette krever strukturert innhold, autoritetssignaler og teknisk optimalisering - noe vi bygger inn i all SEO-rådgivning."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hvem passer Apriils digitale tjenester for?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Apriil passer best for norske bedrifter som ønsker målbare resultater fra digital markedsføring, men mangler intern kapasitet eller metodologi. Vi jobber med alt fra vekstbedrifter til store nasjonale aktører, med kontorer i Bergen, Oslo og Stavanger."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hva er forskjellen på SEO og betalt søk?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SEO (søkeoptimalisering) handler om å bygge organisk synlighet over tid - uten kostnad per klikk. Betalt søk (Google Ads / PPC) gir umiddelbar synlighet mot betaling. Apriil anbefaler ofte en kombinasjon, der kanalene forsterker hverandre."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hva er business intelligence (BI) og trenger vi det?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Business intelligence er prosessen med å gjøre rå forretningsdata om til handlingsrettet innsikt. Alle bedrifter med en nettside og digitale markedsaktiviteter trenger en form for BI - uten det vet man ikke hva som virker eller hva man bør prioritere."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Har Apriil kontor i Bergen, Oslo og Stavanger?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Apriil har kontorer i Bergen (Damsgårdveien 59), Oslo (Hausmannsgate 21) og Stavanger (Nykirkebakken 7). Vi betjener kunder i hele Norge, men prioriterer nærheten og de lokale relasjonene."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <nav class="top-nav" aria-label="Hovednavigasjon">
+    <div class="container top-nav-inner">
+      <a href="#top" class="logo-wrap" aria-label="Apriil hjem">
+        <img src="./assets/apriil-logo.svg" alt="Apriil logo">
+      </a>
+      <button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="site-links" aria-label="Åpne meny">☰</button>
+      <ul class="nav-links" id="site-links">
+        <li><a href="#hvorfor">Hvorfor</a></li>
+        <li><a href="#metodologi">Metodologi</a></li>
+        <li><a href="#seo">SEO</a></li>
+        <li><a href="#betalt-media">Betalt media</a></li>
+        <li><a href="#bi">BI</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-content reveal">
+      <h1>Mer enn markedsføring - digital innsikt som gir kommersiell effekt</h1>
+      <p>
+        Apriil kombinerer SEO, betalt media og dyp forretningsintelligens i ett samlet rammeverk. Vi hjelper norske bedrifter med å bli funnet, forstått og valgt av de riktige kundene, på rett tidspunkt. Med kontorer i Bergen, Oslo og Stavanger er vi der du er.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#kontakt">Book strategisamtale</a>
+        <a class="btn btn-secondary" href="#seo">Se tjenester</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section id="hvorfor">
+        <div class="container reveal">
+          <h2>Hva skjer når SEO, annonsering og data lever hvert sitt liv?</h2>
+          <div class="grid-3 reveal-group">
+            <div class="card reveal">
+              <h3>Kanaler som ikke snakker sammen</h3>
+              <p>SEO-teamet optimaliserer for organisk trafikk, mens paid-teamet kjører annonser i egne spor. Når innsikten ikke deles, mister man helhet, prioriteringer blir svake og budsjettet brukes på aktiviteter som ikke forsterker hverandre.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Rapporter uten retning</h3>
+              <p>Dashbord finnes i alle kanaler, men tallene forteller sjelden hva som bør gjøres neste uke. Uten tydelig tolkning og beslutningsstøtte blir data en passiv rapportering i stedet for et verktøy for vekst.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Tiltak uten prioritering</h3>
+              <p>Alt virker viktig når mål og ansvar er uklare. Resultatet blir spredte initiativ, høy aktivitet og lav effekt. Uten metodisk prioritering brukes tid og penger på feil tiltak i feil rekkefølge.</p>
+            </div>
+          </div>
+          <p class="closing-line">Apriil løser dette med ett samlet metodisk rammeverk.</p>
+        </div>
+      </section>
+
+      <section id="metodologi">
+        <div class="container reveal">
+          <h2>Hva er Apriil Clarity - og hvorfor er det kjernen i alt vi gjør?</h2>
+          <blockquote>
+            Apriil Clarity er vår operasjonelle intelligensmodell. Den samler signaler fra søk, betalt media, atferdsdata og CRM, og gjør dem om til prioriterte, handlingsrettede beslutninger. I stedet for fragmenterte kanalbeslutninger gir Clarity ledelsen og teamene ett felles bilde.
+          </blockquote>
+          <ol class="process-list">
+            <li>
+              <span class="step-no">01 Signaler</span>
+              <h3>Datagrunnlag i sanntid</h3>
+              <p>Søkeetterspørsel, annonseytelse, brukeratferd, CRM-utfall og rapporteringshelse samles i ett bilde.</p>
+            </li>
+            <li>
+              <span class="step-no">02 Intelligenslaget</span>
+              <h3>Prioriteringslogikk</h3>
+              <p>Hvert signal vektes etter kommersiell påvirkning, kompleksitet, hast og kanalsamspill.</p>
+            </li>
+            <li>
+              <span class="step-no">03 Prioriterte beslutninger</span>
+              <h3>Handling med eierskap</h3>
+              <p>Output er ikke et dashbord til, men en tydelig sekvens av tiltak, eierskap og estimert effekt.</p>
+            </li>
+          </ol>
+          <blockquote>
+            Det som skiller Apriil Clarity fra tradisjonell rapportering, er prioriteringslogikken. Vi forteller ikke bare hva som skjer - vi forteller hva du bør gjøre med det, i hvilken rekkefølge, og hvorfor.
+          </blockquote>
+        </div>
+      </section>
+
+      <section id="seo">
+        <div class="container reveal">
+          <h2>SEO og søkesynlighet: Bli funnet av kunder som allerede leter</h2>
+          <p>
+            SEO handler ikke lenger bare om å komme øverst på Google. I 2025 vil AI-genererte svar, Google AI Overviews og plattformer som ChatGPT og Perplexity velge sine egne kilder. Apriil bygger synlighet som fungerer i dette nye søkelandskapet med teknisk soliditet, innholdsstruktur og autoritetsbygging.
+          </p>
+          <h3 style="margin-top:1.4rem">Slik har SEO endret seg - og hva det betyr for din bedrift</h3>
+          <blockquote>
+            Søk er ikke lenger bare Google. AI-svar fra ChatGPT, Perplexity og Google AI Overviews overtar stadig flere søk uten at brukeren klikker videre. For å bli sitert og anbefalt av AI-systemer må innholdet ditt være autoritativt, strukturert og klart formulert, ikke bare søkeordoptimalisert.
+          </blockquote>
+          <div class="answer-blocks">
+            <div class="answer-block">
+              <h4>Hva er teknisk SEO?</h4>
+              <p>Teknisk SEO er arbeidet som sikrer at søkemotorer faktisk kan forstå, indeksere og prioritere nettstedet ditt. Det inkluderer hastighet, struktur, internlenking, metadata, feilretting og schema-markup, slik at innholdet får best mulig synlighet i relevante søk.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er innholdsoptimalisering for SEO?</h4>
+              <p>Innholdsoptimalisering betyr å lage og forbedre innhold som svarer tydelig på det kundene faktisk spør om. Fokus er ikke bare søkeord, men struktur, relevans, språk, ekspertise og tydelig verdi, slik at siden både rangerer bedre og konverterer høyere.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er AI SEO / generativ søkeoptimalisering?</h4>
+              <p>AI SEO handler om å gjøre innholdet siterbart i generative søkemotorer som ChatGPT, Perplexity og Google AI Overviews. Det krever tydelig informasjonsarkitektur, autoritetssignaler, gode kildestrukturer og presise svarblokker som AI-systemer kan hente og stole på.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er søkeintensjon og hvorfor betyr det noe?</h4>
+              <p>Søkeintensjon er årsaken bak et søk: vil brukeren lære, sammenligne eller kjøpe? Når innholdet matcher riktig intensjon, får du mer relevant trafikk, bedre brukeropplevelse og høyere konvertering. Feil intensjon gir ofte mye trafikk med lav forretningsverdi.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:1.6rem">Vårt arbeid inkluderer</h3>
+          <ul class="service-list">
+            <li>Teknisk SEO-revisjon og strukturforbedring</li>
+            <li>Søkeintensjonanalyse og innholdsprioritering</li>
+            <li>Informasjonsarkitektur og internlenking</li>
+            <li>Lokal SEO (Bergen, Oslo, Stavanger og nasjonalt)</li>
+            <li>AI-søkeoptimalisering og strukturerte data (Schema.org)</li>
+            <li>Månedlig rapportering via Apriil Clarity</li>
+          </ul>
+
+          <div class="pricing-wrap" aria-label="Pristabell SEO">
+            <table>
+              <caption>SEO - Tre nivåer</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Kategori</th>
+                  <th scope="col">Basis</th>
+                  <th scope="col" class="recommended">Vekst <span class="badge">Anbefalt</span></th>
+                  <th scope="col">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td data-label="Kategori">Pris/mnd</td><td data-label="Basis">Fra NOK 12 000</td><td data-label="Vekst" class="recommended">Fra NOK 22 000</td><td data-label="Enterprise">Fra NOK 45 000</td></tr>
+                <tr><td data-label="Kategori">For hvem</td><td data-label="Basis">Bedrifter som starter med SEO</td><td data-label="Vekst" class="recommended">Vekstbedrifter med konkrete mål</td><td data-label="Enterprise">Nasjonale aktører og store nettsider</td></tr>
+                <tr><td data-label="Kategori">Teknisk SEO</td><td data-label="Basis">Grunnleggende revisjon</td><td data-label="Vekst" class="recommended">Løpende optimalisering</td><td data-label="Enterprise">Full teknisk implementering</td></tr>
+                <tr><td data-label="Kategori">Innholdsstrategi</td><td data-label="Basis">Prioriteringsliste</td><td data-label="Vekst" class="recommended">Månedlig innholdsproduksjon</td><td data-label="Enterprise">Dedikert innholdsteam</td></tr>
+                <tr><td data-label="Kategori">AI-søkesynlighet</td><td data-label="Basis">-</td><td data-label="Vekst" class="recommended">Grunnleggende struktur</td><td data-label="Enterprise">Full AI SEO-strategi</td></tr>
+                <tr><td data-label="Kategori">Lokalt SEO</td><td data-label="Basis">1 lokasjon</td><td data-label="Vekst" class="recommended">3 lokasjoner</td><td data-label="Enterprise">Ubegrenset</td></tr>
+                <tr><td data-label="Kategori">Apriil Clarity rapportering</td><td data-label="Basis">Månedlig sammendrag</td><td data-label="Vekst" class="recommended">Ukentlig dashboard</td><td data-label="Enterprise">Real-time + ledermøte</td></tr>
+                <tr><td data-label="Kategori">Dedikert strateg</td><td data-label="Basis">-</td><td data-label="Vekst" class="recommended">Ja</td><td data-label="Enterprise">Ja, senior strateg</td></tr>
+                <tr><td data-label="Kategori">Oppstartsanalyse</td><td data-label="Basis">NOK 9 000</td><td data-label="Vekst" class="recommended">Inkludert</td><td data-label="Enterprise">Inkludert</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cta-row"><a class="btn btn-primary" href="#kontakt">Book en gratis strategisamtale →</a></div>
+        </div>
+      </section>
+
+      <section id="betalt-media">
+        <div class="container reveal">
+          <h2>Betalt media: Annonser som betaler seg - ikke bare bruker budsjettet</h2>
+          <p>
+            Betalt annonsering er ikke lenger sett opp en kampanje og se hva som skjer. Google Ads, Meta, LinkedIn og programmatic krever løpende optimalisering, dypere forståelse av kjøpsintensjon og tett kobling til landingssider. Apriil kombinerer annonsestrategi med forretningsintelligens, slik at hver krone gir maksimal kommersiell effekt.
+          </p>
+          <h3 style="margin-top:1.4rem">Slik har betalt annonsering endret seg</h3>
+          <blockquote>
+            Automatisering og AI har overtatt mye av den manuelle annonseoptimaliseringen. Det som skiller de beste resultatene fra middelmådige er ikke lenger budsjettstørrelse, men kvaliteten på strategien, landingssidens relevans og forståelsen av kommersiell intensjon bak søket.
+          </blockquote>
+
+          <div class="answer-blocks">
+            <div class="answer-block">
+              <h4>Hva er betalt søk (Google Ads / PPC)?</h4>
+              <p>Betalt søk betyr at du kjøper synlighet i søkemotoren når potensielle kunder søker etter relevante behov. Du betaler vanligvis per klikk. God effekt krever riktig søkeordsstrategi, sterke annonsetekster og landingssider som matcher intensjonen bak søket.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er betalt sosiale medier (Meta Ads, LinkedIn Ads)?</h4>
+              <p>Betalt sosiale medier bruker målretting i plattformer som Facebook, Instagram og LinkedIn for å nå riktige målgrupper med riktig budskap. Det fungerer særlig godt for posisjonering, remarketing og etterspørselsbygging når kreativ retning og segmentering er tydelig.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er ROAS og hvorfor er det viktig?</h4>
+              <p>ROAS står for return on ad spend og viser hvor mye inntekt annonseinvesteringen skaper. En ROAS på 4 betyr fire kroner tilbake per krone brukt. Målet er ikke bare høy ROAS, men lønnsom vekst med riktig margin og kundekvalitet.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er Performance Max og hvordan bruker Apriil det?</h4>
+              <p>Performance Max er Googles AI-drevne kampanjetype som bruker flere annonseflater samtidig. Apriil bruker den når mål, signaler og kreative elementer er riktig satt opp. Vi kombinerer automatisering med aktiv styring av data, innhold og prioriterte forretningsmål.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:1.6rem">Vårt arbeid inkluderer</h3>
+          <ul class="service-list">
+            <li>Kampanjestruktur og søkeordsanalyse</li>
+            <li>Budsjettallokering og budoptimalisering</li>
+            <li>Annonsekopi og kreativ retning</li>
+            <li>Landingssideanalyse og konverteringsrådgivning</li>
+            <li>Google Ads, Meta Ads, LinkedIn Ads og Programmatic</li>
+            <li>Rapportering og Clarity-innsikt</li>
+          </ul>
+
+          <div class="pricing-wrap" aria-label="Pristabell betalt media">
+            <table>
+              <caption>Betalt media - Tre nivåer</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Kategori</th>
+                  <th scope="col">Basis</th>
+                  <th scope="col" class="recommended">Vekst <span class="badge">Anbefalt</span></th>
+                  <th scope="col">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td data-label="Kategori">Pris/mnd</td><td data-label="Basis">Fra NOK 12 000</td><td data-label="Vekst" class="recommended">Fra NOK 25 000</td><td data-label="Enterprise">Fra NOK 55 000</td></tr>
+                <tr><td data-label="Kategori">For hvem</td><td data-label="Basis">Bedrifter med begrenset budsjett</td><td data-label="Vekst" class="recommended">Vekstbedrifter med klare mål</td><td data-label="Enterprise">Store annonsører</td></tr>
+                <tr><td data-label="Kategori">Kanaler</td><td data-label="Basis">Google Ads eller Meta</td><td data-label="Vekst" class="recommended">Google + Meta eller LinkedIn</td><td data-label="Enterprise">Alle relevante kanaler</td></tr>
+                <tr><td data-label="Kategori">Kampanjeadministrasjon</td><td data-label="Basis">Månedlig optimalisering</td><td data-label="Vekst" class="recommended">Ukentlig optimalisering</td><td data-label="Enterprise">Daglig oppfølging</td></tr>
+                <tr><td data-label="Kategori">Annonsekopi og kreativ</td><td data-label="Basis">Mal-basert</td><td data-label="Vekst" class="recommended">Skreddersydd</td><td data-label="Enterprise">Dedikert kreativt team</td></tr>
+                <tr><td data-label="Kategori">Landingssideanalyse</td><td data-label="Basis">-</td><td data-label="Vekst" class="recommended">Ja</td><td data-label="Enterprise">Ja + A/B-testing</td></tr>
+                <tr><td data-label="Kategori">Konverteringssporing</td><td data-label="Basis">Standard</td><td data-label="Vekst" class="recommended">Avansert</td><td data-label="Enterprise">Fullstendig datalag</td></tr>
+                <tr><td data-label="Kategori">Apriil Clarity rapportering</td><td data-label="Basis">Månedlig sammendrag</td><td data-label="Vekst" class="recommended">Ukentlig dashboard</td><td data-label="Enterprise">Real-time</td></tr>
+                <tr><td data-label="Kategori">Dedikert strateg</td><td data-label="Basis">-</td><td data-label="Vekst" class="recommended">Ja</td><td data-label="Enterprise">Ja, senior strateg</td></tr>
+                <tr><td data-label="Kategori">Minimumsannonsbudsjett</td><td data-label="Basis">NOK 15 000</td><td data-label="Vekst" class="recommended">NOK 30 000</td><td data-label="Enterprise">NOK 100 000+</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cta-row"><a class="btn btn-primary" href="#resultater">Se hva vi har oppnådd for andre →</a></div>
+        </div>
+      </section>
+
+      <section id="bi">
+        <div class="container reveal">
+          <h2>Business intelligence: Fra data til beslutninger som faktisk skaper vekst</h2>
+          <p>
+            De fleste bedrifter har mer data enn de klarer å bruke. Problemet er ikke mangel på rapporter, men mangel på tolkning, prioritering og handlingsrettede konklusjoner. Apriil sin BI-tjeneste gjør data til et strategisk verktøy for ledelsen, ikke en teknisk øvelse for analytikere.
+          </p>
+
+          <h3 style="margin-top:1.4rem">Slik har analyse og business intelligence endret seg</h3>
+          <blockquote>
+            GA4 har erstattet Universal Analytics. Cookieless tracking, GDPR og first-party data endrer hvordan vi måler. Samtidig gjør AI-drevne analyser det mulig å finne mønstre og forutsi adferd på nye måter. De som forstår dette nå, er forberedt for det neste tiåret.
+          </blockquote>
+
+          <div class="answer-blocks">
+            <div class="answer-block">
+              <h4>Hva er business intelligence (BI)?</h4>
+              <p>Business intelligence er prosessen med å samle, strukturere og tolke forretningsdata slik at ledelsen kan ta bedre beslutninger. BI handler om å koble tall til mål, avdekke mønstre og prioritere tiltak som påvirker inntekt, kostnad og vekst.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er forskjellen på analyse og business intelligence?</h4>
+              <p>Analyse beskriver og forklarer enkeltfunn i data. Business intelligence setter disse funnene inn i en operativ og strategisk sammenheng. Kort sagt: analyse svarer på hva som skjer, mens BI svarer på hva virksomheten bør gjøre videre.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er GA4 og hvorfor er det viktig?</h4>
+              <p>GA4 er Googles analyseplattform som måler hendelser og brukerreiser på tvers av nettsted og apper. Den er viktig fordi den gir bedre innsikt i kundeadferd, støtter personvernkrav bedre enn tidligere løsninger og er grunnlag for moderne attribusjon.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er et KPI-dashbord og hvem trenger det?</h4>
+              <p>Et KPI-dashbord samler nøkkeltall for ledelse og team i ett visuelt bilde. Det er nyttig for alle bedrifter som vil styre etter faktiske resultater, ikke magefølelse. Verdien oppstår når KPI-ene er knyttet til beslutninger og tydelige ansvar.</p>
+            </div>
+            <div class="answer-block">
+              <h4>Hva er Apriil Clarity-plattformen?</h4>
+              <p>Apriil Clarity-plattformen er Apriils operative system for rapportering, analyse og oppgavestyring. Den samler signaler fra SEO, betalt media, analyseverktøy og CRM i én flate, og oversetter data til prioriterte tiltak. Målet er raskere beslutninger, tydeligere eierskap og dokumenterbar kommersiell effekt over tid.</p>
+            </div>
+          </div>
+
+          <div class="clarity-box">
+            <h3>Apriil Clarity: Vår unike plattform for rapportering, analyse og oppgavestyring</h3>
+            <p style="margin-top:0.8rem">Apriil Clarity er ikke et standard dashbord. Det er et samlet operativt system for innsikt og prioritering, bygget for ledelsen, ikke bare for analytikere.</p>
+            <div class="pillars">
+              <div class="pillar">
+                <h4>Rapportering</h4>
+                <p>Sanntidsdata fra alle kanaler samlet i ett sted. Ingen kopiering fra dashbord til presentasjon.</p>
+              </div>
+              <div class="pillar">
+                <h4>Analyse og tolkning</h4>
+                <p>Vi tolker dataen for deg. Hva betyr det? Hva bør vi gjøre? Prioriteringslogikk basert på kommersiell effekt.</p>
+              </div>
+              <div class="pillar">
+                <h4>Oppgavestyring</h4>
+                <p>Tiltak kobles direkte til innsikten. Eierskap, frister og fremdrift i én og samme flate.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing-wrap" aria-label="Pristabell innsikt og BI">
+            <table>
+              <caption>Innsikt og BI - Tre nivåer</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Kategori</th>
+                  <th scope="col">Basis</th>
+                  <th scope="col" class="recommended">Vekst <span class="badge">Anbefalt</span></th>
+                  <th scope="col">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td data-label="Kategori">Pris/mnd</td><td data-label="Basis">Fra NOK 10 000</td><td data-label="Vekst" class="recommended">Fra NOK 20 000</td><td data-label="Enterprise">Fra NOK 40 000</td></tr>
+                <tr><td data-label="Kategori">For hvem</td><td data-label="Basis">Bedrifter som vil forstå data</td><td data-label="Vekst" class="recommended">Vekstbedrifter med rapportbehov</td><td data-label="Enterprise">Konserner og komplekse strukturer</td></tr>
+                <tr><td data-label="Kategori">GA4-oppsett og revisjon</td><td data-label="Basis">Ja</td><td data-label="Vekst" class="recommended">Ja, avansert</td><td data-label="Enterprise">Ja, full implementering</td></tr>
+                <tr><td data-label="Kategori">Apriil Clarity tilgang</td><td data-label="Basis">Les-tilgang</td><td data-label="Vekst" class="recommended">Fullt abonnement</td><td data-label="Enterprise">Dedikert konfigurasjon</td></tr>
+                <tr><td data-label="Kategori">Dashbord</td><td data-label="Basis">1 standard</td><td data-label="Vekst" class="recommended">Skreddersydd</td><td data-label="Enterprise">Ubegrenset</td></tr>
+                <tr><td data-label="Kategori">Oppgavestyring</td><td data-label="Basis">-</td><td data-label="Vekst" class="recommended">Ja</td><td data-label="Enterprise">Ja + integrasjoner</td></tr>
+                <tr><td data-label="Kategori">Månedlig analyserapport</td><td data-label="Basis">Sammendrag</td><td data-label="Vekst" class="recommended">Strategisk analyse</td><td data-label="Enterprise">Lederrapport + workshop</td></tr>
+                <tr><td data-label="Kategori">Dataintegrasjoner</td><td data-label="Basis">3 kilder</td><td data-label="Vekst" class="recommended">10 kilder</td><td data-label="Enterprise">Ubegrenset + CRM/ERP</td></tr>
+                <tr><td data-label="Kategori">Konverteringssporing</td><td data-label="Basis">Standard</td><td data-label="Vekst" class="recommended">Avansert</td><td data-label="Enterprise">Server-side tracking</td></tr>
+                <tr><td data-label="Kategori">Dedikert analytiker</td><td data-label="Basis">-</td><td data-label="Vekst" class="recommended">Delt</td><td data-label="Enterprise">Dedikert</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="fremtidssikring">
+        <div class="container reveal">
+          <h2>Fremtidssikret digital markedsføring: Hva forandrer seg - og hva betyr det for deg?</h2>
+          <p>
+            Søk, annonsering og analyse er midt i sin største omveltning på 15 år. AI endrer hvordan kundene finner deg, hvordan annonser kjøpes og hvordan data tolkes. Apriil hjelper deg å navigere disse endringene, ikke løpe etter dem.
+          </p>
+          <div class="grid-3 reveal-group" style="margin-top:1.4rem">
+            <div class="card reveal">
+              <h3>AI Overviews og generativ søk</h3>
+              <p>Google, ChatGPT og Perplexity velger sine egne svar. Din bedrift kan bli anbefalt eller usynlig. Vi bygger innholdsstruktur og autoritet som gjør deg siterbar i nye søkeflater.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Cookieless tracking og personvern</h3>
+              <p>Tredjepartscookies forsvinner, og GDPR blir strengere. Fremtiden er first-party data, server-side tracking og smartere datamodeller. Vi hjelper deg å være trygg og samtidig kommersielt effektiv.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Automatisert annonsering og smart budgiving</h3>
+              <p>Google og Meta styrer mer automatisk. Vinnerne er de med bedre data, sterkere landingssider og tydelige konverteringssignaler. Strategi slår budsjett når markedet blir mer automatisert.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultater">
+        <div class="container reveal">
+          <h2>Resultater som taler for seg</h2>
+          <div class="grid-3 reveal-group">
+            <div class="card reveal">
+              <h3>Detaljhandel, Bergen - Søkesynlighet</h3>
+              <p class="case-quote">Etter seks måneder med Apriil økte organisk trafikk med 187 % og organisk omsetning doblet seg.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Industribedrift, Stavanger - Betalt media</h3>
+              <p class="case-quote">ROAS økte fra 2,1 til 4,8 over tre kvartaler. Lavere kostnad per konvertering, høyere kvalitet på leads.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Tjenestevirksomhet, Oslo - Business Intelligence</h3>
+              <p class="case-quote">For første gang hadde ledelsen et samlet bilde av digital ytelse. Clarity-plattformen er nå i ukentlig bruk i ledergruppen.</p>
+            </div>
+          </div>
+          <p class="muted-note">Eksempler er illustrerende. Faktiske case og referanser deles i strategisamtale.</p>
+        </div>
+      </section>
+
+      <section id="hvorfor-apriil">
+        <div class="container reveal">
+          <h2>Hvorfor Apriil - og hva gjør oss annerledes?</h2>
+          <div class="grid-3 reveal-group" style="margin-top:1.2rem">
+            <div class="card reveal">
+              <span class="icon-kicker" aria-hidden="true">01</span>
+              <h3>Intelligens som metodologi, ikke tillegg</h3>
+              <p>Apriil Clarity er ikke et rapporteringsverktøy. Det er måten vi tenker på, koblet inn i alt vi gjør.</p>
+            </div>
+            <div class="card reveal">
+              <span class="icon-kicker" aria-hidden="true">02</span>
+              <h3>SEO og betalt media som ett system</h3>
+              <p>Vi isolerer ikke kanalene. Vi behandler dem som gjensidig avhengige, fordi de faktisk er det.</p>
+            </div>
+            <div class="card reveal">
+              <span class="icon-kicker" aria-hidden="true">03</span>
+              <h3>Lokal kunnskap, nasjonal kraft</h3>
+              <p>140+ spesialister i Bergen, Oslo og Stavanger. Vi kjenner det norske markedet, ikke bare teorien.</p>
+            </div>
+            <div class="card reveal">
+              <span class="icon-kicker" aria-hidden="true">04</span>
+              <h3>Fokus på kommersiell effekt, ikke aktivitet</h3>
+              <p>Vi rapporterer ikke på klikk og visninger som mål i seg selv. Vi rapporterer på hva tallene betyr for forretningen din.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container reveal">
+          <h2>Ofte stilte spørsmål</h2>
+          <details open>
+            <summary>Hva koster SEO fra Apriil?</summary>
+            <p class="faq-answer">SEO fra Apriil starter fra NOK 12 000 per måned for basispakken, NOK 22 000 for vekstpakken og NOK 45 000 for enterprise. Alle pakker inkluderer tilgang til Apriil Clarity-rapportering. Prisene varierer basert på nettstedets kompleksitet og konkurransesituasjon.</p>
+          </details>
+          <details>
+            <summary>Hva er Apriil Clarity?</summary>
+            <p class="faq-answer">Apriil Clarity er Apriils egen plattform for operasjonell innsikt og oppgavestyring. Den samler data fra SEO, betalt media og analyser i én flate, og gir ledelsen og teamene et felles beslutningsgrunnlag med tydelig prioritering av tiltak.</p>
+          </details>
+          <details>
+            <summary>Jobber Apriil med AI SEO og generativ søkeoptimalisering?</summary>
+            <p class="faq-answer">Ja. Apriil hjelper bedrifter med å bli sitert og anbefalt av AI-systemer som Google AI Overviews, ChatGPT og Perplexity. Dette krever strukturert innhold, autoritetssignaler og teknisk optimalisering, noe vi bygger inn i all SEO-rådgivning.</p>
+          </details>
+          <details>
+            <summary>Hvem passer Apriils digitale tjenester for?</summary>
+            <p class="faq-answer">Apriil passer best for norske bedrifter som ønsker målbare resultater fra digital markedsføring, men mangler intern kapasitet eller metodologi. Vi jobber med alt fra vekstbedrifter til store nasjonale aktører, med kontorer i Bergen, Oslo og Stavanger.</p>
+          </details>
+          <details>
+            <summary>Hva er forskjellen på SEO og betalt søk?</summary>
+            <p class="faq-answer">SEO (søkeoptimalisering) handler om å bygge organisk synlighet over tid uten kostnad per klikk. Betalt søk (Google Ads / PPC) gir umiddelbar synlighet mot betaling. Apriil anbefaler ofte en kombinasjon, der kanalene forsterker hverandre.</p>
+          </details>
+          <details>
+            <summary>Hva er business intelligence (BI) og trenger vi det?</summary>
+            <p class="faq-answer">Business intelligence er prosessen med å gjøre rå forretningsdata om til handlingsrettet innsikt. Alle bedrifter med en nettside og digitale markedsaktiviteter trenger en form for BI. Uten det vet man ikke hva som virker eller hva som bør prioriteres.</p>
+          </details>
+          <details>
+            <summary>Har Apriil kontor i Bergen, Oslo og Stavanger?</summary>
+            <p class="faq-answer">Ja. Apriil har kontorer i Bergen (Damsgårdveien 59), Oslo (Hausmannsgate 21) og Stavanger (Nykirkebakken 7). Vi betjener kunder i hele Norge, men prioriterer nærheten og de lokale relasjonene.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="kontakt">
+        <div class="container reveal">
+          <h2>Klar for å se hva dataene dine egentlig forteller deg?</h2>
+          <p>Book en uforpliktende strategisamtale med en av våre spesialister. Vi gjennomgår din nåværende situasjon, identifiserer de viktigste mulighetene og anbefaler neste steg.</p>
+          <form method="post" action="/api/lead" aria-label="Kontaktskjema for strategisamtale">
+            <label>
+              Navn
+              <input type="text" name="navn" required autocomplete="name">
+            </label>
+            <label>
+              E-post
+              <input type="email" name="epost" required autocomplete="email">
+            </label>
+            <label>
+              Bedrift
+              <input type="text" name="bedrift" required autocomplete="organization">
+            </label>
+            <label>
+              Primært fokus
+              <select name="fokus" required>
+                <option value="">Velg fokus</option>
+                <option>SEO</option>
+                <option>Betalt media</option>
+                <option>Business intelligence</option>
+                <option>Alt over</option>
+              </select>
+            </label>
+            <label>
+              Lokasjon
+              <select name="lokasjon" required>
+                <option value="">Velg lokasjon</option>
+                <option>Bergen</option>
+                <option>Oslo</option>
+                <option>Stavanger</option>
+                <option>Annet</option>
+              </select>
+            </label>
+            <label class="form-span-2">
+              Valgfri melding
+              <textarea name="melding" placeholder="Fortell kort om mål eller utfordring"></textarea>
+            </label>
+            <div class="form-span-2 cta-row">
+              <button type="submit" class="btn btn-primary">Send forespørsel</button>
+            </div>
+          </form>
+          <p style="margin-top:0.8rem">Vi svarer innen én arbeidsdag.</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Apriil - Bergen (Damsgårdveien 59) · Oslo (Hausmannsgate 21) · Stavanger (Nykirkebakken 7)</p>
+      <p style="margin-top:0.55rem">Norges ledende kommunikasjonshus med over 140 spesialister og lokal forankring.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      }),
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    const menuButton = document.querySelector(".mobile-toggle");
+    const navLinks = document.querySelector("#site-links");
+
+    if (menuButton && navLinks) {
+      menuButton.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        menuButton.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
+</body>
+</html>
