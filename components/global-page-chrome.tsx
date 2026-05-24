@@ -7,25 +7,31 @@ import { Footer } from "./footer";
 import { AskAnExpert } from "./AskAnExpert";
 import { LeadCaptureForm } from "./lead-capture-form";
 
-function EkspertklinikkenCta() {
+function ExpertSupportHub({ topic }: { topic: string }) {
   return (
-    <section className="px-6 pt-10 md:px-10 xl:px-16">
-      <div className="mx-auto max-w-6xl rounded-[24px] border border-apriil-line/80 bg-[linear-gradient(135deg,#fff_0%,#f8f3ed_65%,#f2ebe3_100%)] p-7 shadow-[0_14px_40px_rgba(23,23,23,0.06)] md:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-apriil-primary">Ekspertklinikken</p>
-        <div className="mt-3 grid gap-5 md:grid-cols-[1fr_auto] md:items-end md:gap-8">
-          <div>
-            <h2 className="text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-4xl">Gratis manedlig live Q&A pa LinkedIn</h2>
-            <p className="mt-3 max-w-2xl text-base leading-8 text-apriil-muted">
-              Siste fredag i maneden kl. 12-13 svarer Apriils eksperter pa SEO, Paid Media og Analytics. Send inn sporsmal pa
-              forhand eller bli med live.
-            </p>
+    <section className="px-6 pb-6 pt-10 md:px-10 xl:px-16">
+      <div className="mx-auto max-w-6xl border-t border-apriil-line/80 pt-10">
+        <div className="rounded-[24px] border border-apriil-line/80 bg-[linear-gradient(135deg,#fff_0%,#f8f3ed_65%,#f2ebe3_100%)] p-7 shadow-[0_14px_40px_rgba(23,23,23,0.06)] md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-apriil-primary">Ekspertstøtte</p>
+          <div className="mt-3 grid gap-5 md:grid-cols-[1fr_auto] md:items-end md:gap-8">
+            <div>
+              <h2 className="text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-4xl">Live klinikk + spør en ekspert</h2>
+              <p className="mt-3 max-w-2xl text-base leading-8 text-apriil-muted">
+                Siste fredag i maneden kl. 12-13 svarer Apriils eksperter live pa LinkedIn. Trenger du svar na, kan du ogsa sende
+                inn sporsmal direkte under.
+              </p>
+            </div>
+            <Link
+              href="/ekspertklinikken"
+              className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#0a66c2] bg-[#0a66c2] px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0958a8]"
+            >
+              Gå til Ekspertklinikken
+            </Link>
           </div>
-          <Link
-            href="/ekspertklinikken"
-            className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#0a66c2] bg-[#0a66c2] px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0958a8]"
-          >
-            Gå til Ekspertklinikken
-          </Link>
+
+          <div className="mt-7 border-t border-apriil-line/80 pt-7">
+            <AskAnExpert topic={topic} />
+          </div>
         </div>
       </div>
     </section>
@@ -71,7 +77,6 @@ function PageContactCta() {
 
 export function GlobalPageChrome({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const showEkspertklinikkenCta = pathname !== "/ekspertklinikken";
 
   const askExpertTopic =
     pathname.includes("/services/search-visibility") || pathname.includes("/services/sokesynlighet")
@@ -83,12 +88,7 @@ export function GlobalPageChrome({ children }: { children: ReactNode }) {
   return (
     <>
       {children}
-      {showEkspertklinikkenCta ? <EkspertklinikkenCta /> : null}
-      <section className="px-6 pb-6 md:px-10 xl:px-16">
-        <div className="mx-auto max-w-6xl border-t border-apriil-line/80 pt-10">
-          <AskAnExpert topic={askExpertTopic} />
-        </div>
-      </section>
+      <ExpertSupportHub topic={askExpertTopic} />
       <PageContactCta />
       <Footer />
     </>
