@@ -5,13 +5,13 @@ export default function PaidMediaPage() {
   return (
     <>
       <ServicePageTemplate
-        eyebrow="Paid media"
+        eyebrow="Betalt media"
         title="Betalt media som gir avkastning, ikke bare aktivitet"
-        intro="Apriil jobber med paid media som en kommersiell vekstmotor, ikke som en kampanjeliste. Vi kobler annonser, landingssider og data i en helhet som øker kvaliteten på trafikken og effekten av budsjettet."
-        trendTitle="Hva har endret seg i paid media?"
+        intro="Apriil jobber med betalt media som en kommersiell vekstmotor, ikke som en kampanjeliste. Vi kobler annonser, landingssider og data i en helhet som øker kvaliteten på trafikken og effekten av budsjettet."
+        trendTitle="Hva har endret seg i betalt media?"
         trendBody="Automatisering og AI har tatt over mye av den manuelle optimaliseringen. Differansen mellom svake og sterke resultater ligger nå i strategi, signal-kvalitet og relevans mellom budskap, målgruppe og landingsside."
         bullets={[
-          "Google Ads, Meta Ads, LinkedIn Ads, programmatic, DOOH, contextual, video, creator og podcast",
+          "Google Ads, Meta Ads, LinkedIn Ads, programmatisk, DOOH, kontekstuell, video, innholdsskaper-samarbeid og podcast",
           "Søkestruktur, målgrupper og budsjettrammeverk",
           "Annonsekreativ og testplan",
           "Landingsside- og konverteringsanalyse",
@@ -26,7 +26,7 @@ export default function PaidMediaPage() {
               "Google eller Meta",
               "Månedlig optimalisering",
               "Standard konverteringssporing",
-              "Min. annonsesjett: NOK 15 000",
+              "Min. annonseringsbudsjett: NOK 15 000",
             ],
           },
           {

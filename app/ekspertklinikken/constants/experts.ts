@@ -6,7 +6,7 @@ export const EXPERTS: Expert[] = [
     name: "Lasse Monroe",
     title: "SEO-strateg",
     location: "Bergen",
-    topic: "SEO og sokesynlighet",
+    topic: "SEO og søkesynlighet",
     tag: "seo",
     avatarBg: "#fdf1f0",
     avatarColor: "#9b1c1c",
@@ -24,7 +24,7 @@ export const EXPERTS: Expert[] = [
   {
     initials: "AA",
     name: "Agathe Aase",
-    title: "Analytiker og BI-radgiver",
+    title: "Analytiker & BI-rådgiver",
     location: "Stavanger",
     topic: "Analyse og business intelligence",
     tag: "bi",

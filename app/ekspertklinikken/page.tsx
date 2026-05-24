@@ -3,17 +3,17 @@ import { getAnsweredQuestions } from "@/app/api/_data/ekspertklinikken-store";
 import { EkspertklinikkenClient } from "./page-client";
 
 export const metadata: Metadata = {
-  title: "Ekspertklinikken | Gratis manedlig live Q&A - Apriil",
+  title: "Ekspertklinikken | Gratis månedlig live Q&A — Apriil",
   description:
-    "Apriils eksperter svarer pa sporsmal om SEO, betalt media og digital analyse live pa LinkedIn. Siste fredag i maneden, kl. 12-13. Gratis og uforpliktende.",
+    "Apriils eksperter svarer på spørsmål om SEO, betalt media og digital analyse live på LinkedIn. Siste fredag i måneden, kl. 12–13. Gratis og uforpliktende.",
 };
 
 const eventSeriesSchema = {
   "@context": "https://schema.org",
   "@type": "EventSeries",
-  name: "Ekspertklinikken - Apriil",
+  name: "Ekspertklinikken — Apriil",
   description:
-    "Manedlig gratis live Q&A pa LinkedIn der Apriils eksperter svarer pa sporsmal om SEO, betalt media og digital analyse.",
+    "Månedlig gratis live Q&A på LinkedIn der Apriils eksperter svarer på spørsmål om SEO, betalt media og digital analyse.",
   organizer: {
     "@type": "Organization",
     name: "Apriil",
@@ -28,8 +28,8 @@ const eventSeriesSchema = {
   isAccessibleForFree: true,
   performer: [
     { "@type": "Person", name: "Lasse Monroe", jobTitle: "SEO-strateg" },
-    { "@type": "Person", name: "Mari Tveit", jobTitle: "Paid media-leder" },
-    { "@type": "Person", name: "Agathe Aase", jobTitle: "Analytiker og BI-radgiver" },
+    { "@type": "Person", name: "Mari Tveit", jobTitle: "Leder for betalt media" },
+    { "@type": "Person", name: "Agathe Aase", jobTitle: "Analytiker og BI-rådgiver" },
   ],
 };
 

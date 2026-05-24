@@ -3,10 +3,10 @@ import { ServicePageTemplate } from "@/components/service-page-template";
 export default function IntelligenceConsultingAnalyticsPage() {
   return (
     <ServicePageTemplate
-      eyebrow="Intelligence / Consulting / Analytics"
-      title="From setup to revenue"
-      intro="Collect the important insights and create actionable strategy. A service that moves the commercial needle. Apriil combines intelligence, consulting, and analytics in one execution framework."
-      trendTitle="Hva er nytt i analyse og intelligence?"
+      eyebrow="Innsikt / Rådgivning / Analyse"
+      title="Fra oppsett til inntekt"
+      intro="Vi samler innsikten som faktisk betyr noe, og omsetter den til tydelige prioriteringer. Dette er en tjeneste som flytter den kommersielle nålen. Apriil kombinerer innsikt, rådgivning og analyse i ett samlet gjennomføringsrammeverk."
+      trendTitle="Hva er nytt innen innsikt og analyse?"
       trendBody="GA4, cookieless måling og strengere personvernkrav har endret hvordan data må samles og tolkes. Samtidig gjør AI-drevet analyse det enklere å se mønstre raskere. Gevinsten kommer når innsikten faktisk styrer prioriteringene."
       bullets={[
         "GA4-oppsett, revisjon og datakvalitet",

@@ -6,12 +6,12 @@ export default function DigitalMarketingPage() {
     <>
       <ServicePageTemplate
         eyebrow="Digital markedsføring"
-        title="Digital markedsføring som henger sammen på tvers av SEO, paid media og analyse"
-        intro="Det er 2026. Synlighet avgjøres ikke lenger bare i klassiske Google-resultater. AI-genererte svar, Google AI Overviews og plattformer som ChatGPT og Perplexity kuraterer egne kilder. Apriil bygger en samlet modell for SEO, paid media og analyse som sikrer teknisk soliditet, tydelig innholdsstruktur og sterk autoritet på tvers av søkeflater."
+        title="Digital markedsføring som henger sammen på tvers av SEO, betalt media og analyse"
+        intro="Det er 2026. Synlighet avgjøres ikke lenger bare i klassiske Google-resultater. AI-genererte svar, Google AI Overviews og plattformer som ChatGPT og Perplexity kuraterer egne kilder. Apriil bygger en samlet modell for SEO, betalt media og analyse som sikrer teknisk soliditet, tydelig innholdsstruktur og sterk autoritet på tvers av søkeflater."
         trendTitle="Hva har endret seg i digital markedsføring?"
         trendBody="AI-søk, automatisert annonsering og nye personvernkrav gjør at gamle kanal-oppskrifter ikke holder. Bedrifter som lykkes nå samkjører synlighet, anskaffelse og innsikt i ett operativt system."
         bullets={[
-          "Strategi som kobler SEO, paid media og analyse",
+          "Strategi som kobler SEO, betalt media og analyse",
           "Prioriteringsmodell med tydelige beslutningspunkter",
           "Kontinuerlig optimalisering med kommersiell forankring",
           "Måling og rapportering som ledelsen faktisk bruker",
@@ -35,7 +35,7 @@ export default function DigitalMarketingPage() {
             audience: "For vekstbedrifter som trenger høyere tempo og tettere oppfølging.",
             highlighted: true,
             features: [
-              "SEO + paid media i samme arbeidsflyt",
+              "SEO + betalt media i samme arbeidsflyt",
               "Ukentlig optimalisering",
               "Clarity-rapportering og tiltaksstyring",
               "Kvartalsvis ledelsesgjennomgang",
@@ -64,11 +64,11 @@ export default function DigitalMarketingPage() {
               <p className="mt-2 text-sm text-apriil-muted">Bli funnet i søk og AI-svar med strukturert, kommersielt innhold.</p>
             </Link>
             <Link href="/services/paid-media" className="rounded-2xl border border-apriil-line/80 bg-[#fbfaf7] p-6 text-apriil-dark transition hover:-translate-y-0.5">
-              <h3 className="text-lg font-semibold">Paid media</h3>
+              <h3 className="text-lg font-semibold">Betalt media</h3>
               <p className="mt-2 text-sm text-apriil-muted">Effektiv annonsering med bedre trafikkkvalitet og høyere avkastning.</p>
             </Link>
             <Link href="/services/intelligence-consulting-analytics" className="rounded-2xl border border-apriil-line/80 bg-[#fbfaf7] p-6 text-apriil-dark transition hover:-translate-y-0.5">
-              <h3 className="text-lg font-semibold">Intelligence, consulting og analytics</h3>
+              <h3 className="text-lg font-semibold">Innsikt, rådgivning og analyse</h3>
               <p className="mt-2 text-sm text-apriil-muted">Fra rådata til prioriterte beslutninger for ledelse og team.</p>
             </Link>
           </div>

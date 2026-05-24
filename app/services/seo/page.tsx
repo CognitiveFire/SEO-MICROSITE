@@ -5,7 +5,7 @@ export default function SeoPage() {
     <ServicePageTemplate
       eyebrow="SEO"
       title="SEO som kobler innholdet ditt med kunder der de faktisk søker"
-      intro="AI-sok, sosialt sok, bilde, video, lokale treff og zero-click har erstattet den statiske Google-forsiden. Vår SEO-tjeneste kobler innholdet ditt med kundene dine pa deres premisser."
+      intro="AI-søk, sosialt søk, bilde, video, lokale treff og zero-click har erstattet den statiske Google-forsiden. Vår SEO-tjeneste kobler innholdet ditt med kundene dine på deres premisser."
       trendTitle="Hva er nytt i SEO nå?"
       trendBody="Søkelandskapet er ikke lenger bare ti blå lenker. AI Overviews, ChatGPT og andre svarmotorer henter kilder direkte. Derfor må innholdet ditt være tydelig strukturert, troverdig og formulert for å bli valgt."
       bullets={[

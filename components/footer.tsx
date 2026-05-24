@@ -10,8 +10,8 @@ export function Footer() {
         </div>
         <nav className="flex flex-wrap gap-5">
           <Link href="/services/seo" className="transition hover:text-apriil-dark">SEO</Link>
-          <Link href="/services/paid-media" className="transition hover:text-apriil-dark">Paid Media</Link>
-          <Link href="/services/intelligence-consulting-analytics" className="transition hover:text-apriil-dark">BI / Analytics</Link>
+          <Link href="/services/paid-media" className="transition hover:text-apriil-dark">Betalt media</Link>
+          <Link href="/services/intelligence-consulting-analytics" className="transition hover:text-apriil-dark">Innsikt / Analyse</Link>
           <Link href="/contact" className="transition hover:text-apriil-dark">Kontakt</Link>
         </nav>
         <div className="text-apriil-muted/80">© {new Date().getFullYear()} Apriil. Alle rettigheter reservert.</div>

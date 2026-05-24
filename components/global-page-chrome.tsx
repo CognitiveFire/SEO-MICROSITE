@@ -17,8 +17,8 @@ function ExpertSupportHub({ topic }: { topic: string }) {
             <div>
               <h2 className="text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-4xl">Live klinikk + spør en ekspert</h2>
               <p className="mt-3 max-w-2xl text-base leading-8 text-apriil-muted">
-                Siste fredag i maneden kl. 12-13 svarer Apriils eksperter live pa LinkedIn. Trenger du svar na, kan du ogsa sende
-                inn sporsmal direkte under.
+                Siste fredag i måneden kl. 12-13 svarer Apriils eksperter live på LinkedIn. Trenger du svar nå, kan du også sende
+                inn spørsmål direkte under.
               </p>
             </div>
             <Link
@@ -47,7 +47,7 @@ function PageContactCta() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Neste steg</p>
               <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">
-                Tell us how your company could use more clarity.
+                Fortell oss hvordan virksomheten deres kan få mer klarhet.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
                 Del hva dere vil forstå bedre, så følger vi opp med en tydelig vurdering av hvor Apriil kan bidra videre.
