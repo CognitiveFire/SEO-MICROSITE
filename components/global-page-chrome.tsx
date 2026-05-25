@@ -1,9 +1,9 @@
 "use client";
 
 import type { ReactNode } from "react";
-import Link from "next/link";
 import { Footer } from "./footer";
 import { LeadCaptureForm } from "./lead-capture-form";
+import { CtaPillLink } from "./cta-pill";
 
 function ExpertSupportHub() {
   return (
@@ -21,12 +21,9 @@ function ExpertSupportHub() {
             om synlighet, performance og analyse.
           </p>
         </div>
-        <Link
-          href="/ekspertklinikken"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#e63b00]"
-        >
+        <CtaPillLink href="/ekspertklinikken">
           Gå til ekspertklinikken
-        </Link>
+        </CtaPillLink>
       </div>
     </div>
   );
@@ -48,12 +45,9 @@ function PdfSupportModule() {
             prioriteringsrammeverk.
           </p>
         </div>
-        <Link
-          href="/clarity-growth-framework-whitepaper.html?print=1"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#e63b00]"
-        >
+        <CtaPillLink href="/clarity-growth-framework-whitepaper.html?print=1">
           Last ned notat
-        </Link>
+        </CtaPillLink>
       </div>
     </div>
   );

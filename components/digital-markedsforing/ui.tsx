@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState, type ReactNode } from "react";
+import { CtaPillAnchor, CtaPillLink } from "@/components/cta-pill";
 
 type Step = {
   label: string;
@@ -190,18 +191,12 @@ export function SectionContainer({
 export function HeroActions() {
   return (
     <div className="mt-10 flex flex-wrap items-center gap-3">
-      <Link
-        href="/contact"
-        className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#e63b00]"
-      >
+      <CtaPillLink href="/contact">
         Snakk med oss
-      </Link>
-      <a
-        href="#metodikk"
-        className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#fff1ea]"
-      >
+      </CtaPillLink>
+      <CtaPillAnchor href="#metodikk">
         Se hvordan vi jobber
-      </a>
+      </CtaPillAnchor>
     </div>
   );
 }

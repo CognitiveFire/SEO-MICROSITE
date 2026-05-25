@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   CaseStudyGrid,
   MethodologyGrid,
@@ -8,6 +7,7 @@ import {
   type ServiceCard,
   StrategicSystemAnimation,
 } from "@/components/digital-markedsforing/ui";
+import { CtaPillAnchor, CtaPillLink } from "@/components/cta-pill";
 
 export const metadata: Metadata = {
   title: "Digital markedsføring | Apriil",
@@ -186,18 +186,12 @@ export default function DigitalMarkedsforingPage() {
               og re-prioriteres ut fra forretningsbehov, ikke kanalpreferanser.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#e63b00]"
-              >
+              <CtaPillLink href="/contact">
                 Book strategisamtale
-              </Link>
-              <a
-                href="#serviceokosystem"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#fff1ea]"
-              >
+              </CtaPillLink>
+              <CtaPillAnchor href="#serviceokosystem">
                 Se serviceøkosystem
-              </a>
+              </CtaPillAnchor>
             </div>
           </div>
           <StrategicSystemAnimation />

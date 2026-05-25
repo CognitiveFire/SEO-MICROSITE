@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   CaseStudyGrid,
   HeroActions,
@@ -7,6 +6,7 @@ import {
   PricingGrid,
   SectionContainer,
 } from "@/components/digital-markedsforing/ui";
+import { CtaPillLink } from "@/components/cta-pill";
 
 export const metadata: Metadata = {
   title: "SEO | Digital markedsforing | Apriil",
@@ -179,15 +179,9 @@ export default function SeoSubPage() {
 
       <SectionContainer title="Vil dere styrke synlighet med tydeligere prioriteringer?">
         <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:flex md:items-center md:justify-between md:gap-8">
-          <p className="max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-            Vi kan vurdere na-situasjonen og foresla neste riktige steg.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-5 inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-apriil-ink-soft md:mt-0"
-          >
+          <CtaPillLink href="/contact" className="md:ml-auto">
             Snakk med oss
-          </Link>
+          </CtaPillLink>
         </div>
       </SectionContainer>
     </main>

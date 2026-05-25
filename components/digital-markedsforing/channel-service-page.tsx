@@ -1,8 +1,8 @@
-import Link from "next/link";
 import {
   CaseStudyGrid,
   MethodologyGrid,
 } from "@/components/digital-markedsforing/ui";
+import { CtaPillLink } from "@/components/cta-pill";
 
 export type ChannelServicePageProps = {
   eyebrow: string;
@@ -42,12 +42,9 @@ export function ChannelServicePage({
               {intro}
             </p>
             <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#2d2824]"
-              >
+              <CtaPillLink href="/contact">
                 Snakk med oss
-              </Link>
+              </CtaPillLink>
             </div>
           </div>
           <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 p-7 md:p-9">

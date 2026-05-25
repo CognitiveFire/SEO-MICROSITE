@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   CaseStudyGrid,
   HeroActions,
@@ -7,6 +6,7 @@ import {
   PricingGrid,
   SectionContainer,
 } from "@/components/digital-markedsforing/ui";
+import { CtaPillLink } from "@/components/cta-pill";
 
 export const metadata: Metadata = {
   title: "Betalt media | Digital markedsforing | Apriil",
@@ -177,12 +177,9 @@ export default function BetaltMediaSubPage() {
             Vi kan gi en konkret vurdering av dagens mediemodell og anbefale
             neste prioritering.
           </p>
-          <Link
-            href="/contact"
-            className="mt-5 inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-apriil-ink-soft md:mt-0"
-          >
+          <CtaPillLink href="/contact" className="mt-5 md:mt-0">
             Snakk med oss
-          </Link>
+          </CtaPillLink>
         </div>
       </SectionContainer>
     </main>
