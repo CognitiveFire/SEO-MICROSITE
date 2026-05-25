@@ -18,18 +18,31 @@ export default function BetaltMediaSubPage() {
   return (
     <main>
       <section className="px-6 py-20 md:px-10 xl:px-16">
-        <div className="w-full border-t border-apriil-line/70 pt-14">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-            Betalt media
-          </p>
-          <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.92]">
-            Investeringer med tydelig kommersiell rolle.
-          </h1>
-          <p className="mt-7 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-            Betalt media skal forsterke riktig ettersporsel, ikke kompensere for
-            svak retning.
-          </p>
-          <HeroActions />
+        <div className="grid gap-10 border-t border-apriil-line/70 pt-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
+              Betalt media
+            </p>
+            <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.92]">
+              Betalt media som støtter hele vekstmodellen.
+            </h1>
+            <p className="mt-7 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
+              Betalt media skal støtte og forsterke etterspørsel - ikke skape
+              aktivitet for aktivitetens skyld.
+            </p>
+            <HeroActions />
+          </div>
+          <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 p-7 md:p-9">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
+              Strategisk posisjonering
+            </p>
+            <ul className="mt-6 space-y-4 text-base leading-8 text-apriil-muted">
+              <li className="border-t border-apriil-line/80 pt-4">Search advertising</li>
+              <li className="border-t border-apriil-line/80 pt-4">Social advertising</li>
+              <li className="border-t border-apriil-line/80 pt-4">YouTube</li>
+              <li className="border-t border-apriil-line/80 pt-4">Retargeting and attribution</li>
+            </ul>
+          </div>
         </div>
       </section>
 

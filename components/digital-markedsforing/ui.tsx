@@ -200,7 +200,7 @@ export function HeroActions() {
         href="#metodikk"
         className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-line/80 px-7 py-3 text-sm font-semibold text-apriil-dark transition hover:bg-white/65"
       >
-        Se metodikken
+        Se hvordan vi jobber
       </a>
     </div>
   );

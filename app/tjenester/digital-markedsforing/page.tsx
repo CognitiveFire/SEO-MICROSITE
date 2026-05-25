@@ -238,7 +238,7 @@ export default function DigitalMarkedsforingPage() {
           </div>
         </section>
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <section className="border-t border-apriil-line/70 pt-12">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               Hvordan vi jobber
@@ -252,7 +252,28 @@ export default function DigitalMarkedsforingPage() {
               system.
             </p>
           </div>
-          <MethodologyGrid steps={methodologySteps} />
+          <div className="mt-12 grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 p-7 md:p-9">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-apriil-muted">
+                Clarity-metoden
+              </p>
+              <ul className="mt-5 space-y-4 text-base leading-8 text-apriil-muted">
+                <li className="border-t border-apriil-line/80 pt-4">
+                  Vi forstår marked, signaler og etterspørsel før vi velger tiltak.
+                </li>
+                <li className="border-t border-apriil-line/80 pt-4">
+                  Vi prioriterer det som faktisk påvirker vekst, og fjerner det som ikke gjør det.
+                </li>
+                <li className="border-t border-apriil-line/80 pt-4">
+                  Vi aktiverer riktig miks av SEO, media, innhold og distribusjon.
+                </li>
+                <li className="border-t border-apriil-line/80 pt-4">
+                  Vi måler kommersiell effekt og justerer styringen løpende.
+                </li>
+              </ul>
+            </div>
+            <MethodologyGrid steps={methodologySteps} />
+          </div>
         </section>
 
         <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
@@ -299,7 +320,7 @@ export default function DigitalMarkedsforingPage() {
           </div>
         </section>
 
-        <section id="serviceokosystem" className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <section id="serviceokosystem" className="border-t border-apriil-line/70 pt-12">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               Serviceøkosystem
@@ -312,7 +333,9 @@ export default function DigitalMarkedsforingPage() {
               kapabilitet aktiveres når den styrker den kommersielle prioriteten.
             </p>
           </div>
-          <ServiceGridHero cards={serviceCards} />
+          <div className="mt-12">
+            <ServiceGridHero cards={serviceCards} />
+          </div>
         </section>
 
         <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
@@ -331,7 +354,7 @@ export default function DigitalMarkedsforingPage() {
           <CaseStudyGrid studies={caseStudies} />
         </section>
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <section className="border-t border-apriil-line/70 pt-12">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               Prismodell
@@ -344,7 +367,9 @@ export default function DigitalMarkedsforingPage() {
               beslutningskompleksitet.
             </p>
           </div>
-          <PricingGrid tiers={pricingTiers} />
+          <div className="mt-12">
+            <PricingGrid tiers={pricingTiers} />
+          </div>
         </section>
 
         <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">

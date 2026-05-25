@@ -11,7 +11,7 @@ function ExpertSupportHub() {
       <div className="w-full border-t border-apriil-line/80 pt-10">
         <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:p-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-            Live clinic
+            Ekspertklinikken
           </p>
           <div className="mt-3 grid gap-6 md:grid-cols-[1fr_auto] md:items-end md:gap-8">
             <div>
@@ -27,7 +27,7 @@ function ExpertSupportHub() {
               href="/ekspertklinikken"
               className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#2d2824]"
             >
-              Gå til live clinic
+              Gå til ekspertklinikken
             </Link>
           </div>
         </div>
@@ -42,12 +42,12 @@ function PdfSupportModule() {
       <div className="w-full">
         <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:p-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-            How it works PDF
+            Slik fungerer det
           </p>
           <div className="mt-3 grid gap-6 md:grid-cols-[1fr_auto] md:items-end md:gap-8">
             <div>
               <h2 className="text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-4xl">
-                Clarity how it works
+                Clarity - slik fungerer det
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-8 text-apriil-muted">
                 Last ned dokumentet med tjenestestruktur, arbeidsmetodikk og
@@ -58,7 +58,7 @@ function PdfSupportModule() {
               href="/clarity-growth-framework-whitepaper.html?print=1"
               className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-line px-7 py-3 text-sm font-semibold text-apriil-dark transition hover:bg-white"
             >
-              Last ned PDF
+              Last ned notat
             </Link>
           </div>
         </div>
