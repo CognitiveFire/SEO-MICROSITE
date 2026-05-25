@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 type Step = {
   label: string;
@@ -51,7 +51,7 @@ export function SectionContainer({
 }) {
   return (
     <section id={id} className="px-6 py-20 md:px-10 md:py-24 xl:px-16 xl:py-28">
-      <div className="mx-auto max-w-6xl border-t border-apriil-line/70 pt-12 md:pt-14">
+      <div className="mx-auto max-w-7xl border-t border-apriil-line/70 pt-12 md:pt-14">
         {eyebrow ? <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">{eyebrow}</p> : null}
         <h2 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-6xl md:leading-[0.97]">
           {title}
@@ -78,6 +78,96 @@ export function HeroActions() {
       >
         Se metodikken
       </a>
+    </div>
+  );
+}
+
+type ServiceNode = {
+  title: string;
+  x: number;
+  y: number;
+  href: string;
+};
+
+const serviceNodes: ServiceNode[] = [
+  { title: "SEO", x: 15, y: 17, href: "/tjenester/digital-markedsforing/seo" },
+  { title: "Performance", x: 48, y: 17, href: "/tjenester/digital-markedsforing/performance" },
+  { title: "Programmatic", x: 81, y: 17, href: "/tjenester/digital-markedsforing/programmatic" },
+  { title: "Podcast", x: 15, y: 53, href: "/tjenester/digital-markedsforing/podcast" },
+  { title: "DOOH", x: 48, y: 53, href: "/tjenester/digital-markedsforing/dooh" },
+  { title: "Creator network", x: 81, y: 53, href: "/tjenester/digital-markedsforing/creator-network" },
+  { title: "Social", x: 48, y: 85, href: "/tjenester/digital-markedsforing/social" },
+];
+
+export function ServiceGridHero() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const tick = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1 + Math.floor(Math.random() * 2)) % serviceNodes.length);
+    }, 2200);
+
+    return () => window.clearInterval(tick);
+  }, []);
+
+  const activeNode = serviceNodes[activeIndex];
+  const centerX = 50;
+  const centerY = 50;
+
+  return (
+    <div className="apriil-editorial-surface relative min-h-[520px] overflow-hidden rounded-[18px] border border-apriil-line/70 p-5 md:p-7">
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="10" y1="17" x2="90" y2="17" stroke="rgba(23,23,23,0.12)" strokeWidth="0.18" />
+        <line x1="10" y1="53" x2="90" y2="53" stroke="rgba(23,23,23,0.12)" strokeWidth="0.18" />
+        <line x1="10" y1="85" x2="90" y2="85" stroke="rgba(23,23,23,0.12)" strokeWidth="0.18" />
+        <line x1="15" y1="10" x2="15" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
+        <line x1="48" y1="10" x2="48" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
+        <line x1="81" y1="10" x2="81" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
+
+        <motion.line
+          key={activeIndex}
+          x1={centerX}
+          y1={centerY}
+          x2={activeNode.x}
+          y2={activeNode.y}
+          stroke="rgba(23,23,23,0.44)"
+          strokeWidth="0.34"
+          strokeDasharray="1.4 1.1"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.35 }}
+        />
+      </svg>
+
+      <motion.div
+        className="absolute left-1/2 top-1/2 z-10 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-apriil-line/80 bg-[#f6f4ef] text-xs font-semibold uppercase tracking-[0.12em] text-apriil-dark"
+        animate={{ scale: [1, 1.03, 1] }}
+        transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
+      >
+        Clarity
+      </motion.div>
+
+      <div className="relative grid h-full grid-cols-1 gap-3 md:grid-cols-3 md:grid-rows-3 md:gap-4">
+        {serviceNodes.map((node, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <motion.div
+              key={node.title}
+              className={`min-h-[118px] rounded-[8px] border px-4 py-4 text-left ${
+                isActive ? "border-apriil-dark bg-[#e8e4db]" : "border-apriil-line/70 bg-[#dfddd6]"
+              }`}
+              style={{ gridColumn: index === 6 ? "2 / span 1" : "auto" }}
+              animate={isActive ? { y: [0, -2, 0] } : { y: 0 }}
+              transition={{ duration: 3.6, repeat: isActive ? Infinity : 0, ease: "easeInOut" }}
+            >
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">{String(index + 1).padStart(2, "0")}</p>
+              <h3 className="mt-10 text-[1.08rem] font-semibold leading-[1.05] tracking-[-0.02em] text-apriil-dark">
+                {node.title}
+              </h3>
+            </motion.div>
+          );
+        })}
+      </div>
     </div>
   );
 }

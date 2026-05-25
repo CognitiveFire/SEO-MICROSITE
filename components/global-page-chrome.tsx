@@ -10,29 +10,47 @@ function ExpertSupportHub() {
     <section className="px-6 pb-8 pt-12 md:px-10 xl:px-16">
       <div className="mx-auto max-w-6xl border-t border-apriil-line/80 pt-10">
         <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:p-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">Ressurser</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">Live clinic</p>
           <div className="mt-3 grid gap-6 md:grid-cols-[1fr_auto] md:items-end md:gap-8">
             <div>
-              <h2 className="text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-4xl">Live clinic og how it works PDF</h2>
+              <h2 className="text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-4xl">Ekspertklinikken</h2>
               <p className="mt-3 max-w-2xl text-base leading-8 text-apriil-muted">
-                Hold dere oppdatert med ekspertklinikken og last ned how it works-dokumentet med tjenestemodell,
-                arbeidsform og prioriteringsrammeverk.
+                Siste fredag i måneden svarer Apriils eksperter live på spørsmål om synlighet,
+                performance og analyse.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/ekspertklinikken"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#2d2824]"
-              >
-                Gå til live clinic
-              </Link>
-              <Link
-                href="/clarity-growth-framework-whitepaper.html?print=1"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-line px-7 py-3 text-sm font-semibold text-apriil-dark transition hover:bg-white"
-              >
-                Last ned how it works PDF
-              </Link>
+            <Link
+              href="/ekspertklinikken"
+              className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#2d2824]"
+            >
+              Gå til live clinic
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PdfSupportModule() {
+  return (
+    <section className="px-6 pb-8 pt-2 md:px-10 xl:px-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:p-8">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">How it works PDF</p>
+          <div className="mt-3 grid gap-6 md:grid-cols-[1fr_auto] md:items-end md:gap-8">
+            <div>
+              <h2 className="text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-4xl">Clarity how it works</h2>
+              <p className="mt-3 max-w-2xl text-base leading-8 text-apriil-muted">
+                Last ned dokumentet med tjenestestruktur, arbeidsmetodikk og prioriteringsrammeverk.
+              </p>
             </div>
+            <Link
+              href="/clarity-growth-framework-whitepaper.html?print=1"
+              className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-line px-7 py-3 text-sm font-semibold text-apriil-dark transition hover:bg-white"
+            >
+              Last ned PDF
+            </Link>
           </div>
         </div>
       </div>
@@ -82,6 +100,7 @@ export function GlobalPageChrome({ children }: { children: ReactNode }) {
     <>
       {children}
       <ExpertSupportHub />
+      <PdfSupportModule />
       <PageContactCta />
       <Footer />
     </>

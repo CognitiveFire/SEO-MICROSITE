@@ -1,172 +1,99 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  CaseStudyGrid,
-  EcosystemVisual,
-  HeroActions,
-  MethodologyGrid,
-  SectionContainer,
-} from "@/components/digital-markedsforing/ui";
+import { ServiceGridHero } from "@/components/digital-markedsforing/ui";
 
 export const metadata: Metadata = {
   title: "Digital markedsforing | Apriil",
   description:
-    "Apriil samler analyse, synlighet og markedsforing i ett strategisk rammeverk for tydeligere prioriteringer og sterkere kommersielle beslutninger.",
+    "Tjenester innen digital markedsforing fra Apriil: SEO, performance, programmatic, podcast, DOOH, creator network og social.",
 };
 
-const serviceLinks = [
+const serviceCards = [
   {
     title: "SEO - sokemotoroptimalisering",
-    body: "Vi bygger synlighet gjennom tydelig innholdsstruktur, teknisk kvalitet og prioriteringer som stotter kommersielle mal.",
+    body: "Vi bygger synlighet gjennom teknisk kvalitet, riktig innholdsstruktur og tydelige kommersielle prioriteringer.",
     href: "/tjenester/digital-markedsforing/seo",
   },
   {
-    title: "Paid media",
-    body: "Vi styrer medieinvesteringer med klar kanalrolle, bedre signalgrunnlag og tydelig kommersiell retning.",
-    href: "/tjenester/digital-markedsforing/betalt-media",
+    title: "Performance",
+    body: "Vi styrer paid media med klar kanalrolle, bedre signalgrunnlag og tydelig retning for investeringene.",
+    href: "/tjenester/digital-markedsforing/performance",
   },
   {
-    title: "Analytics og intelligence",
-    body: "Vi omsetter data til beslutningsgrunnlag som gir ledelse og team tryggere prioriteringer over tid.",
-    href: "/tjenester/digital-markedsforing/analyse",
+    title: "Programmatic",
+    body: "Vi bruker programmatic for presis distribusjon med kontroll på kvalitet, frekvens og kommersiell effekt.",
+    href: "/tjenester/digital-markedsforing/programmatic",
+  },
+  {
+    title: "Podcast",
+    body: "Vi utvikler podcastspor som bygger tillit over tid og styrker posisjon i prioriterte segmenter.",
+    href: "/tjenester/digital-markedsforing/podcast",
+  },
+  {
+    title: "DOOH",
+    body: "Vi planlegger digitale utendorsflater som en strategisk del av den totale mediemiksen.",
+    href: "/tjenester/digital-markedsforing/dooh",
+  },
+  {
+    title: "Creator network",
+    body: "Vi strukturerer creatorsamarbeid med tydelig rolle i ettersporselsarbeidet og kommersiell retning.",
+    href: "/tjenester/digital-markedsforing/creator-network",
+  },
+  {
+    title: "Social",
+    body: "Vi bruker sosiale kanaler for tydelig budskap, sterkere relevans og bedre kobling til forretningsmal.",
+    href: "/tjenester/digital-markedsforing/social",
   },
 ];
 
 function ServiceMarker() {
   return (
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <path d="M24 8C24 17.3 30.7 24 40 24C30.7 24 24 30.7 24 40C24 30.7 17.3 24 8 24C17.3 24 24 17.3 24 8Z" fill="#ff4e1a" />
-      <path d="M24 14C24 20.7 28.3 25 35 25C28.3 25 24 29.3 24 36C24 29.3 19.7 25 13 25C19.7 25 24 20.7 24 14Z" fill="#ff8e66" fillOpacity="0.5" />
+    <svg width="62" height="62" viewBox="0 0 62 62" fill="none" aria-hidden="true">
+      <path d="M31 10C31 22 39 31 52 31C39 31 31 40 31 52C31 40 22 31 10 31C22 31 31 22 31 10Z" fill="#ff4e1a" />
+      <path d="M31 17C31 25.5 36.5 31 45 31C36.5 31 31 36.5 31 45C31 36.5 25.5 31 17 31C25.5 31 31 25.5 31 17Z" fill="#ff8e66" fillOpacity="0.55" />
+      <path d="M31 22C31 28 35 31.8 41 31.8C35 31.8 31 35.6 31 41.6C31 35.6 27 31.8 21 31.8C27 31.8 31 28 31 22Z" fill="#ff4e1a" fillOpacity="0.75" />
     </svg>
   );
 }
 
 export default function DigitalMarkedsforingPage() {
   return (
-    <main>
-      <section className="px-6 pb-14 pt-20 md:px-10 md:pb-20 xl:px-16">
-        <div className="mx-auto grid max-w-6xl gap-10 border-t border-apriil-line/70 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+    <main className="w-full px-6 pb-20 pt-6 md:px-10 xl:px-16">
+      <div className="mx-auto w-full">
+        <section className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">Digital markedsforing</p>
-            <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.055em] text-apriil-dark md:text-7xl md:leading-[0.92]">
-              Bedre beslutninger starter med klarere signaler.
+            <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-6xl md:leading-[0.96]">
+              Vi kan hjelpe deg med:
             </h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Clarity samler analyse, synlighet og markedsforing i en struktur som gjør det enklere
-              a prioritere riktig.
+            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
+              Tjenestene er organisert som en samlet digital markedsforing-modell, med tydelige roller og en mer
+              strategisk arbeidsform.
             </p>
-            <HeroActions />
           </div>
-          <EcosystemVisual />
-        </div>
-      </section>
+          <ServiceGridHero />
+        </section>
 
-      <section className="px-6 py-12 md:px-10 md:py-16 xl:px-16">
-        <div className="mx-auto max-w-6xl border-t border-apriil-line/70 pt-12">
-          <p className="max-w-5xl text-3xl leading-[1.2] tracking-[-0.035em] text-apriil-dark md:text-5xl md:leading-[1.14]">
-            Vi jobber ikke med kanalaktiviteter i silo. Vi bygger et styringssystem for kommersiell retning.
-          </p>
-        </div>
-      </section>
-
-      <SectionContainer
-        id="metodikk"
-        eyebrow="Metodikk"
-        title="Clarity-metodikken"
-        intro="Metodikken er bygget for ledergrupper og fagteam som trenger et felles beslutningssprak."
-      >
-        <MethodologyGrid
-          steps={[
-            {
-              label: "Steg 1",
-              title: "Kartlegge virkeligheten",
-              points: ["Ettersporsel", "Datakvalitet", "Synlighet", "Kanalroller"],
-            },
-            {
-              label: "Steg 2",
-              title: "Vurdere effekt",
-              points: ["Hva som faktisk driver verdi", "Hva som skaper stoy", "Hva som mangler styring"],
-            },
-            {
-              label: "Steg 3",
-              title: "Prioritere tiltak",
-              points: ["Tiltaksrekkefolge", "Rollefordeling", "Investeringsretning", "Beslutningspunkter"],
-            },
-            {
-              label: "Steg 4",
-              title: "Forbedre kontinuerlig",
-              points: ["Tydelig rapportering", "Strategiske reviews", "Kontinuerlig justering"],
-            },
-          ]}
-        />
-      </SectionContainer>
-
-      <SectionContainer eyebrow="Tjenester" title="Vi kan hjelpe deg med:" intro="Tre kjerneomrader under Digital markedsforing.">
-        <div className="grid gap-5 lg:grid-cols-3">
-          {serviceLinks.map((item) => (
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {serviceCards.map((card) => (
             <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-[6px] bg-[#dfddd6] px-8 py-10 text-center transition hover:bg-[#d9d6ce]"
+              key={card.title}
+              href={card.href}
+              className="min-h-[390px] rounded-[6px] bg-[#dfddd6] px-8 py-9 text-center transition hover:bg-[#d8d5cd]"
             >
               <div className="mx-auto mb-6 flex w-fit justify-center">
                 <ServiceMarker />
               </div>
-              <h3 className="text-[41px] text-[clamp(1.8rem,2.6vw,2.35rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-apriil-dark">
-                {item.title}
-              </h3>
-              <p className="mx-auto mt-5 max-w-[38ch] text-base leading-8 text-[#2d2d2b]">{item.body}</p>
-              <p className="mt-6 text-[32px] text-[1.95rem] font-semibold tracking-[-0.02em] text-apriil-dark">Les mer</p>
+              <h2 className="text-[42px] text-[clamp(1.95rem,2.6vw,2.45rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-apriil-dark">
+                {card.title}
+              </h2>
+              <p className="mx-auto mt-5 max-w-[36ch] text-[21px] text-[clamp(1rem,1.1vw,1.1rem)] leading-8 text-[#232321]">
+                {card.body}
+              </p>
+              <p className="mt-6 text-[34px] text-[2rem] font-semibold tracking-[-0.02em] text-apriil-dark">Les mer</p>
             </Link>
           ))}
         </div>
-      </SectionContainer>
-
-      <SectionContainer
-        eyebrow="Case"
-        title="Tre anonymiserte oppdrag"
-        intro="Eksempler pa hvordan tydeligere prioriteringer ga bedre kommersiell styring."
-      >
-        <CaseStudyGrid
-          studies={[
-            {
-              title: "Nasjonal tjenesteaktør",
-              situation: "Stor aktivitet i marked, men utydelig sammenheng mellom tiltak og resultat.",
-              challenge: "Lav trygghet i hvilke investeringer som faktisk ga verdi.",
-              actions: "Etablerte felles signalmodell for analyse, synlighet og mediebruk.",
-              result: "Mer presis prioritering i ledermoter og bedre avkastning fra medieinvesteringer.",
-            },
-            {
-              title: "Regional B2C-virksomhet",
-              situation: "Sterk ettersporsel, men varierende kvalitet i trafikk og konvertering.",
-              challenge: "Kanalteam jobbet i parallelle lop uten felles prioriteringslogikk.",
-              actions: "Definerte kanalroller, ny innholdsstruktur og felles styringsrytme.",
-              result: "Redusert friksjon mellom team og tydeligere kommersiell retning per kvartal.",
-            },
-            {
-              title: "Kompleks portefoljeaktør",
-              situation: "Mange initiativer pa tvers av regioner og forretningsomrader.",
-              challenge: "Manglende oversikt over hva som burde skaleres eller avsluttes.",
-              actions: "Bygget beslutningsrammeverk med faste review-punkter for ledelse og marked.",
-              result: "Mer moden styring av portefoljen og tydeligere sammenheng mellom innsats og effekt.",
-            },
-          ]}
-        />
-      </SectionContainer>
-
-      <SectionContainer title="Nar retningen er tydelig, blir markedsforing enklere a lede.">
-        <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:flex md:items-center md:justify-between md:gap-8">
-          <p className="max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-            Vi kan vurdere dagens oppsett og gi en konkret anbefaling for neste beslutning.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-5 inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-apriil-ink-soft md:mt-0"
-          >
-            Snakk med oss
-          </Link>
-        </div>
-      </SectionContainer>
+      </div>
     </main>
   );
 }
