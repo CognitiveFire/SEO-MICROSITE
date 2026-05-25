@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState, type ReactNode } from "react";
-import { CtaPillAnchor, CtaPillLink } from "@/components/cta-pill";
+import { CtaPillLink } from "@/components/cta-pill";
 
 type Step = {
   label: string;
@@ -25,6 +25,8 @@ type PricingTier = {
   audience: string;
   focus: string[];
   recommended?: boolean;
+  href?: string;
+  hrefLabel?: string;
 };
 
 type Capability = {
@@ -194,9 +196,6 @@ export function HeroActions() {
       <CtaPillLink href="/contact">
         Snakk med oss
       </CtaPillLink>
-      <CtaPillAnchor href="#metodikk">
-        Se hvordan vi jobber
-      </CtaPillAnchor>
     </div>
   );
 }
@@ -639,6 +638,14 @@ export function PricingGrid({ tiers }: { tiers: PricingTier[] }) {
                 </li>
               ))}
             </ul>
+            {tier.href ? (
+              <Link
+                href={tier.href}
+                className="mt-6 inline-flex w-fit border-b border-apriil-dark/70 pb-1 text-sm font-semibold uppercase tracking-[0.08em] text-apriil-dark transition hover:border-[#ff4101] hover:text-[#ff4101]"
+              >
+                {tier.hrefLabel ?? "Se full side"}
+              </Link>
+            ) : null}
           </div>
         </motion.article>
       ))}
