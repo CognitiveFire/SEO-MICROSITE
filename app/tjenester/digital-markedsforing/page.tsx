@@ -15,13 +15,13 @@ const serviceCards = [
     href: "/tjenester/digital-markedsforing/seo",
   },
   {
-    title: "Performance",
-    body: "Vi styrer paid media med klar kanalrolle, bedre signalgrunnlag og tydelig retning for investeringene.",
+    title: "Betalt media",
+    body: "Vi styrer betalt media med klar kanalrolle, bedre signalgrunnlag og tydelig retning for investeringene.",
     href: "/tjenester/digital-markedsforing/performance",
   },
   {
-    title: "Programmatic",
-    body: "Vi bruker programmatic for presis distribusjon med kontroll på kvalitet, frekvens og kommersiell effekt.",
+    title: "Programmatisk annonsering",
+    body: "Vi bruker programmatisk annonsering for presis distribusjon med kontroll på kvalitet, frekvens og kommersiell effekt.",
     href: "/tjenester/digital-markedsforing/programmatic",
   },
   {
@@ -30,19 +30,29 @@ const serviceCards = [
     href: "/tjenester/digital-markedsforing/podcast",
   },
   {
-    title: "DOOH",
-    body: "Vi planlegger digitale utendorsflater som en strategisk del av den totale mediemiksen.",
+    title: "DOOH / utendørs",
+    body: "Vi planlegger digitale utendørsflater som en strategisk del av den totale mediemiksen.",
     href: "/tjenester/digital-markedsforing/dooh",
   },
   {
     title: "Creator network",
-    body: "Vi strukturerer creatorsamarbeid med tydelig rolle i ettersporselsarbeidet og kommersiell retning.",
+    body: "Vi strukturerer creatorsamarbeid med tydelig rolle i etterspørselsarbeidet og kommersiell retning.",
     href: "/tjenester/digital-markedsforing/creator-network",
   },
   {
-    title: "Social",
-    body: "Vi bruker sosiale kanaler for tydelig budskap, sterkere relevans og bedre kobling til forretningsmal.",
+    title: "Sosiale medier",
+    body: "Vi bruker sosiale kanaler for tydelig budskap, sterkere relevans og bedre kobling til forretningsmål.",
     href: "/tjenester/digital-markedsforing/social",
+  },
+  {
+    title: "Video",
+    body: "Vi bruker video for å forklare, forsterke og skape tydeligere beslutningsstøtte i markedet.",
+    href: "/contact",
+  },
+  {
+    title: "Display",
+    body: "Vi planlegger display som en del av en samlet distribusjonsmodell med klar rolle og effekt.",
+    href: "/contact",
   },
 ];
 
@@ -60,13 +70,13 @@ export default function DigitalMarkedsforingPage() {
   return (
     <main className="w-full px-6 pb-20 pt-6 md:px-10 xl:px-16">
       <div className="mx-auto w-full">
-        <section className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <section className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-6xl md:leading-[0.96]">
-              Vi kan hjelpe deg med:
+              Vi kan hjelpe dere med:
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Tjenestene er organisert som en samlet digital markedsforing-modell, med tydelige roller og en mer
+              Tjenestene er organisert som en samlet modell for digital markedsføring, med tydelige roller og en mer
               strategisk arbeidsform.
             </p>
           </div>

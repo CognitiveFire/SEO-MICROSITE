@@ -113,8 +113,8 @@ export function ServiceGridHero({ cards }: { cards: ServiceCard[] }) {
   const nextPosition = heroPositions[(activeIndex + 2) % cards.length] ?? heroPositions[1];
 
   return (
-    <div className="apriil-editorial-surface relative overflow-hidden rounded-[16px] border border-apriil-line/70 p-4 md:p-5">
-      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <div className="apriil-editorial-surface relative overflow-hidden rounded-[16px] border border-apriil-line/70 p-4 md:p-5 md:min-h-[560px]">
+      <svg className="absolute inset-0 z-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         <line x1="10" y1="17" x2="90" y2="17" stroke="rgba(23,23,23,0.12)" strokeWidth="0.18" />
         <line x1="10" y1="53" x2="90" y2="53" stroke="rgba(23,23,23,0.12)" strokeWidth="0.18" />
         <line x1="10" y1="85" x2="90" y2="85" stroke="rgba(23,23,23,0.12)" strokeWidth="0.18" />
@@ -151,25 +151,25 @@ export function ServiceGridHero({ cards }: { cards: ServiceCard[] }) {
       </svg>
 
       <motion.div
-        className="absolute left-1/2 top-1/2 z-10 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-apriil-line/80 bg-[#f6f4ef] text-xs font-semibold uppercase tracking-[0.12em] text-apriil-dark"
+        className="absolute left-1/2 top-1/2 z-30 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-apriil-dark/70 bg-[#f8f7f4] text-xs font-semibold uppercase tracking-[0.12em] text-apriil-dark shadow-[0_0_0_6px_rgba(248,247,244,0.75)]"
         animate={{ scale: [1, 1.03, 1] }}
         transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
       >
         Clarity
       </motion.div>
 
-      <div className="relative grid h-full grid-cols-1 gap-3 md:grid-cols-3 md:gap-4">
+      <div className="relative z-10 grid h-full grid-cols-1 gap-3 md:grid-cols-3 md:gap-4">
         {cards.map((card, index) => {
           const isActive = index === activeIndex;
           return (
             <motion.div
               key={card.title}
-              className={`min-h-[118px] rounded-[8px] border px-4 py-4 text-left ${
+              className={`min-h-[118px] rounded-[8px] border px-4 py-4 text-left shadow-[0_4px_10px_rgba(23,23,23,0.04)] ${
                 isActive ? "border-apriil-dark bg-[#e8e4db]" : "border-apriil-line/70 bg-[#dfddd6]"
               }`}
               style={{
-                gridColumn: index === 6 ? "2 / span 1" : "auto",
-                gridRow: index === 6 ? "3" : "auto",
+                gridColumn: index === 6 ? "2 / span 1" : index === 7 ? "1 / span 1" : index === 8 ? "3 / span 1" : "auto",
+                gridRow: index >= 6 ? "3" : "auto",
               }}
               animate={isActive ? { y: [0, -2, 0] } : { y: 0 }}
               transition={{ duration: 3.6, repeat: isActive ? Infinity : 0, ease: "easeInOut" }}
