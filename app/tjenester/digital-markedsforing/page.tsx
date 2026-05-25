@@ -15,16 +15,31 @@ export const metadata: Metadata = {
 };
 
 const serviceLinks = [
-  { title: "SEO", href: "/tjenester/digital-markedsforing/seo" },
-  { title: "Betalt media", href: "/tjenester/digital-markedsforing/betalt-media" },
-  { title: "Analyse", href: "/tjenester/digital-markedsforing/analyse" },
-  { title: "Video", href: "/tjenester/digital-markedsforing/video" },
-  { title: "Sosiale medier", href: "/tjenester/digital-markedsforing/sosiale-medier" },
-  { title: "Programmatic", href: "/tjenester/digital-markedsforing/programmatic" },
-  { title: "DOOH", href: "/tjenester/digital-markedsforing/dooh" },
-  { title: "Podcast", href: "/tjenester/digital-markedsforing/podcast" },
-  { title: "Creator network", href: "/tjenester/digital-markedsforing/creator-network" },
+  {
+    title: "SEO - sokemotoroptimalisering",
+    body: "Vi bygger synlighet gjennom tydelig innholdsstruktur, teknisk kvalitet og prioriteringer som stotter kommersielle mal.",
+    href: "/tjenester/digital-markedsforing/seo",
+  },
+  {
+    title: "Paid media",
+    body: "Vi styrer medieinvesteringer med klar kanalrolle, bedre signalgrunnlag og tydelig kommersiell retning.",
+    href: "/tjenester/digital-markedsforing/betalt-media",
+  },
+  {
+    title: "Analytics og intelligence",
+    body: "Vi omsetter data til beslutningsgrunnlag som gir ledelse og team tryggere prioriteringer over tid.",
+    href: "/tjenester/digital-markedsforing/analyse",
+  },
 ];
+
+function ServiceMarker() {
+  return (
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M24 8C24 17.3 30.7 24 40 24C30.7 24 24 30.7 24 40C24 30.7 17.3 24 8 24C17.3 24 24 17.3 24 8Z" fill="#ff4e1a" />
+      <path d="M24 14C24 20.7 28.3 25 35 25C28.3 25 24 29.3 24 36C24 29.3 19.7 25 13 25C19.7 25 24 20.7 24 14Z" fill="#ff8e66" fillOpacity="0.5" />
+    </svg>
+  );
+}
 
 export default function DigitalMarkedsforingPage() {
   return (
@@ -86,19 +101,22 @@ export default function DigitalMarkedsforingPage() {
         />
       </SectionContainer>
 
-      <SectionContainer
-        eyebrow="Tjenester"
-        title="Fagomrader i samme struktur"
-        intro="Hver disiplin har en tydelig rolle i den samlede vekstmodellen."
-      >
-        <div className="grid gap-x-10 gap-y-5 md:grid-cols-3">
+      <SectionContainer eyebrow="Tjenester" title="Vi kan hjelpe deg med:" intro="Tre kjerneomrader under Digital markedsforing.">
+        <div className="grid gap-5 lg:grid-cols-3">
           {serviceLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="border-b border-apriil-line/75 pb-4 text-lg font-medium tracking-[-0.02em] text-apriil-dark transition hover:text-apriil-muted"
+              className="rounded-[6px] bg-[#dfddd6] px-8 py-10 text-center transition hover:bg-[#d9d6ce]"
             >
-              {item.title}
+              <div className="mx-auto mb-6 flex w-fit justify-center">
+                <ServiceMarker />
+              </div>
+              <h3 className="text-[41px] text-[clamp(1.8rem,2.6vw,2.35rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-apriil-dark">
+                {item.title}
+              </h3>
+              <p className="mx-auto mt-5 max-w-[38ch] text-base leading-8 text-[#2d2d2b]">{item.body}</p>
+              <p className="mt-6 text-[32px] text-[1.95rem] font-semibold tracking-[-0.02em] text-apriil-dark">Les mer</p>
             </Link>
           ))}
         </div>

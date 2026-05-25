@@ -5,19 +5,14 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const serviceMenu = [
+  { href: "/tjenester/digital-markedsforing", label: "Digital markedsforing" },
   { href: "/tjenester/digital-markedsforing/seo", label: "SEO" },
   { href: "/tjenester/digital-markedsforing/betalt-media", label: "Betalt media" },
-  { href: "/tjenester/digital-markedsforing/analyse", label: "Analyse" },
-  { href: "/tjenester/digital-markedsforing/video", label: "Video" },
-  { href: "/tjenester/digital-markedsforing/sosiale-medier", label: "Sosiale medier" },
-  { href: "/tjenester/digital-markedsforing/programmatic", label: "Programmatic" },
-  { href: "/tjenester/digital-markedsforing/dooh", label: "DOOH" },
-  { href: "/tjenester/digital-markedsforing/podcast", label: "Podcast" },
-  { href: "/tjenester/digital-markedsforing/creator-network", label: "Creator network" },
+  { href: "/tjenester/digital-markedsforing/analyse", label: "Analyse og innsikt" },
 ];
 
 const primaryNav = [
-  { href: "/tjenester/digital-markedsforing", label: "Digital markedsforing" },
+  { href: "/tjenester/digital-markedsforing", label: "Tjenester" },
   { href: "/signal-room", label: "Signal Room" },
   { href: "/results", label: "Case" },
   { href: "/about", label: "Om Apriil" },
@@ -64,16 +59,16 @@ export function SiteHeader() {
                   isDigitalArea ? "text-apriil-dark" : "text-apriil-muted hover:text-apriil-dark"
                 }`}
               >
-                Digital markedsforing
+                Tjenester
                 <span className="text-xs">▾</span>
               </Link>
               <div
-                className={`absolute left-0 top-[calc(100%+14px)] w-[620px] rounded-[16px] border border-apriil-line/80 bg-[#f8f7f4] p-5 transition ${
+                className={`absolute left-0 top-[calc(100%+14px)] w-[360px] rounded-[16px] border border-apriil-line/80 bg-[#f8f7f4] p-5 transition ${
                   submenuOpen ? "visible opacity-100" : "invisible opacity-0"
                 }`}
               >
-                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-apriil-muted">Tjenester</p>
-                <div className="grid grid-cols-3 gap-x-4 gap-y-3">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-apriil-muted">Digital markedsforing</p>
+                <div className="grid grid-cols-1 gap-y-3">
                   {serviceMenu.map((item) => {
                     const active = pathname === item.href;
                     return (

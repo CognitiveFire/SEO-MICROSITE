@@ -15,21 +15,18 @@ export function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-apriil-muted">Digital markedsforing</p>
             <nav className="mt-4 grid gap-3 text-sm text-apriil-muted">
+              <Link href="/tjenester/digital-markedsforing" className="transition hover:text-apriil-dark">Oversikt</Link>
               <Link href="/tjenester/digital-markedsforing/seo" className="transition hover:text-apriil-dark">SEO</Link>
               <Link href="/tjenester/digital-markedsforing/betalt-media" className="transition hover:text-apriil-dark">Betalt media</Link>
-              <Link href="/tjenester/digital-markedsforing/analyse" className="transition hover:text-apriil-dark">Analyse</Link>
-              <Link href="/tjenester/digital-markedsforing/video" className="transition hover:text-apriil-dark">Video</Link>
-              <Link href="/tjenester/digital-markedsforing/sosiale-medier" className="transition hover:text-apriil-dark">Sosiale medier</Link>
+              <Link href="/tjenester/digital-markedsforing/analyse" className="transition hover:text-apriil-dark">Analyse og innsikt</Link>
             </nav>
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-apriil-muted">Kanaler</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-apriil-muted">Ressurser</p>
             <nav className="mt-4 grid gap-3 text-sm text-apriil-muted">
-              <Link href="/tjenester/digital-markedsforing/programmatic" className="transition hover:text-apriil-dark">Programmatic</Link>
-              <Link href="/tjenester/digital-markedsforing/dooh" className="transition hover:text-apriil-dark">DOOH</Link>
-              <Link href="/tjenester/digital-markedsforing/podcast" className="transition hover:text-apriil-dark">Podcast</Link>
-              <Link href="/tjenester/digital-markedsforing/creator-network" className="transition hover:text-apriil-dark">Creator network</Link>
+              <Link href="/ekspertklinikken" className="transition hover:text-apriil-dark">Live clinic</Link>
+              <Link href="/clarity-growth-framework-whitepaper.html" className="transition hover:text-apriil-dark">How it works PDF</Link>
               <Link href="/contact" className="transition hover:text-apriil-dark">Kontakt</Link>
             </nav>
           </div>
