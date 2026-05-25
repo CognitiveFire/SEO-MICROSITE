@@ -11,6 +11,7 @@ import {
   CaseStudyToggle,
   type CaseStudyContent,
 } from "@/components/digital-markedsforing/case-study-toggle";
+import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 
 export const metadata: Metadata = {
   title: "Digital markedsføring | Apriil",
@@ -176,12 +177,7 @@ const caseStudies: CaseStudyContent[] = [
       "Innsikten var at internasjonale søk på norske fjorder ofte handler om planlegging, sammenligning og oppdagelse, ikke direkte søk etter operatør eller rute.",
     approach:
       "Derfor flyttet vi modellen fra transaksjonelle søk til visibility across the full search journey. Apriil etablerte en structured content ecosystem med answer engine optimisation, pillar pages, supporting content clusters, internlenking, FAQ-strukturer og schema implementation. Strategien bandt early-stage travel demand from inspiration to booking i ett sammenkoblet synlighetssystem.",
-    outcomes: [
-      "sterkere internasjonal synlighet utenfor branded søk",
-      "klarere booking pathways mellom innhold og transaksjon",
-      "forbedret thematic authority i engelskspråklige markeder",
-      "økt qualified traffic og bedre discoverability",
-    ],
+    outcomes: [],
   },
   {
     id: "oppskrift",
@@ -230,6 +226,7 @@ export default function DigitalMarkedsforingPage() {
         </section>
 
         <section id="metodikk" className="border-t border-apriil-line/70 pt-12">
+          <ServiceSubmenu />
           <div>
             <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
               Markedsføring fungerer best når retningen er tydelig.
