@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   CaseStudyGrid,
   MethodologyGrid,
@@ -20,12 +21,6 @@ const serviceCards: ServiceCard[] = [
     body: "Vi bygger synlighet gjennom teknisk kvalitet, riktig innholdsstruktur og tydelige kommersielle prioriteringer.",
     href: "/tjenester/digital-markedsforing/seo",
     icon: "seo",
-  },
-  {
-    title: "Betalt media",
-    body: "Vi styrer betalt media med klar kanalrolle, bedre signalgrunnlag og tydelig retning for investeringene.",
-    href: "/tjenester/digital-markedsforing/performance",
-    icon: "paid",
   },
   {
     title: "Programmatisk annonsering",
@@ -178,25 +173,38 @@ export default function DigitalMarkedsforingPage() {
   return (
     <main className="w-full px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
       <div className="w-full space-y-20 md:space-y-24">
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Kommersiell intelligens
+              Strategisk systemvisualisering
             </p>
-            <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-6xl md:leading-[0.94]">
-              Klarhet før kanalvalg.
+            <h1 className="mt-5 max-w-xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.9]">
+              Kanalmiksen organiseres rundt kommersiell effekt.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Apriil bygger kommersiell effekt ved å koordinere signaler,
-              synlighet og investeringer på tvers av kanaler. Vi prioriterer
-              etter forretningsverdi, ikke etter aktivitet.
+            <p className="mt-6 max-w-xl text-lg leading-9 text-apriil-muted md:text-[1.22rem]">
+              Visualiseringen viser hvordan ulike kanaler aktiveres, tones ned
+              og re-prioriteres ut fra forretningsbehov, ikke kanalpreferanser.
             </p>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted">
-              Resultatet er en sammenkoblet arbeidsmodell der hvert tiltak har
-              en tydelig rolle i vekstreisen.
-            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#2d2824]"
+              >
+                Book strategisamtale
+              </Link>
+              <a
+                href="#serviceokosystem"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-line/80 px-7 py-3 text-sm font-semibold text-apriil-dark transition hover:bg-[#f7f5f1]"
+              >
+                Se serviceøkosystem
+              </a>
+            </div>
           </div>
-          <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 p-7 md:p-9">
+          <StrategicSystemAnimation />
+        </section>
+
+        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-apriil-muted">
               Strategisk posisjonering
             </p>
@@ -214,6 +222,19 @@ export default function DigitalMarkedsforingPage() {
                 Vi optimaliserer kontinuerlig mot kommersiell effekt.
               </li>
             </ul>
+          </div>
+          <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 p-7 md:p-9">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
+              Kommersiell intelligens
+            </p>
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+              Klarhet før kanalvalg.
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
+              Apriil bygger kommersiell effekt ved å koordinere signaler,
+              synlighet og investeringer på tvers av kanaler. Vi prioriterer
+              etter forretningsverdi, ikke etter aktivitet.
+            </p>
           </div>
         </section>
 
@@ -278,23 +299,7 @@ export default function DigitalMarkedsforingPage() {
           </div>
         </section>
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Strategisk systemvisualisering
-            </p>
-            <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Kanalmiksen organiseres rundt kommersiell effekt.
-            </h2>
-            <p className="mt-6 max-w-xl text-base leading-8 text-apriil-muted md:text-lg">
-              Visualiseringen viser hvordan ulike kanaler aktiveres, tones ned og
-              re-prioriteres ut fra forretningsbehov, ikke kanalpreferanser.
-            </p>
-          </div>
-          <StrategicSystemAnimation />
-        </section>
-
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <section id="serviceokosystem" className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               Serviceøkosystem
