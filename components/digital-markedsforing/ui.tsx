@@ -529,6 +529,110 @@ export function SignalFlowVisual() {
   );
 }
 
+const strategicNodes = [
+  { label: "SEO", x: 50, y: 10 },
+  { label: "Betalt media", x: 72, y: 18 },
+  { label: "Sosiale medier", x: 85, y: 36 },
+  { label: "Video", x: 85, y: 60 },
+  { label: "Creator network", x: 70, y: 80 },
+  { label: "Programmatic", x: 50, y: 88 },
+  { label: "Podcast", x: 30, y: 80 },
+  { label: "DOOH", x: 15, y: 60 },
+  { label: "Display", x: 15, y: 36 },
+  { label: "Analyse", x: 28, y: 18 },
+];
+
+export function StrategicSystemAnimation() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const tick = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % strategicNodes.length);
+    }, 2200);
+
+    return () => window.clearInterval(tick);
+  }, []);
+
+  const secondaryIndex = (activeIndex + 3) % strategicNodes.length;
+
+  return (
+    <div className="apriil-editorial-surface relative h-[540px] overflow-hidden rounded-[18px] border border-apriil-line/70 p-6 md:h-[620px] md:p-8">
+      <svg
+        className="absolute inset-0 h-full w-full"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <line x1="6" y1="16" x2="94" y2="16" stroke="rgba(23,23,23,0.08)" strokeWidth="0.16" />
+        <line x1="6" y1="50" x2="94" y2="50" stroke="rgba(23,23,23,0.08)" strokeWidth="0.16" />
+        <line x1="6" y1="84" x2="94" y2="84" stroke="rgba(23,23,23,0.08)" strokeWidth="0.16" />
+        <line x1="20" y1="8" x2="20" y2="92" stroke="rgba(23,23,23,0.06)" strokeWidth="0.16" />
+        <line x1="50" y1="8" x2="50" y2="92" stroke="rgba(23,23,23,0.06)" strokeWidth="0.16" />
+        <line x1="80" y1="8" x2="80" y2="92" stroke="rgba(23,23,23,0.06)" strokeWidth="0.16" />
+
+        {strategicNodes.map((node, index) => {
+          const isActive = index === activeIndex || index === secondaryIndex;
+          return (
+            <motion.line
+              key={node.label}
+              x1="50"
+              y1="50"
+              x2={node.x}
+              y2={node.y}
+              stroke={isActive ? "rgba(255,78,26,0.72)" : "rgba(23,23,23,0.18)"}
+              strokeWidth={isActive ? "0.34" : "0.24"}
+              strokeDasharray={isActive ? "1.3 1.1" : "0"}
+              animate={{ opacity: isActive ? 1 : 0.42 }}
+              transition={{ duration: 0.55 }}
+            />
+          );
+        })}
+
+        <motion.circle
+          cx="50"
+          cy="50"
+          r="2"
+          fill="rgba(23,23,23,0.6)"
+          animate={{ r: [2, 2.3, 2] }}
+          transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </svg>
+
+      <div className="relative z-10 h-full">
+        {strategicNodes.map((node, index) => {
+          const isActive = index === activeIndex || index === secondaryIndex;
+          return (
+            <motion.div
+              key={node.label}
+              className="absolute -translate-x-1/2 -translate-y-1/2"
+              style={{ left: `${node.x}%`, top: `${node.y}%` }}
+              animate={{ opacity: isActive ? 1 : 0.55, y: isActive ? -1 : 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span
+                className={`inline-flex rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] md:text-[11px] ${
+                  isActive
+                    ? "border-[#ff4e1a]/50 bg-[#fff4ef] text-apriil-dark"
+                    : "border-apriil-line/80 bg-[#f7f5f1] text-apriil-muted"
+                }`}
+              >
+                {node.label}
+              </span>
+            </motion.div>
+          );
+        })}
+
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="rounded-full border border-[#ff4e1a]/55 bg-[#fff4ef] px-5 py-2 text-center">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">Prioritert utfall</p>
+            <p className="mt-1 text-sm font-semibold tracking-[-0.02em] text-apriil-dark md:text-base">Kommersiell effekt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function MethodologyGrid({ steps }: { steps: Step[] }) {
   return (
     <ol className="relative border-l border-apriil-line/80 pl-7 md:pl-10">
