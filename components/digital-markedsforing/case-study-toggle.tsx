@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export type CaseStudyContent = {
   id: string;
@@ -19,9 +19,14 @@ export type CaseStudyContent = {
 
 export function CaseStudyToggle({ studies }: { studies: CaseStudyContent[] }) {
   const [activeId, setActiveId] = useState(studies[0]?.id ?? "");
+  const [expanded, setExpanded] = useState(false);
   const activeStudy =
     studies.find((study) => study.id === activeId) ?? studies[0];
   const hasMultipleStudies = studies.length > 1;
+
+  useEffect(() => {
+    setExpanded(false);
+  }, [activeId]);
 
   if (!activeStudy) {
     return null;
@@ -62,22 +67,42 @@ export function CaseStudyToggle({ studies }: { studies: CaseStudyContent[] }) {
           <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
             {activeStudy.title}
           </h2>
-          <p className="mt-4 text-base leading-8 text-apriil-muted">
+          <p className="mt-4 text-base leading-7 text-apriil-muted md:text-[1.02rem]">
             {activeStudy.subtitle}
           </p>
 
           <p className="mt-6 text-base leading-8 text-apriil-muted">
             {activeStudy.intro}
           </p>
-          <p className="mt-5 text-base leading-8 text-apriil-muted">
-            {activeStudy.challenge}
-          </p>
-          <p className="mt-5 border-t border-apriil-line/80 pt-4 text-base leading-8 text-apriil-muted">
-            {activeStudy.insight}
-          </p>
-          <p className="mt-5 text-base leading-8 text-apriil-muted">
-            {activeStudy.approach}
-          </p>
+
+          <div className="mt-6 rounded-[12px] border border-apriil-line/80 bg-[#f8f7f4] p-4 md:p-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">
+              Strategisk innsikt
+            </p>
+            <p className="mt-2 text-sm leading-7 text-apriil-muted">
+              {activeStudy.insight}
+            </p>
+          </div>
+
+          {expanded ? (
+            <div className="mt-5 space-y-5 border-t border-apriil-line/80 pt-5">
+              <p className="text-base leading-8 text-apriil-muted">
+                {activeStudy.challenge}
+              </p>
+              <p className="text-base leading-8 text-apriil-muted">
+                {activeStudy.approach}
+              </p>
+            </div>
+          ) : null}
+
+          <button
+            type="button"
+            onClick={() => setExpanded((value) => !value)}
+            className="mt-5 inline-flex items-center rounded-full border border-apriil-line/80 bg-[#f8f7f4] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-apriil-dark transition hover:border-apriil-dark/40"
+            aria-expanded={expanded}
+          >
+            {expanded ? "Vis mindre" : "Les mer"}
+          </button>
 
           <ul className="mt-6 space-y-3 text-base leading-8 text-apriil-muted">
             {activeStudy.outcomes.map((outcome) => (

@@ -32,8 +32,9 @@ export default function BetaltMediaSubPage() {
               Betalt media som støtter hele vekstmodellen.
             </h1>
             <p className="mt-7 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-              Betalt media skal støtte og forsterke etterspørsel - ikke skape
-              aktivitet for aktivitetens skyld.
+              Betalt media skal støtte og forsterke etterspørsel pa tvers av
+              search, shopping, social og video - ikke skape aktivitet for
+              aktivitetens skyld.
             </p>
             <HeroActions />
           </div>
@@ -43,6 +44,7 @@ export default function BetaltMediaSubPage() {
             </p>
             <ul className="mt-6 space-y-4 text-base leading-8 text-apriil-muted">
               <li className="border-t border-apriil-line/80 pt-4">Search advertising</li>
+              <li className="border-t border-apriil-line/80 pt-4">Shopping advertising</li>
               <li className="border-t border-apriil-line/80 pt-4">Social advertising</li>
               <li className="border-t border-apriil-line/80 pt-4">YouTube</li>
               <li className="border-t border-apriil-line/80 pt-4">Retargeting and attribution</li>
@@ -95,7 +97,7 @@ export default function BetaltMediaSubPage() {
       <SectionContainer
         eyebrow="Case"
         title="Eksempler pa styrket mediestyring"
-        intro="Anonymiserte oppdrag med fokus pa bedre beslutningskvalitet."
+        intro="Anonymiserte oppdrag med fokus pa bedre beslutningskvalitet i search, shopping, social og video."
       >
         <CaseStudyGrid
           studies={[
@@ -114,7 +116,8 @@ export default function BetaltMediaSubPage() {
               title: "Detaljhandel med regionale forskjeller",
               situation: "Stor variasjon i effekt mellom markeder.",
               challenge: "Mangler i signalgrunnlag for god budsjettallokering.",
-              actions: "Bygget ny mediemiksmodell med faste review-punkter.",
+              actions:
+                "Bygget ny mediemiksmodell med faste review-punkter, inkludert tydelig shopping-prioritering basert pa margin og sortiment.",
               result:
                 "Tydeligere regional prioritering og bedre kommersiell kontroll.",
             },

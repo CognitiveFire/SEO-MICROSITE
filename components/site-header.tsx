@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/tjenester/digital-markedsforing", label: "Tjenester" },
-  { href: "/results", label: "Arbeider" },
-  { href: "/about", label: "Om Apriil" },
-  { href: "/contact", label: "Kontakt oss" },
+  { label: "Tjenester" },
+  { label: "Arbeider" },
+  { label: "Om Apriil" },
+  { label: "Kontakt oss" },
 ];
 
 export function SiteHeader() {
@@ -26,13 +26,14 @@ export function SiteHeader() {
 
           <nav className="hidden items-center gap-9 lg:flex">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
+              <a
+                key={item.label}
+                href="#"
+                onClick={(event) => event.preventDefault()}
                 className="text-[17px] font-medium tracking-[-0.01em] text-apriil-dark transition hover:opacity-70"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -81,14 +82,17 @@ export function SiteHeader() {
             className="mt-4 grid gap-px overflow-hidden rounded-[14px] border border-apriil-line/80 bg-apriil-line/80 lg:hidden"
           >
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
+              <a
+                key={item.label}
+                href="#"
+                onClick={(event) => {
+                  event.preventDefault();
+                  setIsOpen(false);
+                }}
                 className="bg-[#f8f7f4] px-5 py-3 text-base font-medium text-apriil-dark"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </nav>
         ) : null}

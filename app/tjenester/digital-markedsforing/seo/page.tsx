@@ -1,194 +1,306 @@
 import type { Metadata } from "next";
-import {
-  CaseStudyGrid,
-  HeroActions,
-  MethodologyGrid,
-  PricingGrid,
-  SectionContainer,
-} from "@/components/digital-markedsforing/ui";
-import { CtaPillLink } from "@/components/cta-pill";
+import Image from "next/image";
+import Link from "next/link";
+import { CtaPillAnchor, CtaPillLink } from "@/components/cta-pill";
 import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 
 export const metadata: Metadata = {
   title: "SEO | Digital markedsforing | Apriil",
   description:
-    "SEO-radgivning fra Apriil for virksomheter som trenger bedre synlighet, tydeligere prioriteringer og et sterkere kommersielt beslutningsgrunnlag.",
+    "SEO-radgivning fra Apriil for virksomheter som trenger tydelig struktur, sterkere synlighet og bedre kommersielle prioriteringer over tid.",
 };
+
+const faqItems = [
+  {
+    question: "Hvor lang tid tar SEO?",
+    answer:
+      "SEO er langsiktig arbeid. De fleste virksomheter ser gradvis utvikling over tid, men tempoet avhenger av konkurranse, historikk og marked.",
+  },
+  {
+    question: "Hvordan påvirker AI sokesynlighet?",
+    answer:
+      "AI endrer hvordan informasjon presenteres og oppsummeres. Derfor blir struktur, tydelighet og autoritet viktigere i hvordan innhold oppdages.",
+  },
+  {
+    question: "Hvordan males effekt?",
+    answer:
+      "Vi vurderer synlighet, trafikk, søkeatferd og kommersielle signaler samlet for a forsta hva som faktisk bidrar til verdi.",
+  },
+  {
+    question: "Kan SEO kombineres med annonsering?",
+    answer:
+      "Ja. SEO og betalt distribusjon fungerer ofte best nar de stotter hverandre med tydelige roller i samme beslutningsmodell.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
+const pricing = [
+  {
+    name: "Fundament",
+    price: "Fra NOK 16 000 / mnd",
+    body: "For virksomheter som trenger bedre struktur, teknisk kvalitet og tydeligere organisk synlighet.",
+    bullets: ["Teknisk kvalitet", "Innholdsstruktur", "Maanedlig prioritering"],
+  },
+  {
+    name: "Vekst",
+    price: "Fra NOK 29 000 / mnd",
+    body: "For virksomheter som ønsker lopende SEO-radgivning, innholdsutvikling og kontinuerlig forbedring.",
+    bullets: ["Lopende rådgivning", "Tverrfaglig samspill", "Kontinuerlig oppfolging"],
+    featured: true,
+  },
+  {
+    name: "Strategisk",
+    price: "Fra NOK 52 000 / mnd",
+    body: "For komplekse nettsteder, flere markeder eller behov for tett strategisk oppfolging.",
+    bullets: ["Lederforankret retning", "Komplekse strukturer", "Langsiktig synlighetsarbeid"],
+  },
+];
+
+function SeoStructureVisual() {
+  return (
+    <div className="apriil-editorial-surface relative overflow-hidden rounded-[18px] border border-apriil-line/70 p-6 md:p-8">
+      <svg className="h-[420px] w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="8" y1="16" x2="92" y2="16" stroke="rgba(23,23,23,0.1)" strokeWidth="0.18" />
+        <line x1="8" y1="50" x2="92" y2="50" stroke="rgba(23,23,23,0.1)" strokeWidth="0.18" />
+        <line x1="8" y1="84" x2="92" y2="84" stroke="rgba(23,23,23,0.1)" strokeWidth="0.18" />
+        <line x1="22" y1="8" x2="22" y2="92" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
+        <line x1="52" y1="8" x2="52" y2="92" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
+        <line x1="82" y1="8" x2="82" y2="92" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
+
+        <path d="M12 72C23 69 29 60 42 57C55 54 62 45 75 42C82 40 86 34 90 24" fill="none" stroke="rgba(23,23,23,0.34)" strokeWidth="0.34" strokeDasharray="1.3 1" />
+        <path d="M12 80C27 74 34 70 45 67C58 63 67 59 76 50C84 43 87 39 90 31" fill="none" stroke="rgba(255,65,1,0.52)" strokeWidth="0.34" strokeDasharray="1.2 1" />
+
+        <circle cx="20" cy="70" r="1.7" fill="rgba(23,23,23,0.56)" />
+        <circle cx="42" cy="57" r="1.7" fill="rgba(23,23,23,0.56)" />
+        <circle cx="63" cy="47" r="1.7" fill="rgba(23,23,23,0.56)" />
+        <circle cx="90" cy="28" r="2" fill="rgba(255,65,1,0.72)" />
+      </svg>
+
+      <div className="mt-5 grid grid-cols-2 gap-3 text-[11px] uppercase tracking-[0.12em] text-apriil-muted">
+        <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">content clusters</span>
+        <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">search pathways</span>
+        <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">ai extraction</span>
+        <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">discoverability</span>
+      </div>
+    </div>
+  );
+}
 
 export default function SeoSubPage() {
   return (
-    <main>
-      <div className="px-6 pt-8 md:px-10 md:pt-10 xl:px-16">
-        <ServiceSubmenu />
-      </div>
+    <main className="w-full px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
-      <section className="px-6 py-20 md:px-10 xl:px-16">
-        <div className="grid gap-10 border-t border-apriil-line/70 pt-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+      <div className="w-full space-y-20 md:space-y-24">
+        <ServiceSubmenu />
+
+        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-2 lg:items-start">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               SEO
             </p>
-            <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.92]">
-              SEO som bygger langsiktig synlighet og etterspørsel.
+            <h1 className="mt-5 max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.9]">
+              SEO som bygger langsiktig synlighet.
             </h1>
-            <p className="mt-7 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-              SEO handler om synlighet, tillit og etterspørsel - ikke bare
-              rangeringer.
+            <p className="mt-7 max-w-2xl text-lg leading-9 text-apriil-muted md:text-[1.22rem]">
+              God synlighet handler om a vaere tydelig nar mennesker soker,
+              vurderer og sammenligner.
             </p>
-            <HeroActions />
+            <div className="mt-8 flex flex-wrap gap-3">
+              <CtaPillLink href="#kontakt-skjema">Snakk med oss</CtaPillLink>
+              <CtaPillAnchor href="#hvordan-vi-jobber">Se hvordan vi jobber</CtaPillAnchor>
+            </div>
           </div>
-          <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 p-7 md:p-9">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Strategisk posisjonering
-            </p>
-            <ul className="mt-6 space-y-4 text-base leading-8 text-apriil-muted">
-              <li className="border-t border-apriil-line/80 pt-4">Discoverability</li>
-              <li className="border-t border-apriil-line/80 pt-4">AI visibility</li>
-              <li className="border-t border-apriil-line/80 pt-4">Information structure</li>
-              <li className="border-t border-apriil-line/80 pt-4">Authority and schema</li>
-            </ul>
+          <SeoStructureVisual />
+        </section>
+
+        <section id="hvordan-vi-jobber" className="rounded-[18px] border border-[#2e2a26] bg-[#1b1917] px-6 py-14 md:px-10 md:py-16">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#bfb8ae]">
+                Hvordan vi jobber
+              </p>
+              <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-[#f2efe9] md:text-6xl md:leading-[0.96]">
+                Synlighet bygges ikke tilfeldig.
+              </h2>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-[#c8c2b8] md:text-lg">
+                SEO handler ikke bare om rangeringer. Det handler om struktur,
+                tydelighet og a vaere synlig nar mennesker faktisk leter etter
+                svar.
+              </p>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-[#c8c2b8]">
+                I tett samspill med
+                <Link href="/tjenester/digital-markedsforing/betalt-media" className="ml-1 border-b border-[#ff4101]/70 text-[#f2efe9] hover:text-white">
+                  Betalt media
+                </Link>
+                og
+                <Link href="/tjenester/digital-markedsforing/analyse" className="ml-1 border-b border-[#ff4101]/70 text-[#f2efe9] hover:text-white">
+                  Analyse
+                </Link>
+                blir prioritering enklere og tiltakene mer konsistente over tid.
+              </p>
+            </div>
+
+            <ol className="space-y-4">
+              {[
+                ["01", "Forsta sokeatferd"],
+                ["02", "Kartlegge synlighet"],
+                ["03", "Strukturere innhold"],
+                ["04", "Bygge autoritet"],
+                ["05", "Forbedre over tid"],
+              ].map(([num, title]) => (
+                <li
+                  key={title}
+                  className="grid gap-3 rounded-[12px] border border-[#3a3530] bg-[#221f1c] p-4 md:grid-cols-[auto_1fr] md:items-center md:gap-5"
+                >
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#ff4101]/55 bg-[#2c241f] text-[11px] font-semibold tracking-[0.1em] text-[#f3eee8]">
+                    {num}
+                  </span>
+                  <p className="text-lg font-semibold tracking-[-0.02em] text-[#f3eee8]">{title}</p>
+                </li>
+              ))}
+            </ol>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <SectionContainer
-        eyebrow="Arbeidsmodell"
-        title="Fire arbeidsspor for varig synlighet"
-        intro="Vi jobber med teknikk, innhold, tillitssignaler og prioritering i en samlet modell."
-      >
-        <MethodologyGrid
-          steps={[
-            {
-              label: "Omrade 1",
-              title: "Teknisk kvalitet",
-              points: [
-                "Indeksering",
-                "Informasjonsstruktur",
-                "Internlenking",
-                "Lastetid",
-              ],
-            },
-            {
-              label: "Omrade 2",
-              title: "Innholdsarkitektur",
-              points: [
-                "Tema",
-                "Sokesvar",
-                "Beslutningsnaere sider",
-                "Rolle i kundereisen",
-              ],
-            },
-            {
-              label: "Omrade 3",
-              title: "Synlighet i svarflater",
-              points: [
-                "Schema",
-                "Kildetydelighet",
-                "Autoritetssignaler",
-                "AI-svar",
-              ],
-            },
-            {
-              label: "Omrade 4",
-              title: "Kontinuerlig styring",
-              points: ["Maling", "Prioritering", "Review", "Oppfolging"],
-            },
-          ]}
-        />
-      </SectionContainer>
+        <section className="border-t border-apriil-line/70 pt-12">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
+                Case-eksempel
+              </p>
+              <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+                Fra fragmentert innhold til tydelig synlighet
+              </h2>
+              <p className="mt-6 text-base leading-8 text-apriil-muted">
+                En stor norsk virksomhet hadde produsert mye innhold over tid,
+                men manglet tydelig struktur mellom informasjon, intensjon og
+                kommersielle behov.
+              </p>
+              <p className="mt-5 text-base leading-8 text-apriil-muted">
+                Ved a bygge en tydelig content hierarchy, styrke intern lenking
+                og prioritere sokebehov naermere beslutning, ble synligheten mer
+                robust i baade tradisjonelle sokeflater og AI-drevne svar.
+              </p>
+              <ul className="mt-6 space-y-3 text-base leading-8 text-apriil-muted">
+                <li className="border-t border-apriil-line/80 pt-3">sterkere synlighet pa kommersielle sok</li>
+                <li className="border-t border-apriil-line/80 pt-3">okende organisk trafikk med hoyere relevans</li>
+                <li className="border-t border-apriil-line/80 pt-3">bedre kvalitet pa henvendelser og prioriteringer</li>
+              </ul>
+            </div>
+            <div className="apriil-editorial-surface overflow-hidden rounded-[16px] border border-apriil-line/70">
+              <div className="relative h-[440px] w-full md:h-[560px]">
+                <Image
+                  src="/apriil-digital/assets/Fjord-case study.png"
+                  alt="Anonymisert visualisering av strukturert synlighetsarbeid"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 52vw, 100vw"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <SectionContainer
-        eyebrow="Case"
-        title="Tre typiske SEO-oppdrag"
-        intro="Anonymiserte case fra virksomheter med ulike modenhetsniva."
-      >
-        <CaseStudyGrid
-          studies={[
-            {
-              title: "B2B i endring",
-              situation: "Nytt tjenestetilbud uten tydelig synlighet i sok.",
-              challenge:
-                "Mye innhold, men lav sammenheng mellom tema og kommersielle mal.",
-              actions:
-                "Bygget ny informasjonsarkitektur og tydeligere sidehierarki.",
-              result:
-                "Bedre kvalitet i inbound-henvendelser og klarere prioritering av innholdsarbeid.",
-            },
-            {
-              title: "Nasjonal tjenesteaktør",
-              situation:
-                "Sterk merkevare, men svake organiske innganger i kritiske segmenter.",
-              challenge: "Ulike team arbeidet uten felles SEO-prinsipper.",
-              actions:
-                "Etablerte felles rammeverk for struktur, innhold og måling.",
-              result:
-                "Mer konsistent synlighet og tydeligere beslutningsgrunnlag for ledelsen.",
-            },
-            {
-              title: "Kompleks nettsideportefolje",
-              situation: "Mange domener og overlappende sider.",
-              challenge: "Fragmentert autoritet og utydelig tematisk struktur.",
-              actions:
-                "Konsoliderte struktur og prioriterte viktigste forretningsomrader.",
-              result:
-                "Mer robust synlighet og enklere styring av videre utvikling.",
-            },
-          ]}
-        />
-      </SectionContainer>
+        <section className="border-t border-apriil-line/70 pt-12">
+          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
+                Prisniva
+              </p>
+              <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+                SEO-retainere med tydelig scope.
+              </h2>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
+                Prisnivaet reflekterer ambisjon, kompleksitet og behov for
+                oppfolging - ikke abonnementspakker.
+              </p>
+            </div>
 
-      <SectionContainer
-        eyebrow="Retainere"
-        title="Strategiske SEO-engasjement"
-        intro="Prisnivaene reflekterer ambisjonsniva og kompleksitet, ikke pakkelogikk."
-      >
-        <PricingGrid
-          tiers={[
-            {
-              name: "Fundament",
-              price: "Fra NOK 16 000 / mnd",
-              audience:
-                "For virksomheter som trenger en tydelig SEO-retning og et stabilt grunnlag.",
-              focus: [
-                "Maanedlig prioritering",
-                "Faglig review og anbefalinger",
-                "Lopende teknisk oppfolging",
-              ],
-            },
-            {
-              name: "Vekst",
-              price: "Fra NOK 29 000 / mnd",
-              audience:
-                "For virksomheter med hoyere tempo og behov for tettere faglig styring.",
-              focus: [
-                "Utvidet analyse av signaler",
-                "Tettere oppfolging pa tvers av fag",
-                "Strategisk sparring i lederrytme",
-              ],
-              recommended: true,
-            },
-            {
-              name: "Strategisk",
-              price: "Fra NOK 52 000 / mnd",
-              audience:
-                "For organisasjoner med flere markeder, stor kompleksitet og hoye krav til styring.",
-              focus: [
-                "Lederforankret prioriteringsmodell",
-                "Utvidet scope for svarflater og AI-synlighet",
-                "Langsiktig synlighetsstrategi",
-              ],
-            },
-          ]}
-        />
-      </SectionContainer>
+            <div className="space-y-4">
+              {pricing.map((tier) => (
+                <article
+                  key={tier.name}
+                  className={`rounded-[14px] border p-6 md:p-7 ${
+                    tier.featured
+                      ? "border-[#ff4101]/40 bg-[#fff5ef]"
+                      : "border-apriil-line/80 bg-[#f8f7f4]"
+                  }`}
+                >
+                  <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
+                    <div>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">
+                        {tier.name}
+                      </p>
+                      <p className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-apriil-dark">
+                        {tier.price}
+                      </p>
+                    </div>
+                    {tier.featured ? (
+                      <span className="inline-flex rounded-full border border-[#ff4101]/45 bg-[#fff1e8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-apriil-dark">
+                        Anbefalt
+                      </span>
+                    ) : null}
+                  </div>
+                  <p className="mt-5 text-base leading-8 text-apriil-muted">{tier.body}</p>
+                  <ul className="mt-5 space-y-2 text-sm leading-7 text-apriil-muted">
+                    {tier.bullets.map((bullet) => (
+                      <li key={bullet} className="border-t border-apriil-line/70 pt-2">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      <SectionContainer title="Vil dere styrke synlighet med tydeligere prioriteringer?">
-        <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:flex md:items-center md:justify-between md:gap-8">
-          <CtaPillLink href="#kontakt-skjema" className="md:ml-auto">
-            Snakk med oss
-          </CtaPillLink>
-        </div>
-      </SectionContainer>
+        <section className="rounded-[18px] border border-[#2e2a26] bg-[#1b1917] px-6 py-14 md:px-10 md:py-16">
+          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#bfb8ae]">
+                FAQ
+              </p>
+              <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-[#f2efe9] md:text-6xl md:leading-[0.96]">
+                Sporsmal vi ofte far for oppstart.
+              </h2>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-[#c8c2b8]">
+                Svarene er skrevet for baade mennesker og sokeflater, med tydelig
+                struktur og naturlig sprak.
+              </p>
+            </div>
+
+            <div className="divide-y divide-[#3a3530] rounded-[14px] border border-[#3a3530] bg-[#211e1b]">
+              {faqItems.map((item) => (
+                <details key={item.question} className="group px-6 py-5">
+                  <summary className="cursor-pointer list-none pr-8 text-lg font-semibold tracking-[-0.02em] text-[#f2efe9]">
+                    {item.question}
+                  </summary>
+                  <p className="mt-3 text-base leading-8 text-[#c8c2b8]">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

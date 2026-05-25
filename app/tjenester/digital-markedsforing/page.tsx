@@ -32,28 +32,10 @@ const serviceCards: ServiceCard[] = [
     icon: "paid",
   },
   {
-    title: "Search Advertising",
-    body: "Søkeannonsering strukturert for tydelig etterspørselsfangst og kontroll på lønnsomhet.",
-    href: "/tjenester/digital-markedsforing/search-advertising",
+    title: "Performance",
+    body: "Tverrkanal prioritering av budsjett, kanalrolle og kommersiell effekt.",
+    href: "/tjenester/digital-markedsforing/performance",
     icon: "paid",
-  },
-  {
-    title: "Shopping ads",
-    body: "Produktannonsering med fokus på datakvalitet, feed-struktur og kommersiell prioritering.",
-    href: "/tjenester/digital-markedsforing/shopping-ads",
-    icon: "paid",
-  },
-  {
-    title: "Sosiale medier",
-    body: "Innhold og distribusjon tilpasset kanal og målgruppe.",
-    href: "/tjenester/digital-markedsforing/sosiale-medier",
-    icon: "social",
-  },
-  {
-    title: "Video",
-    body: "Innhold som forklarer, bygger tillit og forsterker synlighet.",
-    href: "/tjenester/digital-markedsforing/video",
-    icon: "video",
   },
   {
     title: "Creator network",
@@ -78,12 +60,6 @@ const serviceCards: ServiceCard[] = [
     body: "Strategisk synlighet i det fysiske rommet.",
     href: "/tjenester/digital-markedsforing/dooh",
     icon: "dooh",
-  },
-  {
-    title: "Display",
-    body: "Digital distribusjon brukt for å styrke synlighet og rekkevidde.",
-    href: "/tjenester/digital-markedsforing/display",
-    icon: "display",
   },
   {
     title: "Analyse og intelligence",
@@ -251,47 +227,6 @@ export default function DigitalMarkedsforingPage() {
             </div>
           </div>
           <StrategicSystemAnimation />
-        </section>
-
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <div>
-            <h2 className="mt-2 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              De fleste virksomheter har nok kanaler. Utfordringen er retning.
-            </h2>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-              Mange markedsføringsmiljøer jobber i separate spor. SEO
-              optimaliseres isolert. Kampanjer kjøres uten tydelig sammenheng
-              med etterspørsel. Rapportering viser aktivitet, men ikke
-              nødvendigvis hva som faktisk påvirker vekst.
-            </p>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-              Apriil jobber annerledes.
-            </p>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-              Vi jobber med analyse, synlighet, innhold og distribusjon samlet.
-              Det gjør det enklere å prioritere riktig og skape tydeligere
-              sammenheng mellom aktivitet og effekt.
-            </p>
-          </div>
-          <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 p-7 md:p-9">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Kommersiell intelligens
-            </p>
-            <ul className="mt-5 space-y-4 text-base leading-8 text-apriil-muted">
-              <li className="border-t border-apriil-line/80 pt-4">
-                visibility across the full search journey
-              </li>
-              <li className="border-t border-apriil-line/80 pt-4">
-                answer engine optimisation
-              </li>
-              <li className="border-t border-apriil-line/80 pt-4">
-                topical authority
-              </li>
-              <li className="border-t border-apriil-line/80 pt-4">
-                structured content ecosystem
-              </li>
-            </ul>
-          </div>
         </section>
 
         <section id="metodikk" className="border-t border-apriil-line/70 pt-12">
