@@ -31,9 +31,9 @@ type Capability = {
   body: string;
 };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0 },
+const reveal = {
+  hidden: { opacity: 0, y: 8 },
+  visible: { opacity: 1, y: 0 },
 };
 
 export function SectionContainer({
@@ -50,12 +50,14 @@ export function SectionContainer({
   id?: string;
 }) {
   return (
-    <section id={id} className="px-6 py-16 md:px-10 xl:px-16">
-      <div className="mx-auto max-w-6xl border-t border-apriil-line/70 pt-14">
-        {eyebrow ? <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e63322]">{eyebrow}</p> : null}
-        <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl">{title}</h2>
-        {intro ? <p className="mt-4 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">{intro}</p> : null}
-        <div className="mt-10">{children}</div>
+    <section id={id} className="px-6 py-20 md:px-10 md:py-24 xl:px-16 xl:py-28">
+      <div className="mx-auto max-w-6xl border-t border-apriil-line/70 pt-12 md:pt-14">
+        {eyebrow ? <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">{eyebrow}</p> : null}
+        <h2 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-6xl md:leading-[0.97]">
+          {title}
+        </h2>
+        {intro ? <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">{intro}</p> : null}
+        <div className="mt-12 md:mt-14">{children}</div>
       </div>
     </section>
   );
@@ -63,172 +65,140 @@ export function SectionContainer({
 
 export function HeroActions() {
   return (
-    <div className="mt-10 flex flex-wrap gap-3">
+    <div className="mt-10 flex flex-wrap items-center gap-3">
       <Link
         href="/contact"
-        className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#e63322] px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#cf2d1d]"
+        className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-apriil-ink-soft"
       >
         Snakk med oss
       </Link>
       <a
-        href="#hvordan-vi-jobber"
-        className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-line px-7 py-3 text-sm font-semibold text-apriil-dark transition hover:-translate-y-0.5"
+        href="#metodikk"
+        className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-line/80 px-7 py-3 text-sm font-semibold text-apriil-dark transition hover:bg-white/65"
       >
-        Se hvordan vi jobber
+        Se metodikken
       </a>
     </div>
   );
 }
 
 export function EcosystemVisual() {
-  const nodes = [
-    "SEO",
-    "Betalt media",
-    "Analyse",
-    "Video",
-    "Sosiale medier",
-    "Programmatic",
-    "DOOH",
-    "Podcast",
-    "Creator network",
-  ];
-
   return (
-    <div className="relative h-[380px] rounded-[26px] border border-apriil-line/70 bg-white p-8 shadow-[0_24px_60px_rgba(23,23,23,0.08)]">
-      <motion.div
-        className="absolute inset-0"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        {nodes.map((label, index) => {
-          const angle = (index / nodes.length) * Math.PI * 2;
-          const x = 50 + Math.cos(angle) * 37;
-          const y = 50 + Math.sin(angle) * 37;
+    <div className="apriil-editorial-surface relative h-[360px] overflow-hidden rounded-[26px] border border-apriil-line/70 p-8">
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="10" y1="18" x2="90" y2="18" stroke="rgba(23,23,23,0.16)" strokeWidth="0.2" />
+        <line x1="10" y1="50" x2="90" y2="50" stroke="rgba(23,23,23,0.14)" strokeWidth="0.2" />
+        <line x1="10" y1="82" x2="90" y2="82" stroke="rgba(23,23,23,0.16)" strokeWidth="0.2" />
+        <line x1="20" y1="10" x2="20" y2="90" stroke="rgba(23,23,23,0.12)" strokeWidth="0.2" />
+        <line x1="50" y1="10" x2="50" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.2" />
+        <line x1="80" y1="10" x2="80" y2="90" stroke="rgba(23,23,23,0.12)" strokeWidth="0.2" />
 
-          return (
-            <motion.div
-              key={label}
-              className="absolute"
-              style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}
-              animate={{ y: [0, -3, 0] }}
-              transition={{ duration: 4.5 + index * 0.2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <span className="inline-flex rounded-full border border-apriil-line bg-[#fbfaf7] px-3 py-1 text-xs font-medium text-apriil-dark">
-                {label}
-              </span>
-            </motion.div>
-          );
-        })}
+        <motion.path
+          d="M12 76 C 26 68, 35 52, 50 50 C 64 48, 72 34, 88 22"
+          fill="none"
+          stroke="rgba(23,23,23,0.45)"
+          strokeWidth="0.32"
+          strokeDasharray="2.2 1.2"
+          initial={{ strokeDashoffset: 0 }}
+          animate={{ strokeDashoffset: -8 }}
+          transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+        />
+      </svg>
 
-        <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          {nodes.map((_, index) => {
-            const angle = (index / nodes.length) * Math.PI * 2;
-            const x = 50 + Math.cos(angle) * 37;
-            const y = 50 + Math.sin(angle) * 37;
-            return <line key={index} x1="50" y1="50" x2={x} y2={y} stroke="rgba(23,23,23,0.15)" strokeWidth="0.22" />;
-          })}
-        </svg>
-      </motion.div>
-
-      <motion.div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#e63322]/30 bg-[#fff6f4] px-6 py-2.5 text-sm font-semibold text-[#b42318]"
-        animate={{ scale: [1, 1.02, 1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        Vekst
-      </motion.div>
+      <div className="relative h-full">
+        {[
+          { label: "Analyse", x: "10%", y: "72%" },
+          { label: "Synlighet", x: "34%", y: "56%" },
+          { label: "Markedsforing", x: "53%", y: "48%" },
+          { label: "Prioritering", x: "72%", y: "34%" },
+          { label: "Beslutning", x: "84%", y: "20%" },
+        ].map((node) => (
+          <div key={node.label} className="absolute" style={{ left: node.x, top: node.y }}>
+            <span className="inline-flex rounded-full border border-apriil-line/80 bg-[#f6f4ef] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-apriil-dark">
+              {node.label}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export function SignalFlowVisual() {
   return (
-    <div className="relative h-[380px] rounded-[26px] border border-apriil-line/70 bg-white p-8 shadow-[0_24px_60px_rgba(23,23,23,0.08)]">
+    <div className="apriil-editorial-surface relative h-[360px] overflow-hidden rounded-[26px] border border-apriil-line/70 p-8">
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M10 22 C 28 26, 34 44, 50 44 C 67 44, 72 24, 90 28" fill="none" stroke="rgba(23,23,23,0.22)" strokeWidth="0.25" />
-        <path d="M10 50 C 30 55, 35 70, 54 68 C 72 66, 74 45, 90 46" fill="none" stroke="rgba(23,23,23,0.14)" strokeWidth="0.25" />
-        <path d="M10 74 C 28 74, 35 86, 49 86 C 67 86, 74 67, 90 66" fill="none" stroke="rgba(23,23,23,0.16)" strokeWidth="0.25" />
+        <path d="M8 24 C 23 21, 31 36, 45 36 C 60 36, 66 21, 92 20" fill="none" stroke="rgba(23,23,23,0.25)" strokeWidth="0.26" />
+        <path d="M8 52 C 24 58, 36 63, 49 60 C 63 57, 72 42, 92 44" fill="none" stroke="rgba(23,23,23,0.2)" strokeWidth="0.26" />
+        <path d="M8 80 C 24 76, 33 88, 49 86 C 67 84, 77 71, 92 67" fill="none" stroke="rgba(23,23,23,0.18)" strokeWidth="0.26" />
+        <motion.circle
+          cx="10"
+          cy="24"
+          r="1.2"
+          fill="rgba(23,23,23,0.55)"
+          animate={{ cx: [10, 44, 88], cy: [24, 36, 20] }}
+          transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
+        />
       </svg>
 
-      <motion.div
-        className="absolute left-[11%] top-[21%] rounded-full border border-apriil-line bg-[#fbfaf7] px-3 py-1 text-xs font-medium text-apriil-muted"
-        animate={{ x: [0, 8, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        Fragmenterte signaler
-      </motion.div>
-      <motion.div
-        className="absolute left-[37%] top-[45%] rounded-full border border-apriil-line bg-[#fbfaf7] px-3 py-1 text-xs font-medium text-apriil-muted"
-        animate={{ x: [0, -6, 0] }}
-        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        Validerte data
-      </motion.div>
-      <motion.div
-        className="absolute left-[62%] top-[65%] rounded-full border border-apriil-line bg-[#fbfaf7] px-3 py-1 text-xs font-medium text-apriil-muted"
-        animate={{ x: [0, 6, 0] }}
-        transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
-      >
-        Beslutningsflyt
-      </motion.div>
-      <motion.div
-        className="absolute right-[9%] top-[35%] rounded-full border border-[#e63322]/30 bg-[#fff6f4] px-4 py-1.5 text-xs font-semibold text-[#b42318]"
-        animate={{ y: [0, -4, 0] }}
-        transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        Prioritering med klarhet
-      </motion.div>
+      <div className="relative grid h-full content-between">
+        <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-apriil-muted">Signalniva</p>
+        <div className="space-y-2 text-sm text-apriil-muted">
+          <p>Fragmenterte datapunkter</p>
+          <p>Validerte signaler</p>
+          <p>Strategisk beslutningsgrunnlag</p>
+        </div>
+      </div>
     </div>
   );
 }
 
 export function MethodologyGrid({ steps }: { steps: Step[] }) {
   return (
-    <div className="grid gap-4 lg:grid-cols-2">
+    <ol className="relative border-l border-apriil-line/80 pl-7 md:pl-10">
       {steps.map((step, index) => (
-        <motion.article
+        <motion.li
           key={step.title}
-          variants={fadeUp}
+          variants={reveal}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45, delay: index * 0.08 }}
-          className="rounded-[18px] border border-apriil-line/80 bg-white p-6"
+          className="relative pb-12 last:pb-0"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#e63322]">{step.label}</p>
-          <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-apriil-dark">{step.title}</h3>
-          <ul className="mt-5 grid gap-2 text-sm leading-7 text-apriil-muted md:text-base">
+          <span className="absolute -left-[39px] top-0 inline-flex h-5 w-5 items-center justify-center rounded-full border border-apriil-line/80 bg-[#f7f6f3] text-[11px] font-semibold text-apriil-dark md:-left-[43px]">
+            {index + 1}
+          </span>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-apriil-muted">{step.label}</p>
+          <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-apriil-dark md:text-[2rem]">{step.title}</h3>
+          <ul className="mt-5 grid gap-2 text-base leading-7 text-apriil-muted md:grid-cols-2">
             {step.points.map((point) => (
-              <li key={point} className="flex items-start gap-3 border-t border-apriil-line/60 pt-2.5">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#e63322]" aria-hidden="true" />
-                <span>{point}</span>
+              <li key={point} className="border-t border-apriil-line/70 pt-2.5">
+                {point}
               </li>
             ))}
           </ul>
-        </motion.article>
+        </motion.li>
       ))}
-    </div>
+    </ol>
   );
 }
 
 export function CapabilityGrid({ capabilities }: { capabilities: Capability[] }) {
   return (
-    <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid gap-x-10 gap-y-7 md:grid-cols-2">
       {capabilities.map((item, index) => (
         <motion.article
           key={item.title}
-          variants={fadeUp}
+          variants={reveal}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.4, delay: index * 0.04 }}
-          className="group rounded-[16px] border border-apriil-line/80 bg-white p-5 transition hover:-translate-y-0.5"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.35, delay: index * 0.03 }}
+          className="border-t border-apriil-line/80 pt-5"
         >
-          <h3 className="text-lg font-semibold tracking-[-0.02em] text-apriil-dark">{item.title}</h3>
-          <p className="mt-2 text-sm leading-7 text-apriil-muted">{item.body}</p>
-          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#a96436]">Se mer →</p>
+          <h3 className="text-xl font-semibold tracking-[-0.03em] text-apriil-dark">{item.title}</h3>
+          <p className="mt-3 max-w-xl text-base leading-8 text-apriil-muted">{item.body}</p>
         </motion.article>
       ))}
     </div>
@@ -237,35 +207,35 @@ export function CapabilityGrid({ capabilities }: { capabilities: Capability[] })
 
 export function CaseStudyGrid({ studies }: { studies: CaseStudy[] }) {
   return (
-    <div className="grid gap-4 lg:grid-cols-3">
+    <div className="grid gap-8 lg:grid-cols-3">
       {studies.map((study, index) => (
         <motion.article
           key={study.title}
-          variants={fadeUp}
+          variants={reveal}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.45, delay: index * 0.08 }}
-          className="rounded-[18px] border border-apriil-line/80 bg-white p-6"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.4, delay: index * 0.06 }}
+          className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-6"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#e63322]">Case</p>
-          <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-apriil-dark">{study.title}</h3>
-          <dl className="mt-5 space-y-3 text-sm leading-7">
-            <div>
-              <dt className="font-semibold text-apriil-dark">Situasjon</dt>
-              <dd className="text-apriil-muted">{study.situation}</dd>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-apriil-muted">Case</p>
+          <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-apriil-dark">{study.title}</h3>
+          <dl className="mt-6 space-y-4 text-sm leading-7">
+            <div className="border-t border-apriil-line/70 pt-3">
+              <dt className="font-semibold uppercase tracking-[0.08em] text-apriil-dark">Situasjon</dt>
+              <dd className="mt-1 text-apriil-muted">{study.situation}</dd>
             </div>
-            <div>
-              <dt className="font-semibold text-apriil-dark">Utfordring</dt>
-              <dd className="text-apriil-muted">{study.challenge}</dd>
+            <div className="border-t border-apriil-line/70 pt-3">
+              <dt className="font-semibold uppercase tracking-[0.08em] text-apriil-dark">Problem</dt>
+              <dd className="mt-1 text-apriil-muted">{study.challenge}</dd>
             </div>
-            <div>
-              <dt className="font-semibold text-apriil-dark">Tiltak</dt>
-              <dd className="text-apriil-muted">{study.actions}</dd>
+            <div className="border-t border-apriil-line/70 pt-3">
+              <dt className="font-semibold uppercase tracking-[0.08em] text-apriil-dark">Tiltak</dt>
+              <dd className="mt-1 text-apriil-muted">{study.actions}</dd>
             </div>
-            <div>
-              <dt className="font-semibold text-apriil-dark">Resultat</dt>
-              <dd className="text-apriil-dark">{study.result}</dd>
+            <div className="border-t border-apriil-line/70 pt-3">
+              <dt className="font-semibold uppercase tracking-[0.08em] text-apriil-dark">Resultat</dt>
+              <dd className="mt-1 text-apriil-dark">{study.result}</dd>
             </div>
           </dl>
         </motion.article>
@@ -276,37 +246,34 @@ export function CaseStudyGrid({ studies }: { studies: CaseStudy[] }) {
 
 export function PricingGrid({ tiers }: { tiers: PricingTier[] }) {
   return (
-    <div className="grid gap-5 lg:grid-cols-3">
+    <div className="divide-y divide-apriil-line/80 overflow-hidden rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4]">
       {tiers.map((tier, index) => (
         <motion.article
           key={tier.name}
-          variants={fadeUp}
+          variants={reveal}
           initial="hidden"
-          whileInView="show"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.45, delay: index * 0.08 }}
-          className={
-            tier.recommended
-              ? "rounded-[24px] border border-[#e63322] bg-[#fff6f4] p-7 shadow-[0_16px_44px_rgba(230,51,34,0.12)]"
-              : "rounded-[24px] border border-apriil-line/80 bg-white p-7 shadow-[0_14px_40px_rgba(23,23,23,0.06)]"
-          }
+          transition={{ duration: 0.4, delay: index * 0.05 }}
+          className="grid gap-6 px-6 py-8 md:grid-cols-[0.9fr_1.1fr_1fr] md:items-start"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e63322]">{tier.name}</p>
-          <p className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-apriil-dark">{tier.price}</p>
-          <p className="mt-4 text-sm leading-7 text-apriil-muted">{tier.audience}</p>
-          <ul className="mt-5 grid gap-2.5 text-sm leading-7 text-apriil-muted">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-apriil-muted">{tier.name}</p>
+            <p className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-[2.2rem]">{tier.price}</p>
+            {tier.recommended ? (
+              <p className="mt-3 inline-flex rounded-full border border-apriil-line/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-apriil-dark">
+                Anbefalt
+              </p>
+            ) : null}
+          </div>
+          <p className="text-base leading-8 text-apriil-muted">{tier.audience}</p>
+          <ul className="space-y-2 text-sm leading-7 text-apriil-muted">
             {tier.focus.map((item) => (
-              <li key={item} className="flex items-start gap-2.5 border-t border-apriil-line/60 pt-2.5">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#e63322]" aria-hidden="true" />
-                <span>{item}</span>
+              <li key={item} className="border-t border-apriil-line/70 pt-2">
+                {item}
               </li>
             ))}
           </ul>
-          {tier.recommended ? (
-            <p className="mt-6 rounded-full border border-[#e63322]/30 bg-[#fff0ec] px-3 py-1 text-xs font-semibold text-[#b42318]">
-              Anbefalt for de fleste virksomheter
-            </p>
-          ) : null}
         </motion.article>
       ))}
     </div>

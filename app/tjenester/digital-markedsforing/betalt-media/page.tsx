@@ -9,23 +9,22 @@ import {
 } from "@/components/digital-markedsforing/ui";
 
 export const metadata: Metadata = {
-  title: "Betalt media | Digital markedsføring | Apriil",
+  title: "Betalt media | Digital markedsforing | Apriil",
   description:
-    "Apriil leverer betalt media-rådgivning som styrker etterspørsel, lønnsomhet og beslutningskvalitet i en samlet vekstmodell.",
+    "Apriil leverer betalt media-radgivning for virksomheter som trenger bedre investeringsstyring, tydeligere kanalroller og sterkere kommersiell effekt.",
 };
 
 export default function BetaltMediaSubPage() {
   return (
     <main>
-      <section className="px-6 py-16 md:px-10 xl:px-16">
+      <section className="px-6 py-20 md:px-10 xl:px-16">
         <div className="mx-auto max-w-6xl border-t border-apriil-line/70 pt-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e63322]">Betalt media</p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-6xl md:leading-[0.95]">
-            Betalt media som støtter hele vekstmodellen.
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">Betalt media</p>
+          <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.92]">
+            Investeringer med tydelig kommersiell rolle.
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-            Betalt media skal forsterke etterspørsel og akselerere gode beslutninger. Ikke kompensere for svak retning.
-            Vi kobler investeringer, landingssider og signalanalyse i ett helhetlig styringsløp.
+          <p className="mt-7 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
+            Betalt media skal forsterke riktig ettersporsel, ikke kompensere for svak retning.
           </p>
           <HeroActions />
         </div>
@@ -33,66 +32,25 @@ export default function BetaltMediaSubPage() {
 
       <SectionContainer
         eyebrow="Arbeidsmodell"
-        title="Kvalitet i signalene avgjør avkastningen."
-        intro="Vi vurderer betalt media i sammenheng med søkeatferd, innholdsstruktur og attribusjonskvalitet."
+        title="Tre styringsspor for betalt media"
+        intro="Kanalvalg, budskap og beslutningskvalitet ma ses i sammenheng."
       >
         <MethodologyGrid
           steps={[
             {
-              label: "Fokus 1",
-              title: "Aktivering",
-              points: ["Søkeannonsering", "Sosiale annonser", "YouTube og video"],
+              label: "Spor 1",
+              title: "Rolleavklaring",
+              points: ["Kanalfunksjon", "Maalgrupper", "Investeringsrammer", "Forventet effekt"],
             },
             {
-              label: "Fokus 2",
-              title: "Sammenheng",
-              points: ["Retargeting med rolleforståelse", "Landingsside-alignment", "Budskapskonsistens"],
+              label: "Spor 2",
+              title: "Gjennomforing",
+              points: ["Kreativ retning", "Landingsside-samspill", "Testdesign", "Budsjettfordeling"],
             },
             {
-              label: "Fokus 3",
-              title: "Kvalitet",
-              points: ["Attribusjonskvalitet", "Signalanalyse", "Kontinuerlig prioritering"],
-            },
-          ]}
-        />
-      </SectionContainer>
-
-      <SectionContainer
-        eyebrow="Prisnivåer"
-        title="Retainere for virksomheter som vil styre investeringene strategisk."
-      >
-        <PricingGrid
-          tiers={[
-            {
-              name: "Aktivere",
-              price: "Fra NOK 18 000 / mnd",
-              audience: "For virksomheter som vil etablere en tydelig og effektiv grunnmodell.",
-              focus: [
-                "Rammeverk for kanalbruk og budsjett",
-                "Månedlig analyse og anbefalt retning",
-                "Felles prioriteringer mellom marked og ledelse",
-              ],
-            },
-            {
-              name: "Skalere",
-              price: "Fra NOK 34 000 / mnd",
-              audience: "For virksomheter som vil løfte tempo, kvalitet og kommersiell effekt.",
-              focus: [
-                "Løpende optimalisering på tvers av kanaler",
-                "Styrket attribusjon og bedre beslutningsgrunnlag",
-                "Tett rådgivning mot tiltak og investeringer",
-              ],
-              recommended: true,
-            },
-            {
-              name: "Integrere",
-              price: "Fra NOK 58 000 / mnd",
-              audience: "For større organisasjoner med komplekse porteføljer og høy endringstakt.",
-              focus: [
-                "Strategisk styring av flere kanaler og markeder",
-                "Lederrettet rapportering og prioriteringsstøtte",
-                "Integrert analyse av vekstdrivere på tvers av fagområder",
-              ],
+              label: "Spor 3",
+              title: "Kommersiell vurdering",
+              points: ["Signalkvalitet", "Attribusjon", "Prioritering", "Lopende justering"],
             },
           ]}
         />
@@ -100,43 +58,85 @@ export default function BetaltMediaSubPage() {
 
       <SectionContainer
         eyebrow="Case"
-        title="Eksempler på kommersiell effekt fra integrert mediestyring."
+        title="Eksempler pa styrket mediestyring"
+        intro="Anonymiserte oppdrag med fokus pa bedre beslutningskvalitet."
       >
         <CaseStudyGrid
           studies={[
             {
               title: "Norsk B2B-selskap",
-              situation: "God trafikk, men utydelig sammenheng mellom investering og inntekt.",
-              challenge: "For mange tiltak uten tydelig prioritering.",
-              actions: "Strammet kanalroller, forbedret landingsside-logikk og styrket attribusjon.",
-              result: "23 % bedre kostnad per kvalifisert lead og høyere beslutningstrygghet i ledelsen.",
+              situation: "Hoy aktivitet i paid, men svak sammenheng med faktiske salgsresultater.",
+              challenge: "Uklart hvilke kampanjer som burde skaleres eller stoppes.",
+              actions: "Etablerte kanalroller, ny evalueringslogikk og tydelig prioriteringsrytme.",
+              result: "Mer presis investeringstakt og hoyere trygghet i lederbeslutninger.",
             },
             {
-              title: "Nasjonal detaljhandel",
-              situation: "Sterk kampanjeaktivitet, men varierende effekt mellom regioner.",
-              challenge: "Mangler i signalgrunnlag for budsjettfordeling.",
-              actions: "Etablerte ny mediemiksmodell med tydelig testregime.",
-              result: "18 % høyere medieeffektivitet og mer presis regional prioritering.",
+              title: "Detaljhandel med regionale forskjeller",
+              situation: "Stor variasjon i effekt mellom markeder.",
+              challenge: "Mangler i signalgrunnlag for god budsjettallokering.",
+              actions: "Bygget ny mediemiksmodell med faste review-punkter.",
+              result: "Tydeligere regional prioritering og bedre kommersiell kontroll.",
             },
             {
-              title: "Tjenestevirksomhet i vekst",
-              situation: "Høy avhengighet av ett kanalspor.",
-              challenge: "Sårbarhet i etterspørselsfangst.",
-              actions: "Bygget flerkanals modell med tydelig samspill mellom søk, sosial og video.",
-              result: "30 % økning i robust etterspørsel med lavere volatilitet i resultatene.",
+              title: "Vekstorientert tjenestevirksomhet",
+              situation: "Hoy avhengighet av fa kanalspor.",
+              challenge: "Saarbarhet i ettersporselsfangst og lav robusthet i modellen.",
+              actions: "Utvidet kanalstruktur med tydelig samspill mellom sokespor, sosial og video.",
+              result: "Mer stabil ettersporsel og bedre styring av medieportefoljen.",
             },
           ]}
         />
       </SectionContainer>
 
-      <SectionContainer title="Når medieinvesteringer styres av klar retning, øker effekten.">
-        <div className="rounded-[24px] border border-apriil-line/80 bg-white p-7 shadow-[0_14px_36px_rgba(23,23,23,0.06)] md:flex md:items-center md:justify-between md:gap-8">
+      <SectionContainer
+        eyebrow="Retainere"
+        title="Betalt media som strategisk partnerskap"
+      >
+        <PricingGrid
+          tiers={[
+            {
+              name: "Aktivere",
+              price: "Fra NOK 18 000 / mnd",
+              audience: "For virksomheter som vil etablere en tydelig paid-modell med riktig kanalbruk.",
+              focus: [
+                "Rammeverk for prioritering",
+                "Maanedlig analyse og anbefalinger",
+                "Styringspunkt mellom marked og ledelse",
+              ],
+            },
+            {
+              name: "Skalere",
+              price: "Fra NOK 34 000 / mnd",
+              audience: "For virksomheter som trenger hoyere tempo og sterkere tverrfaglig styring.",
+              focus: [
+                "Lopende justering pa tvers av kanaler",
+                "Bedre attribusjonsgrunnlag",
+                "Tettere radgivning i beslutningsprosesser",
+              ],
+              recommended: true,
+            },
+            {
+              name: "Integrere",
+              price: "Fra NOK 58 000 / mnd",
+              audience: "For storre organisasjoner med komplekse markeder og hoye krav til governance.",
+              focus: [
+                "Strategisk styring av flere kanaler",
+                "Lederrettet rapportering",
+                "Integrert analyse av kommersielle drivere",
+              ],
+            },
+          ]}
+        />
+      </SectionContainer>
+
+      <SectionContainer title="Nar medieinvesteringer styres med klarhet, blir effekten mer robust.">
+        <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:flex md:items-center md:justify-between md:gap-8">
           <p className="max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-            Vi hjelper dere å bruke betalt media som en integrert vekstmotor, ikke som en separat aktivitet.
+            Vi kan gi en konkret vurdering av dagens mediemodell og anbefale neste prioritering.
           </p>
           <Link
             href="/contact"
-            className="mt-5 inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#e63322] px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#cf2d1d] md:mt-0"
+            className="mt-5 inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-apriil-ink-soft md:mt-0"
           >
             Snakk med oss
           </Link>

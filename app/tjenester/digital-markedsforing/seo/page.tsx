@@ -9,95 +9,126 @@ import {
 } from "@/components/digital-markedsforing/ui";
 
 export const metadata: Metadata = {
-  title: "SEO | Digital markedsføring | Apriil",
+  title: "SEO | Digital markedsforing | Apriil",
   description:
-    "SEO-rådgivning fra Apriil som styrker langsiktig synlighet, etterspørsel og beslutningskvalitet på tvers av søkeflater.",
+    "SEO-radgivning fra Apriil for virksomheter som trenger bedre synlighet, tydeligere prioriteringer og et sterkere kommersielt beslutningsgrunnlag.",
 };
 
 export default function SeoSubPage() {
   return (
     <main>
-      <section className="px-6 py-16 md:px-10 xl:px-16">
+      <section className="px-6 py-20 md:px-10 xl:px-16">
         <div className="mx-auto max-w-6xl border-t border-apriil-line/70 pt-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e63322]">SEO</p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-6xl md:leading-[0.95]">
-            SEO som bygger langsiktig synlighet og etterspørsel.
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">SEO</p>
+          <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.92]">
+            Synlighet som styrker ettersporsel over tid.
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-            Vi jobber med synlighet der beslutninger faktisk tas: i søk, i AI-drevne svarflater og i målgruppens egne vurderingsprosesser.
-            Målet er å bli tydelig valgt, ikke bare bli teknisk funnet.
+          <p className="mt-7 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
+            SEO handler om mer enn rangering. Vi bygger struktur og innhold som gjor det enklere a bli valgt.
           </p>
           <HeroActions />
         </div>
       </section>
 
       <SectionContainer
-        eyebrow="Perspektiv"
-        title="Synlighet handler ikke bare om Google."
-        intro="SEO i dag er et arbeid med struktur, troverdighet og tydelige svar. Når informasjonen er godt organisert, blir den enklere å velge."
+        eyebrow="Arbeidsmodell"
+        title="Fire arbeidsspor for varig synlighet"
+        intro="Vi jobber med teknikk, innhold, tillitssignaler og prioritering i en samlet modell."
       >
         <MethodologyGrid
           steps={[
             {
-              label: "Område 1",
-              title: "Teknisk fundament",
-              points: ["Stabil indeksering", "Ryddig informasjonsstruktur", "Sømløs internlenking"],
+              label: "Omrade 1",
+              title: "Teknisk kvalitet",
+              points: ["Indeksering", "Informasjonsstruktur", "Internlenking", "Lastetid"],
             },
             {
-              label: "Område 2",
+              label: "Omrade 2",
               title: "Innholdsarkitektur",
-              points: ["Tematisk tydelighet", "Svar som matcher søkeatferd", "Beslutningsnære landingssider"],
+              points: ["Tema", "Sokesvar", "Beslutningsnaere sider", "Rolle i kundereisen"],
             },
             {
-              label: "Område 3",
+              label: "Omrade 3",
               title: "Synlighet i svarflater",
-              points: ["Schema og kontekst", "Autoritetssignaler", "AI- og answer-synlighet"],
+              points: ["Schema", "Kildetydelighet", "Autoritetssignaler", "AI-svar"],
             },
             {
-              label: "Område 4",
-              title: "Kontinuerlig forbedring",
-              points: ["Løpende måling", "Kvalitetsjusteringer", "Kommersiell prioritering"],
+              label: "Omrade 4",
+              title: "Kontinuerlig styring",
+              points: ["Maling", "Prioritering", "Review", "Oppfolging"],
             },
           ]}
         />
       </SectionContainer>
 
       <SectionContainer
-        eyebrow="Prisnivåer"
-        title="Rådgivning som følger ambisjonsnivå og kompleksitet."
-        intro="Våre SEO-avtaler er bygget som strategiske samarbeid med tydelig ansvar og styringsrytme."
+        eyebrow="Case"
+        title="Tre typiske SEO-oppdrag"
+        intro="Anonymiserte case fra virksomheter med ulike modenhetsniva."
+      >
+        <CaseStudyGrid
+          studies={[
+            {
+              title: "B2B i endring",
+              situation: "Nytt tjenestetilbud uten tydelig synlighet i sok.",
+              challenge: "Mye innhold, men lav sammenheng mellom tema og kommersielle mal.",
+              actions: "Bygget ny informasjonsarkitektur og tydeligere sidehierarki.",
+              result: "Bedre kvalitet i inbound-henvendelser og klarere prioritering av innholdsarbeid.",
+            },
+            {
+              title: "Nasjonal tjenesteaktør",
+              situation: "Sterk merkevare, men svake organiske innganger i kritiske segmenter.",
+              challenge: "Ulike team arbeidet uten felles SEO-prinsipper.",
+              actions: "Etablerte felles rammeverk for struktur, innhold og måling.",
+              result: "Mer konsistent synlighet og tydeligere beslutningsgrunnlag for ledelsen.",
+            },
+            {
+              title: "Kompleks nettsideportefolje",
+              situation: "Mange domener og overlappende sider.",
+              challenge: "Fragmentert autoritet og utydelig tematisk struktur.",
+              actions: "Konsoliderte struktur og prioriterte viktigste forretningsomrader.",
+              result: "Mer robust synlighet og enklere styring av videre utvikling.",
+            },
+          ]}
+        />
+      </SectionContainer>
+
+      <SectionContainer
+        eyebrow="Retainere"
+        title="Strategiske SEO-engasjement"
+        intro="Prisnivaene reflekterer ambisjonsniva og kompleksitet, ikke pakkelogikk."
       >
         <PricingGrid
           tiers={[
             {
               name: "Fundament",
               price: "Fra NOK 16 000 / mnd",
-              audience: "For virksomheter som vil etablere et robust SEO-grunnlag.",
+              audience: "For virksomheter som trenger en tydelig SEO-retning og et stabilt grunnlag.",
               focus: [
-                "Tydelig arbeidsramme og prioritering",
-                "Månedlig innsiktsrapport og anbefalinger",
-                "Støtte i synlighets- og innholdsbeslutninger",
+                "Maanedlig prioritering",
+                "Faglig review og anbefalinger",
+                "Lopende teknisk oppfolging",
               ],
             },
             {
               name: "Vekst",
               price: "Fra NOK 29 000 / mnd",
-              audience: "For virksomheter med høyere tempo og behov for tett sparring.",
+              audience: "For virksomheter med hoyere tempo og behov for tettere faglig styring.",
               focus: [
-                "Dypere analyse og bredere synlighetsarbeid",
-                "Hyppigere rapportering og beslutningsstøtte",
-                "Tverrfaglig støtte mot innhold og kanalteam",
+                "Utvidet analyse av signaler",
+                "Tettere oppfolging pa tvers av fag",
+                "Strategisk sparring i lederrytme",
               ],
               recommended: true,
             },
             {
               name: "Strategisk",
               price: "Fra NOK 52 000 / mnd",
-              audience: "For større organisasjoner med komplekse behov og flere markeder.",
+              audience: "For organisasjoner med flere markeder, stor kompleksitet og hoye krav til styring.",
               focus: [
-                "Lederforankret rådgivning og prioriteringsstøtte",
-                "Utvidet scope for AI- og answer-synlighet",
-                "Langsiktig utvikling av synlighetsstrategi",
+                "Lederforankret prioriteringsmodell",
+                "Utvidet scope for svarflater og AI-synlighet",
+                "Langsiktig synlighetsstrategi",
               ],
             },
           ]}
@@ -105,18 +136,16 @@ export default function SeoSubPage() {
       </SectionContainer>
 
       <SectionContainer title="Vil dere styrke synlighet med tydeligere prioriteringer?">
-        <div className="rounded-[24px] border border-apriil-line/80 bg-white p-7 shadow-[0_14px_36px_rgba(23,23,23,0.06)] md:flex md:items-center md:justify-between md:gap-8">
+        <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:flex md:items-center md:justify-between md:gap-8">
           <p className="max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-            Vi hjelper dere å utvikle SEO som støtter forretningsmål, ikke bare rangering.
+            Vi kan vurdere na-situasjonen og foresla neste riktige steg.
           </p>
-          <div className="mt-5 flex flex-wrap gap-3 md:mt-0">
-            <Link
-              href="/contact"
-              className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#e63322] px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#cf2d1d]"
-            >
-              Snakk med oss
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="mt-5 inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-apriil-ink-soft md:mt-0"
+          >
+            Snakk med oss
+          </Link>
         </div>
       </SectionContainer>
     </main>
