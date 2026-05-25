@@ -70,29 +70,8 @@ export default function DigitalMarkedsforingPage() {
               strategisk arbeidsform.
             </p>
           </div>
-          <ServiceGridHero />
+          <ServiceGridHero cards={serviceCards} />
         </section>
-
-        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {serviceCards.map((card) => (
-            <Link
-              key={card.title}
-              href={card.href}
-              className="min-h-[390px] rounded-[6px] bg-[#dfddd6] px-8 py-9 text-center transition hover:bg-[#d8d5cd]"
-            >
-              <div className="mx-auto mb-6 flex w-fit justify-center">
-                <ServiceMarker />
-              </div>
-              <h2 className="text-[42px] text-[clamp(1.95rem,2.6vw,2.45rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-apriil-dark">
-                {card.title}
-              </h2>
-              <p className="mx-auto mt-5 max-w-[36ch] text-[21px] text-[clamp(1rem,1.1vw,1.1rem)] leading-8 text-[#232321]">
-                {card.body}
-              </p>
-              <p className="mt-6 text-[34px] text-[2rem] font-semibold tracking-[-0.02em] text-apriil-dark">Les mer</p>
-            </Link>
-          ))}
-        </div>
       </div>
     </main>
   );

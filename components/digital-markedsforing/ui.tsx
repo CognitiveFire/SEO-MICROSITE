@@ -31,6 +31,12 @@ type Capability = {
   body: string;
 };
 
+type ServiceCard = {
+  title: string;
+  body: string;
+  href: string;
+};
+
 const reveal = {
   hidden: { opacity: 0, y: 8 },
   visible: { opacity: 1, y: 0 },
@@ -82,57 +88,62 @@ export function HeroActions() {
   );
 }
 
-type ServiceNode = {
-  title: string;
-  x: number;
-  y: number;
-  href: string;
-};
-
-const serviceNodes: ServiceNode[] = [
-  { title: "SEO", x: 15, y: 17, href: "/tjenester/digital-markedsforing/seo" },
-  { title: "Performance", x: 48, y: 17, href: "/tjenester/digital-markedsforing/performance" },
-  { title: "Programmatic", x: 81, y: 17, href: "/tjenester/digital-markedsforing/programmatic" },
-  { title: "Podcast", x: 15, y: 53, href: "/tjenester/digital-markedsforing/podcast" },
-  { title: "DOOH", x: 48, y: 53, href: "/tjenester/digital-markedsforing/dooh" },
-  { title: "Creator network", x: 81, y: 53, href: "/tjenester/digital-markedsforing/creator-network" },
-  { title: "Social", x: 48, y: 85, href: "/tjenester/digital-markedsforing/social" },
+const heroPositions = [
+  { x: 16, y: 18 },
+  { x: 50, y: 18 },
+  { x: 84, y: 18 },
+  { x: 16, y: 54 },
+  { x: 50, y: 54 },
+  { x: 84, y: 54 },
+  { x: 50, y: 86 },
 ];
 
-export function ServiceGridHero() {
+export function ServiceGridHero({ cards }: { cards: ServiceCard[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const tick = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1 + Math.floor(Math.random() * 2)) % serviceNodes.length);
+      setActiveIndex((current) => (current + 1 + Math.floor(Math.random() * 2)) % cards.length);
     }, 2200);
 
     return () => window.clearInterval(tick);
   }, []);
 
-  const activeNode = serviceNodes[activeIndex];
-  const centerX = 50;
-  const centerY = 50;
+  const activePosition = heroPositions[activeIndex] ?? heroPositions[0];
+  const nextPosition = heroPositions[(activeIndex + 2) % cards.length] ?? heroPositions[1];
 
   return (
-    <div className="apriil-editorial-surface relative min-h-[520px] overflow-hidden rounded-[18px] border border-apriil-line/70 p-5 md:p-7">
+    <div className="apriil-editorial-surface relative overflow-hidden rounded-[16px] border border-apriil-line/70 p-4 md:p-5">
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         <line x1="10" y1="17" x2="90" y2="17" stroke="rgba(23,23,23,0.12)" strokeWidth="0.18" />
         <line x1="10" y1="53" x2="90" y2="53" stroke="rgba(23,23,23,0.12)" strokeWidth="0.18" />
         <line x1="10" y1="85" x2="90" y2="85" stroke="rgba(23,23,23,0.12)" strokeWidth="0.18" />
-        <line x1="15" y1="10" x2="15" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
-        <line x1="48" y1="10" x2="48" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
-        <line x1="81" y1="10" x2="81" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
+        <line x1="16" y1="10" x2="16" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
+        <line x1="50" y1="10" x2="50" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
+        <line x1="84" y1="10" x2="84" y2="90" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
 
         <motion.line
           key={activeIndex}
-          x1={centerX}
-          y1={centerY}
-          x2={activeNode.x}
-          y2={activeNode.y}
+          x1="50"
+          y1="50"
+          x2={activePosition.x}
+          y2={activePosition.y}
           stroke="rgba(23,23,23,0.44)"
           strokeWidth="0.34"
           strokeDasharray="1.4 1.1"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.35 }}
+        />
+        <motion.line
+          key={`${activeIndex}-next`}
+          x1={activePosition.x}
+          y1={activePosition.y}
+          x2={nextPosition.x}
+          y2={nextPosition.y}
+          stroke="rgba(23,23,23,0.22)"
+          strokeWidth="0.26"
+          strokeDasharray="1 1.2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.35 }}
@@ -147,23 +158,37 @@ export function ServiceGridHero() {
         Clarity
       </motion.div>
 
-      <div className="relative grid h-full grid-cols-1 gap-3 md:grid-cols-3 md:grid-rows-3 md:gap-4">
-        {serviceNodes.map((node, index) => {
+      <div className="relative grid h-full grid-cols-1 gap-3 md:grid-cols-3 md:gap-4">
+        {cards.map((card, index) => {
           const isActive = index === activeIndex;
           return (
             <motion.div
-              key={node.title}
+              key={card.title}
               className={`min-h-[118px] rounded-[8px] border px-4 py-4 text-left ${
                 isActive ? "border-apriil-dark bg-[#e8e4db]" : "border-apriil-line/70 bg-[#dfddd6]"
               }`}
-              style={{ gridColumn: index === 6 ? "2 / span 1" : "auto" }}
+              style={{
+                gridColumn: index === 6 ? "2 / span 1" : "auto",
+                gridRow: index === 6 ? "3" : "auto",
+              }}
               animate={isActive ? { y: [0, -2, 0] } : { y: 0 }}
               transition={{ duration: 3.6, repeat: isActive ? Infinity : 0, ease: "easeInOut" }}
             >
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">{String(index + 1).padStart(2, "0")}</p>
-              <h3 className="mt-10 text-[1.08rem] font-semibold leading-[1.05] tracking-[-0.02em] text-apriil-dark">
-                {node.title}
-              </h3>
+              <div className="mt-8">
+                <div className="mb-4 flex justify-center">
+                  <svg width="30" height="30" viewBox="0 0 62 62" fill="none" aria-hidden="true">
+                    <path d="M31 10C31 22 39 31 52 31C39 31 31 40 31 52C31 40 22 31 10 31C22 31 31 22 31 10Z" fill="#ff4e1a" />
+                  </svg>
+                </div>
+                <h3 className="text-center text-[1.08rem] font-semibold leading-[1.05] tracking-[-0.02em] text-apriil-dark">
+                  {card.title}
+                </h3>
+                <p className="mx-auto mt-4 max-w-[26ch] text-center text-sm leading-7 text-apriil-dark/90">
+                  {card.body}
+                </p>
+                <p className="mt-5 text-center text-sm font-medium text-apriil-dark">Les mer</p>
+              </div>
             </motion.div>
           );
         })}
