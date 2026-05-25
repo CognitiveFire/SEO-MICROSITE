@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function PaidAcquisitionPage() {
-  redirect("/services/paid-media");
+  redirect("/tjenester/digital-markedsforing/betalt-media");
 }

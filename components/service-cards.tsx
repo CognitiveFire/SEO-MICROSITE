@@ -18,13 +18,13 @@ export function ServiceCards() {
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-apriil-primary">Søkesynlighet</p>
             <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-apriil-dark">Organisk etterspørselfangst, teknisk synlighet og informasjonsarkitektur.</h3>
             <p className="mt-4 text-base leading-7 text-apriil-muted">Bredere enn tradisjonell SEO. Arbeidet dekker teknisk synlighet, etterspørselfangst og innholdsstruktur som støtter kommersiell utvikling.</p>
-            <Link href="/services/sokesynlighet" className="mt-8 inline-flex text-sm font-semibold text-apriil-dark transition hover:text-apriil-primary">Se tjeneste</Link>
+            <Link href="/tjenester/digital-markedsforing/seo" className="mt-8 inline-flex text-sm font-semibold text-apriil-dark transition hover:text-apriil-primary">Se tjeneste</Link>
           </div>
           <div className="bg-[#fbfaf7] p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-apriil-primary">Betalt anskaffelse</p>
             <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-apriil-dark">Anskaffelseseffektivitet, kvalitet på kommersiell intensjon og landingsside-samspill.</h3>
             <p className="mt-4 text-base leading-7 text-apriil-muted">Kommersiell effektivitet på tvers av betalt søk, anskaffelsesstruktur, landingsside-samspill og budsjettallokering.</p>
-            <Link href="/services/betalt-anskaffelse" className="mt-8 inline-flex text-sm font-semibold text-apriil-dark transition hover:text-apriil-primary">Se tjeneste</Link>
+            <Link href="/tjenester/digital-markedsforing/betalt-media" className="mt-8 inline-flex text-sm font-semibold text-apriil-dark transition hover:text-apriil-primary">Se tjeneste</Link>
           </div>
           <div className="bg-[#fbfaf7] p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-apriil-primary">Apriil Clarity</p>

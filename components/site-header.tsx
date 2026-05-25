@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/services/seo", label: "SEO" },
-  { href: "/services/paid-media", label: "Betalt media" },
-  { href: "/services/intelligence-consulting-analytics", label: "Innsikt og analyse" },
+  { href: "/tjenester/digital-markedsforing/seo", label: "SEO" },
+  { href: "/tjenester/digital-markedsforing/betalt-media", label: "Betalt media" },
+  { href: "/tjenester/digital-markedsforing/analyse", label: "Innsikt og analyse" },
 ];
 
 export function SiteHeader() {

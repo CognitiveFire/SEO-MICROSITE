@@ -63,7 +63,7 @@ export function PricingSection() {
               <li>Innholdsretning og oppdagbarhet</li>
               <li>Rapportering og Signal Room-oversikt</li>
             </ul>
-            <Link href="/services/sokesynlighet" className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/16 bg-white px-5 py-3 text-sm font-semibold text-apriil-dark transition hover:-translate-y-0.5 hover:bg-[#f6f1eb]">
+            <Link href="/tjenester/digital-markedsforing/seo" className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/16 bg-white px-5 py-3 text-sm font-semibold text-apriil-dark transition hover:-translate-y-0.5 hover:bg-[#f6f1eb]">
               Se tjeneste
               <span aria-hidden="true">↗</span>
             </Link>
@@ -85,7 +85,7 @@ export function PricingSection() {
               <li>Konverteringsanalyse og landingssidevurdering</li>
               <li>Rapportering og Signal Room-innsikt</li>
             </ul>
-            <Link href="/services/betalt-anskaffelse" className="mt-10 inline-flex items-center gap-3 rounded-full border border-apriil-line/80 bg-white px-5 py-3 text-sm font-semibold text-apriil-dark transition hover:-translate-y-0.5 hover:border-apriil-primary/40 hover:text-apriil-primary">
+            <Link href="/tjenester/digital-markedsforing/betalt-media" className="mt-10 inline-flex items-center gap-3 rounded-full border border-apriil-line/80 bg-white px-5 py-3 text-sm font-semibold text-apriil-dark transition hover:-translate-y-0.5 hover:border-apriil-primary/40 hover:text-apriil-primary">
               Se tjeneste
               <span aria-hidden="true">↗</span>
             </Link>

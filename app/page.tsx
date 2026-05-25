@@ -24,19 +24,19 @@ export default function HomePage() {
             Tjenestene under er byggesteiner i én samlet vekstmodell. Vi setter sammen riktig miks basert på mål, marked og modenhet.
           </p>
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            <Link href="/services/seo" className="rounded-[24px] border border-apriil-line/80 bg-white p-7 text-apriil-dark shadow-[0_16px_44px_rgba(23,23,23,0.07)] transition hover:-translate-y-0.5">
+            <Link href="/tjenester/digital-markedsforing/seo" className="rounded-[24px] border border-apriil-line/80 bg-white p-7 text-apriil-dark shadow-[0_16px_44px_rgba(23,23,23,0.07)] transition hover:-translate-y-0.5">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#a76435]">SEO</p>
               <p className="mt-3 text-3xl font-semibold tracking-[-0.04em]">Fra NOK 12 000 / mnd</p>
               <h3 className="mt-4 text-xl font-semibold tracking-[-0.03em]">Søkesynlighet i Google og AI-søk</h3>
               <p className="mt-3 text-sm leading-7 text-apriil-muted">Tre nivåer. Inkluderer tilgang til Apriil Clarity Data Room.</p>
             </Link>
-            <Link href="/services/paid-media" className="rounded-[24px] border border-[#e63322] bg-[#fff6f4] p-7 text-apriil-dark shadow-[0_16px_44px_rgba(230,51,34,0.12)] transition hover:-translate-y-0.5">
+            <Link href="/tjenester/digital-markedsforing/betalt-media" className="rounded-[24px] border border-[#e63322] bg-[#fff6f4] p-7 text-apriil-dark shadow-[0_16px_44px_rgba(230,51,34,0.12)] transition hover:-translate-y-0.5">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e63322]">Betalt media</p>
               <p className="mt-3 text-3xl font-semibold tracking-[-0.04em]">Fra NOK 12 000 / mnd</p>
               <h3 className="mt-4 text-xl font-semibold tracking-[-0.03em]">Kanaler, kreativ og konvertering i samme modell</h3>
               <p className="mt-3 text-sm leading-7 text-apriil-muted">Tre nivåer. Inkluderer tilgang til Apriil Clarity Data Room.</p>
             </Link>
-            <Link href="/services/intelligence-consulting-analytics" className="rounded-[24px] border border-apriil-line/80 bg-white p-7 text-apriil-dark shadow-[0_16px_44px_rgba(23,23,23,0.07)] transition hover:-translate-y-0.5">
+            <Link href="/tjenester/digital-markedsforing/analyse" className="rounded-[24px] border border-apriil-line/80 bg-white p-7 text-apriil-dark shadow-[0_16px_44px_rgba(23,23,23,0.07)] transition hover:-translate-y-0.5">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7a5a47]">Innsikt / Analyse</p>
               <p className="mt-3 text-3xl font-semibold tracking-[-0.04em]">Fra NOK 10 000 / mnd</p>
               <h3 className="mt-4 text-xl font-semibold tracking-[-0.03em]">Innsikt, rådgivning og analyse</h3>

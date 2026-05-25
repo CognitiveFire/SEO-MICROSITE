@@ -9,9 +9,9 @@ export function Footer() {
           <p className="mt-2 max-w-md leading-7">Apriil kombinerer søkesynlighet, betalt anskaffelse og operasjonell rapportering i ett samlet strategisk rammeverk.</p>
         </div>
         <nav className="flex flex-wrap gap-5">
-          <Link href="/services/seo" className="transition hover:text-apriil-dark">SEO</Link>
-          <Link href="/services/paid-media" className="transition hover:text-apriil-dark">Betalt media</Link>
-          <Link href="/services/intelligence-consulting-analytics" className="transition hover:text-apriil-dark">Innsikt / Analyse</Link>
+          <Link href="/tjenester/digital-markedsforing/seo" className="transition hover:text-apriil-dark">SEO</Link>
+          <Link href="/tjenester/digital-markedsforing/betalt-media" className="transition hover:text-apriil-dark">Betalt media</Link>
+          <Link href="/tjenester/digital-markedsforing/analyse" className="transition hover:text-apriil-dark">Innsikt / Analyse</Link>
           <Link href="/contact" className="transition hover:text-apriil-dark">Kontakt</Link>
         </nav>
         <div className="text-apriil-muted/80">© {new Date().getFullYear()} Apriil. Alle rettigheter reservert.</div>
