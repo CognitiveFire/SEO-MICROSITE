@@ -56,7 +56,13 @@ const itemVariants = {
   },
 };
 
-function OfferCard({ offer, tone = "light" }: { offer: Offer; tone?: "light" | "dark" }) {
+function OfferCard({
+  offer,
+  tone = "light",
+}: {
+  offer: Offer;
+  tone?: "light" | "dark";
+}) {
   const isDark = tone === "dark";
 
   return (
@@ -69,18 +75,51 @@ function OfferCard({ offer, tone = "light" }: { offer: Offer; tone?: "light" | "
           : "relative overflow-hidden rounded-[30px] border border-apriil-line/80 bg-[#fbfaf7]/95 p-8 text-apriil-dark shadow-[0_20px_70px_rgba(23,23,23,0.08)] md:p-10"
       }
     >
-      <div className={isDark ? "absolute inset-x-0 top-0 h-px bg-white/20" : "absolute inset-x-0 top-0 h-px bg-apriil-primary/20"} />
-      <p className={isDark ? "text-xs font-semibold uppercase tracking-[0.26em] text-[#d8c6b8]" : "text-xs font-semibold uppercase tracking-[0.26em] text-apriil-primary"}>
+      <div
+        className={
+          isDark
+            ? "absolute inset-x-0 top-0 h-px bg-white/20"
+            : "absolute inset-x-0 top-0 h-px bg-apriil-primary/20"
+        }
+      />
+      <p
+        className={
+          isDark
+            ? "text-xs font-semibold uppercase tracking-[0.26em] text-[#d8c6b8]"
+            : "text-xs font-semibold uppercase tracking-[0.26em] text-apriil-primary"
+        }
+      >
         {offer.label}
       </p>
-      <p className="mt-8 text-4xl font-semibold tracking-[-0.06em] md:text-5xl">{offer.price}</p>
-      <p className={isDark ? "mt-5 max-w-xl text-base leading-8 text-white/74" : "mt-5 max-w-xl text-base leading-8 text-apriil-muted"}>
+      <p className="mt-8 text-4xl font-semibold tracking-[-0.06em] md:text-5xl">
+        {offer.price}
+      </p>
+      <p
+        className={
+          isDark
+            ? "mt-5 max-w-xl text-base leading-8 text-white/74"
+            : "mt-5 max-w-xl text-base leading-8 text-apriil-muted"
+        }
+      >
         {offer.description}
       </p>
       <ul className="mt-8 grid gap-3 text-sm leading-7 md:grid-cols-2 md:gap-x-6 md:gap-y-4">
         {offer.items.map((item) => (
-          <li key={item} className={isDark ? "flex items-start gap-3 text-white/82" : "flex items-start gap-3 text-apriil-muted"}>
-            <span className={isDark ? "mt-2 h-1.5 w-1.5 rounded-full bg-[#d8c6b8]" : "mt-2 h-1.5 w-1.5 rounded-full bg-apriil-primary"} />
+          <li
+            key={item}
+            className={
+              isDark
+                ? "flex items-start gap-3 text-white/82"
+                : "flex items-start gap-3 text-apriil-muted"
+            }
+          >
+            <span
+              className={
+                isDark
+                  ? "mt-2 h-1.5 w-1.5 rounded-full bg-[#d8c6b8]"
+                  : "mt-2 h-1.5 w-1.5 rounded-full bg-apriil-primary"
+              }
+            />
             <span>{item}</span>
           </li>
         ))}
@@ -110,7 +149,9 @@ function TaskCard({ task }: { task: TaskItem }) {
       <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-apriil-primary">
         <span>Prioritert tiltak</span>
       </div>
-      <h3 className="mt-6 max-w-lg text-2xl font-semibold tracking-[-0.04em] text-apriil-dark">{task.title}</h3>
+      <h3 className="mt-6 max-w-lg text-2xl font-semibold tracking-[-0.04em] text-apriil-dark">
+        {task.title}
+      </h3>
       <div className="mt-6 flex flex-wrap gap-3">
         <span className="inline-flex items-center rounded-full border border-apriil-line/80 bg-[#fbfaf7] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-apriil-muted">
           Effekt: {task.impact}
@@ -119,7 +160,9 @@ function TaskCard({ task }: { task: TaskItem }) {
           Kompleksitet: {task.complexity}
         </span>
       </div>
-      <p className="mt-6 max-w-xl text-base leading-8 text-apriil-muted">{task.description}</p>
+      <p className="mt-6 max-w-xl text-base leading-8 text-apriil-muted">
+        {task.description}
+      </p>
     </motion.article>
   );
 }
@@ -136,22 +179,26 @@ export function PremiumServicePricing(props: PremiumServicePricingProps) {
     embedded = false,
     closingEyebrow = "Arbeidsmodell",
     closingHeadline = "Strukturert rundt tydelige prioriteringer og langsiktig effekt.",
-    closingBody =
-      "Hver leveranse tilpasses virksomhetens mål, kompleksitet og vekstprioriteringer — med fokus på tydeligere beslutninger og målbar utvikling.",
+    closingBody = "Hver leveranse tilpasses virksomhetens mål, kompleksitet og vekstprioriteringer — med fokus på tydeligere beslutninger og målbar utvikling.",
     closingCtaLabel = "Book strategisamtale",
     closingCtaHref = "/contact",
   } = props;
   const IntroHeading = headlineTag;
 
   return (
-    <section className={embedded ? "pb-16 md:pb-20" : "px-6 pb-24 md:px-10 xl:px-16"}>
+    <section
+      className={embedded ? "pb-16 md:pb-20" : "px-6 pb-24 md:px-10 xl:px-16"}
+    >
       <motion.section
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="mx-auto max-w-6xl border-t border-apriil-line/80 pt-16 md:pt-20"
+        className="w-full border-t border-apriil-line/80 pt-16 md:pt-20"
       >
-        <motion.p variants={itemVariants} className="text-xs font-semibold uppercase tracking-[0.26em] text-apriil-primary">
+        <motion.p
+          variants={itemVariants}
+          className="text-xs font-semibold uppercase tracking-[0.26em] text-apriil-primary"
+        >
           {eyebrow}
         </motion.p>
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
@@ -160,7 +207,10 @@ export function PremiumServicePricing(props: PremiumServicePricingProps) {
               {headline}
             </IntroHeading>
           </motion.div>
-          <motion.p variants={itemVariants} className="max-w-2xl text-lg leading-8 text-apriil-muted md:text-xl md:leading-9">
+          <motion.p
+            variants={itemVariants}
+            className="max-w-2xl text-lg leading-8 text-apriil-muted md:text-xl md:leading-9"
+          >
             {body}
           </motion.p>
         </div>
@@ -171,7 +221,7 @@ export function PremiumServicePricing(props: PremiumServicePricingProps) {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={containerVariants}
-        className="mx-auto mt-20 max-w-6xl border-t border-apriil-line/80 pt-16"
+        className="w-full mt-20 border-t border-apriil-line/80 pt-16"
       >
         <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
           <OfferCard offer={retainer} tone="dark" />
@@ -184,17 +234,24 @@ export function PremiumServicePricing(props: PremiumServicePricingProps) {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={containerVariants}
-        className="mx-auto mt-20 max-w-6xl border-t border-apriil-line/80 pt-16"
+        className="w-full mt-20 border-t border-apriil-line/80 pt-16"
       >
-        <motion.div variants={itemVariants} className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <motion.div
+          variants={itemVariants}
+          className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start"
+        >
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Operativt utsnitt</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">
+              Operativt utsnitt
+            </p>
             <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">
               Eksempel på prioriterte tiltak
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-            Tiltakene under viser hvordan arbeidet typisk struktureres: tydelige prioriteringer, kommersiell relevans og oppfølging som er enkel å forstå også utenfor fagmiljøet.
+            Tiltakene under viser hvordan arbeidet typisk struktureres: tydelige
+            prioriteringer, kommersiell relevans og oppfølging som er enkel å
+            forstå også utenfor fagmiljøet.
           </p>
         </motion.div>
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -209,13 +266,15 @@ export function PremiumServicePricing(props: PremiumServicePricingProps) {
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
         variants={containerVariants}
-        className="mx-auto mt-20 max-w-6xl border-t border-apriil-line/80 pt-16"
+        className="w-full mt-20 border-t border-apriil-line/80 pt-16"
       >
         <motion.div
           variants={itemVariants}
           className="rounded-[34px] border border-apriil-line/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.75),rgba(251,250,247,0.95))] p-8 shadow-[0_18px_60px_rgba(23,23,23,0.05)] md:p-12"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">{closingEyebrow}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">
+            {closingEyebrow}
+          </p>
           <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">
             {closingHeadline}
           </h2>

@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
-import { createQuestion, getQuestions } from "@/app/api/_data/ekspertklinikken-store";
+import {
+  createQuestion,
+  getQuestions,
+} from "@/app/api/_data/ekspertklinikken-store";
 
 type QuestionPayload = {
   name?: string;
@@ -24,7 +27,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const month = cleanValue(searchParams.get("month"));
   const statusRaw = cleanValue(searchParams.get("status"));
-  const status = statusRaw === "pending" || statusRaw === "answered" ? statusRaw : undefined;
+  const status =
+    statusRaw === "pending" || statusRaw === "answered" ? statusRaw : undefined;
 
   const data = getQuestions(month || undefined, status);
   return NextResponse.json({ data });
@@ -36,7 +40,10 @@ export async function POST(request: Request) {
   try {
     payload = (await request.json()) as QuestionPayload;
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid request body." },
+      { status: 400 },
+    );
   }
 
   const name = cleanValue(payload.name);
@@ -44,11 +51,22 @@ export async function POST(request: Request) {
   const topic = cleanValue(payload.topic);
   const question = cleanValue(payload.question);
   const eventMonth = cleanValue(payload.eventMonth);
-  const submittedAt = cleanValue(payload.submittedAt) || new Date().toISOString();
+  const submittedAt =
+    cleanValue(payload.submittedAt) || new Date().toISOString();
   const consentToPublish = Boolean(payload.consentToPublish);
 
-  if (!name || !email || !topic || !question || !eventMonth || !consentToPublish) {
-    return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+  if (
+    !name ||
+    !email ||
+    !topic ||
+    !question ||
+    !eventMonth ||
+    !consentToPublish
+  ) {
+    return NextResponse.json(
+      { error: "Missing required fields." },
+      { status: 400 },
+    );
   }
 
   if (!isValidEmail(email)) {
@@ -56,7 +74,10 @@ export async function POST(request: Request) {
   }
 
   if (question.length < 20 || question.length > 500) {
-    return NextResponse.json({ error: "Question must be between 20 and 500 characters." }, { status: 400 });
+    return NextResponse.json(
+      { error: "Question must be between 20 and 500 characters." },
+      { status: 400 },
+    );
   }
 
   const created = createQuestion({

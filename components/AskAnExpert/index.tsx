@@ -38,7 +38,9 @@ export function AskAnExpert({
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const online = useOnlineStatus(officeHours, () => {
-    setToast("Eksperten er ikke lenger tilgjengelig. Spørsmålet ditt er lagret og vi svarer på e-post.");
+    setToast(
+      "Eksperten er ikke lenger tilgjengelig. Spørsmålet ditt er lagret og vi svarer på e-post.",
+    );
     setTimeout(() => setToast(""), 5000);
   });
 
@@ -55,7 +57,10 @@ export function AskAnExpert({
     [online],
   );
 
-  const onTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+  const onTabKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) => {
     if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
 
     event.preventDefault();
@@ -95,12 +100,25 @@ export function AskAnExpert({
 
         <span className={styles.triggerText}>
           <span className={styles.heading}>Spør en ekspert</span>
-          <span className={styles.subtext}>Få svar fra våre spesialister i SEO, betalt media og analyse</span>
-          <span className={styles.microCta}>Gratis strategisk avklaring • Svar innen én arbeidsdag</span>
-          <span className={online ? styles.statusBadgeOnline : styles.statusBadgeOffline}>{statusText}</span>
+          <span className={styles.subtext}>
+            Få svar fra våre spesialister i SEO, betalt media og analyse
+          </span>
+          <span className={styles.microCta}>
+            Gratis strategisk avklaring • Svar innen én arbeidsdag
+          </span>
+          <span
+            className={
+              online ? styles.statusBadgeOnline : styles.statusBadgeOffline
+            }
+          >
+            {statusText}
+          </span>
         </span>
 
-        <span className={open ? styles.chevronOpen : styles.chevron} aria-hidden="true">
+        <span
+          className={open ? styles.chevronOpen : styles.chevron}
+          aria-hidden="true"
+        >
           ⌄
         </span>
       </button>

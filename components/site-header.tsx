@@ -15,15 +15,22 @@ export function SiteHeader() {
 
   return (
     <header className="px-6 pb-4 pt-6 md:px-10 md:pt-8 xl:px-16">
-      <div className="mx-auto max-w-7xl">
+      <div className="w-full">
         <div className="flex items-center justify-between gap-6">
-          <Link href="/" className="text-[34px] font-medium tracking-[0.18em] text-apriil-dark md:text-[38px]">
+          <Link
+            href="/"
+            className="text-[34px] font-medium tracking-[0.18em] text-apriil-dark md:text-[38px]"
+          >
             APRIIL
           </Link>
 
           <nav className="hidden items-center gap-9 lg:flex">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-[17px] font-medium tracking-[-0.01em] text-apriil-dark transition hover:opacity-70">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-[17px] font-medium tracking-[-0.01em] text-apriil-dark transition hover:opacity-70"
+              >
                 {item.label}
               </Link>
             ))}
@@ -31,9 +38,26 @@ export function SiteHeader() {
 
           <div className="hidden lg:block">
             <label className="flex h-12 w-[220px] items-center gap-3 rounded-full border border-apriil-dark/55 px-5 text-apriil-muted">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.6" />
-                <path d="M20 20L16.7 16.7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="7"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                />
+                <path
+                  d="M20 20L16.7 16.7"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
               </svg>
               <span className="text-[17px]">Søk</span>
             </label>
@@ -52,7 +76,10 @@ export function SiteHeader() {
         </div>
 
         {isOpen ? (
-          <nav id="mobile-navigation" className="mt-4 grid gap-px overflow-hidden rounded-[14px] border border-apriil-line/80 bg-apriil-line/80 lg:hidden">
+          <nav
+            id="mobile-navigation"
+            className="mt-4 grid gap-px overflow-hidden rounded-[14px] border border-apriil-line/80 bg-apriil-line/80 lg:hidden"
+          >
             {navItems.map((item) => (
               <Link
                 key={item.href}

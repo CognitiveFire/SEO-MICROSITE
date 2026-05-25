@@ -3,7 +3,8 @@ import { ChannelServicePage } from "@/components/digital-markedsforing/channel-s
 
 export const metadata: Metadata = {
   title: "Social | Digital markedsforing | Apriil",
-  description: "Social-radgivning fra Apriil med tydelig kobling mellom kanalbruk, budskap og kommersielle prioriteringer.",
+  description:
+    "Social-radgivning fra Apriil med tydelig kobling mellom kanalbruk, budskap og kommersielle prioriteringer.",
 };
 
 export default function SocialPage() {
@@ -16,10 +17,13 @@ export default function SocialPage() {
       approachIntro="Innhold, distribusjon og prioritering styres med utgangspunkt i kommersiell effekt."
       caseStudy={{
         title: "Regional tjenestevirksomhet",
-        situation: "Sterk aktivitet i sosiale medier, men lav sammenheng med forretningsmal.",
+        situation:
+          "Sterk aktivitet i sosiale medier, men lav sammenheng med forretningsmal.",
         challenge: "Mangel pa tydelig kanalrolle og prioriteringsramme.",
-        actions: "Bygget ny social-modell med klare malbilder, innholdsstruktur og styringsrytme.",
-        result: "Mer relevant trafikk og tydeligere kommersiell retning i kanalbruken.",
+        actions:
+          "Bygget ny social-modell med klare malbilder, innholdsstruktur og styringsrytme.",
+        result:
+          "Mer relevant trafikk og tydeligere kommersiell retning i kanalbruken.",
       }}
     />
   );

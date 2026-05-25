@@ -12,7 +12,13 @@ type ChatTabProps = {
   onSwitchToPost: () => void;
 };
 
-export function ChatTab({ online, messages, isTyping, onSend, onSwitchToPost }: ChatTabProps) {
+export function ChatTab({
+  online,
+  messages,
+  isTyping,
+  onSend,
+  onSwitchToPost,
+}: ChatTabProps) {
   const [value, setValue] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const scrollerRef = useRef<HTMLDivElement | null>(null);
@@ -43,7 +49,8 @@ export function ChatTab({ online, messages, isTyping, onSend, onSwitchToPost }: 
     <div className={styles.tabBody}>
       {!online ? (
         <p className={styles.offlineBar}>
-          Eksperten er ikke tilgjengelig nå. Åpningstider: man-fre 08:00-17:00. Send et spørsmål så svarer vi neste virkedag.
+          Eksperten er ikke tilgjengelig nå. Åpningstider: man-fre 08:00-17:00.
+          Send et spørsmål så svarer vi neste virkedag.
         </p>
       ) : null}
 
@@ -51,10 +58,18 @@ export function ChatTab({ online, messages, isTyping, onSend, onSwitchToPost }: 
         {messages.map((message) => {
           const isUser = message.from === "user";
           return (
-            <div key={message.id} className={isUser ? styles.messageRowUser : styles.messageRowExpert}>
-              <div className={isUser ? styles.bubbleUser : styles.bubbleExpert}>{message.text}</div>
+            <div
+              key={message.id}
+              className={
+                isUser ? styles.messageRowUser : styles.messageRowExpert
+              }
+            >
+              <div className={isUser ? styles.bubbleUser : styles.bubbleExpert}>
+                {message.text}
+              </div>
               <p className={styles.messageMeta}>
-                {isUser ? "Du" : message.agentName || "Apriil-ekspert"} · {message.timestamp}
+                {isUser ? "Du" : message.agentName || "Apriil-ekspert"} ·{" "}
+                {message.timestamp}
               </p>
             </div>
           );
@@ -91,15 +106,28 @@ export function ChatTab({ online, messages, isTyping, onSend, onSwitchToPost }: 
             }
           }}
         />
-        <button type="button" className={styles.sendButton} aria-label="Send melding" disabled={!online} onClick={() => void submit()}>
+        <button
+          type="button"
+          className={styles.sendButton}
+          aria-label="Send melding"
+          disabled={!online}
+          onClick={() => void submit()}
+        >
           <span aria-hidden="true">➤</span>
         </button>
       </div>
 
       {!online ? (
         <div className={styles.ghostPrompt}>
-          <p>Chat er stengt akkurat nå. Bruk "Send spørsmål"-fanen for å stille spørsmålet ditt.</p>
-          <button type="button" className={styles.ghostButton} onClick={onSwitchToPost}>
+          <p>
+            Chat er stengt akkurat nå. Bruk "Send spørsmål"-fanen for å stille
+            spørsmålet ditt.
+          </p>
+          <button
+            type="button"
+            className={styles.ghostButton}
+            onClick={onSwitchToPost}
+          >
             Gå til Send spørsmål
           </button>
         </div>

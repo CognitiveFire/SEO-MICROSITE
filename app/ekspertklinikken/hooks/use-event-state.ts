@@ -20,10 +20,19 @@ function lastFridayOf(year: number, month: number) {
 
 export function getNextLastFriday() {
   const nowOslo = toOsloDate(new Date());
-  const currentMonthCandidate = lastFridayOf(nowOslo.getFullYear(), nowOslo.getMonth());
-  const currentMonthRecordingAvailableAt = recordingAvailableAtFromEvent(currentMonthCandidate);
-  const currentMonthRecordingGraceEnds = new Date(currentMonthRecordingAvailableAt);
-  currentMonthRecordingGraceEnds.setHours(currentMonthRecordingGraceEnds.getHours() + RECORDING_GRACE_HOURS);
+  const currentMonthCandidate = lastFridayOf(
+    nowOslo.getFullYear(),
+    nowOslo.getMonth(),
+  );
+  const currentMonthRecordingAvailableAt = recordingAvailableAtFromEvent(
+    currentMonthCandidate,
+  );
+  const currentMonthRecordingGraceEnds = new Date(
+    currentMonthRecordingAvailableAt,
+  );
+  currentMonthRecordingGraceEnds.setHours(
+    currentMonthRecordingGraceEnds.getHours() + RECORDING_GRACE_HOURS,
+  );
 
   if (nowOslo <= currentMonthRecordingGraceEnds) {
     return currentMonthCandidate;
@@ -39,7 +48,10 @@ function recordingAvailableAtFromEvent(event: Date) {
   return end;
 }
 
-export function getEventState(event: Date, recordingAvailableAt: Date): EventState {
+export function getEventState(
+  event: Date,
+  recordingAvailableAt: Date,
+): EventState {
   const now = toOsloDate(new Date());
   const start = new Date(event);
   start.setHours(12, 0, 0, 0);
@@ -77,8 +89,14 @@ function formatEventDate(eventDate: Date) {
 }
 
 export function getEventMonthValue(eventDate: Date) {
-  const year = new Intl.DateTimeFormat("en-CA", { year: "numeric", timeZone: "Europe/Oslo" }).format(eventDate);
-  const month = new Intl.DateTimeFormat("en-CA", { month: "2-digit", timeZone: "Europe/Oslo" }).format(eventDate);
+  const year = new Intl.DateTimeFormat("en-CA", {
+    year: "numeric",
+    timeZone: "Europe/Oslo",
+  }).format(eventDate);
+  const month = new Intl.DateTimeFormat("en-CA", {
+    month: "2-digit",
+    timeZone: "Europe/Oslo",
+  }).format(eventDate);
   return `${year}-${month}`;
 }
 
@@ -91,8 +109,14 @@ export function useEventState() {
   }, []);
 
   const eventDate = useMemo(() => getNextLastFriday(), [nowTick]);
-  const recordingAvailableAt = useMemo(() => recordingAvailableAtFromEvent(eventDate), [eventDate]);
-  const eventState = useMemo(() => getEventState(eventDate, recordingAvailableAt), [eventDate, recordingAvailableAt, nowTick]);
+  const recordingAvailableAt = useMemo(
+    () => recordingAvailableAtFromEvent(eventDate),
+    [eventDate],
+  );
+  const eventState = useMemo(
+    () => getEventState(eventDate, recordingAvailableAt),
+    [eventDate, recordingAvailableAt, nowTick],
+  );
 
   const nowOslo = toOsloDate(new Date());
   const diffMs = eventDate.getTime() - nowOslo.getTime();

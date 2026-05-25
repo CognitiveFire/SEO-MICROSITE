@@ -45,18 +45,21 @@ export function useChat({ chatEndpoint, online }: UseChatArgs) {
   const pendingWsReply = useRef(false);
   const sessionId = useMemo(() => makeId(), []);
 
-  const appendExpertMessage = useCallback((text: string, agentName?: string, timestamp?: string) => {
-    setMessages((prev) => [
-      ...prev,
-      {
-        id: makeId(),
-        from: "expert",
-        text,
-        agentName: agentName || "Apriil-ekspert",
-        timestamp: timestamp || nowLabel(),
-      },
-    ]);
-  }, []);
+  const appendExpertMessage = useCallback(
+    (text: string, agentName?: string, timestamp?: string) => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: makeId(),
+          from: "expert",
+          text,
+          agentName: agentName || "Apriil-ekspert",
+          timestamp: timestamp || nowLabel(),
+        },
+      ]);
+    },
+    [],
+  );
 
   useEffect(() => {
     if (!online || !chatEndpoint.startsWith("ws")) {
@@ -74,7 +77,8 @@ export function useChat({ chatEndpoint, online }: UseChatArgs) {
       ws.onmessage = (event) => {
         try {
           const payload = JSON.parse(event.data);
-          const text = payload.text || payload.reply || "Takk! Vi følger opp kort.";
+          const text =
+            payload.text || payload.reply || "Takk! Vi følger opp kort.";
           pendingWsReply.current = false;
           setIsTyping(false);
           appendExpertMessage(text, payload.agentName, payload.timestamp);
@@ -136,7 +140,9 @@ export function useChat({ chatEndpoint, online }: UseChatArgs) {
           if (pendingWsReply.current) {
             pendingWsReply.current = false;
             setIsTyping(false);
-            appendExpertMessage("Vi mistet tilkoblingen et øyeblikk. Prøv igjen, eller bruk 'Send spørsmål'.");
+            appendExpertMessage(
+              "Vi mistet tilkoblingen et øyeblikk. Prøv igjen, eller bruk 'Send spørsmål'.",
+            );
           }
         }, 15000);
         return;
@@ -157,10 +163,16 @@ export function useChat({ chatEndpoint, online }: UseChatArgs) {
 
         const data = await response.json();
         setIsTyping(false);
-        appendExpertMessage(data.reply || "Takk! Vi følger opp kort.", data.agentName, data.timestamp);
+        appendExpertMessage(
+          data.reply || "Takk! Vi følger opp kort.",
+          data.agentName,
+          data.timestamp,
+        );
       } catch {
         setIsTyping(false);
-        appendExpertMessage("Kunne ikke hente svar akkurat nå. Prøv igjen, eller bruk 'Send spørsmål'.");
+        appendExpertMessage(
+          "Kunne ikke hente svar akkurat nå. Prøv igjen, eller bruk 'Send spørsmål'.",
+        );
       }
     },
     [appendExpertMessage, chatEndpoint, online, sessionId],

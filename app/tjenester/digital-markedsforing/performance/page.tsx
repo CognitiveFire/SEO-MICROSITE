@@ -3,7 +3,8 @@ import { ChannelServicePage } from "@/components/digital-markedsforing/channel-s
 
 export const metadata: Metadata = {
   title: "Performance | Digital markedsforing | Apriil",
-  description: "Performance-radgivning fra Apriil med tydelig kanalstyring, kommersiell prioritering og robust oppfolging.",
+  description:
+    "Performance-radgivning fra Apriil med tydelig kanalstyring, kommersiell prioritering og robust oppfolging.",
 };
 
 export default function PerformancePage() {
@@ -17,9 +18,12 @@ export default function PerformancePage() {
       caseStudy={{
         title: "Nasjonal B2C-aktør",
         situation: "Høy aktivitet i paid media med varierende effekt.",
-        challenge: "Mangel pa felles modell for prioritering av budsjett og tiltak.",
-        actions: "Bygget ny styringsmodell for kanalrolle, testlop og kommersiell oppfolging.",
-        result: "Mer stabil avkastning og tydeligere beslutningsgrunnlag i ledermoter.",
+        challenge:
+          "Mangel pa felles modell for prioritering av budsjett og tiltak.",
+        actions:
+          "Bygget ny styringsmodell for kanalrolle, testlop og kommersiell oppfolging.",
+        result:
+          "Mer stabil avkastning og tydeligere beslutningsgrunnlag i ledermoter.",
       }}
     />
   );

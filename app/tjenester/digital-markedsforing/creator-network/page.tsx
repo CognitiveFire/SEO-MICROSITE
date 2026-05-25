@@ -3,7 +3,8 @@ import { ChannelServicePage } from "@/components/digital-markedsforing/channel-s
 
 export const metadata: Metadata = {
   title: "Creator network | Digital markedsforing | Apriil",
-  description: "Creator network-radgivning fra Apriil med fokus pa strategisk partnerutvalg og kommersiell effekt.",
+  description:
+    "Creator network-radgivning fra Apriil med fokus pa strategisk partnerutvalg og kommersiell effekt.",
 };
 
 export default function CreatorNetworkPage() {
@@ -16,10 +17,13 @@ export default function CreatorNetworkPage() {
       approachIntro="Valg av profiler, innhold og oppfolging styres i et strukturert kommersielt rammeverk."
       caseStudy={{
         title: "Forbrukerrettet merkevare",
-        situation: "Hoy kampanjeaktivitet uten tydelig sammenheng mellom creator-innhold og salgseffekt.",
+        situation:
+          "Hoy kampanjeaktivitet uten tydelig sammenheng mellom creator-innhold og salgseffekt.",
         challenge: "Mangel pa konsistent modell for partnerutvalg og styring.",
-        actions: "Etablerte nytt creator-rammeverk med klare roller, briefstruktur og evalueringspunkter.",
-        result: "Mer robust effekt over tid og bedre kontroll pa investeringene.",
+        actions:
+          "Etablerte nytt creator-rammeverk med klare roller, briefstruktur og evalueringspunkter.",
+        result:
+          "Mer robust effekt over tid og bedre kontroll pa investeringene.",
       }}
     />
   );

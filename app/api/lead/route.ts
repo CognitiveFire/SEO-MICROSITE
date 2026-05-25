@@ -35,7 +35,10 @@ export async function POST(request: Request) {
   try {
     payload = (await request.json()) as LeadPayload;
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid request body." },
+      { status: 400 },
+    );
   }
 
   const name = cleanValue(payload.name);
@@ -45,7 +48,8 @@ export async function POST(request: Request) {
   const focus = cleanValue(payload.focus);
   const message = cleanValue(payload.message);
   const source = cleanValue(payload.source) || "website";
-  const submittedAt = cleanValue(payload.submittedAt) || new Date().toISOString();
+  const submittedAt =
+    cleanValue(payload.submittedAt) || new Date().toISOString();
 
   if (!name || !email || !message) {
     return NextResponse.json(
@@ -55,7 +59,10 @@ export async function POST(request: Request) {
   }
 
   if (!isValidEmail(email)) {
-    return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid email address." },
+      { status: 400 },
+    );
   }
 
   const webhookResponse = await fetch(webhookUrl, {

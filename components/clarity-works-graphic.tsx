@@ -21,14 +21,20 @@ export function ClarityWorksGraphic() {
   }, [isOpen]);
 
   return (
-    <section className="mx-auto mt-16 max-w-6xl border-t border-apriil-line/80 pt-16">
+    <section className="w-full mt-16 border-t border-apriil-line/80 pt-16">
       <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-end">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">How Clarity works</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">Fra signaler til beslutning og forretningsverdi</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">
+            How Clarity works
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">
+            Fra signaler til beslutning og forretningsverdi
+          </h2>
         </div>
         <p className="max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-          Klikk for full visning. Diagrammet viser hvordan Apriil Clarity setter struktur og prioritering, mens teknologi og oppfolging gir tydeligere tiltak og kommersiell effekt.
+          Klikk for full visning. Diagrammet viser hvordan Apriil Clarity setter
+          struktur og prioritering, mens teknologi og oppfolging gir tydeligere
+          tiltak og kommersiell effekt.
         </p>
       </div>
 
@@ -53,7 +59,10 @@ export function ClarityWorksGraphic() {
           aria-modal="true"
           onClick={() => setIsOpen(false)}
         >
-          <div className="relative max-h-[92vh] max-w-[96vw]" onClick={(event) => event.stopPropagation()}>
+          <div
+            className="relative max-h-[92vh] max-w-[96vw]"
+            onClick={(event) => event.stopPropagation()}
+          >
             <button
               type="button"
               onClick={() => setIsOpen(false)}

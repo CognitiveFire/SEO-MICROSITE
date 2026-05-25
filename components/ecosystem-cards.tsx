@@ -150,7 +150,7 @@ export function EcosystemCards() {
   }, [buildLines]);
 
   return (
-    <section className="relative z-10 mx-auto mb-20 mt-16 max-w-6xl px-6 md:px-10 xl:px-16">
+    <section className="relative z-10 w-full mb-20 mt-16 px-6 md:px-10 xl:px-16">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -158,20 +158,40 @@ export function EcosystemCards() {
         variants={containerVariants}
         className="rounded-[34px] border border-apriil-line/75 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(247,244,238,0.95))] p-6 shadow-[0_24px_72px_rgba(23,23,23,0.08)] md:p-10"
       >
-        <motion.p variants={cardVariants} className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">
+        <motion.p
+          variants={cardVariants}
+          className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary"
+        >
           Operasjonell modell
         </motion.p>
-        <motion.h2 variants={cardVariants} className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">
+        <motion.h2
+          variants={cardVariants}
+          className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl"
+        >
           Fragmenterte signaler. Tydeligere beslutninger.
         </motion.h2>
-        <motion.p variants={cardVariants} className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-          Apriil Clarity samler signaler fra moderne mediemiljøer og oversetter dem til tydeligere prioriteringer, tiltak og forretningsmessige beslutninger.
+        <motion.p
+          variants={cardVariants}
+          className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg"
+        >
+          Apriil Clarity samler signaler fra moderne mediemiljøer og oversetter
+          dem til tydeligere prioriteringer, tiltak og forretningsmessige
+          beslutninger.
         </motion.p>
 
         <div ref={gridRef} className="relative mt-12">
-          <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" aria-hidden="true">
+          <svg
+            className="pointer-events-none absolute inset-0 hidden h-full w-full md:block"
+            aria-hidden="true"
+          >
             <defs>
-              <filter id="connectionGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <filter
+                id="connectionGlow"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
                 <feGaussianBlur stdDeviation="1.8" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
@@ -221,8 +241,16 @@ export function EcosystemCards() {
                   r="2.6"
                   fill="rgba(143,90,51,0.9)"
                   filter="url(#connectionGlow)"
-                  animate={{ opacity: [0.45, 1, 0.45], scale: [0.95, 1.15, 0.95] }}
-                  transition={{ duration: 1.35, repeat: Infinity, ease: "easeInOut", delay: index * 0.04 }}
+                  animate={{
+                    opacity: [0.45, 1, 0.45],
+                    scale: [0.95, 1.15, 0.95],
+                  }}
+                  transition={{
+                    duration: 1.35,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.04,
+                  }}
                 />
                 <motion.circle
                   cx={line.x2}
@@ -230,8 +258,16 @@ export function EcosystemCards() {
                   r="2.6"
                   fill="rgba(143,90,51,0.9)"
                   filter="url(#connectionGlow)"
-                  animate={{ opacity: [0.45, 1, 0.45], scale: [0.95, 1.15, 0.95] }}
-                  transition={{ duration: 1.35, repeat: Infinity, ease: "easeInOut", delay: index * 0.06 }}
+                  animate={{
+                    opacity: [0.45, 1, 0.45],
+                    scale: [0.95, 1.15, 0.95],
+                  }}
+                  transition={{
+                    duration: 1.35,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.06,
+                  }}
                 />
               </g>
             ))}
@@ -245,7 +281,10 @@ export function EcosystemCards() {
                   cardRefs.current[index] = el;
                 }}
                 variants={cardVariants}
-                whileHover={{ y: -4, transition: { duration: 0.22, ease: "easeOut" } }}
+                whileHover={{
+                  y: -4,
+                  transition: { duration: 0.22, ease: "easeOut" },
+                }}
                 className="relative flex min-h-[118px] items-center justify-center rounded-2xl border border-apriil-line/70 bg-white/86 px-4 text-center text-sm font-semibold tracking-[-0.01em] text-apriil-dark shadow-[0_12px_32px_rgba(23,23,23,0.06)]"
               >
                 <span>{label}</span>

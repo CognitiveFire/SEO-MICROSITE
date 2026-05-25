@@ -97,11 +97,15 @@ export function SignalRoomSlideshow() {
   };
 
   return (
-    <section className="mx-auto mt-16 max-w-6xl border-t border-apriil-line/80 pt-16">
+    <section className="w-full mt-16 border-t border-apriil-line/80 pt-16">
       <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">Signalrom</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">Operativ innsikt på tvers av signaler</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-apriil-primary">
+            Signalrom
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-5xl">
+            Operativ innsikt på tvers av signaler
+          </h2>
         </div>
         <div className="flex items-center gap-3">
           <button

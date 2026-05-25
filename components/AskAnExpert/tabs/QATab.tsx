@@ -70,7 +70,8 @@ const chips = [
 
 export function QATab({ qaEndpoint }: QATabProps) {
   const [items, setItems] = useState<QAItem[]>([]);
-  const [activeFilter, setActiveFilter] = useState<(typeof chips)[number]["key"]>("all");
+  const [activeFilter, setActiveFilter] =
+    useState<(typeof chips)[number]["key"]>("all");
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(8);
 
@@ -85,7 +86,9 @@ export function QATab({ qaEndpoint }: QATabProps) {
         }
         const data = (await response.json()) as QAItem[];
         if (active) {
-          setItems(Array.isArray(data) && data.length > 0 ? data : fallbackItems);
+          setItems(
+            Array.isArray(data) && data.length > 0 ? data : fallbackItems,
+          );
         }
       } catch {
         if (active) {
@@ -137,7 +140,9 @@ export function QATab({ qaEndpoint }: QATabProps) {
         })}
       </div>
 
-      {loading ? <p className={styles.loading}>Laster tidligere svar...</p> : null}
+      {loading ? (
+        <p className={styles.loading}>Laster tidligere svar...</p>
+      ) : null}
 
       {!loading && visibleItems.length === 0 ? (
         <p className={styles.empty}>Ingen spørsmål i denne kategorien ennå.</p>
@@ -157,13 +162,19 @@ export function QATab({ qaEndpoint }: QATabProps) {
                   {item.date} · {item.author}
                 </p>
               </div>
-              {index < visibleItems.length - 1 ? <div className={styles.divider} /> : null}
+              {index < visibleItems.length - 1 ? (
+                <div className={styles.divider} />
+              ) : null}
             </article>
           ))
         : null}
 
       {!loading && canLoadMore ? (
-        <button type="button" className={styles.loadMore} onClick={() => setVisibleCount((prev) => prev + 8)}>
+        <button
+          type="button"
+          className={styles.loadMore}
+          onClick={() => setVisibleCount((prev) => prev + 8)}
+        >
           Vis flere svar
         </button>
       ) : null}

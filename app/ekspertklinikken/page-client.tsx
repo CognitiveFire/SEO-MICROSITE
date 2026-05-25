@@ -42,16 +42,31 @@ function tagClass(topic: TopicTag) {
 }
 
 function statusUi(state: string) {
-  if (state === "today-before") return { text: "I dag kl. 12:00", className: `${styles.pill} ${styles.pillAmber}` };
+  if (state === "today-before")
+    return {
+      text: "I dag kl. 12:00",
+      className: `${styles.pill} ${styles.pillAmber}`,
+    };
   if (state === "live")
     return {
       text: "Sender nå!",
       className: `${styles.pill} ${styles.pillRed}`,
       live: true,
     };
-  if (state === "recording-pending") return { text: "Opptak klargjøres…", className: `${styles.pill} ${styles.pillGray}` };
-  if (state === "recording-available") return { text: "Opptak tilgjengelig", className: `${styles.pill} ${styles.pillGreen}` };
-  return { text: "Neste klinikk", className: `${styles.pill} ${styles.pillBlue}` };
+  if (state === "recording-pending")
+    return {
+      text: "Opptak klargjøres…",
+      className: `${styles.pill} ${styles.pillGray}`,
+    };
+  if (state === "recording-available")
+    return {
+      text: "Opptak tilgjengelig",
+      className: `${styles.pill} ${styles.pillGreen}`,
+    };
+  return {
+    text: "Neste klinikk",
+    className: `${styles.pill} ${styles.pillBlue}`,
+  };
 }
 
 function useAnnouncedState(eventState: string) {
@@ -64,7 +79,11 @@ function useAnnouncedState(eventState: string) {
   return announced;
 }
 
-export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnsweredFaq: SubmittedQuestion[] }) {
+export function EkspertklinikkenClient({
+  initialAnsweredFaq,
+}: {
+  initialAnsweredFaq: SubmittedQuestion[];
+}) {
   const { eventDateLabel, eventMonth, eventState, countdown } = useEventState();
   const [questions, setQuestions] = useState<SubmittedQuestion[]>([]);
   const [recordings, setRecordings] = useState<Recording[]>([]);
@@ -90,7 +109,10 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
   useEffect(() => {
     async function loadQuestions() {
       setIsLoadingQuestions(true);
-      const res = await fetch(`/api/questions?month=${eventMonth}&status=pending`, { cache: "no-store" });
+      const res = await fetch(
+        `/api/questions?month=${eventMonth}&status=pending`,
+        { cache: "no-store" },
+      );
       const json = await res.json();
       setQuestions((json.data || []) as SubmittedQuestion[]);
       setIsLoadingQuestions(false);
@@ -195,38 +217,62 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
     const json = await res.json();
 
     if (!res.ok) {
-      setSubmitError("Noe gikk galt. Prøv igjen eller send e-post til hei@apriil.no");
+      setSubmitError(
+        "Noe gikk galt. Prøv igjen eller send e-post til hei@apriil.no",
+      );
       setIsSubmitting(false);
       return;
     }
 
     const created = json.question as SubmittedQuestion;
     setQuestions((prev) => [{ ...created, isNew: true }, ...prev]);
-    setFormData({ name: "", email: "", topic: "", question: "", consentToPublish: false });
+    setFormData({
+      name: "",
+      email: "",
+      topic: "",
+      question: "",
+      consentToPublish: false,
+    });
     setErrors({});
-    setSubmitSuccess("Spørsmål mottatt! Ekspertene ser det før sendingen. Du vil se svaret live — eller i opptaket etterpå.");
+    setSubmitSuccess(
+      "Spørsmål mottatt! Ekspertene ser det før sendingen. Du vil se svaret live — eller i opptaket etterpå.",
+    );
     setIsSubmitting(false);
   }
 
-  const showCountdown = eventState === "upcoming" || eventState === "today-before";
+  const showCountdown =
+    eventState === "upcoming" || eventState === "today-before";
   const showLiveNotice = eventState === "live";
   const showRecPending = eventState === "recording-pending";
   const showRecCta = eventState === "recording-available";
 
   return (
     <main className={styles.page}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className={styles.wrapper}>
         <section className={styles.section}>
-          <p className={styles.mutedSmall}>Apriil · LinkedIn Live · Siste fredag i måneden</p>
-          <h1 className={styles.heroTitle}>Ekspertklinikken — still ditt spørsmål live</h1>
+          <p className={styles.mutedSmall}>
+            Apriil · LinkedIn Live · Siste fredag i måneden
+          </p>
+          <h1 className={styles.heroTitle}>
+            Ekspertklinikken — still ditt spørsmål live
+          </h1>
           <p className={styles.heroLead}>
-            En gang i måneden svarer Apriils eksperter på dine spørsmål om SEO, betalt media og digital analyse — direkte på
-            LinkedIn. Gratis, uforpliktende og alltid relevant. Still spørsmålet ditt på forhånd, eller møt opp live og still det i
-            kommentarfeltet.
+            En gang i måneden svarer Apriils eksperter på dine spørsmål om SEO,
+            betalt media og digital analyse — direkte på LinkedIn. Gratis,
+            uforpliktende og alltid relevant. Still spørsmålet ditt på forhånd,
+            eller møt opp live og still det i kommentarfeltet.
           </p>
           <div className={styles.statusRow}>
-            <span className={status.className}>{status.live ? <span className={styles.liveDot} aria-hidden="true" /> : null}{status.text}</span>
+            <span className={status.className}>
+              {status.live ? (
+                <span className={styles.liveDot} aria-hidden="true" />
+              ) : null}
+              {status.text}
+            </span>
             <span className={styles.dateString}>{eventDateLabel}</span>
           </div>
           <span className={styles.srOnly} aria-live="polite">
@@ -276,16 +322,26 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
           {showLiveNotice ? (
             <div className={styles.statusRow}>
               <span className={`${styles.pill} ${styles.pillRed}`}>
-                <span className={styles.liveDot} aria-hidden="true" />Klinikken sender nå — bli med på LinkedIn
+                <span className={styles.liveDot} aria-hidden="true" />
+                Klinikken sender nå — bli med på LinkedIn
               </span>
-              <a href="https://www.linkedin.com/company/apriil/events/" target="_blank" rel="noopener noreferrer" className={styles.linkedInBtn}>
+              <a
+                href="https://www.linkedin.com/company/apriil/events/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.linkedInBtn}
+              >
                 Bli med live
                 <span className={styles.srOnly}>(åpnes i ny fane)</span>
               </a>
             </div>
           ) : null}
 
-          {showRecPending ? <p className={styles.mutedSmall}>Opptaket er tilgjengelig om ca. 60 minutter</p> : null}
+          {showRecPending ? (
+            <p className={styles.mutedSmall}>
+              Opptaket er tilgjengelig om ca. 60 minutter
+            </p>
+          ) : null}
           {showRecCta ? (
             <a href="#opptak" className={styles.linkedInBtn}>
               Se opptak
@@ -297,20 +353,49 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
           <h2>Slik fungerer det</h2>
           <div className={styles.grid2}>
             <article className={styles.infoBlock}>
-              <div className={styles.infoHeader}><span className={styles.iconRed} aria-hidden="true">◷</span>60 minutter</div>
-              <p className={styles.mutedSmall}>Kl. 12:00-13:00 norsk tid, hver siste fredag i måneden</p>
+              <div className={styles.infoHeader}>
+                <span className={styles.iconRed} aria-hidden="true">
+                  ◷
+                </span>
+                60 minutter
+              </div>
+              <p className={styles.mutedSmall}>
+                Kl. 12:00-13:00 norsk tid, hver siste fredag i måneden
+              </p>
             </article>
             <article className={styles.infoBlock}>
-              <div className={styles.infoHeader}><span className={styles.iconBlue} aria-hidden="true">in</span>LinkedIn Live</div>
-              <p className={styles.mutedSmall}>Åpent for alle — ingen påmelding nødvendig for å se</p>
+              <div className={styles.infoHeader}>
+                <span className={styles.iconBlue} aria-hidden="true">
+                  in
+                </span>
+                LinkedIn Live
+              </div>
+              <p className={styles.mutedSmall}>
+                Åpent for alle — ingen påmelding nødvendig for å se
+              </p>
             </article>
             <article className={styles.infoBlock}>
-              <div className={styles.infoHeader}><span className={styles.iconRed} aria-hidden="true">?</span>Send spørsmål på forhånd</div>
-              <p className={styles.mutedSmall}>Ekspertene forbereder seg. Du trenger ikke møte opp live for å få svar</p>
+              <div className={styles.infoHeader}>
+                <span className={styles.iconRed} aria-hidden="true">
+                  ?
+                </span>
+                Send spørsmål på forhånd
+              </div>
+              <p className={styles.mutedSmall}>
+                Ekspertene forbereder seg. Du trenger ikke møte opp live for å
+                få svar
+              </p>
             </article>
             <article className={styles.infoBlock}>
-              <div className={styles.infoHeader}><span className={styles.iconRed} aria-hidden="true">▶</span>Se opptak i etterkant</div>
-              <p className={styles.mutedSmall}>Tilgjengelig 60 minutter etter sendingen — se når det passer deg</p>
+              <div className={styles.infoHeader}>
+                <span className={styles.iconRed} aria-hidden="true">
+                  ▶
+                </span>
+                Se opptak i etterkant
+              </div>
+              <p className={styles.mutedSmall}>
+                Tilgjengelig 60 minutter etter sendingen — se når det passer deg
+              </p>
             </article>
           </div>
         </section>
@@ -320,7 +405,13 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
           <div className={styles.expertList}>
             {EXPERTS.map((expert) => (
               <article key={expert.name} className={styles.expertRow}>
-                <span className={styles.avatar} style={{ background: expert.avatarBg, color: expert.avatarColor }}>
+                <span
+                  className={styles.avatar}
+                  style={{
+                    background: expert.avatarBg,
+                    color: expert.avatarColor,
+                  }}
+                >
                   {expert.initials}
                 </span>
                 <div className={styles.expertMeta}>
@@ -338,12 +429,16 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
         <section id="send-sporsmal" className={styles.section}>
           <h2>Send inn spørsmål på forhånd</h2>
           <p className={styles.mutedSmall}>
-            Ekspertene forbereder seg på innsendte spørsmål — du øker sjansen for et grundig svar. Du trenger ikke møte opp live for å få svar på spørsmålet ditt.
+            Ekspertene forbereder seg på innsendte spørsmål — du øker sjansen
+            for et grundig svar. Du trenger ikke møte opp live for å få svar på
+            spørsmålet ditt.
           </p>
 
           <form className={styles.form} onSubmit={onSubmit} noValidate>
             <div>
-              <label htmlFor="name" className={styles.label}>Navn</label>
+              <label htmlFor="name" className={styles.label}>
+                Navn
+              </label>
               <input
                 id="name"
                 name="name"
@@ -351,13 +446,21 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
                 className={`${styles.input} ${errors.name ? styles.invalid : ""}`}
                 aria-describedby={errors.name ? "name-error" : undefined}
                 value={formData.name}
-                onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, name: e.target.value }))
+                }
               />
-              {errors.name ? <p id="name-error" role="alert" className={styles.fieldError}>{errors.name}</p> : null}
+              {errors.name ? (
+                <p id="name-error" role="alert" className={styles.fieldError}>
+                  {errors.name}
+                </p>
+              ) : null}
             </div>
 
             <div>
-              <label htmlFor="email" className={styles.label}>E-post</label>
+              <label htmlFor="email" className={styles.label}>
+                E-post
+              </label>
               <input
                 id="email"
                 name="email"
@@ -366,44 +469,80 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
                 className={`${styles.input} ${errors.email ? styles.invalid : ""}`}
                 aria-describedby={errors.email ? "email-error" : undefined}
                 value={formData.email}
-                onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, email: e.target.value }))
+                }
               />
-              {errors.email ? <p id="email-error" role="alert" className={styles.fieldError}>{errors.email}</p> : null}
+              {errors.email ? (
+                <p id="email-error" role="alert" className={styles.fieldError}>
+                  {errors.email}
+                </p>
+              ) : null}
             </div>
 
             <div>
-              <label htmlFor="topic" className={styles.label}>Tema</label>
+              <label htmlFor="topic" className={styles.label}>
+                Tema
+              </label>
               <select
                 id="topic"
                 name="topic"
                 className={`${styles.select} ${errors.topic ? styles.invalid : ""}`}
                 aria-describedby={errors.topic ? "topic-error" : undefined}
                 value={formData.topic}
-                onChange={(e) => setFormData((prev) => ({ ...prev, topic: e.target.value }))}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, topic: e.target.value }))
+                }
               >
                 {TOPIC_OPTIONS.map((option, idx) => (
-                  <option key={`${option.label}-${idx}`} value={option.value} disabled={idx === 0}>
+                  <option
+                    key={`${option.label}-${idx}`}
+                    value={option.value}
+                    disabled={idx === 0}
+                  >
                     {option.label}
                   </option>
                 ))}
               </select>
-              {errors.topic ? <p id="topic-error" role="alert" className={styles.fieldError}>{errors.topic}</p> : null}
+              {errors.topic ? (
+                <p id="topic-error" role="alert" className={styles.fieldError}>
+                  {errors.topic}
+                </p>
+              ) : null}
             </div>
 
             <div>
-              <label htmlFor="question" className={styles.label}>Spørsmålet ditt</label>
+              <label htmlFor="question" className={styles.label}>
+                Spørsmålet ditt
+              </label>
               <textarea
                 id="question"
                 name="question"
                 placeholder="Beskriv utfordringen eller spørsmålet ditt — jo mer kontekst, desto bedre svar…"
                 className={`${styles.textarea} ${errors.question ? styles.invalid : ""}`}
-                aria-describedby={errors.question ? "question-error" : undefined}
+                aria-describedby={
+                  errors.question ? "question-error" : undefined
+                }
                 value={formData.question}
                 maxLength={500}
-                onChange={(e) => setFormData((prev) => ({ ...prev, question: e.target.value }))}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, question: e.target.value }))
+                }
               />
-              <p className={`${styles.counter} ${remainingChars < 50 ? styles.counterWarn : ""}`}>{remainingChars} tegn igjen</p>
-              {errors.question ? <p id="question-error" role="alert" className={styles.fieldError}>{errors.question}</p> : null}
+              <p
+                className={`${styles.counter} ${remainingChars < 50 ? styles.counterWarn : ""}`}
+              >
+                {remainingChars} tegn igjen
+              </p>
+              {errors.question ? (
+                <p
+                  id="question-error"
+                  role="alert"
+                  className={styles.fieldError}
+                >
+                  {errors.question}
+                </p>
+              ) : null}
             </div>
 
             <div>
@@ -412,38 +551,70 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
                   id="consent"
                   type="checkbox"
                   checked={formData.consentToPublish}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, consentToPublish: e.target.checked }))}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      consentToPublish: e.target.checked,
+                    }))
+                  }
                 />{" "}
-                Jeg godtar at spørsmålet kan besvares anonymt på denne siden etter sendingen
+                Jeg godtar at spørsmålet kan besvares anonymt på denne siden
+                etter sendingen
               </label>
-              {errors.consentToPublish ? <p role="alert" className={styles.fieldError}>{errors.consentToPublish}</p> : null}
+              {errors.consentToPublish ? (
+                <p role="alert" className={styles.fieldError}>
+                  {errors.consentToPublish}
+                </p>
+              ) : null}
             </div>
 
-            <button type="submit" className={styles.redBtn} aria-busy={isSubmitting} disabled={isSubmitting}>
+            <button
+              type="submit"
+              className={styles.redBtn}
+              aria-busy={isSubmitting}
+              disabled={isSubmitting}
+            >
               Send spørsmål →
             </button>
 
-            {submitSuccess ? <p className={styles.noticeSuccess}>✓ {submitSuccess}</p> : null}
-            {submitError ? <p className={styles.noticeError}>{submitError}</p> : null}
+            {submitSuccess ? (
+              <p className={styles.noticeSuccess}>✓ {submitSuccess}</p>
+            ) : null}
+            {submitError ? (
+              <p className={styles.noticeError}>{submitError}</p>
+            ) : null}
           </form>
         </section>
 
         <section className={styles.section}>
           <h2>Innsendte spørsmål — denne måneden</h2>
-          <p className={styles.mutedSmall}>Ekspertene besvarer disse live. Alle spørsmål er anonymisert.</p>
+          <p className={styles.mutedSmall}>
+            Ekspertene besvarer disse live. Alle spørsmål er anonymisert.
+          </p>
 
-          {isLoadingQuestions ? <p className={styles.mutedSmall}>Laster spørsmål...</p> : null}
+          {isLoadingQuestions ? (
+            <p className={styles.mutedSmall}>Laster spørsmål...</p>
+          ) : null}
 
           {!isLoadingQuestions && questions.length === 0 ? (
-            <p className={styles.mutedSmall}>Ingen spørsmål sendt inn ennå — bli den første! ↑</p>
+            <p className={styles.mutedSmall}>
+              Ingen spørsmål sendt inn ennå — bli den første! ↑
+            </p>
           ) : null}
 
           <div className={styles.questionsList}>
             {questions.map((q) => (
-              <article key={q.id} className={`${styles.questionCard} ${q.isNew ? styles.qNew : ""}`}>
-                <span className={tagClass(q.topic)}>{q.topicLabel || topicLabel(q.topic)}</span>
+              <article
+                key={q.id}
+                className={`${styles.questionCard} ${q.isNew ? styles.qNew : ""}`}
+              >
+                <span className={tagClass(q.topic)}>
+                  {q.topicLabel || topicLabel(q.topic)}
+                </span>
                 <p className={styles.questionText}>"{q.question}"</p>
-                <p className={styles.questionMeta}>Sendt inn av en deltaker · besvares live</p>
+                <p className={styles.questionMeta}>
+                  Sendt inn av en deltaker · besvares live
+                </p>
               </article>
             ))}
           </div>
@@ -451,9 +622,13 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
 
         <section id="opptak" className={styles.section}>
           <h2>Tidligere sendinger — se på opptak</h2>
-          <p className={styles.mutedSmall}>Opptak er tilgjengelig 60 minutter etter at sendingen er ferdig.</p>
+          <p className={styles.mutedSmall}>
+            Opptak er tilgjengelig 60 minutter etter at sendingen er ferdig.
+          </p>
 
-          {isLoadingRecordings ? <p className={styles.mutedSmall}>Laster opptak...</p> : null}
+          {isLoadingRecordings ? (
+            <p className={styles.mutedSmall}>Laster opptak...</p>
+          ) : null}
 
           <div className={styles.recordingsList}>
             {liveRecordings.map((recording) => {
@@ -462,32 +637,61 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
               const upcoming = recording.status === "upcoming";
 
               return (
-                <article key={recording.id} className={styles.recordingCard} aria-label={`Opptak ${recording.title}`}>
-                  <div className={`${styles.thumb} ${available ? styles.thumbAvailable : styles.thumbPending}`}>
+                <article
+                  key={recording.id}
+                  className={styles.recordingCard}
+                  aria-label={`Opptak ${recording.title}`}
+                >
+                  <div
+                    className={`${styles.thumb} ${available ? styles.thumbAvailable : styles.thumbPending}`}
+                  >
                     {available ? "▶" : "..."}
                   </div>
                   <div>
                     <div className={styles.recordingTop}>
-                      {available ? <span className={`${styles.pill} ${styles.pillGreen}`}>Tilgjengelig</span> : null}
-                      {pending ? <span className={`${styles.pill} ${styles.pillAmber}`}>Tilgjengelig om kort tid</span> : null}
-                      {upcoming ? <span className={`${styles.pill} ${styles.pillBlue}`}>Kommende</span> : null}
-                      <span className={styles.mutedSmall}>{recording.displayDate}</span>
+                      {available ? (
+                        <span className={`${styles.pill} ${styles.pillGreen}`}>
+                          Tilgjengelig
+                        </span>
+                      ) : null}
+                      {pending ? (
+                        <span className={`${styles.pill} ${styles.pillAmber}`}>
+                          Tilgjengelig om kort tid
+                        </span>
+                      ) : null}
+                      {upcoming ? (
+                        <span className={`${styles.pill} ${styles.pillBlue}`}>
+                          Kommende
+                        </span>
+                      ) : null}
+                      <span className={styles.mutedSmall}>
+                        {recording.displayDate}
+                      </span>
                     </div>
 
                     <p className={styles.recordingTitle}>{recording.title}</p>
                     <p className={styles.recordingMeta}>
-                      {recording.questionCount} spørsmål besvart · {recording.durationMinutes} min
+                      {recording.questionCount} spørsmål besvart ·{" "}
+                      {recording.durationMinutes} min
                     </p>
 
                     <div className={styles.tagsRow}>
                       {recording.topics.map((topic) => (
-                        <span key={`${recording.id}-${topic}`} className={tagClass(topic)}>
+                        <span
+                          key={`${recording.id}-${topic}`}
+                          className={tagClass(topic)}
+                        >
                           {topicLabel(topic)}
                         </span>
                       ))}
                     </div>
 
-                    <a className={styles.linkedinLink} href={recording.linkedInUrl} target="_blank" rel="noopener noreferrer">
+                    <a
+                      className={styles.linkedinLink}
+                      href={recording.linkedInUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <span aria-hidden="true">in</span>
                       Se opptak på LinkedIn
                       <span className={styles.srOnly}>(åpnes i ny fane)</span>
@@ -501,7 +705,10 @@ export function EkspertklinikkenClient({ initialAnsweredFaq }: { initialAnswered
 
         <section className={`${styles.section} ${styles.footerCta}`}>
           <h2>Vil du heller snakke med en ekspert direkte?</h2>
-          <p>Book en uforpliktende strategisamtale med Lasse, Mari eller Agathe — 30 minutter, ingen salgspress.</p>
+          <p>
+            Book en uforpliktende strategisamtale med Lasse, Mari eller Agathe —
+            30 minutter, ingen salgspress.
+          </p>
           <a href="/kontakt" className={styles.redBtn}>
             Book samtale →
           </a>

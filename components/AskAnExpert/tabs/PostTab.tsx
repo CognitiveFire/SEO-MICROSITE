@@ -30,7 +30,12 @@ const topics = [
 const offices = ["Bergen", "Stavanger", "Oslo"] as const;
 
 function normalize(value: string) {
-  return value.toLowerCase().replaceAll("ø", "o").replaceAll("å", "a").replaceAll("æ", "ae").trim();
+  return value
+    .toLowerCase()
+    .replaceAll("ø", "o")
+    .replaceAll("å", "a")
+    .replaceAll("æ", "ae")
+    .trim();
 }
 
 function resolveTopic(presetTopic: string) {
@@ -38,7 +43,10 @@ function resolveTopic(presetTopic: string) {
   if (!needle) return "";
   const direct = topics.find((item) => normalize(item) === needle);
   if (direct) return direct;
-  const fuzzy = topics.find((item) => normalize(item).includes(needle) || needle.includes(normalize(item)));
+  const fuzzy = topics.find(
+    (item) =>
+      normalize(item).includes(needle) || needle.includes(normalize(item)),
+  );
   return fuzzy ?? "";
 }
 
@@ -82,7 +90,9 @@ export function PostTab({ submitEndpoint, topic }: PostTabProps) {
     question: "",
   });
   const [errors, setErrors] = useState<FieldErrors>({});
-  const [status, setStatus] = useState<"idle" | "success" | "error" | "submitting">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "success" | "error" | "submitting"
+  >("idle");
 
   const update = (field: keyof FormState, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -163,7 +173,9 @@ export function PostTab({ submitEndpoint, topic }: PostTabProps) {
           className={errors.email ? styles.fieldError : ""}
           required
         />
-        {errors.email ? <p className={styles.errorText}>{errors.email}</p> : null}
+        {errors.email ? (
+          <p className={styles.errorText}>{errors.email}</p>
+        ) : null}
       </div>
 
       <div className={styles.formField}>
@@ -184,7 +196,9 @@ export function PostTab({ submitEndpoint, topic }: PostTabProps) {
             </option>
           ))}
         </select>
-        {errors.office ? <p className={styles.errorText}>{errors.office}</p> : null}
+        {errors.office ? (
+          <p className={styles.errorText}>{errors.office}</p>
+        ) : null}
       </div>
 
       <div className={styles.formField}>
@@ -205,7 +219,9 @@ export function PostTab({ submitEndpoint, topic }: PostTabProps) {
             </option>
           ))}
         </select>
-        {errors.topic ? <p className={styles.errorText}>{errors.topic}</p> : null}
+        {errors.topic ? (
+          <p className={styles.errorText}>{errors.topic}</p>
+        ) : null}
       </div>
 
       <div className={styles.formField}>
@@ -218,19 +234,29 @@ export function PostTab({ submitEndpoint, topic }: PostTabProps) {
           minLength={20}
           required
         />
-        {errors.question ? <p className={styles.errorText}>{errors.question}</p> : null}
+        {errors.question ? (
+          <p className={styles.errorText}>{errors.question}</p>
+        ) : null}
       </div>
 
-      <button type="submit" className={styles.submitButton} disabled={status === "submitting"}>
+      <button
+        type="submit"
+        className={styles.submitButton}
+        disabled={status === "submitting"}
+      >
         {status === "submitting" ? "Sender..." : "Send spørsmål"}
       </button>
 
       {status === "success" ? (
-        <p className={styles.successNotice}>✓ Takk! Vi svarer på e-post innen én arbeidsdag.</p>
+        <p className={styles.successNotice}>
+          ✓ Takk! Vi svarer på e-post innen én arbeidsdag.
+        </p>
       ) : null}
 
       {status === "error" ? (
-        <p className={styles.errorNotice}>Noe gikk galt. Prøv igjen eller send e-post til hei@apriil.no</p>
+        <p className={styles.errorNotice}>
+          Noe gikk galt. Prøv igjen eller send e-post til hei@apriil.no
+        </p>
       ) : null}
     </form>
   );

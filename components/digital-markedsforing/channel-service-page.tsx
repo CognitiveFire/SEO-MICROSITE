@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { CaseStudyGrid, MethodologyGrid, SectionContainer } from "@/components/digital-markedsforing/ui";
+import {
+  CaseStudyGrid,
+  MethodologyGrid,
+  SectionContainer,
+} from "@/components/digital-markedsforing/ui";
 
 export type ChannelServicePageProps = {
   eyebrow: string;
@@ -27,12 +31,16 @@ export function ChannelServicePage({
   return (
     <main>
       <section className="px-6 py-16 md:px-10 xl:px-16">
-        <div className="mx-auto max-w-6xl border-t border-apriil-line/70 pt-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-apriil-muted">{eyebrow}</p>
+        <div className="w-full border-t border-apriil-line/70 pt-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-apriil-muted">
+            {eyebrow}
+          </p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-6xl md:leading-[0.95]">
             {title}
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">{intro}</p>
+          <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
+            {intro}
+          </p>
           <div className="mt-8">
             <Link
               href="/contact"
@@ -44,7 +52,11 @@ export function ChannelServicePage({
         </div>
       </section>
 
-      <SectionContainer eyebrow="Approach" title={approachTitle} intro={approachIntro}>
+      <SectionContainer
+        eyebrow="Approach"
+        title={approachTitle}
+        intro={approachIntro}
+      >
         <MethodologyGrid
           steps={[
             {

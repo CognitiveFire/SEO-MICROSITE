@@ -1,4 +1,8 @@
-import type { Recording, SubmittedQuestion, TopicTag } from "@/app/ekspertklinikken/types";
+import type {
+  Recording,
+  SubmittedQuestion,
+  TopicTag,
+} from "@/app/ekspertklinikken/types";
 
 type InternalQuestion = SubmittedQuestion & {
   month: string;
@@ -20,7 +24,8 @@ const questions: InternalQuestion[] = [
     id: "q-101",
     topic: "seo",
     topicLabel: "SEO",
-    question: "Hvordan prioriterer vi innhold når både Google og AI-svarmotorer skal forstå oss?",
+    question:
+      "Hvordan prioriterer vi innhold når både Google og AI-svarmotorer skal forstå oss?",
     status: "pending",
     month: "2026-05",
     submittedAt: "2026-05-10T09:20:00.000Z",
@@ -29,7 +34,8 @@ const questions: InternalQuestion[] = [
     id: "q-102",
     topic: "paid",
     topicLabel: "Betalt media",
-    question: "Når bør vi splitte budsjettet mellom søk og paid social for best mulig lønnsomhet?",
+    question:
+      "Når bør vi splitte budsjettet mellom søk og paid social for best mulig lønnsomhet?",
     status: "pending",
     month: "2026-05",
     submittedAt: "2026-05-14T11:10:00.000Z",
@@ -38,10 +44,12 @@ const questions: InternalQuestion[] = [
     id: "q-001",
     topic: "general",
     topicLabel: "Strategi",
-    question: "Hva er første steg for å få bedre samspill mellom SEO, annonsering og analyse?",
+    question:
+      "Hva er første steg for å få bedre samspill mellom SEO, annonsering og analyse?",
     status: "answered",
     answeredInSession: "April 2026",
-    answer: "Start med ett felles mål for inntekt, mål deretter bidrag per kanal ukentlig og prioriter tiltak som løfter total effekt.",
+    answer:
+      "Start med ett felles mål for inntekt, mål deretter bidrag per kanal ukentlig og prioriter tiltak som løfter total effekt.",
     month: "2026-04",
     submittedAt: "2026-04-20T10:00:00.000Z",
   },
@@ -102,12 +110,24 @@ function syncRecordingStatus(recording: Recording): Recording {
   return { ...recording, status: "pending" };
 }
 
-export function getQuestions(month?: string, status?: "pending" | "answered"): SubmittedQuestion[] {
+export function getQuestions(
+  month?: string,
+  status?: "pending" | "answered",
+): SubmittedQuestion[] {
   return questions
     .filter((q) => (month ? q.month === month : true))
     .filter((q) => (status ? q.status === status : true))
     .sort((a, b) => (a.submittedAt < b.submittedAt ? 1 : -1))
-    .map(({ month: _month, submittedAt: _submittedAt, name: _name, email: _email, consentToPublish: _consentToPublish, ...rest }) => rest);
+    .map(
+      ({
+        month: _month,
+        submittedAt: _submittedAt,
+        name: _name,
+        email: _email,
+        consentToPublish: _consentToPublish,
+        ...rest
+      }) => rest,
+    );
 }
 
 export function getAnsweredQuestions(): SubmittedQuestion[] {
@@ -124,7 +144,10 @@ export function createQuestion(input: {
   submittedAt: string;
 }): SubmittedQuestion {
   const normalizedTopic: TopicTag =
-    input.topic === "seo" || input.topic === "paid" || input.topic === "bi" || input.topic === "general"
+    input.topic === "seo" ||
+    input.topic === "paid" ||
+    input.topic === "bi" ||
+    input.topic === "general"
       ? input.topic
       : "general";
 
@@ -143,7 +166,14 @@ export function createQuestion(input: {
 
   questions.unshift(q);
 
-  const { month: _month, submittedAt: _submittedAt, name: _name, email: _email, consentToPublish: _consentToPublish, ...publicQuestion } = q;
+  const {
+    month: _month,
+    submittedAt: _submittedAt,
+    name: _name,
+    email: _email,
+    consentToPublish: _consentToPublish,
+    ...publicQuestion
+  } = q;
   return publicQuestion;
 }
 

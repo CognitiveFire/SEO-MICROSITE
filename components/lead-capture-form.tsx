@@ -18,6 +18,9 @@ type LeadCaptureFormProps = {
   focusLabel?: string;
   fieldLayout?: "two-column" | "stacked";
   submitRowClassName?: string;
+  fieldLabelClassName?: string;
+  introClassName?: string;
+  responseTextClassName?: string;
 };
 
 const focusOptions = [
@@ -45,6 +48,9 @@ export function LeadCaptureForm({
   focusLabel = "Fokusområde",
   fieldLayout = "two-column",
   submitRowClassName = "mt-2 flex flex-col gap-4 md:flex-row md:items-center md:justify-between",
+  fieldLabelClassName = "grid gap-2.5 text-sm font-medium text-apriil-dark/72",
+  introClassName = "max-w-2xl text-[1.02rem] leading-8 text-apriil-muted",
+  responseTextClassName = "text-sm text-apriil-muted/72",
 }: LeadCaptureFormProps) {
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -71,15 +77,21 @@ export function LeadCaptureForm({
           email: formData.get("email"),
           company: formData.get("company"),
           office: formData.get("office"),
-          focus: showFocusField ? formData.get("focus") : "Generell henvendelse",
-          message: showMessageField ? formData.get("message") : hiddenMessageValue,
+          focus: showFocusField
+            ? formData.get("focus")
+            : "Generell henvendelse",
+          message: showMessageField
+            ? formData.get("message")
+            : hiddenMessageValue,
           source,
           submittedAt: new Date().toISOString(),
         }),
       });
 
       if (!response.ok) {
-        const data = (await response.json().catch(() => null)) as { error?: string } | null;
+        const data = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
         setStatus("error");
         setErrorMessage(data?.error || "Noe gikk galt. Prøv igjen om litt.");
         return;
@@ -93,25 +105,43 @@ export function LeadCaptureForm({
 
   return (
     <form className={formClassName} onSubmit={handleSubmit}>
-      {introText ? <p className="max-w-2xl text-[1.02rem] leading-8 text-apriil-muted">{introText}</p> : null}
-      <div className={fieldLayout === "stacked" ? "grid gap-5" : "grid gap-5 md:grid-cols-2"}>
-        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
+      {introText ? <p className={introClassName}>{introText}</p> : null}
+      <div
+        className={
+          fieldLayout === "stacked" ? "grid gap-5" : "grid gap-5 md:grid-cols-2"
+        }
+      >
+        <label className={fieldLabelClassName}>
           Navn
           <input name="name" type="text" className={inputClassName} required />
         </label>
-        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
+        <label className={fieldLabelClassName}>
           E-post
-          <input name="email" type="email" className={inputClassName} required />
+          <input
+            name="email"
+            type="email"
+            className={inputClassName}
+            required
+          />
         </label>
       </div>
-      <div className={fieldLayout === "stacked" ? "grid gap-5" : "grid gap-5 md:grid-cols-3"}>
-        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
+      <div
+        className={
+          fieldLayout === "stacked" ? "grid gap-5" : "grid gap-5 md:grid-cols-3"
+        }
+      >
+        <label className={fieldLabelClassName}>
           Selskap
           <input name="company" type="text" className={inputClassName} />
         </label>
-        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
+        <label className={fieldLabelClassName}>
           Velg kontor
-          <select name="office" className={inputClassName} required defaultValue="">
+          <select
+            name="office"
+            className={inputClassName}
+            required
+            defaultValue=""
+          >
             <option value="" disabled>
               Velg kontor...
             </option>
@@ -122,26 +152,30 @@ export function LeadCaptureForm({
             ))}
           </select>
         </label>
-      {showFocusField ? (
-        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
-          {focusLabel}
-          <select
-            name="focus"
-            value={selectedFocus}
-            onChange={(event) => setSelectedFocus(event.target.value)}
-            className={inputClassName}
-          >
-            {focusOptions.map((option) => (
-              <option key={option} value={option} className="text-apriil-dark">
-                {option}
-              </option>
-            ))}
-          </select>
-        </label>
-      ) : null}
+        {showFocusField ? (
+          <label className={fieldLabelClassName}>
+            {focusLabel}
+            <select
+              name="focus"
+              value={selectedFocus}
+              onChange={(event) => setSelectedFocus(event.target.value)}
+              className={inputClassName}
+            >
+              {focusOptions.map((option) => (
+                <option
+                  key={option}
+                  value={option}
+                  className="text-apriil-dark"
+                >
+                  {option}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
       </div>
       {showMessageField ? (
-        <label className="grid gap-2.5 text-sm font-medium text-apriil-dark/72">
+        <label className={fieldLabelClassName}>
           Beskrivelse
           <textarea
             name="message"
@@ -153,15 +187,19 @@ export function LeadCaptureForm({
         </label>
       ) : null}
       <div className={submitRowClassName}>
-        <p className="text-sm text-apriil-muted/72">{responseText}</p>
+        <p className={responseTextClassName}>{responseText}</p>
         <button type="submit" className={buttonClassName} disabled={isPending}>
           {isPending ? "Sender..." : submitLabel}
         </button>
       </div>
       {status === "success" ? (
-        <p className={feedbackClassName}>Takk. Vi følger opp innen én arbeidsdag.</p>
+        <p className={feedbackClassName}>
+          Takk. Vi følger opp innen én arbeidsdag.
+        </p>
       ) : null}
-      {status === "error" ? <p className={feedbackClassName}>{errorMessage}</p> : null}
+      {status === "error" ? (
+        <p className={feedbackClassName}>{errorMessage}</p>
+      ) : null}
     </form>
   );
 }

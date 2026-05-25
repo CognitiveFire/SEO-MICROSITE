@@ -28,8 +28,16 @@ const eventSeriesSchema = {
   isAccessibleForFree: true,
   performer: [
     { "@type": "Person", name: "Lasse Monroe", jobTitle: "SEO-strateg" },
-    { "@type": "Person", name: "Mari Tveit", jobTitle: "Leder for betalt media" },
-    { "@type": "Person", name: "Agathe Aase", jobTitle: "Analytiker og BI-rådgiver" },
+    {
+      "@type": "Person",
+      name: "Mari Tveit",
+      jobTitle: "Leder for betalt media",
+    },
+    {
+      "@type": "Person",
+      name: "Agathe Aase",
+      jobTitle: "Analytiker og BI-rådgiver",
+    },
   ],
 };
 
@@ -38,7 +46,10 @@ export default function EkspertklinikkenPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSeriesSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSeriesSchema) }}
+      />
       <EkspertklinikkenClient initialAnsweredFaq={answeredQuestions} />
     </>
   );
