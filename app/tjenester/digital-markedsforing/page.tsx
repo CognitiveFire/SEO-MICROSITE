@@ -10,6 +10,7 @@ import {
   type CaseStudyContent,
 } from "@/components/digital-markedsforing/case-study-toggle";
 import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
+import { OfficesSection } from "@/components/digital-markedsforing/offices-section";
 
 export const metadata: Metadata = {
   title: "Digital markedsføring | Apriil",
@@ -208,6 +209,8 @@ export default function DigitalMarkedsforingPage() {
             <MethodologyGrid steps={methodologySteps} />
           </div>
         </section>
+
+        <OfficesSection />
 
         <CaseStudyToggle studies={caseStudies} />
 
