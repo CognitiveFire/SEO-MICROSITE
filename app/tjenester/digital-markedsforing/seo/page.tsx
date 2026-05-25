@@ -184,7 +184,7 @@ export default function SeoSubPage() {
 
       <SectionContainer title="Vil dere styrke synlighet med tydeligere prioriteringer?">
         <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:flex md:items-center md:justify-between md:gap-8">
-          <CtaPillLink href="/contact" className="md:ml-auto">
+          <CtaPillLink href="#kontakt-skjema" className="md:ml-auto">
             Snakk med oss
           </CtaPillLink>
         </div>

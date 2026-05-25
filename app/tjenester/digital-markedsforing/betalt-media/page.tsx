@@ -182,7 +182,7 @@ export default function BetaltMediaSubPage() {
             Vi kan gi en konkret vurdering av dagens mediemodell og anbefale
             neste prioritering.
           </p>
-          <CtaPillLink href="/contact" className="mt-5 md:mt-0">
+          <CtaPillLink href="#kontakt-skjema" className="mt-5 md:mt-0">
             Snakk med oss
           </CtaPillLink>
         </div>

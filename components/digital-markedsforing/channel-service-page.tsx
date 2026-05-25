@@ -1,9 +1,12 @@
 import {
-  CaseStudyGrid,
   MethodologyGrid,
 } from "@/components/digital-markedsforing/ui";
 import { CtaPillLink } from "@/components/cta-pill";
 import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
+import {
+  CaseStudyToggle,
+  type CaseStudyContent,
+} from "@/components/digital-markedsforing/case-study-toggle";
 
 export type ChannelServicePageProps = {
   eyebrow: string;
@@ -18,6 +21,8 @@ export type ChannelServicePageProps = {
     actions: string;
     result: string;
   };
+  caseStudyImageSrc?: string;
+  caseStudyImageAlt?: string;
 };
 
 export function ChannelServicePage({
@@ -27,7 +32,25 @@ export function ChannelServicePage({
   approachTitle,
   approachIntro,
   caseStudy,
+  caseStudyImageSrc = "/apriil-digital/assets/Fjord-case study.png",
+  caseStudyImageAlt = "Anonymisert casevisual",
 }: ChannelServicePageProps) {
+  const caseStudies: CaseStudyContent[] = [
+    {
+      id: "service-case",
+      toggleLabel: "Case",
+      title: caseStudy.title,
+      subtitle: "Anonymisert kundeeksempel",
+      imageSrc: caseStudyImageSrc,
+      imageAlt: caseStudyImageAlt,
+      intro: caseStudy.situation,
+      challenge: caseStudy.challenge,
+      insight: "Tiltakene ble vurdert ut fra kommersiell relevans og tydelige signaler.",
+      approach: caseStudy.actions,
+      outcomes: [caseStudy.result],
+    },
+  ];
+
   return (
     <main className="px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
       <div className="w-full space-y-20 md:space-y-24">
@@ -45,7 +68,7 @@ export function ChannelServicePage({
               {intro}
             </p>
             <div className="mt-8">
-              <CtaPillLink href="/contact">
+              <CtaPillLink href="#kontakt-skjema">
                 Snakk med oss
               </CtaPillLink>
             </div>
@@ -101,21 +124,7 @@ export function ChannelServicePage({
           />
         </section>
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Case study
-            </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Anonymisert kundeeksempel
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Et eksempel på hvordan en mer strukturert modell gir bedre
-              kommersiell kontroll.
-            </p>
-          </div>
-          <CaseStudyGrid studies={[caseStudy]} />
-        </section>
+        <CaseStudyToggle studies={caseStudies} />
       </div>
     </main>
   );

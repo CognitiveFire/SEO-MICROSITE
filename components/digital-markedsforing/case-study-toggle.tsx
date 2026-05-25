@@ -21,6 +21,7 @@ export function CaseStudyToggle({ studies }: { studies: CaseStudyContent[] }) {
   const [activeId, setActiveId] = useState(studies[0]?.id ?? "");
   const activeStudy =
     studies.find((study) => study.id === activeId) ?? studies[0];
+  const hasMultipleStudies = studies.length > 1;
 
   if (!activeStudy) {
     return null;
@@ -32,26 +33,28 @@ export function CaseStudyToggle({ studies }: { studies: CaseStudyContent[] }) {
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
           Case-eksempler
         </p>
-        <div className="ml-auto flex flex-wrap gap-2">
-          {studies.map((study) => {
-            const isActive = study.id === activeStudy.id;
-            return (
-              <button
-                key={study.id}
-                type="button"
-                onClick={() => setActiveId(study.id)}
-                className={`rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition ${
-                  isActive
-                    ? "border-[#ff4101]/50 bg-[#fff4ef] text-apriil-dark"
-                    : "border-apriil-line/80 bg-[#f8f7f4] text-apriil-muted hover:border-apriil-dark/30"
-                }`}
-                aria-pressed={isActive}
-              >
-                {study.toggleLabel}
-              </button>
-            );
-          })}
-        </div>
+        {hasMultipleStudies ? (
+          <div className="ml-auto flex flex-wrap gap-2">
+            {studies.map((study) => {
+              const isActive = study.id === activeStudy.id;
+              return (
+                <button
+                  key={study.id}
+                  type="button"
+                  onClick={() => setActiveId(study.id)}
+                  className={`rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition ${
+                    isActive
+                      ? "border-[#ff4101]/50 bg-[#fff4ef] text-apriil-dark"
+                      : "border-apriil-line/80 bg-[#f8f7f4] text-apriil-muted hover:border-apriil-dark/30"
+                  }`}
+                  aria-pressed={isActive}
+                >
+                  {study.toggleLabel}
+                </button>
+              );
+            })}
+          </div>
+        ) : null}
       </div>
 
       <div className="mt-6 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
@@ -85,16 +88,23 @@ export function CaseStudyToggle({ studies }: { studies: CaseStudyContent[] }) {
           </ul>
         </div>
 
-        <div className="apriil-editorial-surface overflow-hidden rounded-[16px] border border-apriil-line/70">
-          <div className="relative h-[420px] w-full md:h-[560px]">
-            <Image
-              src={activeStudy.imageSrc}
-              alt={activeStudy.imageAlt}
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 52vw, 100vw"
-              priority={false}
-            />
+        <div className="apriil-editorial-surface rounded-[16px] border border-apriil-line/70 p-5 md:p-7">
+          <div className="mx-auto w-full max-w-[420px]">
+            <div className="rounded-[34px] border border-apriil-line/80 bg-[#ece9e2] p-2 shadow-[0_18px_40px_rgba(23,23,23,0.12)]">
+              <div className="mb-2 flex justify-center">
+                <span className="h-[5px] w-14 rounded-full bg-apriil-dark/25" />
+              </div>
+              <div className="relative aspect-[3/4] overflow-hidden rounded-[24px] border border-apriil-line/70 bg-[#111111]">
+                <Image
+                  src={activeStudy.imageSrc}
+                  alt={activeStudy.imageAlt}
+                  fill
+                  className="object-contain"
+                  sizes="(min-width: 1024px) 35vw, 85vw"
+                  priority={false}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

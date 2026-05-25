@@ -238,7 +238,7 @@ export default function AnalyseSubPage() {
             Vi kan gi en konkret vurdering av dagens signalgrunnlag og neste
             riktige prioritering.
           </p>
-          <CtaPillLink href="/contact" className="mt-5 md:mt-0">
+          <CtaPillLink href="#kontakt-skjema" className="mt-5 md:mt-0">
             Snakk med oss
           </CtaPillLink>
         </div>

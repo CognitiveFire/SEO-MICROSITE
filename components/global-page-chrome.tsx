@@ -55,7 +55,7 @@ function PdfSupportModule() {
 
 function PageContactCta() {
   return (
-    <section className="px-6 py-20 md:px-10 xl:px-16">
+    <section id="kontakt-skjema" className="px-6 py-20 md:px-10 xl:px-16">
       <div className="w-full border-t border-apriil-line/80 pt-16">
         <div className="rounded-[16px] border border-[#2d2a26] bg-[#1b1917] p-8 md:p-10">
           <div className="grid gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">

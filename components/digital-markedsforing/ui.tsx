@@ -193,7 +193,7 @@ export function SectionContainer({
 export function HeroActions() {
   return (
     <div className="mt-10 flex flex-wrap items-center gap-3">
-      <CtaPillLink href="/contact">
+      <CtaPillLink href="#kontakt-skjema">
         Snakk med oss
       </CtaPillLink>
     </div>

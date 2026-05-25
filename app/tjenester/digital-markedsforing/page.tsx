@@ -32,6 +32,18 @@ const serviceCards: ServiceCard[] = [
     icon: "paid",
   },
   {
+    title: "Search Advertising",
+    body: "Søkeannonsering strukturert for tydelig etterspørselsfangst og kontroll på lønnsomhet.",
+    href: "/tjenester/digital-markedsforing/search-advertising",
+    icon: "paid",
+  },
+  {
+    title: "Shopping ads",
+    body: "Produktannonsering med fokus på datakvalitet, feed-struktur og kommersiell prioritering.",
+    href: "/tjenester/digital-markedsforing/shopping-ads",
+    icon: "paid",
+  },
+  {
     title: "Sosiale medier",
     body: "Innhold og distribusjon tilpasset kanal og målgruppe.",
     href: "/tjenester/digital-markedsforing/sosiale-medier",
@@ -235,7 +247,7 @@ export default function DigitalMarkedsforingPage() {
               prioriteringer, sterkere synlighet og bedre beslutningsgrunnlag.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <CtaPillLink href="/contact">Snakk med oss</CtaPillLink>
+              <CtaPillLink href="#kontakt-skjema">Snakk med oss</CtaPillLink>
             </div>
           </div>
           <StrategicSystemAnimation />
@@ -379,21 +391,6 @@ export default function DigitalMarkedsforingPage() {
           </div>
         </section>
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <div>
-            <h2 className="mt-2 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Markedsføring blir enklere når retningen er tydelig.
-            </h2>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
-              Ta kontakt dersom dere ønsker en vurdering av synlighet,
-              kanalbruk eller hvordan analyse og markedsføring kan samles i en
-              tydeligere vekstmodell.
-            </p>
-          </div>
-          <div className="lg:justify-self-end">
-            <CtaPillLink href="/contact">Snakk med oss</CtaPillLink>
-          </div>
-        </section>
       </div>
     </main>
   );
