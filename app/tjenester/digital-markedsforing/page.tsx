@@ -88,7 +88,7 @@ const methodologySteps = [
     points: [
       "Vi analyserer hvordan markedet søker, vurderer og sammenligner.",
       "Vi identifiserer hvilke signaler som påvirker beslutninger.",
-      "Vi avdekker hvor virksomheten taper oppmerksomhet.",
+      "Vi identifiserer hvor synligheten kan styrkes.",
     ],
   },
   {
@@ -196,8 +196,8 @@ const caseStudies: CaseStudyContent[] = [
     ],
   },
   {
-    id: "melk",
-    toggleLabel: "Melk",
+    id: "oppskrift",
+    toggleLabel: "Oppskrift",
     title: "Fra innholdsproduksjon til tydeligere synlighet",
     subtitle:
       "AI-tilpasset innholdsstruktur for en stor norsk innholdsplattform.",
@@ -224,12 +224,12 @@ export default function DigitalMarkedsforingPage() {
   return (
     <main className="w-full px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
       <div className="w-full space-y-20 md:space-y-24">
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-2 lg:items-start">
           <div>
-            <h1 className="mt-5 max-w-xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.9]">
+            <h1 className="mt-5 max-w-2xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.9]">
               Markedsføring som styres av inntekt. Ikke kanaler.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-9 text-apriil-muted md:text-[1.22rem]">
+            <p className="mt-6 max-w-2xl text-lg leading-9 text-apriil-muted md:text-[1.22rem]">
               Apriil hjelper virksomheter med å samle analyse, synlighet og
               medieinvesteringer i én tydelig vekstmodell. Målet er tydeligere
               prioriteringer, sterkere synlighet og bedre beslutningsgrunnlag.
