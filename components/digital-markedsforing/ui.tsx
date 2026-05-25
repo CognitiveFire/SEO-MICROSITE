@@ -192,13 +192,13 @@ export function HeroActions() {
     <div className="mt-10 flex flex-wrap items-center gap-3">
       <Link
         href="/contact"
-        className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-apriil-ink-soft"
+        className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#e63b00]"
       >
         Snakk med oss
       </Link>
       <a
         href="#metodikk"
-        className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-line/80 px-7 py-3 text-sm font-semibold text-apriil-dark transition hover:bg-white/65"
+        className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#fff1ea]"
       >
         Se hvordan vi jobber
       </a>
@@ -605,7 +605,7 @@ export function CaseStudyGrid({ studies }: { studies: CaseStudy[] }) {
 
 export function PricingGrid({ tiers }: { tiers: PricingTier[] }) {
   return (
-    <div className="divide-y divide-apriil-line/80 overflow-hidden rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4]">
+    <div className="grid gap-4 lg:grid-cols-3">
       {tiers.map((tier, index) => (
         <motion.article
           key={tier.name}
@@ -614,9 +614,14 @@ export function PricingGrid({ tiers }: { tiers: PricingTier[] }) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.4, delay: index * 0.05 }}
-          className="grid gap-6 px-6 py-8 md:grid-cols-[0.9fr_1.1fr_1fr] md:items-start"
+          className={`flex h-full min-h-[280px] flex-col rounded-[18px] border p-6 md:p-7 ${
+            tier.recommended
+              ? "border-[#ff4101]/40 bg-[#fff7f2] shadow-[0_18px_44px_rgba(255,65,1,0.08)]"
+              : "border-apriil-line/80 bg-[#f8f7f4]"
+          }`}
         >
-          <div>
+          <div className="flex h-full flex-col">
+            <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-apriil-muted">
               {tier.name}
             </p>
@@ -624,21 +629,22 @@ export function PricingGrid({ tiers }: { tiers: PricingTier[] }) {
               {tier.price}
             </p>
             {tier.recommended ? (
-              <p className="mt-3 inline-flex rounded-full border border-apriil-line/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-apriil-dark">
+              <p className="mt-3 inline-flex rounded-full border border-[#ff4101]/40 bg-[#fff1ea] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#1b1917]">
                 Anbefalt
               </p>
             ) : null}
+            </div>
+            <p className="mt-5 text-base leading-8 text-apriil-muted">
+              {tier.audience}
+            </p>
+            <ul className="mt-6 space-y-2 text-sm leading-7 text-apriil-muted">
+              {tier.focus.map((item) => (
+                <li key={item} className="border-t border-apriil-line/70 pt-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-          <p className="text-base leading-8 text-apriil-muted">
-            {tier.audience}
-          </p>
-          <ul className="space-y-2 text-sm leading-7 text-apriil-muted">
-            {tier.focus.map((item) => (
-              <li key={item} className="border-t border-apriil-line/70 pt-2">
-                {item}
-              </li>
-            ))}
-          </ul>
         </motion.article>
       ))}
     </div>

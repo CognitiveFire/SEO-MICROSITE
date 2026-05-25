@@ -188,13 +188,13 @@ export default function DigitalMarkedsforingPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#2d2824]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#e63b00]"
               >
                 Book strategisamtale
               </Link>
               <a
                 href="#serviceokosystem"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-line/80 px-7 py-3 text-sm font-semibold text-apriil-dark transition hover:bg-[#f7f5f1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#ff4101] px-7 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#fff1ea]"
               >
                 Se serviceøkosystem
               </a>
@@ -321,7 +321,7 @@ export default function DigitalMarkedsforingPage() {
         </section>
 
         <section id="serviceokosystem" className="border-t border-apriil-line/70 pt-12">
-          <div>
+          <div className="max-w-3xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               Serviceøkosystem
             </p>
@@ -355,7 +355,7 @@ export default function DigitalMarkedsforingPage() {
         </section>
 
         <section className="border-t border-apriil-line/70 pt-12">
-          <div>
+          <div className="max-w-3xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               Prismodell
             </p>
