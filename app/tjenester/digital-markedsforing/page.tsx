@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
-  CaseStudyGrid,
   MethodologyGrid,
   PricingGrid,
   ServiceGridHero,
   type ServiceCard,
   StrategicSystemAnimation,
 } from "@/components/digital-markedsforing/ui";
-import { CtaPillAnchor, CtaPillLink } from "@/components/cta-pill";
+import { CtaPillLink } from "@/components/cta-pill";
 
 export const metadata: Metadata = {
   title: "Digital markedsføring | Apriil",
@@ -17,155 +17,153 @@ export const metadata: Metadata = {
 
 const serviceCards: ServiceCard[] = [
   {
-    title: "SEO - søkemotoroptimalisering",
-    body: "Vi bygger synlighet gjennom teknisk kvalitet, riktig innholdsstruktur og tydelige kommersielle prioriteringer.",
+    title: "SEO",
+    body: "Langsiktig synlighet basert på hvordan mennesker søker og vurderer.",
     href: "/tjenester/digital-markedsforing/seo",
     icon: "seo",
   },
   {
-    title: "Programmatisk annonsering",
-    body: "Vi bruker programmatisk annonsering for presis distribusjon med kontroll på kvalitet, frekvens og kommersiell effekt.",
+    title: "Betalt media",
+    body: "Annonsering og distribusjon tilpasset mål, marked og behov.",
+    href: "/tjenester/digital-markedsforing/betalt-media",
+    icon: "paid",
+  },
+  {
+    title: "Sosiale medier",
+    body: "Innhold og distribusjon tilpasset kanal og målgruppe.",
+    href: "/tjenester/digital-markedsforing/sosiale-medier",
+    icon: "social",
+  },
+  {
+    title: "Video",
+    body: "Innhold som forklarer, bygger tillit og forsterker synlighet.",
+    href: "/tjenester/digital-markedsforing/video",
+    icon: "video",
+  },
+  {
+    title: "Creator network",
+    body: "Distribusjon gjennom relevante profiler og miljøer.",
+    href: "/tjenester/digital-markedsforing/creator-network",
+    icon: "creator",
+  },
+  {
+    title: "Programmatic",
+    body: "Automatiserte mediekjøp med kontroll på kvalitet og effekt.",
     href: "/tjenester/digital-markedsforing/programmatic",
     icon: "programmatic",
   },
   {
     title: "Podcast",
-    body: "Vi utvikler podcastspor som bygger tillit over tid og styrker posisjon i prioriterte segmenter.",
+    body: "Formater som bygger relasjon og troverdighet over tid.",
     href: "/tjenester/digital-markedsforing/podcast",
     icon: "podcast",
   },
   {
-    title: "DOOH / utendørs",
-    body: "Vi planlegger digitale utendørsflater som en strategisk del av den totale mediemiksen.",
+    title: "DOOH",
+    body: "Strategisk synlighet i det fysiske rommet.",
     href: "/tjenester/digital-markedsforing/dooh",
     icon: "dooh",
   },
   {
-    title: "Creator-nettverk",
-    body: "Vi strukturerer creatorsamarbeid med tydelig rolle i etterspørselsarbeidet og kommersiell retning.",
-    href: "/tjenester/digital-markedsforing/creator-network",
-    icon: "creator",
-  },
-  {
-    title: "Sosiale medier",
-    body: "Vi bruker sosiale kanaler for tydelig budskap, sterkere relevans og bedre kobling til forretningsmål.",
-    href: "/tjenester/digital-markedsforing/social",
-    icon: "social",
-  },
-  {
-    title: "Video",
-    body: "Vi bruker video for å forklare, forsterke og skape tydeligere beslutningsstøtte i markedet.",
-    href: "/contact",
-    icon: "video",
-  },
-  {
     title: "Display",
-    body: "Vi planlegger display som en del av en samlet distribusjonsmodell med klar rolle og effekt.",
-    href: "/contact",
+    body: "Digital distribusjon brukt for å styrke synlighet og rekkevidde.",
+    href: "/tjenester/digital-markedsforing/display",
     icon: "display",
+  },
+  {
+    title: "Analyse og intelligence",
+    body: "Analyse og innsikt som gjør prioritering enklere.",
+    href: "/tjenester/digital-markedsforing/analyse",
+    icon: "paid",
   },
 ];
 
 const methodologySteps = [
   {
-    label: "Steg 1",
-    title: "Forretningskontekst og signaldiagnose",
+    label: "1. Forstå marked og signaler",
+    title: "Forstå marked og signaler",
     points: [
-      "Kartlegging av mål, margin og vekstkrav",
-      "Analyse av eksisterende synlighetssignaler",
-      "Identifisering av tapte kommersielle muligheter",
-      "Prioritering av beslutningskritiske datakilder",
+      "Vi analyserer hvordan markedet søker, vurderer og sammenligner.",
+      "Vi identifiserer hvilke signaler som påvirker beslutninger.",
+      "Vi avdekker hvor virksomheten taper oppmerksomhet.",
     ],
   },
   {
-    label: "Steg 2",
-    title: "Kanalnøytral prioritering",
+    label: "2. Prioritere riktig",
+    title: "Prioritere riktig",
     points: [
-      "Valg av kanalmiks etter effekt, ikke aktivitet",
-      "Klare roller mellom SEO, media og innhold",
-      "Sekvensering av tiltak etter forretningsverdi",
-      "Tydelig ansvar i tverrfaglig leveransemodell",
+      "Vi vurderer hvilke aktiviteter som faktisk gir effekt.",
+      "Vi prioriterer hvor synligheten bør styrkes.",
+      "Vi fordeler ressurser etter kommersiell relevans.",
     ],
   },
   {
-    label: "Steg 3",
-    title: "Kontinuerlig kommersiell styring",
+    label: "3. Aktivere og optimalisere",
+    title: "Aktivere og optimalisere",
     points: [
-      "Løpende justering mot faktiske markedsrespons",
-      "Samlet evaluering av signaler og resultater",
-      "Reallokering av innsats mot høyere avkastning",
-      "Operativ læring omsatt til ny prioritering",
+      "SEO, annonsering, innhold og distribusjon brukes koordinert.",
+      "Tiltakene bygges i en samlet modell over tid.",
+      "Aktiviteter justeres når signalbildet endres.",
     ],
   },
-];
-
-const caseStudies = [
   {
-    title: "Retail med fragmentert etterspørsel",
-    situation: "Sterk kanalaktivitet, men lav sammenheng mellom synlighet og salg.",
-    challenge: "Investeringer ble fordelt historisk fremfor kommersielt.",
-    actions: "Vi etablerte en kanalnøytral prioriteringsmodell med felles signalramme.",
-    result: "Høyere konverteringskvalitet og tydeligere effekt av medieinvesteringene.",
-  },
-  {
-    title: "B2B med lang beslutningsreise",
-    situation: "Mange kontaktpunkter, men svak progresjon fra interesse til forespørsel.",
-    challenge: "Innhold, SEO og paid jobbet uten felles retning.",
-    actions: "Vi koblet kanalroller til fasene i kjøpsreisen og styrte etter signalstyrke.",
-    result: "Bedre etterspørselskvalitet og mer presis prioritering av tiltak over tid.",
+    label: "4. Måle kommersiell effekt",
+    title: "Måle kommersiell effekt",
+    points: [
+      "Vi følger utviklingen i synlighet, trafikk og etterspørsel.",
+      "Vi vurderer hvilke aktiviteter som skaper verdi.",
+      "Prioritering oppdateres løpende med faktiske signaler.",
+    ],
   },
 ];
 
 const pricingTiers = [
   {
-    name: "Clarity Foundation",
-    price: "Fra 65 000 / mnd",
-    audience: "For virksomheter som trenger tydelig prioritering og sterkere styring av eksisterende kanalinnsats.",
-    focus: [
-      "Kanalnøytral prioriteringsmodell",
-      "Månedlig kommersiell styringsforum",
-      "Felles signal- og effektbilde",
-    ],
+    name: "SEO",
+    price: "Fra NOK 16 000 / mnd",
+    audience:
+      "For virksomheter som trenger bedre struktur, teknisk kvalitet og tydeligere organisk synlighet.",
+    focus: ["teknisk SEO", "innholdsstruktur", "AI-synlighet"],
+    href: "/tjenester/digital-markedsforing/seo",
+    hrefLabel: "Se full side",
   },
   {
-    name: "Clarity Growth",
-    price: "Fra 110 000 / mnd",
-    audience: "For virksomheter som vil skalere etterspørsel med tett samspill mellom strategi, innhold, SEO og paid.",
-    focus: [
-      "Tverrfaglig operativ modell",
-      "Dynamisk reallokering av kanalmiks",
-      "Kontinuerlig optimalisering mot margin og vekst",
-    ],
+    name: "Performance marketing",
+    price: "Fra NOK 18 000 / mnd",
+    audience:
+      "For virksomheter som ønsker løpende optimalisering, testing og koordinering på tvers av kanaler.",
+    focus: ["Google Ads", "Paid social", "kanalstrategi og attribusjon"],
     recommended: true,
+    href: "/tjenester/digital-markedsforing/performance",
+    hrefLabel: "Se full side",
   },
   {
-    name: "Clarity Enterprise",
-    price: "Etter avtale",
-    audience: "For komplekse organisasjoner med flere markeder, høy beslutningskompleksitet og store investeringsrammer.",
-    focus: [
-      "Eget strategisk rådgiverteam",
-      "Avansert beslutningsstøtte og scenarioarbeid",
-      "Ledelsesforankret styringsmodell for kommersiell effekt",
-    ],
+    name: "Clarity Intelligence",
+    price: "Fra NOK 18 000 / mnd",
+    audience:
+      "For virksomheter som trenger tydeligere rapportering, signalvalidering og et sterkere beslutningsgrunnlag.",
+    focus: ["måling og attribusjon", "datavalidering", "dashboard og rapportering"],
+    href: "/tjenester/digital-markedsforing/analyse",
+    hrefLabel: "Se full side",
   },
 ];
 
 const faqItems = [
   {
-    q: "Hvordan velger dere hvilke kanaler vi skal bruke?",
-    a: "Vi velger ikke kanaler først. Vi vurderer forretningsmål, signalstyrke, beslutningsreise og kommersiell risiko før vi prioriterer kanalmiks.",
+    q: "Hvordan vet dere hvilke kanaler som passer?",
+    a: "Vi starter ikke med kanaler. Vi starter med marked, synlighet og forretningsmål. Deretter vurderer vi hvilke aktiviteter som faktisk støtter vekst.",
   },
   {
-    q: "Hva betyr kanalagnostisk i praksis?",
-    a: "Det betyr at vi ikke forsvarer en kanal fordi den er kjent eller internfavoritt. Vi styrer innsatsen dit effekten faktisk kan dokumenteres.",
+    q: "Jobber dere med både merkevare og salg?",
+    a: "Ja. De fleste virksomheter trenger en kombinasjon av synlighet, etterspørsel og konvertering over tid.",
   },
   {
-    q: "Hvordan jobber dere med løpende prioritering?",
-    a: "Vi bruker en kontinuerlig beslutningssyklus der vi oppdaterer prioritering ut fra nye signaler, resultater og endret markedssituasjon.",
+    q: "Hvordan måles effekt?",
+    a: "Vi kombinerer analyse, attribusjon og kommersielle signaler for å forstå hvilke aktiviteter som påvirker resultatene.",
   },
   {
-    q: "Kan vi starte med en avgrenset leveranse?",
-    a: "Ja. Vi starter ofte med en Clarity-diagnose som etablerer felles retning og konkret handlingsrekkefølge for de neste 90 dagene.",
+    q: "Kan dere samarbeide med interne team?",
+    a: "Ja. Vi jobber ofte tett med både interne markedsteam og eksterne partnere.",
   },
 ];
 
@@ -175,23 +173,16 @@ export default function DigitalMarkedsforingPage() {
       <div className="w-full space-y-20 md:space-y-24">
         <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Strategisk systemvisualisering
-            </p>
             <h1 className="mt-5 max-w-xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.9]">
-              Kanalmiksen organiseres rundt kommersiell effekt.
+              Markedsføring som styres av inntekt. Ikke kanaler.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-9 text-apriil-muted md:text-[1.22rem]">
-              Visualiseringen viser hvordan ulike kanaler aktiveres, tones ned
-              og re-prioriteres ut fra forretningsbehov, ikke kanalpreferanser.
+              Apriil hjelper virksomheter med å samle analyse, synlighet og
+              medieinvesteringer i én tydelig vekstmodell. Målet er tydeligere
+              prioriteringer, sterkere synlighet og bedre beslutningsgrunnlag.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <CtaPillLink href="/contact">
-                Book strategisamtale
-              </CtaPillLink>
-              <CtaPillAnchor href="#serviceokosystem">
-                Se serviceøkosystem
-              </CtaPillAnchor>
+              <CtaPillLink href="/contact">Snakk med oss</CtaPillLink>
             </div>
           </div>
           <StrategicSystemAnimation />
@@ -199,51 +190,55 @@ export default function DigitalMarkedsforingPage() {
 
         <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-apriil-muted">
-              Strategisk posisjonering
+            <h2 className="mt-2 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+              De fleste virksomheter har nok kanaler. Utfordringen er retning.
+            </h2>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
+              Mange markedsføringsmiljøer jobber i separate spor. SEO
+              optimaliseres isolert. Kampanjer kjøres uten tydelig sammenheng
+              med etterspørsel. Rapportering viser aktivitet, men ikke
+              nødvendigvis hva som faktisk påvirker vekst.
             </p>
-            <ul className="mt-6 space-y-4 text-base leading-8 text-apriil-muted">
-              <li className="border-t border-apriil-line/80 pt-4">
-                Vi kobler kanalvalg direkte til kommersielle prioriteringer.
-              </li>
-              <li className="border-t border-apriil-line/80 pt-4">
-                Vi styrer etter signaler som påvirker etterspørsel og margin.
-              </li>
-              <li className="border-t border-apriil-line/80 pt-4">
-                Vi bygger en robust beslutningsstruktur på tvers av fag.
-              </li>
-              <li className="border-t border-apriil-line/80 pt-4">
-                Vi optimaliserer kontinuerlig mot kommersiell effekt.
-              </li>
-            </ul>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
+              Apriil jobber annerledes.
+            </p>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
+              Vi jobber med analyse, synlighet, innhold og distribusjon samlet.
+              Det gjør det enklere å prioritere riktig og skape tydeligere
+              sammenheng mellom aktivitet og effekt.
+            </p>
           </div>
           <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 p-7 md:p-9">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               Kommersiell intelligens
             </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Klarhet før kanalvalg.
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Apriil bygger kommersiell effekt ved å koordinere signaler,
-              synlighet og investeringer på tvers av kanaler. Vi prioriterer
-              etter forretningsverdi, ikke etter aktivitet.
-            </p>
+            <ul className="mt-5 space-y-4 text-base leading-8 text-apriil-muted">
+              <li className="border-t border-apriil-line/80 pt-4">
+                visibility across the full search journey
+              </li>
+              <li className="border-t border-apriil-line/80 pt-4">
+                answer engine optimisation
+              </li>
+              <li className="border-t border-apriil-line/80 pt-4">
+                topical authority
+              </li>
+              <li className="border-t border-apriil-line/80 pt-4">
+                structured content ecosystem
+              </li>
+            </ul>
           </div>
         </section>
 
-        <section className="border-t border-apriil-line/70 pt-12">
+        <section id="metodikk" className="border-t border-apriil-line/70 pt-12">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Hvordan vi jobber
-            </p>
             <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Strukturert arbeid fra signal til beslutning.
+              Markedsføring fungerer best når retningen er tydelig.
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Clarity-metodikken gir en tydelig beslutningsrytme der analyse,
-              prioritering og gjennomføring er koblet sammen i ett operativt
-              system.
+              De fleste virksomheter investerer i flere kanaler enn nødvendig
+              uten å vite hvilke aktiviteter som faktisk påvirker synlighet,
+              etterspørsel og vekst. Clarity er utviklet for å gjøre
+              prioritering enklere.
             </p>
           </div>
           <div className="mt-12 grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
@@ -253,16 +248,16 @@ export default function DigitalMarkedsforingPage() {
               </p>
               <ul className="mt-5 space-y-4 text-base leading-8 text-apriil-muted">
                 <li className="border-t border-apriil-line/80 pt-4">
-                  Vi forstår marked, signaler og etterspørsel før vi velger tiltak.
+                  1. Forstå marked og signaler
                 </li>
                 <li className="border-t border-apriil-line/80 pt-4">
-                  Vi prioriterer det som faktisk påvirker vekst, og fjerner det som ikke gjør det.
+                  2. Prioritere riktig
                 </li>
                 <li className="border-t border-apriil-line/80 pt-4">
-                  Vi aktiverer riktig miks av SEO, media, innhold og distribusjon.
+                  3. Aktivere og optimalisere
                 </li>
                 <li className="border-t border-apriil-line/80 pt-4">
-                  Vi måler kommersiell effekt og justerer styringen løpende.
+                  4. Måle kommersiell effekt
                 </li>
               </ul>
             </div>
@@ -270,82 +265,175 @@ export default function DigitalMarkedsforingPage() {
           </div>
         </section>
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Kommersiell filosofi
-            </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Ikke flere kanaler. Bedre prioritering.
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Vi skiller mellom aktivitet og effekt. Derfor evaluerer vi alltid
-              hvilke kanaler som faktisk bør aktiveres, i hvilken rekkefølge,
-              og med hvilken rolle i totalmodellen.
-            </p>
-          </div>
-          <div className="grid gap-5">
-            {[
-              {
-                title: "Kanalagnostisk styring",
-                body: "Vi velger ikke kanal fordi den er kjent. Vi velger kanal fordi den løser en prioritert kommersiell oppgave.",
-              },
-              {
-                title: "Felles signalgrunnlag",
-                body: "SEO, paid, innhold og distribusjon vurderes i samme beslutningsramme med tydelige kriterier.",
-              },
-              {
-                title: "Kontinuerlig re-prioritering",
-                body: "Når marked, signaler eller mål endrer seg, endrer vi miksen raskt og strukturert.",
-              },
-            ].map((item) => (
-              <article
-                key={item.title}
-                className="apriil-editorial-surface rounded-[14px] border border-apriil-line/80 p-6"
-              >
-                <h3 className="text-xl font-semibold tracking-[-0.03em] text-apriil-dark">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-base leading-8 text-apriil-muted">
-                  {item.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section id="serviceokosystem" className="border-t border-apriil-line/70 pt-12">
           <div className="max-w-3xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Serviceøkosystem
+              Tjenester
             </p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Kapabiliteter som følger av strategien.
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+              Strategiske kapabiliteter
             </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Tjenestene er organisert som et sammenkoblet økosystem. Hver
-              kapabilitet aktiveres når den styrker den kommersielle prioriteten.
-            </p>
           </div>
           <div className="mt-12">
             <ServiceGridHero cards={serviceCards} />
           </div>
         </section>
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <section className="border-t border-apriil-line/70 pt-12">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Case studies
+              Case-eksempler
             </p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Når prioritering blir operativ, blir effekten målbar.
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+              Fra lokal synlighet til internasjonal etterspørsel
             </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Vi dokumenterer hvordan tydeligere kanalrolle og bedre
-              signalforståelse skaper mer robust kommersiell utvikling.
+            <p className="mt-4 text-base leading-8 text-apriil-muted">
+              Internasjonal synlighetsstrategi for en norsk reiselivsaktør.
             </p>
           </div>
-          <CaseStudyGrid studies={caseStudies} />
+          <div className="mt-12 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-base leading-8 text-apriil-muted">
+                Dette caset er en anonymisert versjon av en stor norsk
+                reiselivs- og fergeaktør. Selskapet hadde sterk transaksjonell
+                synlighet, branded traffic og bookingtrafikk, men svak
+                internasjonal synlighet for travel inspiration, fjord discovery
+                og planning-stage searches.
+              </p>
+              <p className="mt-5 text-base leading-8 text-apriil-muted">
+                Synligheten lå i stor grad nederst i trakten. Virksomheten
+                manglet topical authority internasjonalt, strukturert
+                informasjonsinnhold og tydelige overganger fra inspirasjon til
+                booking.
+              </p>
+              <p className="mt-5 border-t border-apriil-line/80 pt-4 text-base leading-8 text-apriil-muted">
+                Innsikten var at internasjonale søk på norske fjorder ofte
+                handler om planlegging, sammenligning og oppdagelse, ikke
+                direkte søk etter operatør eller rute.
+              </p>
+              <p className="mt-5 text-base leading-8 text-apriil-muted">
+                Derfor flyttet vi modellen fra transaksjonelle søk til
+                visibility across the full search journey. Apriil etablerte en
+                structured content ecosystem med answer engine optimisation,
+                pillar pages, supporting content clusters, internlenking,
+                FAQ-strukturer og schema implementation.
+              </p>
+              <p className="mt-5 text-base leading-8 text-apriil-muted">
+                Strategien bandt early-stage travel demand from inspiration to
+                booking i ett sammenkoblet synlighetssystem.
+              </p>
+              <ul className="mt-6 space-y-3 text-base leading-8 text-apriil-muted">
+                <li className="border-t border-apriil-line/80 pt-3">
+                  sterkere internasjonal synlighet utenfor branded søk
+                </li>
+                <li className="border-t border-apriil-line/80 pt-3">
+                  klarere booking pathways mellom innhold og transaksjon
+                </li>
+                <li className="border-t border-apriil-line/80 pt-3">
+                  forbedret thematic authority i engelskspråklige markeder
+                </li>
+                <li className="border-t border-apriil-line/80 pt-3">
+                  økt qualified traffic og bedre discoverability
+                </li>
+              </ul>
+            </div>
+            <div className="apriil-editorial-surface overflow-hidden rounded-[16px] border border-apriil-line/70">
+              <div className="relative h-[360px] w-full border-b border-apriil-line/70">
+                <Image
+                  src="/apriil-digital/assets/Fjord-case study.png"
+                  alt="Anonymisert casevisual som viser overgangen fra lokal synlighet til internasjonal discoverability"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 48vw, 100vw"
+                />
+              </div>
+              <div className="p-6 md:p-8">
+                <svg
+                  className="h-[180px] w-full"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <line x1="10" y1="18" x2="90" y2="18" stroke="rgba(23,23,23,0.12)" strokeWidth="0.2" />
+                  <line x1="10" y1="50" x2="90" y2="50" stroke="rgba(23,23,23,0.12)" strokeWidth="0.2" />
+                  <line x1="10" y1="82" x2="90" y2="82" stroke="rgba(23,23,23,0.12)" strokeWidth="0.2" />
+                  <path d="M12 78C26 70 36 58 49 54C64 49 74 36 88 22" fill="none" stroke="rgba(23,23,23,0.36)" strokeWidth="0.34" strokeDasharray="1.5 1" />
+                  <path d="M15 62C31 56 40 48 54 45C70 42 79 34 88 27" fill="none" stroke="rgba(255,65,1,0.52)" strokeWidth="0.34" strokeDasharray="1.3 1.1" />
+                  <circle cx="15" cy="71" r="2" fill="rgba(23,23,23,0.45)" />
+                  <circle cx="50" cy="53" r="2.1" fill="rgba(23,23,23,0.58)" />
+                  <circle cx="88" cy="24" r="2.1" fill="rgba(255,65,1,0.68)" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-apriil-line/70 pt-12">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
+              Case-eksempler
+            </p>
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+              Fra innholdsproduksjon til tydeligere synlighet
+            </h2>
+            <p className="mt-4 text-base leading-8 text-apriil-muted">
+              AI-tilpasset innholdsstruktur for en stor norsk innholdsplattform.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+            <div className="apriil-editorial-surface overflow-hidden rounded-[16px] border border-apriil-line/70">
+              <div className="relative h-[360px] w-full border-b border-apriil-line/70 md:h-[420px]">
+                <Image
+                  src="/melk-case study.png"
+                  alt="Anonymisert visualisering av AI-tilpasset innholdsstruktur"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 56vw, 100vw"
+                />
+              </div>
+              <div className="grid gap-3 p-6 text-[11px] uppercase tracking-[0.12em] text-apriil-muted md:grid-cols-2 md:p-8">
+                <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">answer-first structure</span>
+                <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">AI-readable content</span>
+                <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">structured extraction</span>
+                <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">visibility beyond clicks</span>
+              </div>
+            </div>
+            <div>
+              <p className="text-base leading-8 text-apriil-muted">
+                Dette caset er en anonymisert versjon av en stor norsk
+                oppskrifts- og matplattform. Innholdsvolumet var høyt,
+                merkevaren sterk og den organiske synligheten betydelig.
+              </p>
+              <blockquote className="mt-5 border-l-2 border-[#ff4101]/70 pl-4 text-base leading-8 text-apriil-dark">
+                "Hvis søkemotorer velger å svare uten klikk, er det som regel
+                fordi det gir en bedre brukeropplevelse. Vi kjemper ikke mot
+                det - vi designer for det."
+              </blockquote>
+              <div className="mt-6 space-y-4">
+                <article className="rounded-[12px] border border-apriil-line/80 bg-[#f8f7f4] p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">Strategisk grep 1</p>
+                  <p className="mt-2 text-sm leading-7 text-apriil-muted">Bygget answer-first structure med tydelig content hierarchy for å styrke machine understanding of people.</p>
+                </article>
+                <article className="rounded-[12px] border border-apriil-line/80 bg-[#f8f7f4] p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">Strategisk grep 2</p>
+                  <p className="mt-2 text-sm leading-7 text-apriil-muted">Etablerte FAQ-strukturer, schema og extraction-friendly formatering for bedre visibility in AI-generated answers.</p>
+                </article>
+                <article className="rounded-[12px] border border-apriil-line/80 bg-[#f8f7f4] p-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">Strategisk grep 3</p>
+                  <p className="mt-2 text-sm leading-7 text-apriil-muted">Prioriterte visibility beyond clicks og løpende tilpasning til zero-click behaviour.</p>
+                </article>
+              </div>
+              <p className="mt-6 text-base leading-8 text-apriil-muted">
+                Traffic is redistributed - not disappearing.
+              </p>
+              <ul className="mt-6 space-y-3 text-base leading-8 text-apriil-muted">
+                <li className="border-t border-apriil-line/80 pt-3">forbedret synlighet gjennom tydeligere informasjonsstruktur</li>
+                <li className="border-t border-apriil-line/80 pt-3">sterkere extraction inn i AI-svar</li>
+                <li className="border-t border-apriil-line/80 pt-3">mer effektiv bruk av eksisterende innholdsbase</li>
+                <li className="border-t border-apriil-line/80 pt-3">bedre samsvar mellom innhold og endret søkeatferd</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section className="border-t border-apriil-line/70 pt-12">
@@ -390,6 +478,22 @@ export default function DigitalMarkedsforingPage() {
                 </p>
               </details>
             ))}
+          </div>
+        </section>
+
+        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <div>
+            <h2 className="mt-2 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+              Markedsføring blir enklere når retningen er tydelig.
+            </h2>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
+              Ta kontakt dersom dere ønsker en vurdering av synlighet,
+              kanalbruk eller hvordan analyse og markedsføring kan samles i en
+              tydeligere vekstmodell.
+            </p>
+          </div>
+          <div className="lg:justify-self-end">
+            <CtaPillLink href="/contact">Snakk med oss</CtaPillLink>
           </div>
         </section>
       </div>
