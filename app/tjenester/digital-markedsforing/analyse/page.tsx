@@ -9,6 +9,7 @@ import {
   SignalFlowVisual,
 } from "@/components/digital-markedsforing/ui";
 import { CtaPillLink } from "@/components/cta-pill";
+import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 
 export const metadata: Metadata = {
   title: "Analyse | Digital markedsforing | Apriil",
@@ -19,6 +20,10 @@ export const metadata: Metadata = {
 export default function AnalyseSubPage() {
   return (
     <main>
+      <div className="px-6 pt-8 md:px-10 md:pt-10 xl:px-16">
+        <ServiceSubmenu />
+      </div>
+
       <section className="px-6 py-20 md:px-10 xl:px-16">
         <div className="w-full grid gap-10 border-t border-apriil-line/70 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>

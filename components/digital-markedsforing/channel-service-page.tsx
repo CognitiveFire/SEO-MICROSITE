@@ -3,6 +3,7 @@ import {
   MethodologyGrid,
 } from "@/components/digital-markedsforing/ui";
 import { CtaPillLink } from "@/components/cta-pill";
+import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 
 export type ChannelServicePageProps = {
   eyebrow: string;
@@ -30,6 +31,8 @@ export function ChannelServicePage({
   return (
     <main className="px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
       <div className="w-full space-y-20 md:space-y-24">
+        <ServiceSubmenu />
+
         <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-apriil-muted">
