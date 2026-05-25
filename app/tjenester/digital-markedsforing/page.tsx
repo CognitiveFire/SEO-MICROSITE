@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import {
   MethodologyGrid,
   PricingGrid,
-  ServiceGridHero,
-  type ServiceCard,
   StrategicSystemAnimation,
 } from "@/components/digital-markedsforing/ui";
 import { CtaPillLink } from "@/components/cta-pill";
@@ -18,57 +16,6 @@ export const metadata: Metadata = {
   description:
     "Kommersiell intelligens på tvers av kanaler: Apriil prioriterer synlighet, signaler og kanalvalg strategisk for målbar kommersiell effekt.",
 };
-
-const serviceCards: ServiceCard[] = [
-  {
-    title: "SEO",
-    body: "Langsiktig synlighet basert på hvordan mennesker søker og vurderer.",
-    href: "/tjenester/digital-markedsforing/seo",
-    icon: "seo",
-  },
-  {
-    title: "Betalt media",
-    body: "Annonsering og distribusjon tilpasset mål, marked og behov.",
-    href: "/tjenester/digital-markedsforing/betalt-media",
-    icon: "paid",
-  },
-  {
-    title: "Performance",
-    body: "Tverrkanal prioritering av budsjett, kanalrolle og kommersiell effekt.",
-    href: "/tjenester/digital-markedsforing/performance",
-    icon: "paid",
-  },
-  {
-    title: "Creator network",
-    body: "Distribusjon gjennom relevante profiler og miljøer.",
-    href: "/tjenester/digital-markedsforing/creator-network",
-    icon: "creator",
-  },
-  {
-    title: "Programmatic",
-    body: "Automatiserte mediekjøp med kontroll på kvalitet og effekt.",
-    href: "/tjenester/digital-markedsforing/programmatic",
-    icon: "programmatic",
-  },
-  {
-    title: "Podcast",
-    body: "Formater som bygger relasjon og troverdighet over tid.",
-    href: "/tjenester/digital-markedsforing/podcast",
-    icon: "podcast",
-  },
-  {
-    title: "DOOH",
-    body: "Strategisk synlighet i det fysiske rommet.",
-    href: "/tjenester/digital-markedsforing/dooh",
-    icon: "dooh",
-  },
-  {
-    title: "Analyse og intelligence",
-    body: "Analyse og innsikt som gjør prioritering enklere.",
-    href: "/tjenester/digital-markedsforing/analyse",
-    icon: "paid",
-  },
-];
 
 const methodologySteps = [
   {
@@ -259,20 +206,6 @@ export default function DigitalMarkedsforingPage() {
               </ul>
             </div>
             <MethodologyGrid steps={methodologySteps} />
-          </div>
-        </section>
-
-        <section id="serviceokosystem" className="border-t border-apriil-line/70 pt-12">
-          <div className="max-w-3xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Tjenester
-            </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Strategiske kapabiliteter
-            </h2>
-          </div>
-          <div className="mt-12">
-            <ServiceGridHero cards={serviceCards} />
           </div>
         </section>
 

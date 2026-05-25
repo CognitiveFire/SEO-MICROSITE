@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CtaPillAnchor, CtaPillLink } from "@/components/cta-pill";
+import { CtaPillLink } from "@/components/cta-pill";
 import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 
 export const metadata: Metadata = {
@@ -68,36 +68,6 @@ const pricing = [
   },
 ];
 
-function SeoStructureVisual() {
-  return (
-    <div className="apriil-editorial-surface relative overflow-hidden rounded-[18px] border border-apriil-line/70 p-6 md:p-8">
-      <svg className="h-[420px] w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <line x1="8" y1="16" x2="92" y2="16" stroke="rgba(23,23,23,0.1)" strokeWidth="0.18" />
-        <line x1="8" y1="50" x2="92" y2="50" stroke="rgba(23,23,23,0.1)" strokeWidth="0.18" />
-        <line x1="8" y1="84" x2="92" y2="84" stroke="rgba(23,23,23,0.1)" strokeWidth="0.18" />
-        <line x1="22" y1="8" x2="22" y2="92" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
-        <line x1="52" y1="8" x2="52" y2="92" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
-        <line x1="82" y1="8" x2="82" y2="92" stroke="rgba(23,23,23,0.08)" strokeWidth="0.18" />
-
-        <path d="M12 72C23 69 29 60 42 57C55 54 62 45 75 42C82 40 86 34 90 24" fill="none" stroke="rgba(23,23,23,0.34)" strokeWidth="0.34" strokeDasharray="1.3 1" />
-        <path d="M12 80C27 74 34 70 45 67C58 63 67 59 76 50C84 43 87 39 90 31" fill="none" stroke="rgba(255,65,1,0.52)" strokeWidth="0.34" strokeDasharray="1.2 1" />
-
-        <circle cx="20" cy="70" r="1.7" fill="rgba(23,23,23,0.56)" />
-        <circle cx="42" cy="57" r="1.7" fill="rgba(23,23,23,0.56)" />
-        <circle cx="63" cy="47" r="1.7" fill="rgba(23,23,23,0.56)" />
-        <circle cx="90" cy="28" r="2" fill="rgba(255,65,1,0.72)" />
-      </svg>
-
-      <div className="mt-5 grid grid-cols-2 gap-3 text-[11px] uppercase tracking-[0.12em] text-apriil-muted">
-        <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">content clusters</span>
-        <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">search pathways</span>
-        <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">ai extraction</span>
-        <span className="rounded-full border border-apriil-line/80 px-3 py-1 text-center">discoverability</span>
-      </div>
-    </div>
-  );
-}
-
 export default function SeoSubPage() {
   return (
     <main className="w-full px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
@@ -109,7 +79,7 @@ export default function SeoSubPage() {
       <div className="w-full space-y-20 md:space-y-24">
         <ServiceSubmenu />
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-2 lg:items-start">
+        <section className="border-t border-apriil-line/70 pt-12">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               SEO
@@ -123,10 +93,8 @@ export default function SeoSubPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <CtaPillLink href="#kontakt-skjema">Snakk med oss</CtaPillLink>
-              <CtaPillAnchor href="#hvordan-vi-jobber">Se hvordan vi jobber</CtaPillAnchor>
             </div>
           </div>
-          <SeoStructureVisual />
         </section>
 
         <section id="hvordan-vi-jobber" className="rounded-[18px] border border-[#2e2a26] bg-[#1b1917] px-6 py-14 md:px-10 md:py-16">
