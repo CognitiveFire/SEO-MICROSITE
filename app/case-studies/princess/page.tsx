@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IpadFrameImage } from "@/components/digital-markedsforing/ipad-frame-image";
 
 export default function PrincessCaseStudyPage() {
   return (
@@ -36,22 +37,24 @@ export default function PrincessCaseStudyPage() {
       </section>
       <section className="w-full mt-16 border-t border-apriil-line/80 pt-16">
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="overflow-hidden border border-apriil-line/80 bg-[#f4efe7]">
-            <img
-              src="/oversikt.png"
-              alt="Anonymisert oversiktsvisning fra case"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
+          <div className="border border-apriil-line/80 bg-[#f4efe7] p-5 md:p-6">
+            <div className="mx-auto w-full max-w-[420px]">
+              <IpadFrameImage
+                src="/oversikt.png"
+                alt="Anonymisert oversiktsvisning fra case"
+                sizes="(min-width: 1024px) 42vw, 90vw"
+              />
+            </div>
           </div>
           <div className="grid gap-6">
-            <div className="overflow-hidden border border-apriil-line/80 bg-[#f4efe7]">
-              <img
-                src="/reporting.png"
-                alt="Anonymisert rapporteringsvisning fra case"
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
+            <div className="border border-apriil-line/80 bg-[#f4efe7] p-4 md:p-5">
+              <div className="mx-auto w-full max-w-[320px]">
+                <IpadFrameImage
+                  src="/reporting.png"
+                  alt="Anonymisert rapporteringsvisning fra case"
+                  sizes="(min-width: 1024px) 28vw, 78vw"
+                />
+              </div>
             </div>
             <div className="border border-apriil-line/80 bg-[#fbfaf7] p-6 text-sm leading-7 text-apriil-muted">
               Bildene er anonymiserte og brukes for å illustrere operasjonell

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { CtaPillLink } from "@/components/cta-pill";
+import { IpadFrameImage } from "@/components/digital-markedsforing/ipad-frame-image";
 import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 
 export const metadata: Metadata = {
@@ -171,14 +171,12 @@ export default function SeoSubPage() {
                 <li className="border-t border-apriil-line/80 pt-3">bedre kvalitet pa henvendelser og prioriteringer</li>
               </ul>
             </div>
-            <div className="apriil-editorial-surface overflow-hidden rounded-[16px] border border-apriil-line/70">
-              <div className="relative h-[440px] w-full md:h-[560px]">
-                <Image
+            <div className="apriil-editorial-surface rounded-[16px] border border-apriil-line/70 p-5 md:p-7">
+              <div className="mx-auto w-full max-w-[420px]">
+                <IpadFrameImage
                   src="/apriil-digital/assets/Fjord-case study.png"
                   alt="Anonymisert visualisering av strukturert synlighetsarbeid"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 52vw, 100vw"
+                  sizes="(min-width: 1024px) 35vw, 85vw"
                 />
               </div>
             </div>
@@ -186,25 +184,23 @@ export default function SeoSubPage() {
         </section>
 
         <section className="border-t border-apriil-line/70 pt-12">
-          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-                Prisniva
-              </p>
-              <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-                SEO-retainere med tydelig scope.
-              </h2>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-                Prisnivaet reflekterer ambisjon, kompleksitet og behov for
-                oppfolging - ikke abonnementspakker.
-              </p>
-            </div>
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
+              Prisniva
+            </p>
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+              SEO-retainere med tydelig scope.
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
+              Prisnivaet reflekterer ambisjon, kompleksitet og behov for
+              oppfolging - ikke abonnementspakker.
+            </p>
 
-            <div className="space-y-4">
+            <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {pricing.map((tier) => (
                 <article
                   key={tier.name}
-                  className={`rounded-[14px] border p-6 md:p-7 ${
+                  className={`flex h-full flex-col rounded-[14px] border p-6 md:p-7 ${
                     tier.featured
                       ? "border-[#ff4101]/40 bg-[#fff5ef]"
                       : "border-apriil-line/80 bg-[#f8f7f4]"

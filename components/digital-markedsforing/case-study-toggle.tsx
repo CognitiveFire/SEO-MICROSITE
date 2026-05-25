@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import { IpadFrameImage } from "@/components/digital-markedsforing/ipad-frame-image";
 
 export type CaseStudyContent = {
   id: string;
@@ -115,21 +115,11 @@ export function CaseStudyToggle({ studies }: { studies: CaseStudyContent[] }) {
 
         <div className="apriil-editorial-surface rounded-[16px] border border-apriil-line/70 p-5 md:p-7">
           <div className="mx-auto w-full max-w-[420px]">
-            <div className="rounded-[34px] border border-apriil-line/80 bg-[#ece9e2] p-2 shadow-[0_18px_40px_rgba(23,23,23,0.12)]">
-              <div className="mb-2 flex justify-center">
-                <span className="h-[5px] w-14 rounded-full bg-apriil-dark/25" />
-              </div>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-[24px] border border-apriil-line/70 bg-[#111111]">
-                <Image
-                  src={activeStudy.imageSrc}
-                  alt={activeStudy.imageAlt}
-                  fill
-                  className="object-contain"
-                  sizes="(min-width: 1024px) 35vw, 85vw"
-                  priority={false}
-                />
-              </div>
-            </div>
+            <IpadFrameImage
+              src={activeStudy.imageSrc}
+              alt={activeStudy.imageAlt}
+              sizes="(min-width: 1024px) 35vw, 85vw"
+            />
           </div>
         </div>
       </div>
