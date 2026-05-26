@@ -10,14 +10,14 @@ export function SeoHeroGraphic() {
             SEO
           </span>
           <p className="text-xs font-medium uppercase tracking-[0.11em] text-apriil-muted">
-            Search intent signal map
+            Signalkart for sokeintensjon
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-[1.06fr_0.94fr]">
           <article className="rounded-[14px] border border-apriil-line/80 bg-white/90 p-4">
             <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-apriil-muted">
-              Query clusters
+              Sokegrupper
             </p>
             <div className="mt-4 space-y-3">
               {[
@@ -44,14 +44,14 @@ export function SeoHeroGraphic() {
 
           <article className="rounded-[14px] border border-apriil-line/80 bg-white/90 p-4">
             <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-apriil-muted">
-              SERP readiness
+              Sokeflate-klarhet
             </p>
             <div className="mt-4 space-y-3">
               {[
-                "Title and metadata",
-                "Structured heading flow",
-                "Internal links",
-                "Entity clarity",
+                "Titler og metadata",
+                "Tydelig overskriftsstruktur",
+                "Interne lenker",
+                "Klar entitetsforstaelse",
               ].map((item, index) => (
                 <div
                   key={item}
@@ -71,10 +71,10 @@ export function SeoHeroGraphic() {
         <article className="rounded-[14px] border border-apriil-line/80 bg-white/90 p-4 md:p-5">
           <div className="flex items-center justify-between gap-4">
             <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-apriil-muted">
-              Visibility trajectory
+              Synlighetsutvikling
             </p>
             <span className="rounded-full border border-apriil-line/80 bg-[#faf8f3] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-apriil-muted">
-              last 6 months
+              siste 6 maneder
             </span>
           </div>
 
