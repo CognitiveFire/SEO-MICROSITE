@@ -188,16 +188,19 @@ export const officesData: Record<OfficeData["slug"], OfficeData> = {
 
 export const officeCards = [
   {
+    slug: officesData.bergen.slug,
     city: officesData.bergen.city,
     href: "/kontorer/bergen",
     positioning: officesData.bergen.positioning,
   },
   {
+    slug: officesData.oslo.slug,
     city: officesData.oslo.city,
     href: "/kontorer/oslo",
     positioning: officesData.oslo.positioning,
   },
   {
+    slug: officesData.stavanger.slug,
     city: officesData.stavanger.city,
     href: "/kontorer/stavanger",
     positioning: officesData.stavanger.positioning,
