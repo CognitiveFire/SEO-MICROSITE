@@ -1,10 +1,42 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
-import Image from "next/image";
 import { Footer } from "./footer";
 import { LeadCaptureForm } from "./lead-capture-form";
 import { CtaPillLink } from "./cta-pill";
+
+const pillRootClassName =
+  "group inline-flex items-center gap-2 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4101] focus-visible:ring-offset-2";
+const pillRailClassName =
+  "inline-flex min-h-[58px] items-center rounded-full bg-[#1b1917] px-10 py-3 text-[1.02rem] font-semibold tracking-[-0.01em] text-white transition group-hover:bg-[#11100f]";
+const pillIconClassName =
+  "inline-flex h-[58px] w-[58px] items-center justify-center rounded-full bg-[#ff4101] text-white transition group-hover:bg-[#e63b00]";
+
+function ArrowIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 12H20" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+      <path d="M13 5L20 12L13 19" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function CtaPillButton({
+  onClick,
+  children,
+}: {
+  onClick: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <button type="button" onClick={onClick} className={pillRootClassName}>
+      <span className={pillRailClassName}>{children}</span>
+      <span className={pillIconClassName}>
+        <ArrowIcon />
+      </span>
+    </button>
+  );
+}
 
 function ExpertSupportHub() {
   return (
@@ -97,13 +129,11 @@ function ClarityLightbox({
           Lukk
         </button>
         <div className="relative aspect-[1693/929] w-full">
-          <Image
+          <img
             src="/Clarity-model.png"
             alt="Clarity-modell"
-            fill
-            className="object-contain"
-            sizes="(min-width: 1280px) 1200px, 100vw"
-            priority
+            className="h-full w-full object-contain"
+            loading="eager"
           />
         </div>
       </div>
@@ -167,13 +197,9 @@ export function GlobalPageChrome({ children }: { children: ReactNode }) {
             <div>
               <PdfSupportModule />
               <div className="mt-4 flex justify-end">
-                <button
-                  type="button"
-                  onClick={() => setIsLightboxOpen(true)}
-                  className="inline-flex items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#e63b00] disabled:cursor-not-allowed disabled:opacity-70"
-                >
+                <CtaPillButton onClick={() => setIsLightboxOpen(true)}>
                   Se modellen
-                </button>
+                </CtaPillButton>
               </div>
             </div>
           </div>
