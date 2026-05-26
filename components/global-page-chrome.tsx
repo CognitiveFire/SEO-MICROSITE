@@ -1,6 +1,7 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import Image from "next/image";
 import { Footer } from "./footer";
 import { LeadCaptureForm } from "./lead-capture-form";
 import { CtaPillLink } from "./cta-pill";
@@ -41,13 +42,70 @@ function PdfSupportModule() {
             Clarity - slik fungerer det
           </h2>
           <p className="mt-3 max-w-2xl text-base leading-8 text-apriil-muted">
-            Last ned dokumentet med tjenestestruktur, arbeidsmetodikk og
-            prioriteringsrammeverk.
+            Se modellen som viser hvordan Clarity kobler signaler, prioritering
+            og kommersiell forståelse.
           </p>
         </div>
-        <CtaPillLink href="/clarity-growth-framework-whitepaper.html?print=1">
-          Last ned notat
-        </CtaPillLink>
+      </div>
+    </div>
+  );
+}
+
+function ClarityLightbox({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open, onClose]);
+
+  if (!open) {
+    return null;
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#111111]/80 px-4 py-6 backdrop-blur-sm"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Clarity-modellen"
+    >
+      <div
+        className="relative max-h-[92vh] w-full max-w-[1200px] overflow-hidden rounded-[20px] border border-[#2f2b27] bg-[#f7f6f2] shadow-[0_24px_90px_rgba(0,0,0,0.35)]"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-4 top-4 z-10 rounded-full border border-[#2f2b27]/20 bg-white/90 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-apriil-dark transition hover:border-[#ff4101]/40"
+        >
+          Lukk
+        </button>
+        <div className="relative aspect-[1693/929] w-full">
+          <Image
+            src="/Clarity-model.png"
+            alt="Clarity-modell"
+            fill
+            className="object-contain"
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            priority
+          />
+        </div>
       </div>
     </div>
   );
@@ -97,6 +155,8 @@ function PageContactCta() {
 }
 
 export function GlobalPageChrome({ children }: { children: ReactNode }) {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
   return (
     <>
       {children}
@@ -104,10 +164,22 @@ export function GlobalPageChrome({ children }: { children: ReactNode }) {
         <div className="w-full border-t border-apriil-line/80 pt-10">
           <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
             <ExpertSupportHub />
-            <PdfSupportModule />
+            <div>
+              <PdfSupportModule />
+              <div className="mt-4 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => setIsLightboxOpen(true)}
+                  className="inline-flex items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#e63b00] disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  Se modellen
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+      <ClarityLightbox open={isLightboxOpen} onClose={() => setIsLightboxOpen(false)} />
       <PageContactCta />
       <Footer />
     </>
