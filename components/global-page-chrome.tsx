@@ -102,9 +102,6 @@ function ClarityLightbox({
             alt="Clarity-modell"
             className="h-full w-full object-contain"
             loading="eager"
-            onError={(event) => {
-              event.currentTarget.src = "/clarity-fra-april.png";
-            }}
           />
         </div>
       </div>
