@@ -56,7 +56,7 @@ export function ChannelServicePage({
       <div className="w-full space-y-20 md:space-y-24">
         <ServiceSubmenu />
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <section className="grid gap-10 rounded-[20px] border border-apriil-line/70 bg-[#f8f7f4] p-6 md:p-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-apriil-muted">
               {eyebrow}
@@ -73,7 +73,7 @@ export function ChannelServicePage({
               </CtaPillLink>
             </div>
           </div>
-          <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 p-7 md:p-9">
+          <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 bg-[#f2efe8] p-7 md:p-9">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               Strategisk posisjonering
             </p>
@@ -90,7 +90,7 @@ export function ChannelServicePage({
           </div>
         </section>
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <section className="grid gap-10 rounded-[20px] border border-apriil-line/70 bg-[#f8f7f4] p-6 md:p-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
               Hvordan vi jobber

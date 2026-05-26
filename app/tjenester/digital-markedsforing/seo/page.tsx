@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaPillLink } from "@/components/cta-pill";
 import { IpadFrameImage } from "@/components/digital-markedsforing/ipad-frame-image";
+import { SeoHeroGraphic } from "@/components/digital-markedsforing/seo-hero-graphic";
 import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 
 export const metadata: Metadata = {
@@ -80,20 +81,24 @@ export default function SeoSubPage() {
         <ServiceSubmenu />
 
         <section className="border-t border-apriil-line/70 pt-12">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              SEO
-            </p>
-            <h1 className="mt-5 max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.9]">
-              SEO som bygger langsiktig synlighet.
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-9 text-apriil-muted md:text-[1.22rem]">
-              God synlighet handler om a vaere tydelig nar mennesker soker,
-              vurderer og sammenligner.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <CtaPillLink href="#kontakt-skjema">Snakk med oss</CtaPillLink>
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
+                SEO
+              </p>
+              <h1 className="mt-5 max-w-3xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.9]">
+                SEO som bygger langsiktig synlighet.
+              </h1>
+              <p className="mt-7 max-w-2xl text-lg leading-9 text-apriil-muted md:text-[1.22rem]">
+                God synlighet handler om a vaere tydelig nar mennesker soker,
+                vurderer og sammenligner.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <CtaPillLink href="#kontakt-skjema">Snakk med oss</CtaPillLink>
+              </div>
             </div>
+
+            <SeoHeroGraphic />
           </div>
         </section>
 

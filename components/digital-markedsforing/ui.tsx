@@ -168,6 +168,8 @@ export function SectionContainer({
   children: ReactNode;
   id?: string;
 }) {
+  const useSurface = Boolean(eyebrow);
+
   return (
     <section id={id} className="px-6 py-20 md:px-10 md:py-24 xl:px-16 xl:py-28">
       <div className="w-full border-t border-apriil-line/70 pt-12 md:pt-14">
@@ -184,7 +186,15 @@ export function SectionContainer({
             {intro}
           </p>
         ) : null}
-        <div className="mt-12 md:mt-14">{children}</div>
+        <div
+          className={`mt-12 md:mt-14 ${
+            useSurface
+              ? "rounded-[18px] border border-apriil-line/70 bg-[#f8f7f4] p-6 md:p-8"
+              : ""
+          }`}
+        >
+          {children}
+        </div>
       </div>
     </section>
   );
@@ -329,50 +339,76 @@ export function EcosystemVisual() {
 
 export function SignalFlowVisual() {
   return (
-    <div className="apriil-editorial-surface relative h-[360px] overflow-hidden rounded-[26px] border border-apriil-line/70 p-8">
-      <svg
-        className="absolute inset-0 h-full w-full"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M8 24 C 23 21, 31 36, 45 36 C 60 36, 66 21, 92 20"
-          fill="none"
-          stroke="rgba(23,23,23,0.25)"
-          strokeWidth="0.26"
-        />
-        <path
-          d="M8 52 C 24 58, 36 63, 49 60 C 63 57, 72 42, 92 44"
-          fill="none"
-          stroke="rgba(23,23,23,0.2)"
-          strokeWidth="0.26"
-        />
-        <path
-          d="M8 80 C 24 76, 33 88, 49 86 C 67 84, 77 71, 92 67"
-          fill="none"
-          stroke="rgba(23,23,23,0.18)"
-          strokeWidth="0.26"
-        />
-        <motion.circle
-          cx="10"
-          cy="24"
-          r="1.2"
-          fill="rgba(23,23,23,0.55)"
-          animate={{ cx: [10, 44, 88], cy: [24, 36, 20] }}
-          transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </svg>
+    <div className="apriil-editorial-surface relative overflow-hidden rounded-[26px] border border-apriil-line/70 bg-[#f6f4ef] p-7 md:p-8">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_12%,rgba(255,65,1,0.14),transparent_48%)]" />
+      <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(23,23,23,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(23,23,23,0.08)_1px,transparent_1px)] [background-size:34px_34px]" />
 
-      <div className="relative grid h-full content-between">
-        <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-apriil-muted">
-          Signalniva
-        </p>
-        <div className="space-y-2 text-sm text-apriil-muted">
-          <p>Fragmenterte datapunkter</p>
-          <p>Validerte signaler</p>
-          <p>Strategisk beslutningsgrunnlag</p>
+      <div className="relative space-y-6">
+        <div className="flex items-center justify-between gap-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-apriil-muted">
+            Analysemodell
+          </p>
+          <span className="rounded-full border border-apriil-line/80 bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-apriil-muted">
+            signal clarity
+          </span>
         </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <article className="rounded-[12px] border border-apriil-line/80 bg-white/90 p-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-apriil-muted">
+              Datakvalitet
+            </p>
+            <div className="mt-4 space-y-3">
+              {[
+                ["Tracking", 78],
+                ["Attribusjon", 66],
+                ["Konsistens", 84],
+              ].map(([label, value]) => (
+                <div key={label} className="space-y-1">
+                  <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.1em] text-apriil-muted">
+                    <span>{label}</span>
+                    <span>{value}</span>
+                  </div>
+                  <div className="h-1.5 overflow-hidden rounded-full bg-[#ebe6dc]">
+                    <div className="h-full rounded-full bg-[#ff4101]/75" style={{ width: `${value}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="rounded-[12px] border border-apriil-line/80 bg-white/90 p-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-apriil-muted">
+              Beslutningsflyt
+            </p>
+            <div className="mt-4 grid gap-2">
+              {["Datakilder", "Validering", "Prioritering", "Tiltak"].map((step, index) => (
+                <div key={step} className="grid grid-cols-[auto_1fr] items-center gap-3 rounded-[10px] border border-apriil-line/70 bg-[#faf8f3] px-3 py-2">
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#2c2621] text-[10px] font-semibold text-white">
+                    {index + 1}
+                  </span>
+                  <p className="text-xs font-medium text-apriil-dark">{step}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+        </div>
+
+        <article className="rounded-[12px] border border-apriil-line/80 bg-[#181614] p-4 md:p-5">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#c8c2b8]">
+            Prioritering over tid
+          </p>
+          <div className="mt-4 grid h-24 grid-cols-8 items-end gap-2 md:h-28">
+            {[18, 24, 32, 40, 49, 58, 66, 74].map((height) => (
+              <div key={height} className="h-full">
+                <div
+                  className="h-full w-full rounded-t-sm bg-gradient-to-t from-[#ff4101] to-[#ff8a5c]"
+                  style={{ height: `${height}%` }}
+                />
+              </div>
+            ))}
+          </div>
+        </article>
       </div>
     </div>
   );
