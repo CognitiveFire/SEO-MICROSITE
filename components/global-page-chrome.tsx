@@ -85,7 +85,7 @@ function PageContactCta() {
               fieldLabelClassName="grid gap-2.5 text-sm font-medium text-[#d4cec5]"
               introClassName="max-w-2xl text-[1.02rem] leading-8 text-[#c8c3ba]"
               responseTextClassName="text-sm text-[#c8c3ba]"
-              buttonClassName="inline-flex items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-6 py-3 text-sm font-semibold text-[#1b1917] transition hover:bg-[#e63b00] disabled:cursor-not-allowed disabled:opacity-70"
+              buttonClassName="inline-flex items-center justify-center rounded-full border border-[#ff4101] bg-[#ff4101] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#e63b00] disabled:cursor-not-allowed disabled:opacity-70"
               feedbackClassName="rounded-[12px] border border-[#413a36] bg-[#181614] px-4 py-3 text-sm text-[#c8c3ba]"
               submitRowClassName="mt-1 grid gap-4 border-t border-[#37332e] pt-5 md:grid-cols-[1fr_auto] md:items-center"
             />
