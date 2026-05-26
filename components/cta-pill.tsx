@@ -14,6 +14,11 @@ type CtaPillAnchorProps = BaseProps & {
   href: string;
 };
 
+type CtaPillButtonProps = BaseProps & {
+  onClick: () => void;
+  type?: "button" | "submit" | "reset";
+};
+
 const rootClassName =
   "group inline-flex items-center gap-2 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4101] focus-visible:ring-offset-2";
 const railClassName =
@@ -49,5 +54,21 @@ export function CtaPillAnchor({ href, children, className = "" }: CtaPillAnchorP
         <ArrowIcon />
       </span>
     </a>
+  );
+}
+
+export function CtaPillButton({
+  onClick,
+  children,
+  className = "",
+  type = "button",
+}: CtaPillButtonProps) {
+  return (
+    <button type={type} onClick={onClick} className={`${rootClassName} ${className}`.trim()}>
+      <span className={railClassName}>{children}</span>
+      <span className={iconClassName}>
+        <ArrowIcon />
+      </span>
+    </button>
   );
 }

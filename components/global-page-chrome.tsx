@@ -3,40 +3,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Footer } from "./footer";
 import { LeadCaptureForm } from "./lead-capture-form";
-import { CtaPillLink } from "./cta-pill";
-
-const pillRootClassName =
-  "group inline-flex items-center gap-2 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4101] focus-visible:ring-offset-2";
-const pillRailClassName =
-  "inline-flex min-h-[58px] items-center rounded-full bg-[#1b1917] px-10 py-3 text-[1.02rem] font-semibold tracking-[-0.01em] text-white transition group-hover:bg-[#11100f]";
-const pillIconClassName =
-  "inline-flex h-[58px] w-[58px] items-center justify-center rounded-full bg-[#ff4101] text-white transition group-hover:bg-[#e63b00]";
-
-function ArrowIcon() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M4 12H20" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-      <path d="M13 5L20 12L13 19" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function CtaPillButton({
-  onClick,
-  children,
-}: {
-  onClick: () => void;
-  children: ReactNode;
-}) {
-  return (
-    <button type="button" onClick={onClick} className={pillRootClassName}>
-      <span className={pillRailClassName}>{children}</span>
-      <span className={pillIconClassName}>
-        <ArrowIcon />
-      </span>
-    </button>
-  );
-}
+import { CtaPillButton, CtaPillLink } from "./cta-pill";
 
 function ExpertSupportHub() {
   return (
@@ -62,7 +29,7 @@ function ExpertSupportHub() {
   );
 }
 
-function PdfSupportModule() {
+function PdfSupportModule({ onOpenModel }: { onOpenModel: () => void }) {
   return (
     <div className="rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4] p-7 md:p-8">
       <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
@@ -78,6 +45,7 @@ function PdfSupportModule() {
             og kommersiell forståelse.
           </p>
         </div>
+        <CtaPillButton onClick={onOpenModel}>Se modellen</CtaPillButton>
       </div>
     </div>
   );
@@ -134,6 +102,9 @@ function ClarityLightbox({
             alt="Clarity-modell"
             className="h-full w-full object-contain"
             loading="eager"
+            onError={(event) => {
+              event.currentTarget.src = "/clarity-fra-april.png";
+            }}
           />
         </div>
       </div>
@@ -194,14 +165,7 @@ export function GlobalPageChrome({ children }: { children: ReactNode }) {
         <div className="w-full border-t border-apriil-line/80 pt-10">
           <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
             <ExpertSupportHub />
-            <div>
-              <PdfSupportModule />
-              <div className="mt-4 flex justify-end">
-                <CtaPillButton onClick={() => setIsLightboxOpen(true)}>
-                  Se modellen
-                </CtaPillButton>
-              </div>
-            </div>
+            <PdfSupportModule onOpenModel={() => setIsLightboxOpen(true)} />
           </div>
         </div>
       </section>
