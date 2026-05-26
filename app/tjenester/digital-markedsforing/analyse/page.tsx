@@ -91,9 +91,6 @@ export default function AnalyseSubPage() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <CtaPillLink href="#kontakt-skjema">Snakk med oss</CtaPillLink>
-              <CtaPillLink href="#operating-model" className="bg-[#f2f0eb] text-apriil-dark">
-                Se hvordan Clarity fungerer
-              </CtaPillLink>
             </div>
           </div>
           <ClarityIntelligenceGraphic />

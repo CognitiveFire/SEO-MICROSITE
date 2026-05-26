@@ -68,12 +68,12 @@ export function SeoHeroGraphic() {
           </article>
         </div>
 
-        <article className="rounded-[14px] border border-apriil-line/80 bg-[#151412] p-4 md:p-5">
+        <article className="rounded-[14px] border border-apriil-line/80 bg-white/90 p-4 md:p-5">
           <div className="flex items-center justify-between gap-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-[#bfb8ae]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.13em] text-apriil-muted">
               Visibility trajectory
             </p>
-            <span className="rounded-full border border-[#473f37] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#d8d1c6]">
+            <span className="rounded-full border border-apriil-line/80 bg-[#faf8f3] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-apriil-muted">
               last 6 months
             </span>
           </div>
@@ -85,7 +85,7 @@ export function SeoHeroGraphic() {
                   className="absolute bottom-0 w-full rounded-t-sm bg-gradient-to-t from-[#ff4101] to-[#ff8a5c]"
                   style={{ height: `${height}%` }}
                 />
-                {index > 0 ? <span className="absolute -left-1 top-0 h-px w-2 bg-[#6d6359]" /> : null}
+                {index > 0 ? <span className="absolute -left-1 top-0 h-px w-2 bg-apriil-line/80" /> : null}
               </div>
             ))}
           </div>
