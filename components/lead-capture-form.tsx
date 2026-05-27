@@ -24,13 +24,16 @@ type LeadCaptureFormProps = {
 };
 
 const focusOptions = [
-  "Søkesynlighet",
-  "Betalt anskaffelse",
-  "Integrert søkeytelse",
-  "Apriil Clarity",
+  "Performance Marketing",
+  "SEO",
+  "Sporing og analyse",
+  "Programmatic",
+  "Podcast",
+  "Digital TV-annonsering",
+  "DOOH",
 ];
 
-const officeOptions = ["Bergen", "Stavanger", "Oslo"] as const;
+const officeOptions = ["Bergen", "Oslo", "Stavanger"] as const;
 
 export function LeadCaptureForm({
   source,
@@ -45,7 +48,7 @@ export function LeadCaptureForm({
   hiddenMessageValue = "Ønsker en strategisamtale om dagens modell og prioriteringer.",
   introText,
   responseText = "Vi svarer vanligvis innen én arbeidsdag.",
-  focusLabel = "Fokusområde",
+  focusLabel = "Tjeneste dere er interessert i",
   fieldLayout = "two-column",
   submitRowClassName = "mt-2 flex flex-col gap-4 md:flex-row md:items-center md:justify-between",
   fieldLabelClassName = "grid gap-2.5 text-sm font-medium text-apriil-dark/72",
@@ -55,7 +58,7 @@ export function LeadCaptureForm({
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [selectedFocus, setSelectedFocus] = useState(focusOptions[0]);
+  const [selectedFocus, setSelectedFocus] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -98,7 +101,7 @@ export function LeadCaptureForm({
       }
 
       form.reset();
-      setSelectedFocus(focusOptions[0]);
+      setSelectedFocus("");
       setStatus("success");
     });
   }
@@ -160,7 +163,11 @@ export function LeadCaptureForm({
               value={selectedFocus}
               onChange={(event) => setSelectedFocus(event.target.value)}
               className={inputClassName}
+              required
             >
+              <option value="" disabled>
+                Velg tjeneste...
+              </option>
               {focusOptions.map((option) => (
                 <option
                   key={option}

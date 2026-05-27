@@ -51,9 +51,9 @@ export async function POST(request: Request) {
   const submittedAt =
     cleanValue(payload.submittedAt) || new Date().toISOString();
 
-  if (!name || !email || !message) {
+  if (!name || !email || !message || !office || !focus) {
     return NextResponse.json(
-      { error: "Name, email and message are required." },
+      { error: "Name, email, office, service interest and message are required." },
       { status: 400 },
     );
   }

@@ -155,6 +155,18 @@ function HeroGraphic({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+const focusOptions = [
+  "Performance Marketing",
+  "SEO",
+  "Sporing og analyse",
+  "Programmatic",
+  "Podcast",
+  "Digital TV-annonsering",
+  "DOOH",
+];
+
+const officeOptions = ["Bergen", "Oslo", "Stavanger"] as const;
+
 export function ContactForm({
   serviceName,
   slug,
@@ -167,6 +179,7 @@ export function ContactForm({
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [selectedFocus, setSelectedFocus] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -185,8 +198,8 @@ export function ContactForm({
           name: formData.get("name"),
           email: formData.get("email"),
           company: formData.get("company"),
-          focus: serviceName,
-          office: "",
+          focus: formData.get("focus"),
+          office: formData.get("office"),
           message:
             message ||
             `Foresporsel fra ${serviceName}-siden. Onsker en uforpliktende gjennomgang.`,
@@ -203,6 +216,7 @@ export function ContactForm({
       }
 
       form.reset();
+      setSelectedFocus("");
       setStatus("success");
     });
   }
@@ -231,6 +245,43 @@ export function ContactForm({
             <label className="grid gap-2 text-sm font-medium text-apriil-dark/80">
               E-post
               <input name="email" type="email" required className="w-full rounded-[12px] border border-apriil-line bg-[#faf9f6] px-4 py-3 outline-none focus:border-apriil-dark/35" />
+            </label>
+            <label className="grid gap-2 text-sm font-medium text-apriil-dark/80">
+              Tjeneste dere er interessert i
+              <select
+                name="focus"
+                value={selectedFocus}
+                onChange={(event) => setSelectedFocus(event.target.value)}
+                required
+                className="w-full rounded-[12px] border border-apriil-line bg-[#faf9f6] px-4 py-3 outline-none focus:border-apriil-dark/35"
+              >
+                <option value="" disabled>
+                  Velg tjeneste...
+                </option>
+                {focusOptions.map((option) => (
+                  <option key={option} value={option} className="text-apriil-dark">
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="grid gap-2 text-sm font-medium text-apriil-dark/80">
+              Hvilket kontor vil dere bruke?
+              <select
+                name="office"
+                required
+                defaultValue=""
+                className="w-full rounded-[12px] border border-apriil-line bg-[#faf9f6] px-4 py-3 outline-none focus:border-apriil-dark/35"
+              >
+                <option value="" disabled>
+                  Velg kontor...
+                </option>
+                {officeOptions.map((office) => (
+                  <option key={office} value={office} className="text-apriil-dark">
+                    {office}
+                  </option>
+                ))}
+              </select>
             </label>
             <label className="grid gap-2 text-sm font-medium text-apriil-dark/80">
               Melding (valgfritt)

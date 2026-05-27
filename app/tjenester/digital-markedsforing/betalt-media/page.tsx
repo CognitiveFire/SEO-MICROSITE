@@ -4,7 +4,7 @@ import { ServicePageTemplate } from "@/components/digital-markedsforing/service-
 export const metadata: Metadata = {
   title: "Performance Marketing | Digital markedsforing | Apriil",
   description:
-    "Apriil leverer performance marketing-radgivning for virksomheter som trenger bedre investeringsstyring, tydeligere kanalroller og sterkere kommersiell effekt pa tvers av sosiale, sokeord, display og video.",
+    "Apriil leverer performance marketing-radgivning for virksomheter som trenger bedre investeringsstyring, tydeligere kanalroller og sterkere kommersiell effekt pa tvers av sosiale medier, sokeord, Shopping Ads, display og video.",
 };
 
 export default function PerformanceMarketingSubPage() {
@@ -13,11 +13,11 @@ export default function PerformanceMarketingSubPage() {
       serviceName="Performance Marketing"
       slug="performance-marketing"
       heroTitle="Performance marketing pa tvers av kanaler"
-      heroBody="Vi hjelper virksomheter med a optimalisere investeringer i annonsering gjennom bedre data, intelligente prioriteringer og kontinuerlig optimalisering pa tvers av sosiale medier, sokeord, display og video."
+      heroBody="Vi hjelper virksomheter med a optimalisere investeringer i annonsering gjennom bedre data, intelligente prioriteringer og kontinuerlig optimalisering pa tvers av sosiale medier, sokeord, Shopping Ads, display og video."
       heroImageSrc="/apriil-digital/assets/performance-advertising.png"
       heroImageAlt="Performance marketing-illustrasjon for Apriil"
       heroCtaLabel="Bestill en gjennomgang"
-      whatWeDoIntro="Vi tar ansvar for hele annonsestrategien pa tvers av kanaler: fra strategi og oppsett til oppfolging og rapportering. Arbeidet handler om intelligente prioriteringer og optimalisering av hver eneste annonsekrone."
+      whatWeDoIntro="Vi tar ansvar for hele annonsestrategien pa tvers av kanaler: fra strategi og oppsett til oppfolging og rapportering, inkludert Shopping Ads for produktdrevet vekst. Arbeidet handler om intelligente prioriteringer og optimalisering av hver eneste annonsekrone."
       serviceCards={[
         {
           title: "Annonsering i sosiale medier",
@@ -25,8 +25,8 @@ export default function PerformanceMarketingSubPage() {
           icon: "meta",
         },
         {
-          title: "Sokeordsannonser",
-          body: "Vi bygger Google Ads-kontoer med tydelig struktur, høy relevans og fokus pa salgsnare trafikk. Kampanjer og budsjett styres for a maksimere verdi.",
+          title: "Sokeordsannonser og Shopping Ads",
+          body: "Vi bygger Google Ads-kontoer med tydelig struktur for bade klassiske sokeordskampanjer og Shopping Ads. Feed-kvalitet, produktgruppering og budsjett styres for a maksimere salgsverdi.",
           icon: "search",
         },
         {
@@ -57,7 +57,7 @@ export default function PerformanceMarketingSubPage() {
         },
         {
           title: "Kanalpriortering",
-          body: "Vi vurderer hvilke kombinasjoner av sosiale, sok, display og video som gir best effekt med tilgjengelig budsjett.",
+          body: "Vi vurderer hvilke kombinasjoner av sosiale medier, sok, Shopping Ads, display og video som gir best effekt med tilgjengelig budsjett.",
         },
         {
           title: "Implementering",
@@ -71,11 +71,11 @@ export default function PerformanceMarketingSubPage() {
       caseStudy={{
         title: "Nordisk nettbutikk innen interior - multikanal-optimalisering",
         situation:
-          "Kunden brukte annonsebudsjetter pa tvers av flere kanaler, men mangler tydelig oversikt over hvilke kombinasjoner av sosiale, sok og display som faktisk skapte salg.",
+          "Kunden brukte annonsebudsjetter pa tvers av flere kanaler, men mangler tydelig oversikt over hvilke kombinasjoner av sosiale medier, sok, Shopping Ads og display som faktisk skapte salg.",
         actions: [
           "Etablerte sporing og attribusjon pa tvers av kanaler",
-          "Restrukturerte kampanjer for bedre prioritering",
-          "Justerte budsjettfordeling mellom sosiale, sok og display",
+          "Restrukturerte sokeords- og Shopping Ads-kampanjer for bedre prioritering",
+          "Justerte budsjettfordeling mellom sosiale medier, sok, Shopping Ads og display",
           "Innforte tydelig rapportering for beslutninger pa kanalnivar",
         ],
         resultLabel: "Resultat etter 3 maneder",
@@ -88,7 +88,11 @@ export default function PerformanceMarketingSubPage() {
       faqItems={[
         {
           question: "Hvilke kanaler bor vi prioritere?",
-          answer: "Det avhenger av mal, marginer og hvor kundene befinner seg. Vi anbefaler a starte med sokemotorer og sosiale medier, og utvide med display og video nar det skaper verdi.",
+          answer: "Det avhenger av mal, marginer og hvor kundene befinner seg. Vi anbefaler a starte med sokemotorer, Shopping Ads og sosiale medier, og utvide med display og video nar det skaper verdi.",
+        },
+        {
+          question: "Jobber dere med Shopping Ads?",
+          answer: "Ja. Vi setter opp og optimaliserer Shopping Ads med fokus pa feed-kvalitet, produktstruktur, budstrategi og lonnsom vekst.",
         },
         {
           question: "Hvor mye bor man bruke pa annonsering totalt?",
