@@ -143,13 +143,13 @@ function ServiceIcon({ icon }: { icon: ServiceIconKey }) {
 
 function HeroGraphic({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative min-h-[220px] overflow-hidden rounded-[14px] border border-apriil-line/80 bg-[#f3f1eb] p-4 md:p-6">
+    <div className="relative min-h-[320px] overflow-hidden rounded-[14px] border border-apriil-line/80 bg-[#f3f1eb] md:min-h-[420px]">
       <Image
         src={src}
         alt={alt}
         fill
         sizes="(min-width: 1024px) 50vw, 100vw"
-        className="object-contain"
+        className="object-contain object-center"
       />
     </div>
   );
@@ -284,12 +284,12 @@ export function ServicePageTemplate({
       </section>
 
       <section className="px-6 pb-14 md:px-10 xl:px-16">
-        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
-            <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-6xl md:leading-[0.95]">
+            <h1 className="mt-5 max-w-2xl text-5xl font-semibold tracking-[-0.05em] text-apriil-dark md:text-7xl md:leading-[0.9]">
               {heroTitle}
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">{heroBody}</p>
+            <p className="mt-6 max-w-2xl text-lg leading-9 text-apriil-muted md:text-[1.22rem]">{heroBody}</p>
             <Link href="#kontakt-skjema" className="mt-8 inline-flex min-h-[46px] items-center justify-center rounded-full border border-apriil-dark bg-apriil-dark px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#2a2622]">
               {heroCtaLabel}
             </Link>
