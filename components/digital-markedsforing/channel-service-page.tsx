@@ -2,7 +2,6 @@ import {
   MethodologyGrid,
 } from "@/components/digital-markedsforing/ui";
 import { CtaPillLink } from "@/components/cta-pill";
-import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 import {
   CaseStudyToggle,
   type CaseStudyContent,
@@ -12,6 +11,7 @@ export type ChannelServicePageProps = {
   eyebrow: string;
   title: string;
   intro: string;
+  showHeroCta?: boolean;
   approachTitle: string;
   approachIntro: string;
   caseStudy: {
@@ -29,6 +29,7 @@ export function ChannelServicePage({
   eyebrow,
   title,
   intro,
+  showHeroCta = true,
   approachTitle,
   approachIntro,
   caseStudy,
@@ -54,8 +55,6 @@ export function ChannelServicePage({
   return (
     <main className="px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
       <div className="w-full space-y-20 md:space-y-24">
-        <ServiceSubmenu />
-
         <section className="grid gap-10 rounded-[20px] border border-apriil-line/70 bg-[#f8f7f4] p-6 md:p-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-apriil-muted">
@@ -67,11 +66,13 @@ export function ChannelServicePage({
             <p className="mt-6 max-w-3xl text-base leading-8 text-apriil-muted md:text-lg">
               {intro}
             </p>
-            <div className="mt-8">
-              <CtaPillLink href="#kontakt-skjema">
-                Snakk med oss
-              </CtaPillLink>
-            </div>
+            {showHeroCta ? (
+              <div className="mt-8">
+                <CtaPillLink href="#kontakt-skjema">
+                  Snakk med oss
+                </CtaPillLink>
+              </div>
+            ) : null}
           </div>
           <div className="apriil-editorial-surface rounded-[18px] border border-apriil-line/70 bg-[#f2efe8] p-7 md:p-9">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">

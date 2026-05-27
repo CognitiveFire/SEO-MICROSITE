@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CtaPillLink } from "@/components/cta-pill";
-import { IpadFrameImage } from "@/components/digital-markedsforing/ipad-frame-image";
 import { SeoHeroGraphic } from "@/components/digital-markedsforing/seo-hero-graphic";
-import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 
 export const metadata: Metadata = {
   title: "SEO | Digital markedsforing | Apriil",
@@ -47,28 +44,6 @@ const faqSchema = {
   })),
 };
 
-const pricing = [
-  {
-    name: "Fundament",
-    price: "Fra NOK 16 000 / mnd",
-    body: "For virksomheter som trenger bedre struktur, teknisk kvalitet og tydeligere organisk synlighet.",
-    bullets: ["Teknisk kvalitet", "Innholdsstruktur", "Maanedlig prioritering"],
-  },
-  {
-    name: "Vekst",
-    price: "Fra NOK 29 000 / mnd",
-    body: "For virksomheter som ønsker lopende SEO-radgivning, innholdsutvikling og kontinuerlig forbedring.",
-    bullets: ["Lopende rådgivning", "Tverrfaglig samspill", "Kontinuerlig oppfolging"],
-    featured: true,
-  },
-  {
-    name: "Strategisk",
-    price: "Fra NOK 52 000 / mnd",
-    body: "For komplekse nettsteder, flere markeder eller behov for tett strategisk oppfolging.",
-    bullets: ["Lederforankret retning", "Komplekse strukturer", "Langsiktig synlighetsarbeid"],
-  },
-];
-
 export default function SeoSubPage() {
   return (
     <main className="w-full px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
@@ -78,8 +53,6 @@ export default function SeoSubPage() {
       />
 
       <div className="w-full space-y-20 md:space-y-24">
-        <ServiceSubmenu />
-
         <section className="border-t border-apriil-line/70 pt-12">
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
@@ -93,9 +66,6 @@ export default function SeoSubPage() {
                 God synlighet handler om a vaere tydelig nar mennesker soker,
                 vurderer og sammenligner.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <CtaPillLink href="#kontakt-skjema">Snakk med oss</CtaPillLink>
-              </div>
             </div>
 
             <SeoHeroGraphic />
@@ -148,95 +118,6 @@ export default function SeoSubPage() {
                 </li>
               ))}
             </ol>
-          </div>
-        </section>
-
-        <section className="border-t border-apriil-line/70 pt-12">
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-                Case-eksempel
-              </p>
-              <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-                Fra fragmentert innhold til tydelig synlighet
-              </h2>
-              <p className="mt-6 text-base leading-8 text-apriil-muted">
-                En stor norsk virksomhet hadde produsert mye innhold over tid,
-                men manglet tydelig struktur mellom informasjon, intensjon og
-                kommersielle behov.
-              </p>
-              <p className="mt-5 text-base leading-8 text-apriil-muted">
-                Ved a bygge en tydelig content hierarchy, styrke intern lenking
-                og prioritere sokebehov naermere beslutning, ble synligheten mer
-                robust i baade tradisjonelle sokeflater og AI-drevne svar.
-              </p>
-              <ul className="mt-6 space-y-3 text-base leading-8 text-apriil-muted">
-                <li className="border-t border-apriil-line/80 pt-3">sterkere synlighet pa kommersielle sok</li>
-                <li className="border-t border-apriil-line/80 pt-3">okende organisk trafikk med hoyere relevans</li>
-                <li className="border-t border-apriil-line/80 pt-3">bedre kvalitet pa henvendelser og prioriteringer</li>
-              </ul>
-            </div>
-            <div className="apriil-editorial-surface rounded-[16px] border border-apriil-line/70 p-5 md:p-7">
-              <div className="mx-auto w-full max-w-[420px]">
-                <IpadFrameImage
-                  src="/apriil-digital/assets/Fjord-case study.png"
-                  alt="Anonymisert visualisering av strukturert synlighetsarbeid"
-                  sizes="(min-width: 1024px) 35vw, 85vw"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-t border-apriil-line/70 pt-12">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Prisniva
-            </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              SEO-retainere med tydelig scope.
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Prisnivaet reflekterer ambisjon, kompleksitet og behov for
-              oppfolging - ikke abonnementspakker.
-            </p>
-
-            <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {pricing.map((tier) => (
-                <article
-                  key={tier.name}
-                  className={`flex h-full flex-col rounded-[14px] border p-6 md:p-7 ${
-                    tier.featured
-                      ? "border-[#ff4101]/40 bg-[#fff5ef]"
-                      : "border-apriil-line/80 bg-[#f8f7f4]"
-                  }`}
-                >
-                  <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
-                    <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">
-                        {tier.name}
-                      </p>
-                      <p className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-apriil-dark">
-                        {tier.price}
-                      </p>
-                    </div>
-                    {tier.featured ? (
-                      <span className="inline-flex rounded-full border border-[#ff4101]/45 bg-[#fff1e8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-apriil-dark">
-                        Anbefalt
-                      </span>
-                    ) : null}
-                  </div>
-                  <p className="mt-5 text-base leading-8 text-apriil-muted">{tier.body}</p>
-                  <ul className="mt-5 space-y-2 text-sm leading-7 text-apriil-muted">
-                    {tier.bullets.map((bullet) => (
-                      <li key={bullet} className="border-t border-apriil-line/70 pt-2">
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 

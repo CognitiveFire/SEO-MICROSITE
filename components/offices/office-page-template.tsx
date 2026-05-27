@@ -109,7 +109,6 @@ export function OfficePageTemplate({ office }: { office: OfficeData }) {
               <>
                 Tett samarbeid med <Link href="/tjenester/digital-markedsforing/seo" className="border-b border-apriil-dark/30">SEO</Link>,{" "}
                 <Link href="/tjenester/digital-markedsforing/betalt-media" className="border-b border-apriil-dark/30">betalt media</Link>,{" "}
-                <Link href="/tjenester/digital-markedsforing/performance" className="border-b border-apriil-dark/30">performance</Link> og{" "}
                 <Link href="/tjenester/digital-markedsforing/analyse" className="border-b border-apriil-dark/30">analyse</Link> gir bedre lokal forankring og sterkere kommersiell retning.
               </>
             }

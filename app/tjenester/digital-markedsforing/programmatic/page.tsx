@@ -13,6 +13,7 @@ export default function ProgrammaticPage() {
       eyebrow="Programmatic"
       title="Programmatic som en del av samlet vekstmodell"
       intro="Vi bruker programmatic for presis distribusjon med tydelig rolle i den totale mediemiksen."
+      showHeroCta={false}
       approachTitle="Hvordan vi jobber med programmatic"
       approachIntro="Vi vurderer kvalitet, rekkevidde og kommersiell effekt i samme styringsmodell."
       caseStudy={{

@@ -13,6 +13,7 @@ export default function DoohPage() {
       eyebrow="DOOH"
       title="DOOH med tydelig rolle i mediemiksen"
       intro="Vi bruker digitale utendorsflater strategisk for a styrke synlighet og ettersporsel i prioriterte markeder."
+      showHeroCta={false}
       approachTitle="Hvordan vi jobber med DOOH"
       approachIntro="Vi kobler plassering, timing og budskap til en samlet kommersiell modell."
       caseStudy={{

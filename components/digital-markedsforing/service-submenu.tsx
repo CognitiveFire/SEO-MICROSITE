@@ -6,11 +6,8 @@ import { usePathname } from "next/navigation";
 const serviceLinks = [
   { href: "/tjenester/digital-markedsforing/seo", label: "SEO" },
   { href: "/tjenester/digital-markedsforing/betalt-media", label: "Betalt media" },
-  { href: "/tjenester/digital-markedsforing/performance", label: "Performance" },
   { href: "/tjenester/digital-markedsforing/analyse", label: "Analyse" },
   { href: "/tjenester/digital-markedsforing/programmatic", label: "Programmatic" },
-  { href: "/tjenester/digital-markedsforing/creator-network", label: "Creator network" },
-  { href: "/tjenester/digital-markedsforing/podcast", label: "Podcast" },
   { href: "/tjenester/digital-markedsforing/dooh", label: "DOOH" },
 ];
 

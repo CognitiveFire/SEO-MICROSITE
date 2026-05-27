@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import {
   MethodologyGrid,
-  PricingGrid,
+  ServiceGridHero,
   StrategicSystemAnimation,
 } from "@/components/digital-markedsforing/ui";
 import { CtaPillLink } from "@/components/cta-pill";
@@ -9,7 +9,6 @@ import {
   CaseStudyToggle,
   type CaseStudyContent,
 } from "@/components/digital-markedsforing/case-study-toggle";
-import { ServiceSubmenu } from "@/components/digital-markedsforing/service-submenu";
 import { OfficesSection } from "@/components/digital-markedsforing/offices-section";
 
 export const metadata: Metadata = {
@@ -57,34 +56,36 @@ const methodologySteps = [
   },
 ];
 
-const pricingTiers = [
+const serviceCards = [
   {
-    name: "SEO",
-    price: "Fra NOK 16 000 / mnd",
-    audience:
-      "For virksomheter som trenger bedre struktur, teknisk kvalitet og tydeligere organisk synlighet.",
-    focus: ["teknisk SEO", "innholdsstruktur", "AI-synlighet"],
+    title: "SEO",
+    body: "Strukturert synlighetsarbeid for varig organisk etterspørsel.",
     href: "/tjenester/digital-markedsforing/seo",
-    hrefLabel: "Se full side",
+    icon: "seo" as const,
   },
   {
-    name: "Performance marketing",
-    price: "Fra NOK 18 000 / mnd",
-    audience:
-      "For virksomheter som ønsker løpende optimalisering, testing og koordinering på tvers av kanaler.",
-    focus: ["Google Ads", "Paid social", "kanalstrategi og attribusjon"],
-    recommended: true,
-    href: "/tjenester/digital-markedsforing/performance",
-    hrefLabel: "Se full side",
+    title: "Betalt media",
+    body: "Kanalstyring, testing og optimalisering med kommersiell retning.",
+    href: "/tjenester/digital-markedsforing/betalt-media",
+    icon: "paid" as const,
   },
   {
-    name: "Clarity Intelligence",
-    price: "Fra NOK 18 000 / mnd",
-    audience:
-      "For virksomheter som trenger tydeligere rapportering, signalvalidering og et sterkere beslutningsgrunnlag.",
-    focus: ["måling og attribusjon", "datavalidering", "dashboard og rapportering"],
+    title: "Analyse",
+    body: "Signaltolkning og prioritering på tvers av synlighet og investering.",
     href: "/tjenester/digital-markedsforing/analyse",
-    hrefLabel: "Se full side",
+    icon: "display" as const,
+  },
+  {
+    title: "Programmatic",
+    body: "Datadrevet distribusjon med tydelig rolle i vekstmodellen.",
+    href: "/tjenester/digital-markedsforing/programmatic",
+    icon: "programmatic" as const,
+  },
+  {
+    title: "DOOH",
+    body: "Synlighet i fysiske flater koblet til digital effektmåling.",
+    href: "/tjenester/digital-markedsforing/dooh",
+    icon: "dooh" as const,
   },
 ];
 
@@ -174,7 +175,6 @@ export default function DigitalMarkedsforingPage() {
         </section>
 
         <section id="metodikk" className="border-t border-apriil-line/70 pt-12">
-          <ServiceSubmenu />
           <div>
             <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
               Markedsføring fungerer best når retningen er tydelig.
@@ -217,18 +217,18 @@ export default function DigitalMarkedsforingPage() {
         <section className="border-t border-apriil-line/70 pt-12">
           <div className="max-w-3xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Prismodell
+              Tjenester
             </p>
             <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Rådgivning strukturert etter ambisjon og kompleksitet.
+              Slik aktiveres modellen i praksis.
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Prisnivå følger graden av styringsbehov, operativ involvering og
-              beslutningskompleksitet.
+              Radene under viser tjenestene som inngår i den samlede
+              markedsmodellen.
             </p>
           </div>
           <div className="mt-12">
-            <PricingGrid tiers={pricingTiers} />
+            <ServiceGridHero cards={serviceCards} />
           </div>
         </section>
 
