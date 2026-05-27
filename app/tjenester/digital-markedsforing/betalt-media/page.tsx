@@ -14,6 +14,8 @@ export default function PerformanceMarketingSubPage() {
       slug="performance-marketing"
       heroTitle="Performance marketing pa tvers av kanaler"
       heroBody="Vi hjelper virksomheter med a optimalisere investeringer i annonsering gjennom bedre data, intelligente prioriteringer og kontinuerlig optimalisering pa tvers av sosiale medier, sokeord, display og video."
+      heroImageSrc="/apriil-digital/assets/performance-advertising.png"
+      heroImageAlt="Performance marketing-illustrasjon for Apriil"
       heroCtaLabel="Bestill en gjennomgang"
       whatWeDoIntro="Vi tar ansvar for hele annonsestrategien pa tvers av kanaler: fra strategi og oppsett til oppfolging og rapportering. Arbeidet handler om intelligente prioriteringer og optimalisering av hver eneste annonsekrone."
       serviceCards={[

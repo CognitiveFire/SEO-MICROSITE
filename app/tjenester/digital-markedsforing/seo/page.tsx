@@ -14,6 +14,8 @@ export default function SeoSubPage() {
       slug="seo"
       heroTitle="SEO som gir tydeligere synlighet i riktig sok"
       heroBody="Vi hjelper virksomheter med a bygge en sokestruktur som er enkel a forsta, enkel a vedlikeholde og tydelig for bade brukere og sokemotorer."
+      heroImageSrc="/apriil-digital/assets/seo-apriil.png"
+      heroImageAlt="SEO-illustrasjon for Apriil"
       heroCtaLabel="Bestill en gjennomgang"
       whatWeDoIntro="SEO handler om mer enn rangeringer. Vi jobber med helheten fra teknisk kvalitet og innholdsstruktur til prioritering av sok som faktisk har kommersiell verdi."
       serviceCards={[

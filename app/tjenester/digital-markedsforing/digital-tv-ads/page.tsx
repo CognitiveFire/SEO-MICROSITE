@@ -14,6 +14,8 @@ export default function DigitalTvAdsPage() {
       slug="digital-tv-ads"
       heroTitle="Streaming-TV og connected TV-annonsering som treffer seeren"
       heroBody="Vi hjelper virksomheter med å bygge tilstedeværelse i streaming-TV og connected TV-kanaler der målgruppen bruker stadig mer tid på underholdning og nyheter."
+      heroImageSrc="/apriil-digital/assets/digital-tv-advertising.png"
+      heroImageAlt="Digital TV-annonsering-illustrasjon for Apriil"
       heroCtaLabel="Bestill en gjennomgang"
       whatWeDoIntro="Annonsering på streaming-plattformer som Netflix, Disney+, YouTube og connected TV fungerer best når målgruppevalg, plassering og hyppighet styres strategisk. Vi bygger kampanjer som treffer seeren i riktig kontekst uten å være irriterende."
       serviceCards={[

@@ -14,6 +14,8 @@ export default function PodcastPage() {
       slug="podcast"
       heroTitle="Podcast og audio-annonsering for målgruppe som lytter"
       heroBody="Vi hjelper virksomheter med å finne og sponse relevante podcaster, og bygge tilstedeværelse i audio-kanaler der målgruppen bruker tid og oppmerksomhet."
+      heroImageSrc="/apriil-digital/assets/podcasts.png"
+      heroImageAlt="Podcast-illustrasjon for Apriil"
       heroCtaLabel="Bestill en gjennomgang"
       whatWeDoIntro="Podcast-sponsorskap fungerer best når valg av podcast, formidling av budskap og måling av effekt henger sammen strategisk. Vi identifiserer de rette lydkanalene og bygger relevante pauser som treffer lyttere i riktig kontekst."
       serviceCards={[

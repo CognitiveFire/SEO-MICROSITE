@@ -14,6 +14,8 @@ export default function AnalyseSubPage() {
       slug="analyse"
       heroTitle="Analyse som gir bedre beslutninger i markedsforingen"
       heroBody="Vi hjelper virksomheter med a ga fra mye data til tydelige valg. Arbeidet handler om hva som bor prioriteres, ikke bare hva som kan males."
+      heroImageSrc="/apriil-digital/assets/sporing-apriil.png"
+      heroImageAlt="Analyse og sporing-illustrasjon for Apriil"
       heroCtaLabel="Bestill en gjennomgang"
       whatWeDoIntro="Vi bygger et beslutningsgrunnlag som er relevant for ledelse og markedsteam. Malet er bedre prioritering pa tvers av kanaler, tiltak og budsjett."
       serviceCards={[

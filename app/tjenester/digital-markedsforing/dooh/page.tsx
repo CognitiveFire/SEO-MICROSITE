@@ -14,6 +14,8 @@ export default function DoohPage() {
       slug="dooh"
       heroTitle="DOOH som stotter lokal synlighet og kommersiell effekt"
       heroBody="Vi hjelper virksomheter med a bruke digitale utendorsflater mer presist gjennom bedre plassering, timing og oppfolging."
+      heroImageSrc="/apriil-digital/assets/out-of-home.png"
+      heroImageAlt="DOOH-illustrasjon for Apriil"
       heroCtaLabel="Bestill en gjennomgang"
       whatWeDoIntro="DOOH fungerer best nar lokale signaler, budskap og distribusjon sees i sammenheng. Vi bygger planer som er enkle a styre og enkle a evaluere."
       serviceCards={[

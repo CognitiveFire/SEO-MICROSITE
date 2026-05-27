@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState, useTransition } from "react";
 
@@ -43,6 +44,8 @@ export type ServicePageTemplateProps = {
   slug: string;
   heroTitle: string;
   heroBody: string;
+  heroImageSrc: string;
+  heroImageAlt: string;
   heroCtaLabel: string;
   whatWeDoIntro: string;
   serviceCards: ServiceCard[];
@@ -138,19 +141,16 @@ function ServiceIcon({ icon }: { icon: ServiceIconKey }) {
   );
 }
 
-function HeroGraphic() {
+function HeroGraphic({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative overflow-hidden rounded-[14px] border border-apriil-line/80 bg-[#f3f1eb] p-6 md:p-8">
-      <svg className="h-[220px] w-full" viewBox="0 0 420 220" fill="none" aria-hidden="true">
-        <rect x="8" y="12" width="404" height="196" rx="12" stroke="rgba(23,23,23,0.15)" />
-        <path d="M30 165C86 134 119 144 170 112C222 79 263 88 318 57" stroke="#8f5a33" strokeWidth="2.2" strokeLinecap="round" />
-        <circle cx="170" cy="112" r="5" fill="#8f5a33" />
-        <circle cx="318" cy="57" r="5" fill="#8f5a33" />
-        <line x1="30" y1="180" x2="390" y2="180" stroke="rgba(23,23,23,0.2)" />
-        <line x1="30" y1="146" x2="390" y2="146" stroke="rgba(23,23,23,0.12)" />
-        <line x1="30" y1="112" x2="390" y2="112" stroke="rgba(23,23,23,0.12)" />
-        <line x1="30" y1="78" x2="390" y2="78" stroke="rgba(23,23,23,0.12)" />
-      </svg>
+    <div className="relative min-h-[220px] overflow-hidden rounded-[14px] border border-apriil-line/80 bg-[#f3f1eb]">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        className="object-cover"
+      />
     </div>
   );
 }
@@ -253,6 +253,8 @@ export function ServicePageTemplate({
   slug,
   heroTitle,
   heroBody,
+  heroImageSrc,
+  heroImageAlt,
   heroCtaLabel,
   whatWeDoIntro,
   serviceCards,
@@ -292,7 +294,7 @@ export function ServicePageTemplate({
               {heroCtaLabel}
             </Link>
           </div>
-          <HeroGraphic />
+          <HeroGraphic src={heroImageSrc} alt={heroImageAlt} />
         </div>
       </section>
 
