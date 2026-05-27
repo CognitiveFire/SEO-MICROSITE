@@ -10,6 +10,7 @@ import {
   type CaseStudyContent,
 } from "@/components/digital-markedsforing/case-study-toggle";
 import { OfficesSection } from "@/components/digital-markedsforing/offices-section";
+import { ContactForm } from "@/components/digital-markedsforing/service-page-template";
 
 export const metadata: Metadata = {
   title: "Digital markedsføring | Apriil",
@@ -101,25 +102,6 @@ const serviceCards = [
   },
 ];
 
-const faqItems = [
-  {
-    q: "Hvordan vet dere hvilke kanaler som passer?",
-    a: "Vi starter ikke med kanaler. Vi starter med marked, synlighet og forretningsmål. Deretter vurderer vi hvilke aktiviteter som faktisk støtter vekst.",
-  },
-  {
-    q: "Jobber dere med både merkevare og salg?",
-    a: "Ja. De fleste virksomheter trenger en kombinasjon av synlighet, etterspørsel og konvertering over tid.",
-  },
-  {
-    q: "Hvordan måles effekt?",
-    a: "Vi kombinerer analyse, attribusjon og kommersielle signaler for å forstå hvilke aktiviteter som påvirker resultatene.",
-  },
-  {
-    q: "Kan dere samarbeide med interne team?",
-    a: "Ja. Vi jobber ofte tett med både interne markedsteam og eksterne partnere.",
-  },
-];
-
 const caseStudies: CaseStudyContent[] = [
   {
     id: "fjord",
@@ -167,7 +149,8 @@ const caseStudies: CaseStudyContent[] = [
 
 export default function DigitalMarkedsforingPage() {
   return (
-    <main className="w-full px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
+    <>
+      <main className="w-full px-6 pb-20 pt-8 md:px-10 md:pt-10 xl:px-16">
       <div className="w-full space-y-20 md:space-y-24">
         <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-2 lg:items-start">
           <div>
@@ -244,34 +227,13 @@ export default function DigitalMarkedsforingPage() {
 
         <CaseStudyToggle studies={caseStudies} />
 
-        <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              FAQ
-            </p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Vanlige spørsmål før oppstart.
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Her er de vanligste spørsmålene fra virksomheter som vurderer en
-              mer strategisk og kanalagnostisk markedsmodell.
-            </p>
-          </div>
-          <div className="divide-y divide-apriil-line/80 rounded-[14px] border border-apriil-line/80 bg-[#f8f7f4]">
-            {faqItems.map((item) => (
-              <details key={item.q} className="group px-6 py-5">
-                <summary className="cursor-pointer list-none pr-8 text-lg font-semibold tracking-[-0.02em] text-apriil-dark">
-                  {item.q}
-                </summary>
-                <p className="mt-3 text-base leading-8 text-apriil-muted">
-                  {item.a}
-                </p>
-              </details>
-            ))}
-          </div>
-        </section>
-
       </div>
     </main>
+    <ContactForm
+      serviceName="Digital markedsføring"
+      slug="digital-markedsforing"
+      contactText="Vi starter alltid med å forstå situasjonen din. Book en samtale og få en konkret anbefaling på neste steg."
+    />
+    </>
   );
 }

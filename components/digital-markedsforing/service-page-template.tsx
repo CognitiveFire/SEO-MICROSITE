@@ -155,7 +155,7 @@ function HeroGraphic() {
   );
 }
 
-function ContactForm({
+export function ContactForm({
   serviceName,
   slug,
   contactText,
