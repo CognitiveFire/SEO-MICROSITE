@@ -143,13 +143,13 @@ function ServiceIcon({ icon }: { icon: ServiceIconKey }) {
 
 function HeroGraphic({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative min-h-[220px] overflow-hidden rounded-[14px] border border-apriil-line/80 bg-[#f3f1eb]">
+    <div className="relative min-h-[220px] overflow-hidden rounded-[14px] border border-apriil-line/80 bg-[#f3f1eb] p-4 md:p-6">
       <Image
         src={src}
         alt={alt}
         fill
         sizes="(min-width: 1024px) 50vw, 100vw"
-        className="object-cover"
+        className="object-contain"
       />
     </div>
   );
