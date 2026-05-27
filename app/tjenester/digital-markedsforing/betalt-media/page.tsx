@@ -2,105 +2,110 @@ import type { Metadata } from "next";
 import { ServicePageTemplate } from "@/components/digital-markedsforing/service-page-template";
 
 export const metadata: Metadata = {
-  title: "Betalt media | Digital markedsforing | Apriil",
+  title: "Performance Marketing | Digital markedsforing | Apriil",
   description:
-    "Apriil leverer betalt media-radgivning for virksomheter som trenger bedre investeringsstyring, tydeligere kanalroller og sterkere kommersiell effekt.",
+    "Apriil leverer performance marketing-radgivning for virksomheter som trenger bedre investeringsstyring, tydeligere kanalroller og sterkere kommersiell effekt pa tvers av sosiale, sokeord, display og video.",
 };
 
-export default function BetaltMediaSubPage() {
+export default function PerformanceMarketingSubPage() {
   return (
     <ServicePageTemplate
-      serviceName="Betalt media"
-      slug="betalt-media"
-      heroTitle="Betalt annonsering som faktisk kan males"
-      heroBody="Vi hjelper virksomheter med a bruke annonsebudsjettet smartere gjennom bedre data, tydeligere prioriteringer og kontinuerlig optimalisering."
+      serviceName="Performance Marketing"
+      slug="performance-marketing"
+      heroTitle="Performance marketing pa tvers av kanaler"
+      heroBody="Vi hjelper virksomheter med a optimalisere investeringer i annonsering gjennom bedre data, intelligente prioriteringer og kontinuerlig optimalisering pa tvers av sosiale medier, sokeord, display og video."
       heroCtaLabel="Bestill en gjennomgang"
-      whatWeDoIntro="Vi tar ansvar for hele annonselopet: fra strategi og oppsett til oppfolging og rapportering. Arbeidet handler om kvalitet i beslutninger, ikke bare volum i trafikk."
+      whatWeDoIntro="Vi tar ansvar for hele annonsestrategien pa tvers av kanaler: fra strategi og oppsett til oppfolging og rapportering. Arbeidet handler om intelligente prioriteringer og optimalisering av hver eneste annonsekrone."
       serviceCards={[
         {
-          title: "Google Ads",
-          body: "Vi bygger en kontostruktur som er enkel a styre, enkel a analysere og tett koblet til forretningsmal. Kampanjer settes opp for a skape salgsnare trafikk.",
-          icon: "search",
-        },
-        {
-          title: "Meta-annonsering",
-          body: "Vi bruker Meta for a bygge ettersporsel og stotte salgsutløsende aktiviteter. Kreative grep, malgrupper og budsjett prioriteres med tydelig retning.",
+          title: "Annonsering i sosiale medier",
+          body: "Vi bruker Facebook, Instagram, TikTok og andre plattformer for a bygge ettersporsel og drive konverteringer. Kreative grep, malgrupper og budsjett prioriteres med tydelig retning.",
           icon: "meta",
         },
         {
+          title: "Sokeordsannonser",
+          body: "Vi bygger Google Ads-kontoer med tydelig struktur, høy relevans og fokus pa salgsnare trafikk. Kampanjer og budsjett styres for a maksimere verdi.",
+          icon: "search",
+        },
+        {
+          title: "Display og Video",
+          body: "Vi bruker display og video for a bygge merkevare, rekkevidde og oppmerksomhet. Malgrupper og flatevalg prioriteres etter relevans og effekt.",
+          icon: "display",
+        },
+        {
           title: "Sporing og attribusjon",
-          body: "Vi kvalitetssikrer datagrunnlaget slik at beslutninger tas pa faktiske signaler. Uten god sporing blir optimalisering tilfeldig.",
+          body: "Vi kvalitetssikrer datagrunnlaget slik at beslutninger tas pa faktiske signaler fra hver kanal. Uten god sporing blir optimalisering tilfeldig.",
           icon: "analytics",
         },
         {
-          title: "Budsjettprioritering",
-          body: "Vi flytter budsjett mellom kampanjer og kanaler basert pa utvikling i kostnad, verdi og kapasitet. Malt er bedre avkastning over tid.",
+          title: "Kanal- og budsjettpriortering",
+          body: "Vi fordeler budsjett mellom kanaler og kampanjer basert pa utvikling i kostnad, verdi og kapasitet. Prioriteringene justeres nar signalene endrer seg.",
           icon: "budget",
         },
         {
-          title: "Rapportering og innsikt",
-          body: "Rapporter holdes korte og relevante. Vi viser hva som virker, hva som bor justeres, og hva som er neste konkrete steg.",
+          title: "Rapportering",
+          body: "Rapporter holdes korte og relevante med fokus pa hva som virker, hva som bor justeres, og neste konkrete steg for hver kanal.",
           icon: "reporting",
         },
       ]}
       processSteps={[
         {
-          title: "Innsikt og analyse",
-          body: "Vi starter med a forsta dagens situasjon, datakvalitet og hvor markedsforingen faktisk skaper verdi.",
+          title: "Strategi og innsikt",
+          body: "Vi starter med a forsta mal, marginer og kundereisen. Deretter kartlegger vi hvor hver kanal horer hjemme.",
         },
         {
-          title: "Prioritering",
-          body: "Vi identifiserer hvilke kanaler, malgrupper og tiltak som gir storst effekt med tilgjengelig budsjett.",
+          title: "Kanalpriortering",
+          body: "Vi vurderer hvilke kombinasjoner av sosiale, sok, display og video som gir best effekt med tilgjengelig budsjett.",
         },
         {
           title: "Implementering",
-          body: "Kampanjer, sporing og rapportering settes opp med fokus pa kvalitet, tydelig struktur og malbarhet.",
+          body: "Kampanjer settes opp med fokus pa relevans, struktur og malbarhet pa tvers av kanaler.",
         },
         {
-          title: "Optimalisering",
-          body: "Vi folger opp lopende med testing, justeringer og tydelig rapportering med anbefalte prioriteringer.",
+          title: "Kontinuerlig optimalisering",
+          body: "Vi folger opp lopende med testing, justering av budsjett mellom kanaler, og tydelig rapportering.",
         },
       ]}
       caseStudy={{
-        title: "Nordisk nettbutikk innen interior",
+        title: "Nordisk nettbutikk innen interior - multikanal-optimalisering",
         situation:
-          "Kunden brukte store annonsebudsjetter uten tydelig oversikt over hvilke kampanjer som faktisk skapte salg.",
+          "Kunden brukte annonsebudsjetter pa tvers av flere kanaler, men mangler tydelig oversikt over hvilke kombinasjoner av sosiale, sok og display som faktisk skapte salg.",
         actions: [
-          "Forbedret sporing og malestruktur",
-          "Restrukturerte Google Ads-kontoen",
-          "Justerte budsjettfordeling mellom kampanjer",
-          "Innforte tydeligere rapportering for ledelse",
+          "Etablerte sporing og attribusjon pa tvers av kanaler",
+          "Restrukturerte kampanjer for bedre prioritering",
+          "Justerte budsjettfordeling mellom sosiale, sok og display",
+          "Innforte tydelig rapportering for beslutninger pa kanalnivar",
         ],
         resultLabel: "Resultat etter 3 maneder",
         stats: [
-          { value: "27 %", label: "lavere kostnad per konvertering" },
-          { value: "18 %", label: "okning i ROAS" },
-          { value: "Bedre", label: "datagrunnlag for prioriteringer" },
+          { value: "31 %", label: "forbedret ROAS pa tvers av kanaler" },
+          { value: "22 %", label: "lavere gjennomsnittlig kundekostanad" },
+          { value: "Bedre", label: "prioritering av budsjett mellom kanaler" },
         ],
       }}
       faqItems={[
         {
-          question: "Hvor mye bor man bruke pa annonsering?",
+          question: "Hvilke kanaler bor vi prioritere?",
+          answer: "Det avhenger av mal, marginer og hvor kundene befinner seg. Vi anbefaler a starte med sokemotorer og sosiale medier, og utvide med display og video nar det skaper verdi.",
+        },
+        {
+          question: "Hvor mye bor man bruke pa annonsering totalt?",
           answer: "Det avhenger av mal, marginer og konkurranse. Vi anbefaler et niva som gir nok data til gode beslutninger uten unodig risiko.",
         },
         {
           question: "Hvor raskt ser man resultater?",
-          answer: "De fleste ser effekt tidlig, men stabil forbedring krever noen ukers testing og justering.",
+          answer: "Sok viser resultater hurtig, mens sosiale og display krever noen ukers testing. Stabil forbedring kommer over tid.",
         },
         {
-          question: "Jobber dere med eksisterende annonsekontoer?",
-          answer: "Ja. Vi overtar ofte eksisterende kontoer og forbedrer struktur, prioritering og oppfolging.",
-        },
-        {
-          question: "Hvordan rapporterer dere resultater?",
-          answer: "Kort og konkret: utvikling, forklaring og anbefalt neste steg. Ingen unodig rapportstoy.",
+          question: "Hvordan skal vi dele budsjett mellom kanaler?",
+          answer: "Vi anbefaler a starte med analyse av hvor verdien kommer fra, deretter teste og justere etter faktisk resultat.",
         },
         {
           question: "Binder man seg til en avtale?",
-          answer: "Vi anbefaler et lop over tid for best effekt, men avtalemodellen avklares tydelig i oppstarten.",
+          answer: "Vi anbefaler et lop over tid for best effekt og læring, men avtalemodellen avklares tydelig i oppstarten.",
         },
       ]}
-      contactText="Vi kan starte med en uforpliktende gjennomgang av dagens situasjon og gi en konkret anbefaling pa neste steg."
+      contactText="Vi kan starte med en uforpliktende gjennomgang av dagens annonseinvesteringer pa tvers av kanaler og gi en konkret anbefaling pa neste steg."
     />
   );
 }
