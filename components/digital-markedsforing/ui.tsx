@@ -212,26 +212,23 @@ export function HeroActions() {
 
 export function ServiceGridHero({ cards }: { cards: ServiceCard[] }) {
   return (
-    <div className="apriil-editorial-surface relative overflow-hidden rounded-[16px] border border-apriil-line/70 p-4 md:min-h-[620px] md:p-5">
-      <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:auto-rows-fr">
+    <div className="relative overflow-hidden">
+      <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 xl:auto-rows-fr">
         {cards.map((card, index) => {
           return (
             <Link key={card.title} href={card.href} className="block h-full">
-              <div className="flex h-full min-h-[260px] flex-col rounded-[10px] border border-apriil-line/70 bg-[#dfddd6] px-5 py-5 text-left shadow-[0_4px_10px_rgba(23,23,23,0.04)] transition hover:bg-[#d9d6ce]">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-apriil-muted">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <div className="mt-7 flex flex-1 flex-col">
-                  <div className="mb-4 flex justify-center">
+              <div className="flex h-full min-h-[280px] flex-col rounded-[6px] border border-[#d8d4cb] bg-[#dfddd6] px-8 py-7 text-center transition hover:bg-[#d9d6ce]">
+                <div className="mt-1 flex flex-1 flex-col">
+                  <div className="mb-5 flex justify-center">
                     <ServiceCardIcon icon={card.icon} />
                   </div>
-                  <h3 className="text-center text-[1.08rem] font-semibold leading-[1.05] tracking-[-0.02em] text-apriil-dark">
+                  <h3 className="mx-auto max-w-[18ch] text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.03em] text-apriil-dark md:text-[2.2rem]">
                     {card.title}
                   </h3>
-                  <p className="mx-auto mt-4 max-w-[28ch] text-center text-sm leading-7 text-apriil-dark/90">
+                  <p className="mx-auto mt-5 max-w-[42ch] text-base leading-8 text-apriil-dark/92">
                     {card.body}
                   </p>
-                  <p className="mt-auto pt-6 text-center text-sm font-medium text-apriil-dark">
+                  <p className="mt-auto pt-7 text-lg font-medium text-apriil-dark">
                     Les mer
                   </p>
                 </div>

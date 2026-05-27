@@ -58,32 +58,38 @@ const methodologySteps = [
 
 const serviceCards = [
   {
-    title: "SEO",
-    body: "Strukturert synlighetsarbeid for varig organisk etterspørsel.",
+    title: "Annonsering i sosiale medier",
+    body: "Nar folk scroller, sveiper og klikker seg gjennom sine skreddersydde medieflater, har du en unik anledning til a na frem med ditt budskap til et publikum som allerede er i utfornskermodus.",
+    href: "/tjenester/digital-markedsforing/betalt-media",
+    icon: "social" as const,
+  },
+  {
+    title: "SEO - sokemotoroptimalisering",
+    body: "Vi gjor nettsiden din enkel a finne og elsket av Google. SEO handler om hvordan alle aspekter av nettsiden din gjor den attraktiv for sokemotorene a rangere hoyt i resultatlistene.",
     href: "/tjenester/digital-markedsforing/seo",
     icon: "seo" as const,
   },
   {
-    title: "Betalt media",
-    body: "Kanalstyring, testing og optimalisering med kommersiell retning.",
-    href: "/tjenester/digital-markedsforing/betalt-media",
-    icon: "paid" as const,
-  },
-  {
-    title: "Analyse",
-    body: "Signaltolkning og prioritering på tvers av synlighet og investering.",
+    title: "Sporing og analyse",
+    body: "I digital markedsforing er alt sporbart, malbart og kvantifiserbart. Det gjor at vi i sanntid kan analysere kunders aktivitet gjennom dine digitale kanaler og kampanjer.",
     href: "/tjenester/digital-markedsforing/analyse",
     icon: "display" as const,
   },
   {
-    title: "Programmatic",
-    body: "Datadrevet distribusjon med tydelig rolle i vekstmodellen.",
+    title: "Display og Video",
+    body: "I Apriil jobber vi med programmatisk display og video for a sikre at budskapet ditt treffer riktig malgruppe i riktig kontekst og til riktig tidspunkt.",
     href: "/tjenester/digital-markedsforing/programmatic",
-    icon: "programmatic" as const,
+    icon: "video" as const,
   },
   {
-    title: "DOOH",
-    body: "Synlighet i fysiske flater koblet til digital effektmåling.",
+    title: "Sokeordsannonser",
+    body: "I vare dager er kundereiser komplekse og varierte, men et flertall av gode kundeforhold inkluderer at brukeren et sted i prosessen viser en interesse for deg gjennom et sok pa nettet.",
+    href: "/tjenester/digital-markedsforing/betalt-media",
+    icon: "paid" as const,
+  },
+  {
+    title: "Ute av hjemmet",
+    body: "Programmatisk utendorsreklame - PHOOH - har hatt en eksplosiv vekst de siste par arene. Digitale skjermer i bybildet og andre omrader der folk ferdes har blitt tilgjengeliggjort for programmatiske kjop.",
     href: "/tjenester/digital-markedsforing/dooh",
     icon: "dooh" as const,
   },
