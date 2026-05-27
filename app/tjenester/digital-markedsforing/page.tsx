@@ -180,6 +180,24 @@ export default function DigitalMarkedsforingPage() {
           <StrategicSystemAnimation />
         </section>
 
+        <section className="border-t border-apriil-line/70 pt-12">
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
+              Tjenester
+            </p>
+            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
+              Slik aktiveres modellen i praksis.
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
+              Radene under viser tjenestene som inngår i den samlede
+              markedsmodellen.
+            </p>
+          </div>
+          <div className="mt-12">
+            <ServiceGridHero cards={serviceCards} />
+          </div>
+        </section>
+
         <section id="metodikk" className="border-t border-apriil-line/70 pt-12">
           <div>
             <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
@@ -219,24 +237,6 @@ export default function DigitalMarkedsforingPage() {
         <OfficesSection />
 
         <CaseStudyToggle studies={caseStudies} />
-
-        <section className="border-t border-apriil-line/70 pt-12">
-          <div className="max-w-3xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-apriil-muted">
-              Tjenester
-            </p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.04em] text-apriil-dark md:text-5xl md:leading-[0.96]">
-              Slik aktiveres modellen i praksis.
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-apriil-muted md:text-lg">
-              Radene under viser tjenestene som inngår i den samlede
-              markedsmodellen.
-            </p>
-          </div>
-          <div className="mt-12">
-            <ServiceGridHero cards={serviceCards} />
-          </div>
-        </section>
 
         <section className="grid gap-10 border-t border-apriil-line/70 pt-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
