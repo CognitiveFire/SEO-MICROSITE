@@ -15,8 +15,7 @@ const contactCards: ContactCard[] = [
     role: "Avdelingsleder for digital markedsføring",
     email: "lasse.maroen@apriil.no",
     phone: "970 45 704",
-    imageSrc:
-      "https://apriil.no/img/asset/aW1hZ2VzL2xhc3NlLW1hcm9lbiwucG5n/lasse-maroen,.png?w=900&h=900&fit=crop&s=b4a6032f86a3494c7ac42bd28fa7dd03",
+    imageSrc: "/team/lasse-maroen.jpg",
     imageAlt: "Lasse Marøen",
   },
   {
@@ -25,8 +24,7 @@ const contactCards: ContactCard[] = [
     role: "Rådgiver/avd. leder performance",
     email: "line.fauchald@apriil.no",
     phone: "930 55 062",
-    imageSrc:
-      "https://apriil.no/img/asset/aW1hZ2VzL2JpbGRlcl9hbnNhdHRlL2RpZ2l0YWwtb3Nsby9saW5lLmpwZw/line.jpg?w=900&h=900&fit=crop&s=7094a1766aabfab89cd743c92301e709",
+    imageSrc: "/team/line-fauchald.jpg",
     imageAlt: "Line Fauchald",
   },
   {
@@ -35,8 +33,7 @@ const contactCards: ContactCard[] = [
     role: "Markedsrådgiver",
     email: "lene@apriilprocontra.no",
     phone: "921 48 024",
-    imageSrc:
-      "https://apriil.no/img/asset/aW1hZ2VzL2xlbmUtaGlsbGUuanBlZw/lene-hille.jpeg?w=900&h=900&fit=crop&s=3eda675a56c515b22244b572baf8c764",
+    imageSrc: "/team/lene-hille.jpg",
     imageAlt: "Lene Hille",
   },
 ];
